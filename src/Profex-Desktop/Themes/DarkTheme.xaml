@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="PrimaryBackground" Color="#141718"/>
+    <SolidColorBrush x:Key="SideBarBackground" Color="#232627"/>
+
+    <!--Radio Button Clicked Backround-->
+    <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
+    <!--Radio Button Mouse Over Background-->
+    <SolidColorBrush x:Key="RadioBUttonMouseOverBackground" Color="#39a0ff"/>
+</ResourceDictionary>
