@@ -3,6 +3,7 @@
 
     <SolidColorBrush x:Key="PrimaryBackground" Color="#141718"/>
     <SolidColorBrush x:Key="SideBarBackground" Color="#232627"/>
+    <SolidColorBrush x:Key="ProfileImageBackground" Color="#edf6f9"/>
 
     <!--Radio Button Clicked Backround-->
     <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
