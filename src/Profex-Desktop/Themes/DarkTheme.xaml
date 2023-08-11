@@ -9,4 +9,8 @@
     <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
     <!--Radio Button Mouse Over Background-->
     <SolidColorBrush x:Key="RadioBUttonMouseOverBackground" Color="#39a0ff"/>
+    
+    <!--Dashboard about profex border background color-->
+    <SolidColorBrush x:Key="profexINFObackgr" Color="#212529"/>
+
 </ResourceDictionary>

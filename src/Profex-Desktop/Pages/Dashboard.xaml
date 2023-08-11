@@ -20,31 +20,27 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Asosiy" FontSize="30" Foreground="White"/>
-            <Border Grid.Row="1" CornerRadius="30" Background="Transparent" Margin="5" Padding="7">
+            <Label Grid.Row="0" Style="{DynamicResource Asosiy}"/>
+            <Border Grid.Row="1" Style="{DynamicResource ProfexInfoBorder}">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" Opacity="0.2"/>
+                </Border.Effect>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="30"/>
                         <RowDefinition Height="25"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Profex - bu o'zi qanday dastur?" FontSize="20" Foreground="White"/>
-                    <Label Grid.Row="1" Content="Qisqacha" FontSize="15" 
-                           Foreground="White"
-                           VerticalAlignment="Top" HorizontalAlignment="Left"
-                           Padding="5 0 0 5"/>
+                    <Label Grid.Row="0" Style="{DynamicResource ProfexINfoHeader}"/>
+                    <Label Grid.Row="1" Style="{DynamicResource ProfexInfoUnderHeader}"/>
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="180"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark1.jpg"/>
-                        <TextBlock Grid.Column="1" 
-                                   TextWrapping="Wrap" 
-                                   FontSize="15"
-                                   Foreground="White"
-                                   Margin="10">
-                                            Here is a long description that spans across multiple lines. 
+                        <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark.png"/>
+                        <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
+                                   >Here is a long description that spans across multiple lines. 
                                             It will automatically wrap to the next line as needed.
                                             Lorem Ipsum is simply dummy text of 
                                             the printing and typesetting industry. 
@@ -56,33 +52,48 @@
                                             remaining essentially unchanged. It was popularised in the 1960s 
                                             with the release of Letraset sheets containing Lorem Ipsum 
                                             passages, and more recently with desktop publishing software like 
-                                            Aldus PageMaker including versions of Lorem Ipsum.
-                        </TextBlock>
-                        
+                                            Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
+
+
+
+
+
                     </Grid>
                 </Grid>
             </Border>
 
             <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Umumiy ro'yxatdan o'tganlar soni" Foreground="White"/>
-                    <Label Grid.Row="1" Content="Ustalar soni" Foreground="White"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" 
+                        Style="{DynamicResource ProfexInfoBorder}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Height="90" Width="110" 
+                            CornerRadius="30" Background="{DynamicResource PrimaryBackground}">
+                        <Image Height="90" x:Name="ProfileImg" Source="/Assets/Images/nimalardur.png"/>
+                    </Border>
+                    <Label Grid.Column="1" Content="Umumiy foydalanuvchilar"
+                           Foreground="{DynamicResource ProfileImageBackground}"
+                           FontFamily="{DynamicResource FontFamilyNormal}"
+                           FontSize="20"/>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Vakansiyalar soni" Foreground="White"/>
-                    <Label Grid.Row="1" Content="E'lon beruvchilar soni" Foreground="White"/>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Ustalar soni" 
+                       Foreground="{DynamicResource ProfileImageBackground}"/>
+                    <Label Grid.Column="1" Content="Vakansiyalar soni" 
+                       Foreground="{DynamicResource ProfileImageBackground}"/>
                 </Grid>
             </Grid>
         </Grid>

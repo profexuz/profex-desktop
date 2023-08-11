@@ -16,17 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Images\ProfexLogo.jpg" />
-    <None Remove="Assets\Images\ProfexLogoDark1.jpg" />
+    <None Remove="Assets\Images\ProfexLogoDark.png" />
+    <None Remove="Assets\Images\ProfexLogoLight.png" />
     <None Remove="Assets\Profile images\default image.jpg" />
     <None Remove="Assets\Profile images\default imageLight.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Images\ProfexLogo.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Resource Include="Assets\Images\ProfexLogoDark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Images\ProfexLogoDark1.jpg">
+    <Resource Include="Assets\Images\ProfexLogoLight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Profile images\default image.jpg">

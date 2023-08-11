@@ -56,7 +56,7 @@ namespace Profex_Desktop
 
         private void Window_loading(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Resources["MyDynamicText"] = "Yangi Dinamik Matn";
         }
 
         private void ToggleButton_PreviewStylusSystemGesture(object sender, StylusSystemGestureEventArgs e)

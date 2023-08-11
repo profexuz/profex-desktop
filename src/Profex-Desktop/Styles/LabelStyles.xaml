@@ -1,7 +1,31 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="Asosiy" TargetType="{x:Type Label}">
-        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontSize" Value="35"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Content" Value="{DynamicResource lbl}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="15 0 0 0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="ProfexINfoHeader" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Content" Value="{DynamicResource Profexheader}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
+    </Style>
+    <Style x:Key="ProfexInfoUnderHeader" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Content" Value="{DynamicResource Profexheadershort}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
     </Style>
 </ResourceDictionary>

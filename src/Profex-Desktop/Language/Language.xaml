@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Label x:Key="lbl" Foreground="{DynamicResource ProfileImageBackground}">Asosiy</Label>
+    <Label x:Key="Profexheader" Foreground="{DynamicResource ProfileImageBackground}">Profex - bu o'zi qanday dastur?</Label>
+    <Label x:Key="Profexheadershort" Foreground="{DynamicResource ProfileImageBackground}">Qisqacha</Label>
+    
+    <TextBlock x:Key="Profexabouttext">
+    </TextBlock>
+
+</ResourceDictionary>
