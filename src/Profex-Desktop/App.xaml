@@ -8,7 +8,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Assets/Icons/Icons.xaml"/>
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/TextBlockStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ChekboxStyle.xaml"/>
 
+                <ResourceDictionary Source="TextStyles/TextStyle.xaml"/>
                 <ResourceDictionary Source="Themes/DarkTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

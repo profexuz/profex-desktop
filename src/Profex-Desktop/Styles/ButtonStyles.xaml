@@ -96,4 +96,131 @@
         </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="LightMode" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"/>
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" CornerRadius="100" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" 
+                                Width="{TemplateBinding Width}" VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                        <Path x:Name="icon"
+                                  Grid.Column="1"
+                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                                  Fill="White"
+                                  Height="25" Width="25"
+                                  Stretch="UniformToFill"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="{DynamicResource RadioBUttonMouseOverBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>
+                            <Setter TargetName="icon" Property="Fill" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="EditButton" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Margin" Value="0 10 0 30"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="Background" Value="#212529"/>
+        <Setter Property="Content" Value="Edit"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Label x:Name="L" Content="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}"
+                               FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}"
+                               VerticalAlignment="Center" HorizontalAlignment="Center" Padding="{TemplateBinding Padding}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="Gray"/>
+                            <Setter TargetName="L" Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="#212529"/>
+                            <Setter TargetName="L" Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="#343a40"/>
+                            <Setter TargetName="L" Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SignOutButton" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Margin" Value="0 20 0 0"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="Background" Value="#212529"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path x:Name="icon"
+                                  Grid.Column="0"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                                  Fill="White"
+                                  Height="20" Width="20"
+                                  Stretch="UniformToFill"/>
+                            <Label Grid.Column="1" x:Name="L" Content="Log Out" FontFamily="{TemplateBinding FontFamily}"
+                               FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}"
+                               VerticalAlignment="Center" HorizontalAlignment="Left" Padding="{TemplateBinding Padding}" Margin="5 0 0 0"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="Gray"/>
+                            <Setter TargetName="L" Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="#212529"/>
+                            <Setter TargetName="L" Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="#343a40"/>
+                            <Setter TargetName="L" Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
