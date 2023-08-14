@@ -16,23 +16,59 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Images\ProfexLogo.jpg" />
-    <None Remove="Assets\Images\ProfexLogoDark1.jpg" />
+    <None Remove="Assets\Images\builders.png" />
+    <None Remove="Assets\Images\common users.jpg" />
+    <None Remove="Assets\Images\defaultvacanciesimg.jpg" />
+    <None Remove="Assets\Images\nimalardur.png" />
+    <None Remove="Assets\Images\ProfexLogoDark.png" />
+    <None Remove="Assets\Images\ProfexLogoLight.png" />
+    <None Remove="Assets\Images\Vacancy.png" />
     <None Remove="Assets\Profile images\default image.jpg" />
     <None Remove="Assets\Profile images\default imageLight.jpg" />
+    <None Remove="Assets\Profile images\defaultimagaUser.jpg" />
+    <None Remove="Assets\Profile images\defaultimagaUserDark.jpg" />
+    <None Remove="Assets\Profile images\DefaultProfileImage.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Images\ProfexLogo.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <PackageReference Include="DevExpress.Data" Version="23.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\builders.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Images\ProfexLogoDark1.jpg">
+    <Resource Include="Assets\Images\common users.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\defaultvacanciesimg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\nimalardur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\ProfexLogoDark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\ProfexLogoLight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Vacancy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Profile images\default image.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Profile images\default imageLight.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images\defaultimagaUser.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images\defaultimagaUserDark.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images\DefaultProfileImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

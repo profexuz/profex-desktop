@@ -17,12 +17,14 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
-                <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal"
                         Margin="0 0 10 0"  HorizontalAlignment="Right">
-                <Button x:Name="btnMinimize" Click="btnMinimize_Click" Style="{DynamicResource MinimizedButton}"/>
-                <Button x:Name="btnClose" Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
+                    <Button x:Name="btnMinimize" Click="btnMinimize_Click" Style="{DynamicResource MinimizedButton}"/>
+                    <Button x:Name="btnMaximize" Click="btnMaximize_Click" Style="{DynamicResource MaximizedButton}"/>
+                    <Button x:Name="btnClose" Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
             </StackPanel>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -31,10 +33,11 @@
                 </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
                         <Border CornerRadius="100" Height="80" Width="80"
-                                Background="{DynamicResource ProfileImageBackground}" >
+                                Background="Transparent" BorderBrush="{DynamicResource ProfileImageBackground}"
+                                BorderThickness="1">
                             <Ellipse Height="77" Width="77">
                                 <Ellipse.Fill>
-                                    <ImageBrush x:Name="ProfileImg" ImageSource="/Assets/Profile images/default image.jpg"/>
+                                    <ImageBrush x:Name="ProfileImg" ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Border>
@@ -68,11 +71,15 @@
                             </Grid>
                         </Border>
 
-                        <Button x:Name="SignOut" Style="{DynamicResource SignOutButton}"
-                                Tag="{DynamicResource SignOut}"/>
+                        <!--<Button x:Name="SignOut" Style="{DynamicResource SignOutButton}"
+                                Tag="{DynamicResource SignOut}"/>-->
                     </StackPanel>
-            <Frame x:Name="PageNavigator" Grid.Column="1"
-                            NavigationUIVisibility="Hidden"/>
+                    <ScrollViewer Grid.Column="1">
+                        <Frame x:Name="PageNavigator" 
+                                NavigationUIVisibility="Hidden" Padding="10"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                ScrollViewer.CanContentScroll="True" />
+                    </ScrollViewer>
                 </Grid>
         </Grid>
     </Grid>

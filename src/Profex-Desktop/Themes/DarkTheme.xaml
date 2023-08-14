@@ -9,4 +9,12 @@
     <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
     <!--Radio Button Mouse Over Background-->
     <SolidColorBrush x:Key="RadioBUttonMouseOverBackground" Color="#39a0ff"/>
+    
+    <!--Dashboard about profex border background color-->
+    <SolidColorBrush x:Key="profexINFObackgr" Color="#212529"/>
+    
+    <!--Dashboard vacancy paginations background color-->
+    <SolidColorBrush x:Key="profexVacancyEnableFalseBackgr" Color="#495057"/>
+    <SolidColorBrush x:Key="profexVacancyEnableTrueBackgr" Color="#adb5bd"/>
+
 </ResourceDictionary>

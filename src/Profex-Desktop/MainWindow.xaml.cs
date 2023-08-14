@@ -1,20 +1,11 @@
-﻿using Profex_Desktop.Pages;
+﻿using Profex_Desktop.Components.MasterContact;
+using Profex_Desktop.Pages;
 using Profex_Desktop.Themes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net.Mime;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Profex_Desktop
 {
@@ -31,6 +22,19 @@ namespace Profex_Desktop
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void btnMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -56,7 +60,18 @@ namespace Profex_Desktop
 
         private void Window_loading(object sender, RoutedEventArgs e)
         {
-
+            if(ProfileMyName.Text.Length > 10)
+            {
+                string name = string.Empty, name1 = ProfileMyName.Text;
+                byte count = 0;
+                foreach(var n in name1)
+                {
+                    if (count == 7) break;
+                    name = name+ n;
+                    count++;
+                }
+                ProfileMyName.Text = name + "...";
+            }
         }
 
         private void ToggleButton_PreviewStylusSystemGesture(object sender, StylusSystemGestureEventArgs e)
@@ -69,14 +84,13 @@ namespace Profex_Desktop
             if (chkbox.IsChecked == true)
             {
                 AppTheme.ChangeTheme(new Uri("Themes/DarkTheme.xaml", UriKind.Relative));
-                ProfileImg.ImageSource = new BitmapImage(new Uri("C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\default image.jpg", UriKind.Relative));
 
             }
             else
             {
                 AppTheme.ChangeTheme(new Uri("Themes/LightTheme.xaml", UriKind.Relative));
-                ProfileImg.ImageSource = new BitmapImage(new Uri("C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\default imageLight.jpg", UriKind.Relative));
             }
         }
+
     }
 }
