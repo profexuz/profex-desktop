@@ -3,8 +3,8 @@
     <Label x:Key="lbl" Foreground="{DynamicResource ProfileImageBackground}">Asosiy</Label>
     <Label x:Key="Profexheader" Foreground="{DynamicResource ProfileImageBackground}">Profex - bu o'zi qanday dastur?</Label>
     <Label x:Key="Profexheadershort" Foreground="{DynamicResource ProfileImageBackground}">Qisqacha</Label>
-    
-    <TextBlock x:Key="Profexabouttext">
+
+    <TextBlock x:Key="Profexabouttext">izlash
     </TextBlock>
 
 </ResourceDictionary>

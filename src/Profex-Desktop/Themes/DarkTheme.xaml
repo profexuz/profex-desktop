@@ -12,5 +12,9 @@
     
     <!--Dashboard about profex border background color-->
     <SolidColorBrush x:Key="profexINFObackgr" Color="#212529"/>
+    
+    <!--Dashboard vacancy paginations background color-->
+    <SolidColorBrush x:Key="profexVacancyEnableFalseBackgr" Color="#495057"/>
+    <SolidColorBrush x:Key="profexVacancyEnableTrueBackgr" Color="#adb5bd"/>
 
 </ResourceDictionary>

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Profex_Desktop.Components.MasterContact.MasterContactControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Profex_Desktop.Components.MasterContact"
+             mc:Ignorable="d" 
+             Height="auto"
+             Width="auto"
+             Margin="10 5 10 0"
+             Cursor="Hand">
+    <Border CornerRadius="30" 
+            Background="Transparent">
+        <StackPanel Orientation="Horizontal">
+            <Border x:Name="brBackgr" CornerRadius="50" Height="50" Width="50"
+                    Margin="5" Background="#c12ebf">
+                <Ellipse Height="48" Width="48">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="ProfileImg" ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Border>
+            <Border x:Name="NameBorder" CornerRadius="25" Background="{DynamicResource PrimaryBackground}" 
+                    Width="250"
+                    Height="50">
+            <Label x:Name="NameOfMaster" 
+                   Content="Alisher Sultanov"
+                   FontSize="18" Margin="5"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   FontFamily="{DynamicResource FontFamilyNormal}"
+                   Foreground="{DynamicResource ProfileImageBackground}"
+                   FontWeight="SemiBold"/>
+            </Border>
+        </StackPanel>
+    </Border>
+</UserControl>
