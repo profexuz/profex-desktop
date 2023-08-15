@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profex_Desktop.Components.Vacancies"
              mc:Ignorable="d" 
-             Height="400" Width="380"
+             Height="400" Width="400"
              Background="Transparent">
     <Border CornerRadius="25" Margin="10 10">
         <StackPanel Orientation="Vertical">
@@ -17,15 +17,41 @@
             </Border>
             
                 <!--Name of person which is set vacancie-->
-            <WrapPanel x:Name="wrpContac" Height="70" 
-                       Margin="10 0" 
-                       Orientation="Vertical">
-                
-            </WrapPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" x:Name="btnPre" Click="btnPre_Clicked"
+                        Style="{DynamicResource PreNextButtons}"
+                        Tag="{DynamicResource PreButton}"
+                        />
+
+                <WrapPanel Grid.Column="1" x:Name="wrpContac" Height="70" 
+                       Margin="0.4,0" 
+                       Orientation="Vertical"/>
+
+                <Button Grid.Column="2" x:Name="btnNext" Click="btnNext_Clicked"
+                        Style="{DynamicResource PreNextButtons}"
+                        Tag="{DynamicResource NextButton}"
+                        />
+
+            </Grid>
             <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
                        Margin="10" Padding="10 0"
                        Text="Bu yerda vakandiya joylagan odam 
                        muammo haqida qisqacha aytib ketadi."/>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Height="30" VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                <Border x:Name="br1" MouseDown="br1_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableTrueBackgr}"/>
+                <Border x:Name="br2" MouseDown="br2_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
+                <Border x:Name="br3" MouseDown="br3_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
+                <Border x:Name="br4" MouseDown="br4_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
+                <Border x:Name="br5" MouseDown="br5_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
+            </StackPanel>
 
         </StackPanel>
     </Border>

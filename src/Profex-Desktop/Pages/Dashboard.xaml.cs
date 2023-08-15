@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -22,6 +23,7 @@ namespace Profex_Desktop.Pages
     /// </summary>
     public partial class Dashboard : Page
     {
+        private string somebodyName { get; set; }
         public Dashboard()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace Profex_Desktop.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            wrpGroups.Children.Clear();
+           wrpGroups.Children.Clear();
             
                for (int i = 0; i < 5; i++)
                {
@@ -40,132 +42,15 @@ namespace Profex_Desktop.Pages
                         MakeRandom()
 
                     };
-                    MasterContactControl mastercontact = new MasterContactControl();
-                    //GrouposChipUserControl grouposChipUserControl = new GrouposChipUserControl();
-                    mastercontact.SetData(list);
-                    wrpGroups.Children.Add(mastercontact);
-               }
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                "Toshmatov Eshmat",
-                MakeRandom()
+                MasterContactControl mastercontact = new MasterContactControl();
+                mastercontact.SetData(list);
+                wrpGroups.Children.Add(mastercontact);
+            }
 
-            };
             wrpVacancies.Children.Clear();
             Vacancie vacancie = new Vacancie();
-            vacancie.SetData(list1);
             wrpVacancies.Children.Add(vacancie);
 
-        }
-
-        private void br1_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var bc = new BrushConverter();
-            br1.Background = (Brush)bc.ConvertFrom("#495057")!;
-            br2.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br3.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br4.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br5.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-
-
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                "Toshmatov Eshmat",
-                MakeRandom()
-
-            };
-            wrpVacancies.Children.Clear();
-            Vacancie vacancie = new Vacancie();
-            vacancie.SetData(list1);
-            wrpVacancies.Children.Add(vacancie);
-        }
-
-        private void br2_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var bc = new BrushConverter();
-            br1.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br2.Background = (Brush)bc.ConvertFrom("#495057")!;
-            br3.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br4.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br5.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                "Tursunaliyev G'iybadulla",
-                MakeRandom()
-
-                };
-            wrpVacancies.Children.Clear();
-            Vacancie vacancie = new Vacancie();
-            vacancie.SetData(list1);
-            wrpVacancies.Children.Add(vacancie);
-        }
-
-
-        private void br3_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var bc = new BrushConverter();
-            br1.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br2.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br3.Background = (Brush)bc.ConvertFrom("#495057")!;
-            br4.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br5.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                "G'aniyev Boltavoy",
-                MakeRandom()
-
-                };
-            wrpVacancies.Children.Clear();
-            Vacancie vacancie = new Vacancie();
-            vacancie.SetData(list1);
-            wrpVacancies.Children.Add(vacancie);
-        }
-
-        private void br4_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var bc = new BrushConverter();
-            br1.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br2.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br3.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br4.Background = (Brush)bc.ConvertFrom("#495057")!;
-            br5.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                "Tiqildiyev Teshavoy",
-                MakeRandom()
-
-                };
-            wrpVacancies.Children.Clear();
-            Vacancie vacancie = new Vacancie();
-            vacancie.SetData(list1);
-            wrpVacancies.Children.Add(vacancie);
-        }
-
-        private void br5_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var bc = new BrushConverter();
-            br1.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br2.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br3.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br4.Background = (Brush)bc.ConvertFrom("#adb5bd")!;
-            br5.Background = (Brush)bc.ConvertFrom("#495057")!;
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                "Yo'lchiyev Mekke",
-                MakeRandom()
-
-                };
-            wrpVacancies.Children.Clear();
-            Vacancie vacancie = new Vacancie();
-            vacancie.SetData(list1);
-            wrpVacancies.Children.Add(vacancie);
         }
 
         private static string MakeRandom()
@@ -179,6 +64,55 @@ namespace Profex_Desktop.Pages
                 };
             string selected = colors1[n];
             return selected;
+        }
+        private int currentElement = 0;
+
+        private void Left_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentElement < 2)
+            {
+                currentElement++;
+                AnimateCarousel();
+            }
+        }
+
+        private void Right_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentElement > 0)
+            {
+                currentElement--;
+                AnimateCarousel();
+            }
+        }
+
+        private void AnimateCarousel()
+        {
+            Storyboard storyboard = (this.Resources["CarouselStoryboard"] as Storyboard)!;
+            DoubleAnimation animation = storyboard.Children.First() as DoubleAnimation;
+            animation.To = -this.ActualWidth * currentElement;
+            storyboard.Begin();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            somebodyName = txtSearch.Text;
+            wrpGroups.Children.Clear();
+            Random ran = new Random();
+            int son = ran.Next(1, 100);
+
+            for (int i = 0; i < son; i++)
+            {
+                string[] list =
+                {
+                        "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
+                        $"{somebodyName} Karimov",
+                        MakeRandom()
+
+                    };
+                MasterContactControl mastercontact = new MasterContactControl();
+                mastercontact.SetData(list);
+                wrpGroups.Children.Add(mastercontact);
+            }
         }
     }
 }
