@@ -13,12 +13,17 @@
 
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <Storyboard x:Key="CarouselStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetName="CarouselTransform" 
+                Storyboard.TargetProperty="X"/>
+        </Storyboard>
     </Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="380"/>
+            <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -59,10 +64,6 @@
                                             with the release of Letraset sheets containing Lorem Ipsum 
                                             passages, and more recently with desktop publishing software like 
                                             Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
-
-
-
-
 
                     </Grid>
                 </Grid>
@@ -174,7 +175,6 @@
                     <RowDefinition Height="55"/>
                     <RowDefinition Height="340"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="1" 
                         Background="{DynamicResource profexINFObackgr}"
@@ -206,7 +206,7 @@
                                                  Style="{DynamicResource Search}"/>
 
 
-                                <Button Grid.Column="1" Style="{DynamicResource btnSearch}"/>
+                                <Button Grid.Column="1" x:Name="btnSearch" Click="btnSearch_Click" Style="{DynamicResource btnSearch}"/>
                             </Grid>
                         </Grid>
                         <ScrollViewer Grid.Row="1"
@@ -215,8 +215,9 @@
                                                     VerticalAlignment="Top"
                                                         Margin="5">
                             <WrapPanel x:Name="wrpGroups" Orientation="Vertical">
-
+                                
                             </WrapPanel>
+                            
 
                         </ScrollViewer>
                     </Grid>
@@ -233,15 +234,6 @@
 
                 </Border>
 
-                <!--In here vacancy pagination-->
-                <StackPanel Grid.Row="3" Orientation="Horizontal" Height="30" VerticalAlignment="Center"
-                            HorizontalAlignment="Center">
-                    <Border x:Name="br1" MouseDown="br1_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableTrueBackgr}"/>
-                    <Border x:Name="br2" MouseDown="br2_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
-                    <Border x:Name="br3" MouseDown="br3_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
-                    <Border x:Name="br4" MouseDown="br4_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
-                    <Border x:Name="br5" MouseDown="br5_MouseDown" Margin="5" CornerRadius="10" Height="10" Width="10" Background="{DynamicResource profexVacancyEnableFalseBackgr}"/>
-                </StackPanel>
 
             </Grid>
         </Grid>
