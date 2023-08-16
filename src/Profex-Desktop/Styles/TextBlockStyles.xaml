@@ -70,4 +70,685 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
     </Style>
+    
+    
+    <!--Register and Login textbox style-->
+    <Style x:Key="Fullname" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="290"/>
+        <Setter Property="Padding" Value="10 5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border x:Name="B"
+                            CornerRadius="10" 
+                            BorderBrush="{DynamicResource ProfileImageBackground}"
+                            BorderThickness="1"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False"
+                                      HorizontalScrollBarVisibility="Hidden"
+                                      VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="B"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="BorderBrush" Value="{DynamicResource ProfileImageBackground}" TargetName="B"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="B"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="False">
+                            <Setter Property="BorderBrush" Value="{DynamicResource ProfileImageBackground}" TargetName="B"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+    
+    <!--Offerta part-->
+    <Style x:Key="topFoydalanuvchi2" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Margin" Value="0 0 0 20"/>
+        <Setter Property="Text" Value="Аgar siz «TezService» mobil ilovasini yuklab olsangiz, nusxa koʼchirsangiz yoki boshqa ruxsat etilgan usulda yuklab olib ishlatsangiz, bunday harakatlar bilan siz ushbu foydalanuvchi shartnomasini, shaxsiy maʼlumotlarni qayta ishlash va himoya qilish siyosatini va «huquqiy maʼlumotlar» boʼlimida joylashtirilgan boshqa hujjatlarni toʼliq oʼqiganingizni, tushunganingizni, rozi boʼlganingizni va qabul qilganingizni tasdiqlaysiz. «TezService» ilovasi va ushbu shartnomada koʼrsatilgan boshqa hujjatlar, istisnolar va shartlarsiz, siz shartlarga rioya qilishga rozi boʼlasiz va ular buzilgan taqdirda javobgarlikni oʼz zimmangizga olasiz.  Ushbu foydalanuvchi shartnomasining shartlari va foydalanuvchi shartnomasida koʼrsatilgan boshqa huquqiy hujjatlar muhim va majburiydir."/>
+    </Style>
+
+    <Style x:Key="topFoydalanuvchi4" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Margin" Value="0 0 0 20"/>
+        <Setter Property="Text" Value="Ushbu foydalanuvchi shartnomasi bir vaqtning oʼzida «TezService Corp» MChJ, bundan keyin «kompaniya» deb ataladi, va https://tezservice.uz veb-sahifada yoki «TezService» mobil ilovada (bundan buyon matnda – MI) roʼyxatdan oʼtgan foydalanuvchi boʼlgan har qanday shaxs, bundan keyin «foydalanuvchi» deb ataladi, oʼrtasida tuzilgan ommaviy oferta (bundan buyon matnda «SHАRTNOMА») hisoblanib, shartnoma ishtirokchilari, yaʼni «kompaniya» va «foydalanuvchi», ushbu matnda birgalikda «Tomonlar» va alohida-alohida «Tomon» deb ataladi.
+
+Shartnoma shartlarini qabul qilish Foydalanuvchining Shartnomaning barcha shartlarini istisnolarsiz/cheklovlarsiz toʼliq va shartsiz bajarishga tayyorligini anglatadi
+
+Ushbu Siz va MIga egalik qiluvchi kompaniya oʼrtasida tuzilayotgan shartnomaga koʼra mazkur kompaniya xizmatlarni taqdim etadi va shartnomaga muvofiq eksklyuziv boʼlmagan litsenziya shartlariga koʼra MIdan bepul foydalanish huquqini beradi va ushbu shartnoma MIdan, Kompaniya xizmatlaridan foydalanish tartibi va shartlarini belgilaydi.
+
+Shartnoma siz foydalanayotgan versiyadagi MIning barcha versiyalariga, shu jumladan kelajakdagi barcha versiyalar va yangilanishlarga nisbatan qoʼllaniladi, agar bunday versiyadan foydalanish uchun alohida kelishuv talab qilinmasa.
+
+Android operatsion tizimlarida ishlaydigan mobil qurilmalar uchun MI (4.1-versiya. yoki yanada yangiroq versiya) va Apple iOS (iOS 10.0 yoki undan keyingi versiyalar).
+
+Ushbu shartnoma shartlarini qabul qilib, siz huquqiy jihatdan va jismoniy jihatdan qobiliyatli ekanligingizni va ushbu shartnomani tuzish, MIdan foydalanish, uchinchi shaxslar bilan kelishuvlar va shartnomalar tuzish, shuningdek, shaxsiy maʼlumotlaringizni qayta ishlashga rozilik berish huquqiga egaligingizni va maxfiylik siyosatiga rozilik bildirganingizni tasdiqlaysiz.
+
+Shartnomaning ushbu tahriri 2022 yil 1 dekabrdan boshlab amal qiladi.
+
+I. АTАMА VА TА’RIFLАR
+
+1.1. Ushbu shartnomada, agar matnda boshqacha koʼrsatilmagan boʼlsa, berilgan atamalar quyidagi maʼno va mazmunga ega:
+
+Oferta – bu pudratchi tomonidan xizmatlar koʼrsatish shartlari, shuningdek, veb-sahifa va mobil ilova xizmatlaridan foydalanish qoidalari koʼrsatilgan taklifda oldindan belgilangan shartlar asosida shartnoma tuzish boʼyicha nomaʼlum miqdordagi shaxslarga kompaniyaning ommaviy taklifi;
+
+Аktsept – foydalanuvchi tomonidan ushbu shartnomaning barcha shartlarini, shu jumladan uning barcha qoʼshimchalarini qabul qilish, shuningdek ularni amalga oshirishga tayyorlik;
+
+Veb-sahifa – https://tezservice.uz/ – vaqtinchalik reklamalar/eʼlonlarni toifalar boʼyicha nashr etish uchun aloqa platformasi boʼlgan pudratchi/ijrochining mulki boʼlgan veb-manbaa;
+
+Mobil ilova (MI) – bu ishchilarni toifalar boʼyicha qidirish va ijrochilarni ish bilan taʼminlashda ishlatiladigan kompaniyaning mulki boʼlgan aloqa platformasi;
+
+Foydalanuvchi – shaxsan oʼzi harakat qiladigan va voyaga (18 yoshga) yetgan, Ofertani qabul qilgan va shaxsiy va kasbiy mahoratiga oid maʼlumotlarni, avvalgi ishi haqidagi maʼlumotlarni veb-sahifada va / yoki mobil ilovada joylashtirgan toʼliq qobiliyatli jismoniy shaxs;
+
+Buyurtmachi – ijrochini qidirish uchun vazifani (ish sharoitlarini) nashr etadigan veb-sahifa va mobil ilovaning roʼyxatdan oʼtgan foydalanuvchisi;
+
+Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼridan-toʼgʼri veb-sahifa, mobil ilova xizmatiga tegishli va isteʼmolchining manfaatlari va ehtiyojlarini qondirish uchun foydalaniladigan har qanday harakat;
+
+Ijrochi – shaxsiy va kasbiy mahoratlari haqidagi maʼlumotlarini joylashtirish orqali veb-sahifa / mobil ilovaning roʼyxatdan oʼtgan foydalanuvchisi maʼlum turdagi xizmatlar/ishlarni taqdim etish va/yoki bajarish boʼyicha ixtisoslikka ega, u veb-sahifa va/yoki mobil ilova orqali mijozdan vazifani qabul qiladi (ishlashga rozi);
+
+Bitim – buyurtmachi va pudratchi (bundan buyon matnda Bitim Ishtirokchilari) oʼrtasida pudratchi tomonidan bajarilgan ishlar natijalarini topshirish, bajarilgan ishlar uchun buyurtmachi tomonidan qabul qilish va toʼlash toʼgʼrisidagi shartnoma;
+
+TezService xizmati – kompaniya tomonidan veb-sahifada va mobil ilovada taqdim etiladigan barcha pullik va bepul xizmatlar (shu jumladan funktsiyalar, matn mazmuni, maʼlumotlar, rasmlar, maʼlumotlar, dasturiy taʼminot, grafikalar va boshqalar.), shuningdek veb-sahifa va mobil ilovaning boshqa variantlari;
+
+Shaxsiy hisob qaydnomasi – veb-sahifa yoki mobil ilovaning dasturiy funktsiyalarini ishlatgan holda foydalanuvchi tomonidan keyinchalik oʼz xizmatlarini koʼrsatish yoki boshqa foydalanuvchilardan xizmatlarni qabul qilish uchun yaratilgan elektron formatdagi kabinet;
+
+Roʼyxatdan oʼtish – veb-sahifa yoki MIning funktsional imkoniyatlariga kirish uchun veb-sahifa yoki MIning maʼlumotlar bazasiga kerakli maʼlumotlarni kiritishni talab qiladigan pudratchi tomonidan belgilangan tartib. Roʼyxatdan oʼtish veb-sahifa yoki MI talablariga muvofiq barcha bosqichlar muvaffaqiyatli yakunlanganidan keyingina tugallangan hisoblanadi;
+
+Shaxsiy maʼlumotlar – jismoniy shaxsni aniqlash uchun soʼralgan foydalanuvchi haqidagi ishonchli va dolzarb maʼlumotlar;
+
+SMS-tasdiqlash – roʼyxatdan oʼtish paytida koʼrsatilgan telefon aloqa raqamini kerakli maydonga kiritilgan kod bilan SMS-xabar yuborish orqali tasdiqlash.
+
+1.2. Аgar foydalanuvchi shartnoma shartlarini bajarishga tayyor boʼlmasa / qisman tayyor boʼlmasa, kompaniya veb-sahifa yoki MIni tark etishni qatʼiy tavsiya qiladi. 
+
+1.3. Roʼyxatdan oʼtish/xizmatlardan foydalanish boshlangandan soʼng foydalanuvchi Ofertaning barcha shartlarini toʼliq bajarishga tayyorligini tasdiqlaydi.
+
+1.4. Kompaniya quyidagilarni taqdim etadi:
+
+a) Manbaa foydalanuvchilariga ushbu shartnomada koʼrsatilgan asoslar boʼyicha barcha mavjud imkoniyatlarni;
+
+b) foydalanuvchilar oʼrtasida oʼz xizmatlarini koʼrsatish boʼyicha bitimlarni keyinchalik muammosiz bajarish uchun xizmatlar haqidagi maʼlumotlarni nashr etish uchun manbadan foydalanish imkoniyatini. 
+
+1.5. Bitimlar toʼgʼridan-toʼgʼri foydalanuvchilar oʼrtasida, kompaniya ishtirokisiz tuziladi.
+
+1.6. Kompaniya eʼlon va foydalanuvchilarning oʼzaro hamkorlik faoliyatini nashr etish uchun aloqa platformasi boʼlib, vositachi sifatida faoliyat olib bormaydi.
+
+1.7. Ushbu oferta tomonlarining/ishtirokchilarining huquq va majburiyatlari veb-sahifada, MIda joylashtirilgan va shartnomaning ajralmas qismi boʼlgan moddalar va boshqa axborot manbaalari bilan tartibga solinishi mumkin.
+
+II. E’LONLАRNI NАSHR ETISH SHАRTLАRI
+
+2.1. Eʼlon nashriga kirish huquqiga ega boʼlish uchun foydalanuvchi maxsus shaklni toʼldirishi va eʼlon qilinadigan xizmatlarining xususiyatlarini koʼrsatishi kerak.
+
+2.2. Foydalanuvchi roʼyxatdan oʼtish jarayonini tugatgandan va barcha kerakli maʼlumotlarni kiritgandan soʼng veb-sahifa va MIning qoʼshimcha funktsiyalariga kirish huquqiga ega boʼladi. Roʼyxatdan oʼtishni yakunlash uchun koʼrsatilgan telefon raqamini tekshirib tasdiqdan oʼtkazish talab qilinadi.
+
+2.3. Vakolatli foydalanuvchilar tomonidan veb-sahifa va MI funktsiyalaridan foydalanish ularni TezService.uz xizmatidan foydalanuvchi siyosati qoidalariga rioya qilishga majbur qiladi.
+
+2.4. Foydalanuvchi shaxsiy hisob qaydnomasiga avtorizatsiya qilish uchun koʼrsatilgan aloqa raqami va paroldan amalga oshirilgan barcha amaliyotlar uchun javobgardir. Foydalanuvchi veb-sahifa va MIning xususiyatlaridan faqat oʼz shaxsiy hisob qaydnomasiga kirgandan soʼng foydalanish huquqiga ega.
+
+2.5. Veb-sahifaga yoki MIga kirish uchun parol maxfiy maʼlumot boʼlib, uni saqlash foydalanuvchi zimmasida.
+
+2.6. Foydalanuvchi parolini buzilishi ehtimoli borligiga shubha qilishi bilanoq kirish maʼlumotlarini (parolni) oʼzgartirishi kerak. Eʼlon qilingan reklamalar joriy Oferta shartlariga mos kelishi, shuningdek, xizmatlarning aniq va maksimal darajada toʼliq tavsifi va bitim shartlarini oʼz ichiga olishi kerak. Xizmat haqidagi maʼlumotlarni eʼlon qilish orqali foydalanuvchi xizmat bilan bogʼliq amaliyotlar u tomonidan qonuniy ravishda amalga oshirilishini kafolatlaydi. Аgar foydalanuvchi tasdiqlashni rad etsa (vaziyatdan kelib chiqib), veb-sahifa va MI moderatorlari eʼlon joylashtirishni rad etishi mumkin.
+
+2.7. Foydalanuvchi qoʼshimcha litsenziyalarni talab qilishi mumkin boʼlgan xizmatlar davlat organlarining qonunchilik talablariga muvofiq amalga oshirilishini kafolatlaydi.
+
+2.8. Foydalanuvchi uning aloqa raqami va parolidan uchinchi shaxslar foydalanmasligini tasdiqlaydi.
+
+2.9. Foydalanuvchi xizmatlar haqida faqat ishonchli maʼlumotlarni nashr etish majburiyatini oladi va agar u haqiqiy tavsifga mos kelmasa, kerakli tahrirlarni amalga oshirish majburiyatini oʼz zimmasiga oladi. Аgar mavjud eʼlonga tuzatish kiritish imkoni boʼlmasa, uni oʼchirib tashlab va dolzarb maʼlumotlarni oʼz ichiga olgan yangisini yaratish kerak.
+
+2.10. Bitim shartlari ushbu Oferta shartlariga, shuningdek qonuniy talablarga javob berishi kerak.
+
+2.11. Foydalanuvchiga veb-sahifada va MIda kompaniyaning raqobatchilari haqidagi har qanday maʼlumotlarni, shu jumladan ularning savdo takliflarini, shuningdek, quyidagilarni tarqatish taqiqlanadi:
+
+- uchinchi tomon bozorlariga, eʼlonlar taxtasiga, onlayn-doʼkonlarga, shu jumladan reklama materiallariga havolalar.
+
+- agar joylashtirish Oferta shartlariga zid boʼlsa uchinchi tomon manbaalarining tovarlari va xizmatlari.
+
+2.12. Kompaniya texnik sabablarga koʼra eʼlon joylashtirish muddatini qisqartirish yoki uzaytirish huquqiga ega.
+
+2.13. Kompaniya taklif shartlariga, shuningdek amaldagi qonunchilikka zid boʼlgan eʼlonni namoyish qilishni cheklashi mumkin.
+
+Cheklovlar roʼyxati:
+
+a) Bir xil eʼlonni bir xil profilga ikki marta joylashtirish;
+
+b) Аgar gap bir xil obʼekt haqida boʼlsa, oʼxshash tarkibga ega eʼlonlarni joylashtirish;
+
+c) Turli xil telefon raqamlaridan bir xil mazmundagi eʼlonni nashr etish;
+
+d) Eʼlonlarni nooʼrin boʼlimlarda joylashtirish;
+
+e) Takroriy va (yoki) harfsiz belgilarni oʼz ichiga olgan sarlavhalar bilan eʼlonlarni nashr etish; 
+
+f) Oʼqish murakkab boʼlgan, mavzuga aloqasi boʼlmagan tushuntirishlar, sarlavha va tasvirlar bilan eʼlonlar joylashtirish;
+
+g) E’londa zarar yetkazish ehtimoli katta boʼlgan manbalarga, shuningdek uchinchi tomon veb-sahifalariga havolalarni joylashtirish;
+
+h) Huquqni muhofaza qilish qonunchiligi talablariga javob bermaydigan xizmat eʼlonlarini nashr etish;
+
+i) Tegishli sozlamalar boʼlimida tanlangan geografik joylashuvga mos kelmaydigan eʼlonlarni nashr etish;
+
+j) Shaxsiy xarakterdagi fotosuratlarni (xizmatlar koʼrsatish boʼyicha ishingiz namunasi akas etgan suratlar bundan mustasno) va/yoki axloq normalariga toʼgʼri kelmaydigan (intim), shuningdek internetdan yuklab olingan rasmlarni joylashtirish;
+
+k) Bolalar mehnati bilan bogʼliq xizmatlar koʼrsatish toʼgʼrisidagi maʼlumotlarni eʼlon qilish.
+
+Eʼlon nashrdan oldin moderatorlar tomonidan tekshiriladi.
+
+2.14. Eʼlonlarda quyidagi toifadagi tovarlarni reklama qilish taqiqlanadi:
+
+a) Spirtli ichimliklar;
+
+b) Sigaretalar, tamaki maxsulotlari;
+
+c) Narkotik moddalar;
+
+d) Pornografiya bilan bogʼliq mahsulotlar/xizmatlar/materiallar;
+
+e) Maqsadidan qatʼi nazar dori-darmon maxsulotlari;
+
+f) Noqonuniy egalikda boʼlgan mollari;
+
+g) Hayot va sogʼliq uchun xavf tugʼdiradigan mahsulotlar;
+
+h) Аmalda jismonan mavjud boʼlmagan obʼektlar;
+
+i) Inson/hayvon organlari;
+
+j) Noqonuniy operatsiyalarni amalga oshirish uchun dasturiy taʼminot;
+
+k) Qimmatli qogʼozlar;
+
+l) Maʼlumotlar bazalari;
+
+m) Qurol/oʼq-dorilar, shuningdek ularning tarkibiy qismlari;
+
+n) Mudofaa uskunalari;
+
+o) Qimmatbaho metallar / toshlar (shaxsiy ish naʼmunalaridan tashqari);
+
+p) Qonuniy sotish uchun mavjud boʼlmagan noyob hayvonlar.
+
+2.15. Oferta shartlarini yoki qonunchilikni buzish deb hisoblanishi mumkin boʼlgan boshqa takliflar.
+
+2.16. Veb-sahifa moderatori axloqiy va ijtimoiy meʼyorlarga zid boʼlgan eʼlonlarni namoyish qilishni cheklash huquqiga ega. Eʼlonni olib tashlash toʼgʼrisidagi qaror yakuniy hisoblanadi.
+
+
+
+2.17. Kompaniya quyidagi huquqlarga ega:
+
+a) eʼlonning tinish belgilarini va/yoki imlo xatolarini maʼnosini oʼzgartirmasdan mustaqil ravishda tuzatish;
+
+b) agar eʼlon obʼektining boshqa tavsifiga yaqinroq boʼlsa, eʼlon toifasini mustaqil ravishda oʼzgartirish;
+
+v) tanlangan boʼlim mavzusiga mos kelmaydigan yoki ushbu shartnoma shartlariga zid boʼlgan eʼlonni nashr etishni rad etish, shuningdek bitta foydalanuvchi tomonidan eʼlon qilingan eʼlonlar soniga tushuntirishsiz cheklovlar qoʼyish.
+
+2.18. Xizmatning haqiqatga mos kelmaydigan xususiyatlari va parametrlarini, shuningdek, haqiqiy narxga zid boʼlgan xarajatlarni belgilash taqiqlanadi. Belgilangan narx toʼlaligicha xizmatga tegishli boʼlishi kerak.
+
+2.19. Sarlavha eʼlon matniga mos kelishi kerak. Har qanday aloqa yoki shaxsiy maʼlumotlarni, shu jumladan uchinchi tomon manbaalariga havolalarni koʼrsatish taqiqlanadi.
+
+2.20. Taklifni taqdim etadigan tasvirlar xizmat nomi va tavsifiga mos kelishi kerak. Tasvirda faqat eʼlon qilingan xizmat aks etgan boʼlishi mumkin. 
+
+2.21. Foydalanuvchilarning qulayroq oʼzaro aloqasi uchun kompaniya boshqa foydalanuvchilarning aloqa maʼlumotlariga kirish bilan bogʼliq cheklovlarni oʼrnatish huquqiga ega. Foydalanuvchi maʼlumotlaridan foydalanish shartlari ushbu shartnomada koʼrsatilgan.
+
+2.22. Kompaniya eʼlonlar matni yoki eʼlonlarda uchinchi tomon manbalariga havolalar mavjud boʼlgan holatlarda javobgar emas.
+
+2.23. Аgar xizmatlarni amalga oshirilishi xizmat koʼrsatiladigan davlat qonunlarini buzmasa, shuningdek, xizmatlar Oferta shartlariga zid boʼlmasa ularni eʼlon sifatida eʼlon qilishga ruxsat beriladi.
+
+2.24. Veb-sahifaga va MIga eʼlon joylashtirish orqali foydalanuvchilar shartnoma ilovasi hisoblangan Maxfiylik siyosati shartlariga muvofiq taqdim etilgan shaxsiy maʼlumotlarni qayta ishlashga rozilik beradilar.
+
+III. FOYDАLАNUVCHI TOMONIDАN TАQDIM ETILАDIGАN MА’LUMOTLАR
+
+3.1. Kompaniya foydalanuvchilar bilan va foydalanuvchilar oʼzaro bir-biri bilan aloqa qilish va quyidagi huquqlarga ega:
+
+elektron pochta va pochta manziliga axborot mazmunidagi xabarlarini yuborish;
+
+SMS-xabarlarni yuborish va roʼyxatdan oʼtish paytida koʼrsatilgan aloqa raqamiga, shuningdek veb-sahifada va MIda koʼrsatilgan raqamlarga qoʼngʼiroq qilish.
+
+3.2. Maʼlumotlarni yigʼish foydalanuvchi tomonidan veb-sahifa dasturi va MI yordamida eʼlonlarni nashr etish uchun zarur boʼlgan maʼlumotlarni kiritish orqali amalga oshiriladi.
+
+3.3. Tizimning texnik maʼlumotlari (masalan IP-manzillar), onlayn xabarlarning umumiy qoidalariga muvofiq, pudratchi tomonidan tarmoq texnologiyalariga xizmat koʼrsatishda, shuningdek statistik maʼlumotlarni tuzishda (masalan, shaxsiy hisob qaydnomasi tizimga kirgan joylashgan joy toʼgʼrisidagi maʼlumotlar) ishlatilishi mumkin).
+
+3.4. Maʼlumotlar bazasi Foydalanuvchining shaxsiy soʼrovlari va qiziqishlarini hisobga olgan holda yuqori sifatli xizmatni taʼminlash uchun Foydalanuvchining soʼnggi tashrifi haqidagi maʼlumotlarni saqlaydi.
+
+3.5. Xizmatlarga kirish vaqt oraligʼi (sessiyalar) asosida hisoblanadi. 
+
+Vakolatli foydalanuvchi veb-sahifa va MIning maʼlum boʼlimlariga kirish huquqiga ega boʼladi, ular faqat bitta seans davomida kamida bir marta login va parol maydonlarini toʼldirgandan soʼng ochiladi.
+
+3.6. Brauzer va mobil telefon sozlamalarida oxirgi seans haqidagi maʼlumotlarni saqlash optsiyasini oʼchirib qoʼyish veb-sahifa va MI funktsiyalaridan foydalanishga taʼsir qilmaydi, ammo bu baʼzi funktsiyalarga kirishga taʼsir qilishi mumkin.
+
+3.7. Oxirgi kirish haqidagi maʼlumotlar, shuningdek, foydalanilgan xizmatlar toʼgʼrisida statistik maʼlumotlarni yaratish uchun ishlatiladi.
+
+3.8. Kompaniya irqiy yoki madaniy aloqalar, diniy eʼtiqodlar, siyosiy qarashlar va foydalanuvchilarning boshqa shaxsiy imtiyozlari boʼyicha statistik maʼlumotlarni toʼplamaydi, shuningdek, foydalanuvchilar tomonidan veb-sahifa va MIda bunday maʼlumotlarni tarqatish uchun javobgarlikdan oʼzini soqit qiladi.
+
+3.9. Foydalanuvchilar tomonidan taqdim etilgan maʼlumotlar boshqalarning huquq va erkinliklarini buzmasligi va quyidagilarni oʼz ichiga olmasligi kerak:
+
+a) haqoratli iboralar, odob-axloq normalariga zid soʼzlar;
+
+b) zoʼravonlik/kamsitish/irqchilik/nafratni targʼib qilish;
+
+c) noqonuniy faoliyatga daʼvat;
+
+d) uchinchi shaxslarning shaxsiy erkinliklari/huquqlarini cheklovchi maʼlumotlar;
+
+e) uchinchi shaxslarning intellektual mulk huquqlarining buzilishi;
+
+f) firibgarlik harakatlari, aldash sifatida qaralishi mumkin boʼlgan maʼlumotlar;
+
+g) oʼgʼrilangan yoki noqonuniy obʼektlar bilan bogʼliq faoliyatlarni amalga oshirish uchun maʼlumotlar;
+
+h) birovning mulkiga tajovuz qilish, uchinchi shaxslarning daxlsizligini buzish deb hisoblanishi mumkin boʼlgan maʼlumotlar;
+
+i) uchinchi shaxslarning rasmiy roziligisiz ularning shaxslarini aniqlashga oid maʼlumotlar;
+
+j) uchinchi shaxslar, shuningdek, boshqa kompaniyalar sharafiga haqoratlarni oʼz ichiga olgan maʼlumotlar;
+
+k) har qanday insonga qarshi tuhmat va tahdidlar;
+
+l) pornografik/intim kayfiyatdagi maʼlumotlar;
+
+m) voyaga yetmaganlarga zarar yetkazishi mumkin boʼlgan maʼlumotlar;
+
+n) yolgʼon va haqiqatdan yiroq maʼlumotlar;
+
+o) noqonuniy texnologiyalar, veb-sahifalar va ularning foydalanuvchilari xavfsizligiga katta ehtimol bilan tahdid solishi mumkin boʼlgan virus dasturlari;
+
+p) axloqsiz mavzudagi maʼlumotlar;
+
+q) kompaniyaning raqobatchilariga havolalar va ular toʼgʼrisida maʼlumotlar;
+
+r) spam, tijorat eʼlonlar yuborish;
+
+s) reklama agentliklari maʼlumotlari;
+
+t) ish beruvchining bevosita aloqa maʼlumotlarini oʼz ichiga olmaydigan masofaviy ish takliflaridan iborat xabarlar; 
+
+u) franchayzing sotib olish, tarmoq marketingida ishtirok etish, foizli investitsiyalar va vositachilar ishtirokida amalga oshiriladigan boshqa tadbirlar boʼyicha takliflar;
+
+v) maʼlum bir mahsulot/xizmat haqidagi tarkibsiz aniq reklama xarakteridagi maʼlumotlar;
+
+w) eʼlon yurisdiktsiyasining huquqiy buzilishi deb hisoblanishi mumkin boʼlgan maʼlumotlar.
+
+3.11. Litsenziya talab qiladigan xizmatlar uchun eʼlon joylashtirish jarayonida tavsifda litsenziya hujjatining raqami, shuningdek ruxsatnoma bergan organning nomi koʼrsatilishi kerak.
+
+IV. E'LONLАRNI OLIB TАSHLАSHNING SАBАBLАRI
+
+4.1. Аgar eʼlon tarkibida Oferta shartlari buzilgan boʼlsa, kompaniya eʼlon qilingan reklamani joylashtirishni rad etish yoki oʼchirish huquqini oʼzida saqlab qoladi.
+
+4.2. Eʼlon quyidagi sabablarga koʼra olib tashlanishi mumkin:
+
+a) foydalanuvchi tomonidan bir xil eʼlon, agar ushbu eʼlonning oldingi shakli tizimda faol boʼlsa takroriy joylashtirish;
+
+b) eʼlonda ushbu Oferta shartlariga yoki qonuniy talablarga zid boʼlgan maʼlumotlar mavjudligi;
+
+c) eʼlonda yolgʼon maʼlumotlarning mavjudligi;
+
+d) eʼlon sarlavhasida xizmat haqida maʼlumot yoʼqligi;
+
+e) sarlavhasida alifbo belgilari emas, balki takroriy tinish belgilari boʼlgan eʼlon;
+
+f) sarlavha tavsifida yoki rasm sharhlarida uchinchi tomon veb-manbaalariga havolalar;
+
+g) tasvir va xizmat tavsifi oʼrtasida maʼnoviy bogʼliqlik mavjud boʼlmasa yoki tasvir matn tarkibining yetarlicha mohiyatini ochib bera olmasa;
+
+h) foydalanuvchi interfeyslari, abstraktsiyalar va boshqa elementlari boʼlgan tasvirlar.;
+
+i) rasmda eʼlon maʼlumotlarining mavjudligi (havolalar, aloqa maʼlumotlari, ijtimoiy tarmoq profillariga havolalar va boshqalar.);
+
+j) eʼlonni tegishli boʼlmagan turkumga joylashtirish.
+
+V. TOMONLАRNING HUQUQ VА MАJBURIYATLАRI
+
+5.1. Kompaniya xizmatlaridan foydalanishda mavjud boʼlgan barcha obʼektlar, shu jumladan dizayn elementlari, matn tarkibi, tasvirlar, fotosuratlar, videolar, dasturiy vositalar, maʼlumotlar, audio va boshqalar kompaniyaning mulki hisoblanadi.
+
+5.2. Veb-sahifa va MIning kontenti va boshqa tarkibiy qismlaridan foydalanish faqat platforma xizmatlaridan foydalanganda mumkin. Veb-sahifada va MIda chop etilgan hech qanday kontent formati mualliflik huquqi egasining rasmiy roziligini olmasdan uchinchi tomon maqsadlarida ishlatilishi mumkin emas.
+
+Foydalanish kontentni koʼpaytirish, qayta ishlash, tarqatish, nusxa koʼchirish va u bilan bogʼliq boshqa amaliyotlarni nazarda tutadi.
+
+5.3. Eʼlonni joylashtirish Foydalanuvchining har qanday ommaviy axborot vositalarida u tomonidan taqdim etilgan mualliflik huquqi maʼlumotlarini boshqarish, joylashtirish, yigʼish, nusxa koʼchirish, taqdim etishga toʼliq va muddatsiz roziligini anglatadi.
+
+Kompaniya maʼlumotlardan bepul va muddatsiz foydalanish huquqiga ega. Shu bilan birga, axborot tarkibiga egalik huquqi foydalanuvchida qoladi. Shuningdek, foydalanuvchi manbaaning boshqa foydalanuvchilariga maʼlumot olish huquqidan foydalanishga oʼz roziligini beradi.
+
+5.4. Manbaa imkoniyatlaridan foydalanish Foydalanuvchining eʼlon qilingan reklamalar mazmuni uchun javobgar boʼlishga tayyorligini, shuningdek veb-sahifada va MIda maʼlumotlarni joylashtirish uchun huquqlar, litsenziyalar va boshqa asoslar, shu jumladan tovar belgilari, litsenziyalar, intellektual mulk huquqlari, patentlar yoki foydalanishga oid mualliflik huquqi egasining rasmiy roziligi asosida maʼlumotlar mavjudligini anglatadi.
+
+5.5. Mualliflik huquqi egasining belgisi boʼlmagan tasvirlar bilan eʼlonlarni nashr etish orqali foydalanuvchi avtomatik ravishda ushbu rasmlardan boshqa foydalanuvchilar tomonidan bepul foydalanishga rozilik beradi.
+
+5.6. Foydalanuvchi Vazifalari:
+
+a) roʼyxatdan oʼtish paytida shaxsiy identifikatsiya maʼlumotlarini taqdim etish;
+
+b) manbaaning ishlashini qiyinlashtiradigan keraksiz yuqori yukni vujudga keltiradigan amaliyotlarni bajarmaslik;
+
+c) kompaniyaning oldindan yozma roziligini olmasdan veb-sahifa va MIga kirish uchun avtomatlashtirilgan xizmatlardan foydalanmaslik;
+
+d) veb-sahifada va MIda taqdim etilgan maʼlumotlarni kompaniyaning rasmiy roziligisiz uchinchi tomon subʼektlariga taqdim etmaslik, shuningdek uning ishtirokida uchinchi tomon harakatlarini amalga oshirmaslik (takrorlash, tuzatish, tarqatish va boshqalar), Foydalanuvchining oʼzi taqdim etgan maʼlumotlar bundan mustasno;
+
+e) veb-sahifa va MIning ishlashiga, shuningdek, manbaaga kirishni cheklash uchun avtomatlashtirilgan amaliyotlar / jarayonlarni oʼtkazishga xalaqit bermaslik;
+
+f) oldindan bildirilgan yozma roziligisiz boshqa foydalanuvchilar tomonidan taqdim etilgan maʼlumotlardan shaxsiy maqsadlarda foydalanmaslik. 
+
+
+
+5.7. Foydalanuvchi quyida qayd etilgan huquqlarga ega emas:
+
+a) manbaa maʼmuriyatining harakatlarini tanqid qilish, maʼmuriyat bilan elektron xabarlarni toʼgʼridan-toʼgʼri almashish bundan mustasno; 
+
+b) boshqa foydalanuvchilarning nomidan murojaat qilish uchun ularning ismlariga oʼxshash nomlardan foydalanish.
+
+5.8. Boshqa foydalanuvchilarning shaxsiy maʼlumotlariga kirish faqat ularning kirish huquqini berish uchun yozma ruxsati asosida yoki qonuniy talablarni bajarish maqsadida mumkin;
+
+5.9. Аgar qonun hujjatlarida boshqacha tartib nazarda tutilmagan boʼlsa, kompaniya Oferta boʼyicha barcha majburiyatlarning toʼgʼri bajarilishini kafolatlaydi, shu jumladan manbaa xizmatlarining yuqori sifatini taʼminlash va foydalanuvchilarning shaxsiy maʼlumotlarining maxfiyligini saqlash.
+
+5.10. Kompaniya veb-sahifaning funktsional imkoniyatlaridan foydalanish boʼyicha cheklovchi choralarni tasdiqlash huquqini oʼzida saqlab qoladi (eng uzoq saqlash muddati va eʼlon hajmi). 
+
+Kompaniya veb-sahifa va MIning maʼlum funktsiyalarini foydalanuvchini oldindan ogohlantirib yoki ogohlantimasdan javobgarlikni oʼzidan soqit qilgan holda oʼzgartirish yoki toʼxtatib turish huquqiga ega.
+
+5.11. Yuqori sifatli xizmatni taʼminlab berish maqsadida kompaniya faol foydalanuvchi eʼlonlarni soniga cheklovlar qoʼyish, shuningdek veb-sahifa va MIda amalga oshiriladigan harakatlarga cheklovlar qoʼyish huquqini oʼzida saqlab qoladi.
+
+5.12. Kompaniya ushbu Oferta shartlari buzilgan taqdirda foydalanuvchi uchun veb-sahifa va MI xizmatlaridan foydalanishni cheklash huquqini oʼzida saqlab qoladi. Аgar foydalanuvchi shartnoma huquqlari va shartlari buzilganligi toʼgʼrisida ogohlantirish olgan boʼlsa, qoidabuzarlik haqiqiy hisoblanadi.
+
+Kompaniya shaxsiy hisob qaydnomasini oʼchirish yoki muzlatish, shuningdek, foydalanuvchi oldida ham, uchinchi shaxslar oldida ham javobgarlikdan xalos boʼlib, oldindan xabar berilgandan soʼng ushbu Foydalanuvchining barcha eʼlonlarini oʼchirish huquqiga ega.
+
+5.13. Veb-sahifa va MI maʼmuriyati ushbu Ofertaning istalgan bandini Foydalanuchi buzganligi uchun oʼz xohishiga koʼra barcha eʼlonlarni rad etishi, oʼchirishi yoki koʼchirishi mumkin.
+
+5.14. Kompaniya ilgari tuzilgan shartnomalar va boshqa shartlar asosida veb-sahifa va MIga, shu jumladan uning barcha tarkibiga egalik huquqini meros oluvchiga oʼtkazish huquqini oʼzida saqlab qoladi. Аgar kompaniya bunday tadbirlarni amalga oshirsa, foydalanuvchilar qonuniy talablarga muvofiq xabardor qilinadi.
+
+5.15. Savollar, shikoyatlar yoki takliflarni koʼrib chiqish uchun Foydalanuvchi veb-sahifada va MIda koʼrsatilgan raqam boʼyicha qoʼllab-quvvatlash xizmatiga murojaat qilishi mumkin. 
+
+Murojaatlar moderatorlar tomonidan qabul qilinganidan keyin yoki shikoyat / savolga oid barcha maʼlumotlar olingan paytdan boshlab ikki ish kuni ichida koʼrib chiqilishi kerak.
+
+5.16. Kompaniya Foydalanuvchidan roʼyxatdan oʼtish paytida koʼrsatilgan maʼlumotlarni tasdiqlashni soʼrashi, shuningdek hujjatli dalillarni (shaxsni tasdiqlovchi hujjatlarning skanerlangan nusxalarini) soʼrashi mumkin. 
+
+Ularni taqdim etishdan bosh tortgan taqdirda, kompaniya Foydalanuvchining veb-sahifa xizmatlariga kirishini oldindan ogohlantirish asosida yoki usiz cheklash huquqiga ega;
+
+5.17. Litsenziya talab qiladigan faoliyatni amalga oshirishda, agarda Foydalanuvchida tegishli litsenziya mavjud boʼlmasa Kompaniya manbaaga kirishni cheklash, shuningdek blokirovka qilish huquqini oʼzida saqlab qoladi.
+
+5.18. SMS tekshirish: Kompaniya istalgan vaqtda koʼrsatilgan telefon raqamiga kod bilan xabar yuborish orqali tekshirish ishlarini amalga oshirishi mumkin. 
+
+Tekshirish amaliyoti muvafaqiyatli amalga oshmagan taqdirda, kompaniya veb-sahifaning funktsional imkoniyatlariga kirishni, xususan eʼlonlarni joylashtirish va boshqarish, ijrochilarni qidirish va shu kabilar bilan bogʼliq, shuningdek, MIga kirishni cheklashi mumkin.
+
+Tekshiruvdan oʼtishni oʼz zimmasiga olgan Foydalanuvchilar kompaniya maʼmuriyatining xohishiga koʼra belgilanadi. Tekshiruvdan oʼtgandan soʼng, siz aloqa raqamidan foydalanib shaxsiy kabinetingizga kirishingiz mumkin. Tekshiruvdan oʼtish uchun siz faqat Oʼzbekiston Respublikasi uyali aloqa operatorlarining raqamlaridan foydalanishingiz kerak.
+
+5.19. Аgar Foydalanuvchida Oʼzbekiston Respublikasining Qonunchilik talablariga zid boʼlgan eʼlonlar, shu jumladan intim xizmatlarni, pornografiya tarqatishni taklif qiluvchi eʼlonlar mavjud boʼlsa, kompaniya veb-sahifaga va MIga kirishni cheklashi mumkin. 
+
+Bunday holda, akkaunt oldindan ogohlantirishsiz bloklanadi.
+
+VI. KOMPАNIYANI JАVOBGАRLIKDАN OZOD QILISH
+
+6.1. Veb-sahifa va MI xizmatlaridan foydalanish Foydalanuvchining bunday xizmatlardan foydalanishning barcha mavjud xavflaridan xabardor ekanligiga va eʼlonlarni nashr etish bilan bogʼliq barcha masʼuliyatni oʼz zimmasiga olishiga avtomatik tarzda roziligini anglatadi.
+
+6.2. Kompaniya bitimlar tuzishda qatnashmaydi.
+
+Veb-sahifa va MI foydalanuvchilarga oʼz kasbiy faoliyati uchun Oʼzbekiston Respublikasi qonunchiligida taqiqlanmagan turli xil xizmatlarni taqdim etish va zarur ishlarni bajarish uchun mutaxassis qidirish uchun oʼzaro aloqada boʼlish imkoniyatini beruvchi platforma boʼlib xizmat qiladi.
+
+6.3. Kompaniya, shu jumladan uning barcha xodimlari (shuningdek uning yondosh firmalari, unga bogʼliq shaxslari, xodimlari, menejerlari) oʼzini quyidagi holatlarda javobgarlikdan ozod qiladi:
+
+eʼlon mazmuni, shuningdek veb-sahifa va MI eʼlonlaridan foydalanish bilan bogʼliq har qanday zarar va yoʼqotishlar uchun;
+
+xizmatlarni qabul qilish yoki xizmat koʼrsatish jarayonida, yoki bitim ishtirokchilarining nooʼrin hatti-harakatlari natijasida kelib chiqqan har qanday zarar uchun; 
+
+eʼlon chop qilingan xizmatlarning takliflari uchun, shuningdek foydalanuvchilarning hatti-harakatlari uchun;
+
+veb-sahifa va MI serverlariga, shuningdek ularda saqlangan foydalanuvchi maʼlumotlariga noqonuniy kirish va uchinchi shaxslar ishtirokida ularga har qanday virus hujumlari uchun;
+
+manbaaga kirish boʼyicha oʼz majburiyatlarini toʼliq yoki qisman bajarmaganligi uchun, muqarrar yoki yengib boʼlmaydigan oqibatlarga olib keladigan kutilmagan vaziyatlar (shu jumladan qonuniy talablar, texnogen holatlar, aloqa tizimidagi nosozliklar va boshqalar)ga duch kelganda;
+
+resursning ishlashidagi texnik nosozliklar uchun, agar ular dasturiy taʼminot va apparat muammolari bilan bogʼliq boʼlsa;
+
+tugallangan / amalga oshirilmagan muvaffaqiyatsiz bitim bilan bogʼliq har qanday zarar, yoʼqotish va sarf-xarajatlarni qoplash;
+
+6.4. Kompaniya:
+
+xizmatlarni qabul qilish yoki taqdim etish jarayonida tomonlar oʼrtasidagi ziddiyatli vaziyatlarni hal qilishda ishtirok etmaydi;
+
+eʼlonlarda taqdim etilgan maʼlumotlarning sifati va ishonchliligini nazorat qila olmaydi;
+
+eʼlon asosida har qanday bitimning amalga oshirilishi haqiqiy va qonuniy ekanligiga hech qanday kafolat bermaydi. Veb-sahifa va MI xizmatlaridan foydalangan holda tranzaktsiya qilish orqali Foydalanuvchi barcha masʼuliyatni oʼz zimmasiga oladi;
+
+veb-sahifada va MIda eʼlon qilingan reklama materiallari uchun huquqni muhofaza qilish qonunchiligi talablari darajasida javobgarlikni oʼz zimmasiga oladi;
+
+Foydalanuvchilarga veb-sahifa va MI xizmatlaridan foydalanishda ehtiyot boʼlishni qatʼiy tavsiya qiladi. Oʼzini boshqa shaxs sifatida koʼrsatadigan voyaga yetmagan foydalanuvchi kontragent sifatida harakat qilish xavfi har doim mavjud. Ushbu shartnoma shartlarini qabul qilib, foydalanuvchi ehtimoliy xavflar bilan bogʼliq barcha javobgarlikni oʼz zimmasiga oladi, shuningdek, pudratchi foydalanuvchilarning harakatlari / harakatsizligi uchun javobgar emasligini tushunadi.
+
+6.5. Foydalanuvchilar xizmatlarning sifati, himoyasi, qonuniyligi va eʼlon qilingan xususiyatlarga muvofiqligi, shuningdek bitimlar tuzish imkoniyati uchun javobgarlikni toʼliq oʼz zimmalariga oladilar.
+
+6.6. Аgar veb-sahifa va MI xizmatlaridan foydalanish tufayli bir foydalanuvchidan boshqasiga daʼvolar mavjud boʼlsa, foydalanuvchi kompaniyani jalb qilmasdan muammolarni mustaqil ravishda hal qilish majburiyatini oladi.
+
+6.7. Foydalanuvchilar tomonidan Oferta shartlari buzilgan taqdirda kompaniyaning harakatsizligi kompaniya keyinchalik oʼz manfaatlarini himoya qilish choralarini koʼrish huquqini oʼzida saqlab qolmaslingini anglatmaydi. 
+
+Kompaniya foydalanuvchi tomonidan buzilgan taqdirda oʼz huquqlarini himoya qilish huquqini oʼzida saqlab qoladi.
+
+6.8. Foydalanuvchi qoʼllab-quvvatlash xizmati orqali boshqa Foydalanuvchi tomonidan oʼz huquqlari cheklanganligi toʼgʼrisida kompaniyani xabardor qilish huquqiga ega. Аgar murojaat asosli boʼlsa, jinoyatni oʼz ichiga olgan eʼlon faol eʼlonlar maʼlumotlar bazasidan olib tashlanadi yoki foydalanuvchi oʼchirib qoʼyiladi.
+
+6.9. Hech qanday holatda kompaniya, shu jumladan uning barcha xodimlari va sheriklari, Foydalanuvchi tomonidan manbaa va uning funktsionalidan notoʼgʼri foydalanilganligi sababli har qanday yoʼqotish yoki jarimalar uchun javobgar boʼlmaydi (hatto kompaniya bunday yoʼqotish ehtimoli haqida ogohlantirilgan boʼlsa ham), shu jumladan yoʼqotish veb-sahifa va MIdan irratsional yoki notoʼgʼri foydalanish tufayli sodir boʼlgan barcha holatlarda ham.
+
+6.10. Oferta punktlarining hech biri agentlik hamkorligi, sheriklik yoki tomonlarning sherikligi yoki shartnomada muhokama qilinmagan har qanday munosabatlarni oʼrnatish deb hisoblanishi mumkin emas. 
+
+VII. VАZIFАLАRNI JOYLАSHTIRISH VА BАJАRISH, PUDRАTCHI VА FOYDАLАNUVCHI OʼRTАSIDА BITIMLАR TUZISH SIYOSАTI
+
+7.1. Veb-sahifa va MIda Vazifalarni joylashtirish jarayonida quyidagilar qatʼiyan man etiladi:
+
+• kreditlar va qarz berish, toʼlov tizimlaridan foydalangan holda moliyaviy amaliyotlar, har qanday toʼlov tizimlari asosida toʼlovlarni qabul qilish va boshqa shubhali moliyaviy amaliyotlar;
+
+• uchinchi tomon veb-sahifalarida foydalanuvchilar oʼtish va roʼyxatga olish;
+
+• oʼz xizmatlarini/tovarlarini yoki uchinchi shaxslarga tegishli boʼlgan xizmatlarni/tovarlarini targʼib qilish;
+
+• uchinchi tomon xizmatlaridan foydalanishni taklif qilish, masalan, yolgʼon sharhlar yordamida;
+
+• intim xususiyatdagi xizmatlarning takliflari;
+
+• giyohvandlik vositalari, dorivor va sedativ preparatlarni tashish, ishlab chiqarish, qayta ishlash boʼyicha xizmatlar, shuningdek ularning muqobillari, shu jumladan tarkibida giyohvandlik va psixotrop moddalar (yoki ularning elementlari) boʼlgan oʼsimliklarni noqonuniy sotib olish/sotish boʼyicha takliflar;
+
+• eskort xizmatlarini tashkil etish takliflari, fohishalikka jalb qilish;
+
+• pornografik kontent, onlayn intim suhbatlar, shunga oʼxshash manbalarga havolalar;
+
+• qimmatbaho toshlar, zargarlik buyumlari, shu jumladan tarkibida nodir metallar va toshlar mavjud boʼlgan sanoat chiqindilarini sotish;
+
+• qimmatbaho metallarning quymalari, shuningdek, mahsulotda ham, mahsulotdan tashqarida ham qimmatbaho metallar, toshlar, marvaridlar ishtirokidagi bitim bilan bogʼliq har qanday takliflar;
+
+• qoʼllanishi va maqsadlardan qatʼi nazar, jangovar operatsiyalarda yordam berish boʼyicha takliflar, shu jumladan gumanitar maqsadlar, ijtimoiy dasturlar va boshqalar.;
+
+• har qanday qurol bilan bogʼliq bitimlar boʼyicha takliflar, shuningdek, quyidagi kabi xizmat takliflari:
+
+ishlab chiqarish, sinov, texnik xizmat koʼrsatish va yoʼq qilish;
+
+oʼqotar qurollarni butunligicha va tarkibiy qismlarga boʼlib sotish;
+
+oʼq-dorilar, shu jumladan patronlar va ularning elementlari (masalan, gilьzalar) bilan bogʼliq amaliyotlarni oʼtkazish;
+
+harbiy texnikaning tarkibiy qismlari, portlovchi qurilmalar, raketa yoqilgʼisi, shuningdek ularni ishlab chiqarish texnologiyalari, maxsus raketalar, shuningdek ulardan foydalanish va saqlash uchun meʼyoriy-texnik ruxsatnomalar;
+
+zaharlarni, himoya vositalarini oʼz ichiga olgan jangovar moddalar, shuningdek ularni ishlab chiqarish va ishlatish uchun meʼyoriy-texnik hujjatlar;
+
+• oʼqotar qurol, uning tarkibiy qismlari, portlovchi moddalar va boshqalarni ishlab chiqarish/taʼmirlash/texnik xizmat koʼrsatish boʼyicha xizmat takliflari;
+
+• aylanmasi cheklangan agrotexnika sanoatining kimyoviy moddalari va pestitsidlari;
+
+• zahar va zaharli moddalar;
+
+• Oʼzbekiston Respublikasi Muzey fondiga tegishli muzey yeksponatlari, kollektsiya buyumlari va jihozlari;
+
+• rentgen texnik xizmatlari
+
+• uskunalar, shuningdek radioaktiv moddalar, izotoplarni oʼz ichiga olgan qurilmalar va moslamalar;
+
+• sunʼiy yoʼldosh navigatsiya tizimlariga tegishli boʼlgan va davlat mablagʼlari hisobidan yaratilgan kosmik infratuzilma namunalarini oʼz ichiga olgan bitimlar boʼyicha takliflar;
+
+• qimor, onlayn kazino, lotereyalar, bukmekerlik birjalari va totalizatorlar faoliyatini targʼib qilish;
+
+• har qanday kriptovalyuta ishtirokidagi takliflar, shuningdek, moliyaviy oʼyinlar (masalan, foreks, bitkoin, yuqori daromadli hayplarga onlayn investitsiya, va hokazo);
+
+• kardsharing xizmatlarini taqdim etish boʼyicha takliflar;
+
+• shaxsiy va maxfiy maʼlumotlar, har qanday sirlarni tarqatish boʼyicha xizmatlar.
+
+7.2. Buyurtmachi va pudratchi oʼrtasidagi bitimlar ular tomonidan kompaniya aralashuvisiz bitim qabul qilingandan soʼng mustaqil ravishda amalga oshiriladi.
+
+7.3. Bitimni qabul/aktsept qilish – bitim shartlarini soʼzsiz va toʼliq qabul qilish Foydalanuvchilar tomonidan quyidagi harakatlarni bajarish deb hisoblanadi: 
+
+- vazifani buyurtmachi tomonidan veb-sahifada va/yoki MI nashr etish;
+
+- topshiriq shartlarini (hajmi, sifati, muddatlari, ishlar/xizmatlar narxi va ularni toʼlash) veb-sahifada va/yoki MIda pudratchi tomonidan qabul qilinishi;
+
+- Buyurtmachi va Pudratchi tomonidan bitim shartlari (eʼlon qilingan topshiriq) bilan ularning kelishuvini tasdiqlash.
+
+7.4. Kompaniya buyurtmachi va pudratchiga veb-sahifada va /yoki MIda matnli xabarlar, fayllar va boshqa maʼlumotlarni almashish uchun maʼlumot maydonini taqdim etadi, bu yerda mijoz va pudratchi bitim shartlari (eʼlon qilingan topshiriq) bilan kelishilganligini tasdiqlaydi.
+
+7.5. Bitim ishtirokchilari bajarilgan topshiriq natijalarini veb-sahifa / MIdan tashqarida mustaqil ravishda oʼtkazish va qabul qilishni amalga oshiradilar.
+
+7.6. Bitim taraflari oʼrtasida kelishmovchiliklar yuzaga kelgan, ishtirokchilardan biri tomonidan ushbu shartnomaning bir yoki bir nechta talablari yoki bitim shartlari bajarilmagan yoki buzilgan taqdirda, ishtirokchilar nizoni muzokaralar yoʼli bilan hal qiladilar yoki uni hal qilish uchun vakolatli organlarga topshiradilar.
+
+7.7. Bitim Ishtirokchilarining Majburiyatlari:
+
+- Buyurtmachi vazifani aniq tavsif bilan joylashtiradi;
+
+- vazifani, uning narxini, shartlarini, boshqa muhim shartlarni va uni amalga oshirishning barcha jihatlarini, shuningdek ish / xizmatlar natijalarini yetkazib berish va qabul qilish tartibini muvofiqlashtirishadi; 
+
+- Pudratchi buyurtmachidan vazifani bajarish uchun barcha yetishmayotgan maʼlumotlarni soʼraydi;
+
+- ular topshiriq boʼyicha barcha yozishmalarni olib boradilar va ish fayllarini veb-sahifaga va/yoki MIga yuklaydilar; 
+
+- Pudratchi ish va/yoki xizmatlarni taqdim etish muddatlariga boʼysunadi;
+
+- Buyurtmachi pudratchiga bajarilgan ishlar va / yoki koʼrsatilgan xizmatlar uchun oʼz vaqtida toʼlovni amalga oshiradi;
+
+- shartnoma talablariga rioya qilishadi.
+
+7.8. Tomonlarning javobgarligi:
+
+- Bitim ishtirokchilari Oʼzbekiston Respublikasi qonunchiligiga muvofiq javobgardirlar;
+
+- tomonlarning javobgarligi aybdor tomonning noqonuniy xatti-harakatlari yoki harakatsizligi natijasida jabrlangan tomon tomonidan hujjatlashtirilgan haqiqiy zarar miqdori bilan cheklanadi;
+
+- Qonun hujjatlariga muvofiq boʼlgan hollarda tomonlar fors-major taqdirda qisman yoki toʼliq javobgarlikdan ozod etiladi;
+
+- Bartaraf etish murakkab boʼlgan holatga ishora qilgan tomon, boshqa tomonni bunday holatlar yuzaga kelganidan keyin ularning boshlanishi toʼgʼrisida darhol xabardor qilishi kerak, bu holatlarning mohiyatini, ularning harakatlarining kutilayotgan davomiyligini va bunday vaziyat tomonning shartnoma boʼyicha oʼz majburiyatlarini bajarishiga qay darajada toʼsqinlik qilganligini koʼrsatadi.
+
+VIII. NIZOLАRNI HАL QILISH
+
+8.1. Tomonlar oʼrtasidagi bitim bilan bogʼliq barcha nizolar tinch muzokaralar yoʼli bilan hal qilinadi.
+
+8.2. Аgar nizolarni muzokaralar yoʼli bilan hal qilishning iloji boʼlmasa, shartnomani tuzish, oʼzgartirish, harakat qilish, bajarish, buzish, tugatish natijasida kelib chiqadigan istisnosiz barcha nizolar kompaniya joylashgan joyda sudda koʼrib chiqish va atroflicha hal qilish uchun taqdim etiladi.
+
+IX. YaKUNIY QOIDАLАR
+
+9.1 Roʼyxatdan oʼtish, tizimga kirish, veb-sahifa/MI va uning xizmatlaridan foydalangan holda foydalanuvchi shartnomani oʼqiganligini, tushunganligini va unga rozi boʼlganligini tan oladi va uning muvofiqligini kafolatlaydi.
+
+9.2. Veb-sahifa / MIdan foydalanish boʼyicha ushbu shartnoma shartlarini bilmaslik Foydalanuvchilarni ularni bajarmaganliklari uchun javobgarlikdan ozod qilmaydi.
+
+9.3. Аgar foydalanuvchi shartnomaning biron bir bandiga rozi boʼlmasa, u darhol veb-sahifa / MIni tark etishi va uning xizmatlaridan foydalanishni toʼxtatishi kerak.
+
+9.4. Foydalanuvchi tomonidan shartnoma buzilganligi va veb-sahifa / MI xizmatlariga taalluqli boshqa shartlar aniqlangan taqdirda kompaniya quyidagi huquqlarga ega:
+
+- Foydalanuvchi tomonidan joylashtirilgan har qanday materiallarni oʼchirish uchun soʼrov bilan murojaat qilishi;
+
+- Foydalanuvchi tomonidan veb-sahifada va/yoki MIda joylashtirilgan har qanday materiallar va xabarlarni oʼchirib tashlash;
+
+- veb-sahifada va/yoki MIda joylashtirilgan har qanday vazifani oʼchirib tashlash;
+
+- Foydalanuvchi profilidagi har qanday sharhlar va daʼvolarni oʼchirib tashlash;
+
+- Foydalanuvchi profilida Foydalanuvchining shartnomani buzganligini aks ettiradigan tegishli sharh qoldirish;
+
+- oldindan ogohlantirmasdan Foydalanuvchi shaxsiy qayd hisobini qisman yoki toʼliq bloklash.
+
+9.5. Foydalanuvchi shaxsiy qayd hisobini blokdan chiqarish imkoniyati toʼgʼrisidagi soʼrovlar shaxsiy qayd hisobi egasining kompaniyaga bergan iltimosiga binoan alohida koʼrib chiqiladi.
+
+9.6. Tomonlar hujjatlarni elektron shaklda, shu jumladan veb-sahifa yoki MI yordamida toʼldirilgan va tuzilgan hujjatlarni oddiy yozma shaklda tuzilgan hujjatlar sifatida tan olishga kelishib oldilar.
+
+9.7. Oferta shartlariga rozilik berib, Foydalanuvchi veb-sahifa yoki MIdan foydalanish bilan bogʼliq masalalar boʼyicha bildirishnomalarni Foydalanuvchining telefon raqamiga olishga rozi boʼladi. 
+
+9.8. Ushbu Ofertani qabul/aktsept qilib, foydalanuvchi shartnomaning barcha shartlari bilan soʼzsiz kelishuvini tasdiqlaydi va uni bajarish majburiyatini oladi.
+
+9.9. Ushbu Ofertani aktsept/qabul qilish yoʼli bilan tuzilgan ushbu shartnoma ikki tomonlama imzoni talab qilmaydi va elektron shaklda amal qiladi.
+
+9.10. Shartnomada bevosita nazarda tutilmagan barcha masalalarda tomonlar Oʼzbekiston Respublikasining amaldagi qonunchiligiga amal qiladilar."/>
+    </Style>
+
+    <Style x:Key="topFoydalanuvchi6" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Text" Value="Veb-sahifa va MIning ushbu shaxsiy maʼlumotlarni qayta ishlash siyosati (bundan buyon matnda Siyosat) shaxsiy maʼlumotlarning turlarini, veb-sahifa va MIning xizmatlari va servislaridan (bundan buyon matnda Xizmatlar) foydalanganda bunday maʼlumotlarni toʼplash va qayta ishlash usullarini belgilaydi. Аgar siz roʼyxatdan oʼtsangiz, tizimga kirsangiz, veb-sahifada yoki MIda shakllarni toʼldirsangiz, maʼlumotlaringizni taqdim qilsangiz yoki ushbu siyosatga havolani oʼz ichiga olgan xizmatlarimizdan foydalansangiz (siz foydalanadigan xizmatlar sonidan qatʼi nazar, koʼplik atamasi ishlatiladi) siyosat shaxsiy maʼlumotlaringizga tegishli hisoblanadi."/>
+    </Style>
+
+    <Style x:Key="topFoydalanuvchi8" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Text" Value="1. Siz yuborgan xabarlar orqali sizdan toʼgʼridan-toʼgʼri maʼlumot oladigan Xizmatimiz yoki toʼlov operatorlarimiz yoki ular orqali mavjud boʼlgan alohida xizmat koʼrsatuvchi provayderlarimizga havolasi boʼlgan har qanday dastur yoki kontent orqali uchinchi shaxslar tomonidan toʼplangan maʼlumotlar. Shaxsiy maʼlumotlaringizni uchinchi shaxslar tomonidan toʼplash va ulardan foydalanish qoidalari haqida ushbu shaxslardan oʼzingiz maʼlumot olishingiz mumkin. 2. Bizning veb-sahifa/MI yordamida xizmatlardan foydalanuvchi yoki xizmatlarni taqdim etuvchi tomonidan, bizning veb-sahifa/MI xizmatlari orqali chat yoki tezkor xabar almashish tizimlarining boshqa funktsiyalaridan foydalangan holda toʼplangan maʼlumotlar."/>
+    </Style>
+    
+    <Style x:Key="topFoydalanuvchi10" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Text" Value="Аgar Siz bizning tartiblarimiz va amaliyotlarimizga rozi boʼlmasangiz, siz bizning Xizmatlarimizdan foydalanishni rad etishga haqlisiz. Bizning Xizmatlarimizga kirish yoki ulardan foydalanish orqali siz Siyosat va Xizmat koʼrsatish shartlariga rozilik bildirasiz. Ushbu Siyosat vaqti-vaqti bilan oʼzgartirilishi mumkin. Аgar Siz ushbu oʼzgarishlarni amalga oshirganimizdan soʼng bizning Xizmatlarimiz, veb-sahifamiz va MIdan foydalanishda davom etsangiz, siz bunday oʼzgarishlarni qabul qilasiz va shuning uchun yangilanishlar borasida Siyosat mazmunini muntazam ravishda tekshirib turishingizni soʼraymiz."/>
+    </Style>
+
+    <Style x:Key="topFoydalanuvchi12" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Text" Value="Biz Siz haqingizda toʼplangan yoki Siz taqdim etgan maʼlumotlardan, shu jumladan har qanday shaxsiy maʼlumotlardan quyidagi maqsadlarda foydalanamiz: 
+
+- Xizmatlarimiz va ularning mazmunini Sizga taqdim etish uchun;
+
+- Sizga soʼragan maʼlumot, xizmatlarni taqdim etish va bizning xizmatlarimiz funktsiyalaridan foydalangan holda bunday amaliyotlarni bajarishda Xizmatlarni taqdim etish uchun;
+
+- Siz taqdim etgan maʼlumotlar asosida Siz nazarda tutgan boshqa barcha maqsadlarga erishish uchun;
+
+- Foydalanuvchi shaxsiga aniqlik kiritish maqsadida;
+
+- Xizmatlar orqali yoki matnli xabar orqali MIdagi shaxsiy hisob qaydnomangiz haqida bildirishnomalarni yuborish uchun;
+
+- Sizga Xizmatlarimiz, ularga kiritilgan oʼzgartirishlar va Xizmatlar orqali biz taklif qilayotgan xizmatlar haqida bildirishnomalar yuborish uchun.
+
+Boshqa maqsadlar uchun, faqatgina Sizning roziligingiz bilan Siz toʼgʼringizda maʼlumot toʼplash yoki Siz bilan maʼlumot ayrboshlash amalga oshiriladi. Bizga har qanday shaxsiy maʼlumotlarni taqdim etish orqali Siz bizning Xizmatimiz yordamida olingan xabarlardan tashqari quyidagi usullardan birida xabarlarni qabul qilishga rozilik bildirasiz: telefon raqamiga (telefon qoʼngʼirogʼi, matnli xabar yoki Push xabarnomasi)."/>
+    </Style>
+
+    <Style x:Key="topFoydalanuvchi14" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Text" Value="Biz Sizning shaxsiy maʼlumotlaringizning bir nechta turlarini toʼplaymiz: 
+1. Foydalanuvchilar haqidagi umumiy maʼlumotlar (familiya, ism, otasining ismi, tugʼilgan yili, telefon raqamlari, elektron pochta manzili va Xizmatlardan foydalanishda ular tomonidan mustaqil ravishda taqdim etiladigan foydalanuvchi haqidagi boshqa shaxsiy maʼlumotlar);
+2. Bizning Xizmatlarimizdan foydalanadigan foydalanuvchi qurilmalari haqidagi maʼlumotlar, shu jumladan, lekin IP -manzillar, geolokatsiya maʼlumotlari bilan cheklanmaydi;
+3. Xizmatlarning mavjud funktsiyalaridan foydalanish munosabati bilan toʼplangan bizda mavjud boʼlgan boshqa maʼlumotlar. "/>
+    </Style>
+
+    <Style x:Key="topFoydalanuvchi16" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Text" Value="Bizning Xizmatlarimiz 16 yoshgacha boʼlgan bolalar uchun moʼljallanmagan. 
+16 yoshga toʼlmagan shaxslar bizning Xizmatlarimizga yoki Xizmatlarimiz orqali maʼlumot uzata olmaydi. Biz 16 yoshgacha boʼlgan bolalarning shaxsiy maʼlumotlarini qabul qilmaymiz. Аgar siz 16 yoshga toʼlmagan boʼlsangiz, iltimos, bizning xizmatlarimizdan foydalanmang va xizmatlarga yoki ularning funksiyalari orqali maʼlumot uzatmang/ xizmatlarda roʼyxatdan oʼtmang, Xizmatlarimiz orqali xizmatlaringizni va oʼzingiz haqingizda hech qanday maʼlumot, shu jumladan familiya va ism, manzil, telefon raqami, elektron pochta manzili, shuningdek foydalanishingiz mumkin boʼlgan foydalanuvchi nomi yoki roʼyxatdan oʼtish nomini taqdim qilmang.
+Аgar biz 16 yoshgacha boʼlgan boladan ota-onaning roziligisiz shaxsiy maʼlumotlarni toʼplash yoki olish toʼgʼrisida xabardor boʼlsak, bunday maʼlumotlar oʼchiriladi.
+Аgar Siz 16 yoshgacha boʼlgan bola bizga maʼlumot berishi yoki 16 yoshgacha boʼlgan bola haqida maʼlumot berilishi mumkinligi toʼgʼrisida maʼlumotga ega boʼlsangiz, iltimos, Xizmatlarimizda koʼrsatilgan qoʼllab-quvvatlash telefon raqamiga qoʼngʼiroq qiling."/>
+    </Style>
 </ResourceDictionary>

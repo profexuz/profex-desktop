@@ -1,0 +1,53 @@
+﻿<Window x:Class="Profex_Desktop.Windows.Offerta_shartlari.OffertaShartlari"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Profex_Desktop.Windows.Offerta_shartlari"
+        mc:Ignorable="d"
+        Title="Window1" Height="600" Width="950"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <ScrollViewer Visibility="Visible">
+        <Grid Margin="25">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+            <Button x:Name="btnBack" Click="btnBack_Clicked" Grid.Row="0" Style="{DynamicResource btnBack}"/>
+
+            <Label Grid.Row="0" Style="{DynamicResource topFoydalanuvchi}"/>
+        <Label Grid.Row="1" Style="{DynamicResource topFoydalanuvchi1}"/>
+        <TextBlock Grid.Row="2" Style="{DynamicResource topFoydalanuvchi2}"/>
+        <Label Grid.Row="3" Style="{DynamicResource topFoydalanuvchi3}"/>
+        <TextBlock Grid.Row="4" Style="{DynamicResource topFoydalanuvchi4}"/>
+        <Label Grid.Row="5" Style="{DynamicResource topFoydalanuvchi5}"/>
+        <TextBlock Grid.Row="6" Style="{DynamicResource topFoydalanuvchi6}"/>
+        <Label Grid.Row="7" Style="{DynamicResource topFoydalanuvchi7}"/>
+        <TextBlock Grid.Row="8" Style="{DynamicResource topFoydalanuvchi8}"/>
+        <Label Grid.Row="9" Style="{DynamicResource topFoydalanuvchi9}"/>
+        <TextBlock Grid.Row="10" Style="{DynamicResource topFoydalanuvchi10}"/>
+        <Label Grid.Row="11" Style="{DynamicResource topFoydalanuvchi11}"/>
+        <TextBlock Grid.Row="12" Style="{DynamicResource topFoydalanuvchi12}"/>
+        <Label Grid.Row="13" Style="{DynamicResource topFoydalanuvchi13}"/>
+        <TextBlock Grid.Row="14" Style="{DynamicResource topFoydalanuvchi14}"/>
+        <Label Grid.Row="15" Style="{DynamicResource topFoydalanuvchi15}"/>
+        <TextBlock Grid.Row="16" Style="{DynamicResource topFoydalanuvchi16}"/>
+    </Grid>
+    </ScrollViewer>
+</Window>
