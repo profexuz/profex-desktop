@@ -319,4 +319,64 @@
     </Style>
 
 
+    <!--SignUp/SignIn Buttons style-->
+    <Style x:Key="MenuButton" TargetType="{x:Type ToggleButton}">
+    <Setter Property="Height" Value="40"/>
+    <Setter Property="Width" Value="240"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ToggleButton}">
+                <Border x:Name="B" CornerRadius="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="Indicator" 
+                                Grid.Column="0"
+                                Visibility="Collapsed"
+                                Height="30"
+                                CornerRadius="5"
+                                />
+
+                        <Path x:Name="icon"
+                                  Grid.Column="1"
+                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
+                                  Fill="{DynamicResource PrimaryBackground}"
+                                  Height="20" Width="20"
+                                  Stretch="UniformToFill"/>
+
+                        <Label x:Name="textl" 
+                               Grid.Column="2"
+                               FontSize="20"
+                               Foreground="{DynamicResource ProfileImageBackground}"
+                               FontWeight="SemiBold"
+                               FontFamily="Jetbrains mono"
+                               Margin="0 2 0 0"
+                               Content="{TemplateBinding Content}"/>
+                    </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter TargetName="B" Property="Background" Value="transparent"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="{DynamicResource ProfileImageBackground}"/>
+                    </Trigger>
+                    <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="{DynamicResource ProfileImageBackground}"/>
+                        <Setter TargetName="Indicator" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="textl" Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+                            <Setter TargetName="icon" Property="Fill" Value="{DynamicResource ProfileImageBackground}"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+    </Style>
+
 </ResourceDictionary>

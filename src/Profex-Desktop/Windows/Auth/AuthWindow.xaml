@@ -5,9 +5,93 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.Auth"
         mc:Ignorable="d"
-        Title="AuthWindow" Height="600" Width="450"
-        WindowStartupLocation="CenterScreen">
+        Title="AuthWindow" Height="600" Width="950"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource PrimaryBackground}"
+        WindowStyle="None">
     <Grid>
+            <Grid Background="#edf2fb">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#03045e" CornerRadius="0 0 40 0">
+            <Grid>
+                <Label Content="SignUp" HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="20 10" FontFamily="{DynamicResource FontFamilyNormal}"
+                       FontSize="30" Opacity="0.5"
+                       Foreground="White"/>
+                
+                <Border Grid.Column="0" Width="250" Height="320"
+                        VerticalAlignment="Top" Margin="0 20">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Assets/Profile images/DefaultProfileImage1.png" />
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Orientation="Vertical" 
+                            VerticalAlignment="Center"
+                            Margin="30 200 0 0">
+                <Label Content="We are" 
+                       Foreground="White"
+                       FontSize="18"/>
+                    <Label Content="------"
+                           Foreground="White"
+                           FontSize="18"/>
+
+                    <Label Content="Invite only right now" 
+                       Foreground="White"
+                       FontSize="18"/>
+
+                    <Label Content="People have joined our network." 
+                       Foreground="White" Opacity="0.5"
+                       FontSize="14"/>
+
+                    <Label Content="We invite you to join our tribe." 
+                       Foreground="White" Opacity="0.5"
+                       FontSize="14"/>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
         
+        
+        <Grid Grid.Column="1" Background="#03045e">
+        <Border  Background="{DynamicResource PrimaryBackground}" CornerRadius="40 0 0 0"/>
+            <Border VerticalAlignment="Center" HorizontalAlignment="Center"
+                Height="450" Width="360" Background="{DynamicResource SideBarBackground}"
+                    CornerRadius="20">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" 
+                                      Direction="1" ShadowDepth="4" Opacity="0.2"/>
+                </Border.Effect>
+                <StackPanel Orientation="Vertical">
+                    
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top"
+                            HorizontalAlignment="Left" Margin="10 5">
+                    <ToggleButton Content="Sign Up"
+                                  Style="{DynamicResource MenuButton}"/>
+                    <ToggleButton Content="Sign In" 
+                            Foreground="{DynamicResource ProfileImageBackground}"
+                            BorderThickness="0" Background="Transparent" Height="30" Width="70"/>
+                    
+                </StackPanel>
+                    <Border VerticalAlignment="Top" HorizontalAlignment="Center"
+                            CornerRadius="20" Background="{DynamicResource SideBarBackground}">
+                        <Border.Effect>
+                            <DropShadowEffect Direction="90" BlurRadius="10" 
+                                              ShadowDepth="0.8" Opacity="0.2"/>
+                        </Border.Effect>
+                        <Frame x:Name="registerFrame"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+    </Grid>
+        <Button x:Name="btnClose" Click="btnClose_Clicked" Content="X" Margin="10" VerticalAlignment="Top"
+                    HorizontalAlignment="Right"/>
     </Grid>
 </Window>

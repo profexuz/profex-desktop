@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Profex_Desktop.Windows.AuthPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -8,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -15,13 +18,20 @@ using System.Windows.Shapes;
 namespace Profex_Desktop.Windows.Auth
 {
     /// <summary>
-    /// Interaction logic for AuthWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class AuthWindow : Window
     {
         public AuthWindow()
         {
             InitializeComponent();
+            RegisterPage register = new RegisterPage();
+            registerFrame.Navigate(register);
+        }
+
+        private void btnClose_Clicked(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
