@@ -25,13 +25,45 @@ namespace Profex_Desktop.Windows.Auth
         public AuthWindow()
         {
             InitializeComponent();
-            RegisterPage register = new RegisterPage();
-            registerFrame.Navigate(register);
+           
         }
 
         private void btnClose_Clicked(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoginPage login = new LoginPage();
+            registerFrame.Navigate(login);
+
+            SignUp.IsChecked = true;
+        }
+
+        private void SignUp_Checked(object sender, RoutedEventArgs e)
+        {
+            Sign.Content = "Ro'yxatdan o'tish";
+            SignIn.Opacity = 0.5;
+            SignUp.Opacity = 1;
+            RegisterPage register = new RegisterPage();
+            registerFrame.Navigate(register);
+
+
+        }
+
+        private void SignIn_Checked(object sender, RoutedEventArgs e)
+        {
+            Sign.Content = "Kirish";
+            SignUp.Opacity = 0.5;
+            SignIn.Opacity = 1;
+            LoginPage login = new LoginPage();
+            registerFrame.Navigate(login);
+
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

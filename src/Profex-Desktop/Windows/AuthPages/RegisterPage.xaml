@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Windows.AuthPages"
       mc:Ignorable="d" 
-      Height="400" Width="360"
+      Height="402" Width="360"
       Title="RegisterPage"
       Background="Transparent">
 
@@ -28,18 +28,12 @@
                         Orientation="Vertical">
                 
                 <!--Firs name label-->
-                <Label Content="First name"
-                   Foreground="{DynamicResource ProfileImageBackground}"
-                       FontSize="16"
-                   FontFamily="{DynamicResource FontFamilyNormal}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Margin="5 0"/>
+            <Label Content="Ismi"
+                   Style="{DynamicResource Fullregister}"/>
                 
                 <!--First name textbox-->
-                <TextBox Width="340" Height="40" 
-                         HorizontalAlignment="Left" Margin="10 0"
-                         Style="{DynamicResource Search}"/>
+                <TextBox Style="{DynamicResource Fullname}"
+                         MaxLength="25"/>
             </StackPanel>
             
             <!--Last name part-->
@@ -47,18 +41,12 @@
                         Orientation="Vertical">
 
                 <!--Last name label-->
-                <Label Content="Last name"
-                   Foreground="{DynamicResource ProfileImageBackground}"
-                       FontSize="17"
-                   FontFamily="{DynamicResource FontFamilyNormal}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Margin="5 0"/>
+            <Label Content="Familiyasi"
+                   Style="{DynamicResource Fullregister}"/>
 
                 <!--Last name textbox-->
-                <TextBox Width="340" Height="40"
-                         HorizontalAlignment="Left" Margin="10 0"
-                         Style="{DynamicResource Search}"/>
+                <TextBox Style="{DynamicResource Fullname}"
+                         MaxLength="25"/>
                 </StackPanel>
             
         <!--Phone number part-->
@@ -66,49 +54,40 @@
                     Orientation="Vertical">
 
             <!--Phone number label-->
-            <Label Grid.Column="0" Content="Phone number"
-                   Foreground="{DynamicResource ProfileImageBackground}"
-                   FontSize="17"
-                   FontFamily="{DynamicResource FontFamilyNormal}"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Left"
-                   Margin="5 0"/>
+            <Label Grid.Column="0" Content="Telefon raqami"
+                   Style="{DynamicResource Fullregister}"/>
 
             <!--Phone number textbox-->
-            <TextBox Height="40" Width="340"
-                     HorizontalAlignment="Left"
-                     Margin="10 0"
-                     Style="{DynamicResource Search}"/>
+            <TextBox x:Name="phoneNum" Style="{DynamicResource Fullname}"
+                     PreviewTextInput="NumberValidationTextBox"
+                     MaxLength="12"/>
         </StackPanel>
         
         <!--Offerta shartlari-->
         <CheckBox Grid.Row="4" 
+                  x:Name="checkbox"
                   Foreground="Black"
-                  Margin="10"
-                  FontSize="12"
-                  Content="Offerta shartlari bilan tanishdim"/>
-        
+                  Margin="40 10"
+                  FontSize="12" Click="checkbox_Checked">
+            <Button x:Name="btnOfferta"
+                    Click="btnOfferta_Clicked" 
+                    Content="Ommaviy oferta shartlari bilan tanishdim" Style="{DynamicResource HyperLink}"/>
+        </CheckBox>
+
+
         <!--Register button-->
         <Button Grid.Row="5" 
-                IsEnabled="False"
-                Content="Register"
-                Height="30"
-                Width="340"
-                Foreground="Black"
-                FontFamily="{DynamicResource FontFamilyNormal}"
-                FontSize="17"
-                VerticalAlignment="Bottom"
-                HorizontalAlignment="Center"
-                Margin="10"/>
+                x:Name="SignUpbtn"
+                Style="{DynamicResource bntSignUp}"
+                Content="Ro'yxatdan o'tish"/>
         
         <!--I have an account already-->
-        <Label Grid.Row="6"
-            Content="I have an Account" 
-               VerticalAlignment="Top"
-               HorizontalAlignment="Center"
-               Foreground="Red"
-               FontSize="10"
-               FontFamily="{DynamicResource FontFamilyNormal}"
-               />
+        <Button x:Name="Ihavenotaccount"
+                Click="Ihavenotaccount_Click"
+                Grid.Row="6"
+            Content="Men ro'yxatdan o'tganman" 
+                Style="{DynamicResource btnIhave}"/>
     </Grid>
 </Page>
+
+    
