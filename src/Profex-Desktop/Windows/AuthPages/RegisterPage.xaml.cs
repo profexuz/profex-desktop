@@ -44,9 +44,14 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private void Ihavenotaccount_Click(object sender, RoutedEventArgs e)
         {
-            var LoginPage = new LoginPage(); //create your new form.
-            LoginPage.Show(); //show the new form.
-            this.Close();
+
+        }
+
+        private void SignUpbtn_Click(object sender, RoutedEventArgs e)
+        {
+            SmsPage smsPage = new SmsPage();
+            
+            NavigationService.Navigate(smsPage);
         }
     }
 }

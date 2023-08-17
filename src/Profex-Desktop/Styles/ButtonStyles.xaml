@@ -520,7 +520,6 @@
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="17"/>
-        <Setter Property="IsEnabled" Value="False"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -554,10 +553,50 @@
     </Style>
 
     <!--In Registerpage "I have an account" button style -->
+    <Style x:Key="btnIhavenot" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Margin" Value="0 370 0 0"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" Background="{TemplateBinding Background}">
+                        <Label x:Name="lbl" Content="{TemplateBinding Content}"
+                               Foreground="{TemplateBinding Foreground}"
+                               FontSize="{TemplateBinding FontSize}"
+                               FontFamily="{TemplateBinding FontFamily}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="#ef233c" TargetName="lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="Red" TargetName="lbl"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="#9d0208" TargetName="lbl"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--In Registerpage "I have an account" button style -->
     <Style x:Key="btnIhave" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Margin" Value="0 320 0 0"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -591,7 +630,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-        
+
     <!--Offerta window back button-->
     <Style x:Key="btnBack" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="40"/>
@@ -619,5 +658,44 @@
         </Setter>
     </Style>
 
+
+    <!--Change number button style -->
+    <Style x:Key="btnChange" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="LightGray"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" Background="{TemplateBinding Background}">
+                        <Label x:Name="lbl" Content="{TemplateBinding Content}"
+                               Foreground="{TemplateBinding Foreground}"
+                               FontSize="{TemplateBinding FontSize}"
+                               FontFamily="{TemplateBinding FontFamily}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="Gray" TargetName="lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="LightGray" TargetName="lbl"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="DarkGray" TargetName="lbl"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
