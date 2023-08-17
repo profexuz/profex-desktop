@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using Profex_Desktop.Windows.Auth;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -10,18 +11,13 @@ namespace Profex_Desktop.Windows.AuthPages
     /// </summary>
     public partial class LoginPage : Page
     {
+        private RegisterPage registerPage;
+
         public LoginPage()
         {
             InitializeComponent();
         }
 
-        private void checkbox_Checked(object sender, RoutedEventArgs e)
-        {
-            if (checkbox.IsChecked == true)
-                SignUpbtn.IsEnabled = true;
-
-            else SignUpbtn.IsEnabled = false;
-        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -32,6 +28,21 @@ namespace Profex_Desktop.Windows.AuthPages
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
+            authWindow?.Close();
+            
+        }
+
+        private void checkbox_Checked(object sender, RoutedEventArgs e)
+        {
+            
+
         }
     }
 }

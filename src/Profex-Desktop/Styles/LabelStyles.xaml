@@ -138,6 +138,17 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Content" Value="16 yoshgacha boʼlgan bolalar"/>
     </Style>
-
+    
+    <!--#:Offerta part-->
+    <Style x:Key="second" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Content" Value="{DynamicResource Profexheadershort}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="40 5"/>
+    </Style>
 
 </ResourceDictionary>

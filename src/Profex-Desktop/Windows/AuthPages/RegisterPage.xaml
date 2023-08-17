@@ -78,7 +78,9 @@
         <!--Register button-->
         <Button Grid.Row="5" 
                 x:Name="SignUpbtn"
+                Click="SignUpbtn_Click"
                 Style="{DynamicResource bntSignUp}"
+                IsEnabled="False"
                 Content="Ro'yxatdan o'tish"/>
         
         <!--I have an account already-->

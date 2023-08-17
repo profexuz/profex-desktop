@@ -15,9 +15,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="90"/>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <!--Phone number Password labels and textboxes-->
@@ -45,30 +43,29 @@
                    Style="{DynamicResource Fullregister}"/>
 
             <!--Last name textbox-->
-            <TextBox Style="{DynamicResource Fullname}"
-                         MaxLength="25"/>
+            <!--<TextBox Style="{DynamicResource Fullname}"
+                     MaxLength="25" Text="{Binding Password}" 
+                     />-->
+            <PasswordBox Style="{DynamicResource Password}"
+                     MaxLength="25"/>
         </StackPanel>
 
 
         <!--Offerta shartlari-->
-        <CheckBox Grid.Row="3" 
+        <!--<CheckBox Grid.Row="3" 
                   x:Name="checkbox"
                   Margin="40 10"
                   FontSize="12" Click="checkbox_Checked"
                   Content="Meni eslab qol" 
-                  Foreground="{DynamicResource ProfileImageBackground}"/>
+                  Foreground="{DynamicResource ProfileImageBackground}"/>-->
 
 
         <!--Register button-->
         <Button Grid.Row="4" 
                 x:Name="SignUpbtn"
+                Click="SignUpbtn_Clicked"
                 Style="{DynamicResource bntSignUp}"
                 Content="Kirish"/>
-
-        <!--I have an account already-->
-        <Button Grid.Row="5"
-            Content="Ro'yxatdan o'tmaganman" 
-                Style="{DynamicResource btnIhave}"/>
     </Grid>
 </Page>
 
