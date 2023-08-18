@@ -73,16 +73,16 @@
                                       Direction="1" ShadowDepth="4" Opacity="0.2"/>
                 </Border.Effect>
                 <StackPanel Orientation="Vertical">
-                    
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top"
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"
                             HorizontalAlignment="Left" Margin="10 5 0 0">
                             <RadioButton x:Name="SignUp" IsChecked="{Binding IsSignUpChecked}" Checked="SignUp_Checked" Content="Ro'yxatdan o'tish"
                                   Style="{DynamicResource  MenuButton}"/>
                             <RadioButton x:Name="SignIn" IsChecked="{Binding IsSignInChecked}" Checked="SignIn_Checked" Content="Kirish" 
                             Style="{DynamicResource  MenuButton1}"/>
-                    
-                </StackPanel>
-                    <Border VerticalAlignment="Top" HorizontalAlignment="Center"
+
+                        </StackPanel>
+                        <Border VerticalAlignment="Top" HorizontalAlignment="Center"
                             CornerRadius="20" Background="{DynamicResource SideBarBackground}">
                         <Border.Effect>
                             <DropShadowEffect Direction="90" BlurRadius="10" 
@@ -90,15 +90,10 @@
                         </Border.Effect>
                             <Grid>
                                 <Frame x:Name="registerFrame" NavigationUIVisibility="Hidden"/>
-                                <!--I have an account already-->
-                                <Button Grid.Row="5"
-                                        Content="Ro'yxatdan o'tmaganman"
-                                            x:Name="Idonthave"
-                                                Click="Idonthave_Click"
-                                                    Style="{DynamicResource btnIhavenot}"/>
+                                
                             </Grid>
                         </Border>
-                </StackPanel>
+                    </StackPanel>
             </Border>
         </Grid>
         

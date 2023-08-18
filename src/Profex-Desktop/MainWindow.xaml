@@ -31,21 +31,8 @@
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <Border CornerRadius="100" Height="80" Width="80"
-                                Background="Transparent" BorderBrush="{DynamicResource ProfileImageBackground}"
-                                BorderThickness="1">
-                            <Ellipse Height="77" Width="77">
-                                <Ellipse.Fill>
-                                    <ImageBrush x:Name="ProfileImg" ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                        </Border>
-                        <Grid  Margin="0 5 0 0">
-                            <TextBlock x:Name="ProfileMyName" 
-                                       Style="{DynamicResource ProfileName}"/>
-                        </Grid>
-                        <Button Style="{DynamicResource EditButton}"/>
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                        
                         <Border CornerRadius="40" BorderBrush="Black"
                                     BorderThickness="0" Background="{DynamicResource SideBarBackground}" 
                                         Width="90" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -55,25 +42,59 @@
                                     <RowDefinition Height="100"/>
                                     <RowDefinition Height="100"/>
                                     <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
                                 </Grid.RowDefinitions>
                                 <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                 Click="rbDashboard_Click" Style="{DynamicResource SideBarButton}"
-                                                    Tag="{DynamicResource Dashboard}"/>
+                                                    Tag="{DynamicResource Dashboard}">
+                                    <RadioButton.ToolTip>
+                                        <TextBlock>Asosiy</TextBlock>
+                                    </RadioButton.ToolTip>
+                                </RadioButton>
                                 <RadioButton x:Name="rbVacancies" Grid.Row="1" 
                                                 Click="rbVacancies_Click" Style="{DynamicResource SideBarButton}"
-                                                    Tag="{DynamicResource Vacansies}"/>
-                                <RadioButton x:Name="rbFAQs" Grid.Row="2"
+                                                    Tag="{DynamicResource Vacansies}">
+                                    <RadioButton.ToolTip>
+                                        <TextBlock>E'lonlar</TextBlock>
+                                    </RadioButton.ToolTip>
+                                </RadioButton>
+                                <RadioButton x:Name="rbMasters" Grid.Row="2" 
+                                                Click="rbMasters_Click" Style="{DynamicResource SideBarButton}"
+                                                    Tag="{DynamicResource Masters}">
+                                    <RadioButton.ToolTip>
+                                        <TextBlock>Ustalar</TextBlock>
+                                    </RadioButton.ToolTip>
+                                </RadioButton>
+                                <RadioButton x:Name="rbAccount" Grid.Row="3" 
+                                                Click="rbAccount_Click" Style="{DynamicResource SideBarButton}"
+                                                    Tag="{DynamicResource MyAccount}">
+                                    <RadioButton.ToolTip>
+                                        <TextBlock>Mening profilm</TextBlock>
+                                    </RadioButton.ToolTip>
+                                </RadioButton>
+                                <RadioButton x:Name="rbSetting" Grid.Row="4"
+                                                Click="rbSetting_Click" Style="{DynamicResource SideBarButton}"
+                                                    Tag="{DynamicResource Settings}">
+                                    <RadioButton.ToolTip>
+                                        <TextBlock>Sozlamalar</TextBlock>
+                                    </RadioButton.ToolTip>
+                                </RadioButton>
+                                <RadioButton x:Name="rbFAQs" Grid.Row="5"
                                                 Click="rbFAQs_Click" Style="{DynamicResource SideBarButton}"
-                                                    Tag="{DynamicResource FAQs}"/>
-                                <Grid Grid.Row="3" >
-                                    <CheckBox x:Name="chkbox" Style="{DynamicResource SwitchButton}" Click="IsChecked"/>
+                                                    Tag="{DynamicResource FAQs}">
+                                    <RadioButton.ToolTip>
+                                        <TextBlock>Tez-tez so'raladigan savollar</TextBlock>
+                                    </RadioButton.ToolTip>
+                                </RadioButton>
+                                <Grid Grid.Row="5" >
                                 </Grid>
                             </Grid>
                         </Border>
 
-                        <!--<Button x:Name="SignOut" Style="{DynamicResource SignOutButton}"
-                                Tag="{DynamicResource SignOut}"/>-->
                     </StackPanel>
+                
+                
                     <ScrollViewer Grid.Column="1">
                         <Frame x:Name="PageNavigator" 
                                 NavigationUIVisibility="Hidden" Padding="10"

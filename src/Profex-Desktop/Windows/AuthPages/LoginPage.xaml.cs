@@ -32,17 +32,18 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
-            authWindow?.Close();
+            if(pswBox.Password.Length>3 && phoneNum.Text.Length == 12)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
+                authWindow?.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ma'lumot to'liq kiritilmagan!");
+            }
             
-        }
-
-        private void checkbox_Checked(object sender, RoutedEventArgs e)
-        {
-            
-
         }
     }
 }
