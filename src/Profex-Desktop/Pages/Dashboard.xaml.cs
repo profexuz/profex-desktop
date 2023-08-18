@@ -65,54 +65,5 @@ namespace Profex_Desktop.Pages
             string selected = colors1[n];
             return selected;
         }
-        private int currentElement = 0;
-
-        private void Left_Click(object sender, RoutedEventArgs e)
-        {
-            if (currentElement < 2)
-            {
-                currentElement++;
-                AnimateCarousel();
-            }
-        }
-
-        private void Right_Click(object sender, RoutedEventArgs e)
-        {
-            if (currentElement > 0)
-            {
-                currentElement--;
-                AnimateCarousel();
-            }
-        }
-
-        private void AnimateCarousel()
-        {
-            Storyboard storyboard = (this.Resources["CarouselStoryboard"] as Storyboard)!;
-            DoubleAnimation animation = storyboard.Children.First() as DoubleAnimation;
-            animation.To = -this.ActualWidth * currentElement;
-            storyboard.Begin();
-        }
-
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            somebodyName = txtSearch.Text;
-            wrpGroups.Children.Clear();
-            Random ran = new Random();
-            int son = ran.Next(1, 100);
-
-            for (int i = 0; i < son; i++)
-            {
-                string[] list =
-                {
-                        "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png",
-                        $"{somebodyName} Karimov",
-                        MakeRandom()
-
-                    };
-                MasterContactControl mastercontact = new MasterContactControl();
-                mastercontact.SetData(list);
-                wrpGroups.Children.Add(mastercontact);
-            }
-        }
     }
 }

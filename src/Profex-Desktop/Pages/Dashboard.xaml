@@ -180,47 +180,17 @@
                         Background="{DynamicResource profexINFObackgr}"
                         CornerRadius="30" Margin="10 0"/>
                 <Border Grid.Row="1" Padding="10 5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="350"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="1" Margin="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="70"/>
-                                </Grid.ColumnDefinitions>
-
-                                <!--Search box-->
-
-                                <TextBlock Style="{DynamicResource plholder}"
-                                                    Panel.ZIndex="1" 
-                                                    IsHitTestVisible="False"
-                                                    Visibility="{Binding ElementName=txtSearch,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
-                                <TextBox Grid.Column="0" x:Name="txtSearch" 
-                                                 Style="{DynamicResource Search}"/>
-
-
-                                <Button Grid.Column="1" x:Name="btnSearch" Click="btnSearch_Click" Style="{DynamicResource btnSearch}"/>
-                            </Grid>
-                        </Grid>
-                        <ScrollViewer Grid.Row="1"
+                    <ScrollViewer
                                         x:Name="stpWord_groupChips"
                                             VerticalScrollBarVisibility="Auto"
                                                     VerticalAlignment="Top"
                                                         Margin="5">
                             <WrapPanel x:Name="wrpGroups" Orientation="Vertical">
-                                
+
                             </WrapPanel>
-                            
+
 
                         </ScrollViewer>
-                    </Grid>
 
                 </Border>
 

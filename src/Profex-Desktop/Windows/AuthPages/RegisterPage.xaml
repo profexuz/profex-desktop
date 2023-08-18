@@ -12,12 +12,12 @@
     <Grid>
         <Grid.RowDefinitions>
             <!--<RowDefinition Height="80"/>-->
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
@@ -32,7 +32,7 @@
                    Style="{DynamicResource Fullregister}"/>
                 
                 <!--First name textbox-->
-                <TextBox Style="{DynamicResource Fullname}"
+                <TextBox x:Name="txtName" Style="{DynamicResource Fullname}"
                          MaxLength="25"/>
             </StackPanel>
             
@@ -45,7 +45,7 @@
                    Style="{DynamicResource Fullregister}"/>
 
                 <!--Last name textbox-->
-                <TextBox Style="{DynamicResource Fullname}"
+                <TextBox x:Name="txtSurname" Style="{DynamicResource Fullname}"
                          MaxLength="25"/>
                 </StackPanel>
             
@@ -62,21 +62,34 @@
                      PreviewTextInput="NumberValidationTextBox"
                      MaxLength="12"/>
         </StackPanel>
-        
+
+        <!--Password part-->
+        <StackPanel Grid.Row="4" 
+                    Orientation="Vertical">
+
+            <!--Password label-->
+            <Label Grid.Column="0" Content="Parol yarating"
+                   Style="{DynamicResource Fullregister}"/>
+
+            <!--Password textbox-->
+            <PasswordBox x:Name="txtPassword" Style="{DynamicResource Password}"/>
+        </StackPanel>
+
         <!--Offerta shartlari-->
-        <CheckBox Grid.Row="4" 
+        <CheckBox Grid.Row="5" 
                   x:Name="checkbox"
                   Foreground="Black"
                   Margin="40 10"
                   FontSize="12" Click="checkbox_Checked">
             <Button x:Name="btnOfferta"
                     Click="btnOfferta_Clicked" 
-                    Content="Ommaviy oferta shartlari bilan tanishdim" Style="{DynamicResource HyperLink}"/>
+                    Content="Ommaviy oferta shartlari bilan tanishdim" 
+                    Style="{DynamicResource HyperLink}"/>
         </CheckBox>
 
 
         <!--Register button-->
-        <Button Grid.Row="5" 
+        <Button Grid.Row="6" 
                 x:Name="SignUpbtn"
                 Click="SignUpbtn_Click"
                 Style="{DynamicResource bntSignUp}"

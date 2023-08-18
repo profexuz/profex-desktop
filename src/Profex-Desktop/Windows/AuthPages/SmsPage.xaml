@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       Title="SmsPage"
       Height="402" Width="360"
-      Background="Transparent">
+      Background="Transparent"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,22 +25,22 @@
                         Orientation="Vertical">
 
             <!--Last name textbox-->
-            <TextBlock
-                       Style="{DynamicResource smsMessage}"/>
+            <TextBlock x:Name="txtSmsInfo" Style="{DynamicResource smsMessage}"/>
         </StackPanel>
         <!--Last name part-->
         <StackPanel Grid.Row="2"
                         Orientation="Vertical">
             <!--Last name textbox-->
-            <TextBox Style="{DynamicResource Fullname}"
-                         MaxLength="4" Margin="10 20"/>
+            <TextBox x:Name="txtSmsCode" Style="{DynamicResource Fullname}"
+                     PreviewTextInput="NumberValidationTextBox"    
+                     MaxLength="4" Margin="10 20" KeyDown="txtSmsCode_KeyDown"/>
         </StackPanel>
 
-        <Label Grid.Row="3" Content="04:59"
+        <Label x:Name="lblSecond" Grid.Row="3" Content="04:59"
                Style="{DynamicResource second}"/>
 
         <Button Grid.Row="4"
-                x:Name="Idonthave" Click="Idonthave_Click"
+                x:Name="Idonthave" Click="ChangeNumber_Click"
                 Style="{DynamicResource btnChange}">
             <TextBlock
                 TextDecorations="Underline">

@@ -50,7 +50,8 @@ namespace Profex_Desktop
 
         private void rbVacancies_Click(object sender, RoutedEventArgs e)
         {
-
+            Vacancies vacancy = new Vacancies();
+            PageNavigator.Navigate(vacancy);
         }
 
         private void rbFAQs_Click(object sender, RoutedEventArgs e)
@@ -60,18 +61,18 @@ namespace Profex_Desktop
 
         private void Window_loading(object sender, RoutedEventArgs e)
         {
-            if(ProfileMyName.Text.Length > 10)
-            {
-                string name = string.Empty, name1 = ProfileMyName.Text;
-                byte count = 0;
-                foreach(var n in name1)
-                {
-                    if (count == 7) break;
-                    name = name+ n;
-                    count++;
-                }
-                ProfileMyName.Text = name + "...";
-            }
+            //if(ProfileMyName.Text.Length > 10)
+            //{
+            //    string name = string.Empty, name1 = ProfileMyName.Text;
+            //    byte count = 0;
+            //    foreach(var n in name1)
+            //    {
+            //        if (count == 7) break;
+            //        name = name+ n;
+            //        count++;
+            //    }
+            //    ProfileMyName.Text = name + "...";
+            //}
         }
 
         private void ToggleButton_PreviewStylusSystemGesture(object sender, StylusSystemGestureEventArgs e)
@@ -79,18 +80,33 @@ namespace Profex_Desktop
 
         }
 
-        private void IsChecked(object sender, RoutedEventArgs e)
+        private void rbMasters_Click(object sender, RoutedEventArgs e)
         {
-            if (chkbox.IsChecked == true)
-            {
-                AppTheme.ChangeTheme(new Uri("Themes/DarkTheme.xaml", UriKind.Relative));
 
-            }
-            else
-            {
-                AppTheme.ChangeTheme(new Uri("Themes/LightTheme.xaml", UriKind.Relative));
-            }
         }
+
+        private void rbAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rbSetting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //private void IsChecked(object sender, RoutedEventArgs e)
+        //{
+        //    if (chkbox.IsChecked == true)
+        //    {
+        //        AppTheme.ChangeTheme(new Uri("Themes/DarkTheme.xaml", UriKind.Relative));
+
+        //    }
+        //    else
+        //    {
+        //        AppTheme.ChangeTheme(new Uri("Themes/LightTheme.xaml", UriKind.Relative));
+        //    }
+        //}
 
     }
 }

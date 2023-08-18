@@ -108,7 +108,7 @@
                                   Grid.Column="1"
                                   Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
                                   Fill="White"
-                                  Height="20" Width="20"
+                                  Height="30" Width="30"
                                   Stretch="UniformToFill"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -329,6 +329,7 @@
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Padding" Value="0 4 0 0"/>
+        <Setter Property="Opacity" Value="0.5"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -389,7 +390,6 @@
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Padding" Value="0 4 0 0"/>
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Opacity" Value="0.5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -443,7 +443,7 @@
     <!--SignUp/SignIn Buttons style-->
     <Style x:Key="HyperLink" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="Foreground" Value="#0077b6"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Template">

@@ -46,7 +46,7 @@
             <!--<TextBox Style="{DynamicResource Fullname}"
                      MaxLength="25" Text="{Binding Password}" 
                      />-->
-            <PasswordBox Style="{DynamicResource Password}"
+            <PasswordBox x:Name="pswBox" Style="{DynamicResource Password}"
                      MaxLength="25"/>
         </StackPanel>
 
