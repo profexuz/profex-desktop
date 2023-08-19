@@ -26,13 +26,22 @@ namespace Profex_Desktop.Pages
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             wrpNewsVacancy.Children.Clear();
-            for (int i = 0; i < 8; i++)
+            wrpAdvertising.Children.Clear();
+            string[] values = { "5 KUN", "salomdunyo", "50000 so'm" };
+            for (int i = 0; i < 6; i++)
             {
-            Vacancie vacancies = new Vacancie();
-                wrpNewsVacancy.Children.Add(vacancies);
+                Vacancy vacancy = new Vacancy();
+                vacancy.SetData(values);
+                wrpNewsVacancy.Children.Add(vacancy);
+            }
+            for (int i = 0; i < 30; i++)
+            {
+                Vacancy vacancy = new Vacancy();
+                vacancy.SetData(values);
+                wrpAdvertising.Children.Add(vacancy);
             }
         }
     }

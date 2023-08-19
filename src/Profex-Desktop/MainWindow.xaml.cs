@@ -95,6 +95,11 @@ namespace Profex_Desktop
 
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
         //private void IsChecked(object sender, RoutedEventArgs e)
         //{
         //    if (chkbox.IsChecked == true)

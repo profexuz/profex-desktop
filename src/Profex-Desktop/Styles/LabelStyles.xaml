@@ -43,9 +43,18 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="40 5"/>
     </Style>
-    
-    
-    
+
+    <!--Search place holder textblock style-->
+    <Style x:Key="plholder" TargetType="{x:Type Label}">
+        <Setter Property="Margin" Value="5 0"/>
+        <Setter Property="Content" Value="{DynamicResource Profexabouttext}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="IsHitTestVisible" Value="False"/>
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+    </Style>
+
     <!--Offerta part-->
     <Style x:Key="topFoydalanuvchi" TargetType="{x:Type Label}">
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -149,6 +158,76 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="40 5"/>
+    </Style>
+    
+    <!--#New added label-->
+    <Style x:Key="newAdded" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="{DynamicResource newAddedContent}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <!--#New advertising label-->
+    <Style x:Key="advertising" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="{DynamicResource AdvertisingContent}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+    
+    <!--Clock Icon Label-->
+    <Style x:Key="ClockIconlabel" TargetType="{x:Type Label}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 0 "/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border x:Name="B" BorderThickness="0">
+                    <Path x:Name="icon"
+                                  Data="{DynamicResource Clock}"
+                                  Fill="{DynamicResource ProfileImageBackground}"
+                                  Height="15" Width="15"
+                                  Stretch="UniformToFill"
+                                    Opacity="0.5"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Day Label-->
+    <Style x:Key="lblDay" TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="{DynamicResource profexVacancyEnableFalseBackgr}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <!--Title Label-->
+    <Style x:Key="lblTitle" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Content" Value="{DynamicResource labelTitle}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0 5 0 0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <!--Cost Label-->
+    <Style x:Key="lblCost" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Content" Value="{DynamicResource labelCosts}"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblCostColor}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
 
 </ResourceDictionary>

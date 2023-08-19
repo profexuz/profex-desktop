@@ -3,8 +3,14 @@
     <Label x:Key="lbl" Foreground="{DynamicResource ProfileImageBackground}">Asosiy</Label>
     <Label x:Key="Profexheader" Foreground="{DynamicResource ProfileImageBackground}">Profex - bu o'zi qanday dastur?</Label>
     <Label x:Key="Profexheadershort" Foreground="{DynamicResource ProfileImageBackground}">Qisqacha</Label>
+    <Label x:Key="newAddedContent" Foreground="{DynamicResource ProfileImageBackground}">Yangi qo'shilganlar</Label>
+    <Label x:Key="AdvertisingContent" Foreground="{DynamicResource ProfileImageBackground}">E'lonlar</Label>
 
-    <TextBlock x:Key="Profexabouttext">izlash
-    </TextBlock>
+    <Label x:Key="btnSearchContent" Foreground="{DynamicResource ProfileImageBackground}">Izlash</Label>
+    <Label x:Key="lblDays" Foreground="{DynamicResource profexVacancyEnableFalseBackgr}">Kun</Label>
+    <Label x:Key="labelTitle" Foreground="{DynamicResource ProfileImageBackground}">Nimadur bajarish kerak</Label>
+    <Label x:Key="labelCosts" Foreground="{DynamicResource lblCostColor}">so'm</Label>
+
+    <Label x:Key="Profexabouttext" Foreground="{DynamicResource ProfileImageBackground}">Izlash...</Label>
 
 </ResourceDictionary>

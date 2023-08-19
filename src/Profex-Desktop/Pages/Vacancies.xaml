@@ -8,21 +8,28 @@
       Height="auto" Width="auto"
       Title="Vacancies"
       Loaded="Page_Loaded">
-
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0"
                     Orientation="Horizontal"
                     VerticalAlignment="Top"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Center"
                     Margin="0 20">
             <Grid>
-                <TextBlock x:Name="txtblc" Style="{DynamicResource plholder}"
-                       Panel.ZIndex="0"/>
+                <Label x:Name="txtblc" Style="{DynamicResource plholder}"
+                       Panel.ZIndex="0"
+                           Visibility="{Binding ElementName=Search,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
                 <TextBox x:Name="Search" Style="{DynamicResource Search}"/>
             </Grid>
             <Button x:Name="btnSearch" Style="{DynamicResource btnSearch}"/>
@@ -41,13 +48,25 @@
                 <ComboBoxItem Content="Boshqa"/>
             </ComboBox>
         </StackPanel>
-        
-        
-        <WrapPanel x:Name="wrpNewsVacancy" Grid.Row="1" Orientation="Horizontal"/>
 
-            <ScrollViewer Grid.Row="2" Visibility="Collapsed">
-            <WrapPanel Orientation="Horizontal"/>
+            <Label Grid.Row="1" x:Name="NewAdded" Style="{DynamicResource newAdded}"/>
+            <ScrollViewer Grid.Row="2" Visibility="Visible">
+                <WrapPanel x:Name="wrpNewsVacancy" HorizontalAlignment="Center" Orientation="Horizontal"/>
 
-        </ScrollViewer>
+            </ScrollViewer>
+
+            <Label Grid.Row="3" x:Name="lblAdvertising" Style="{DynamicResource advertising}"/>
+            <ScrollViewer Grid.Row="4" Visibility="Visible">
+                <WrapPanel x:Name="wrpAdvertising" HorizontalAlignment="Center" Orientation="Horizontal"/>
+
+            </ScrollViewer>
+
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="btnPre" Height="20" Width="20" Margin="5" Content="4-"/>
+            <Button x:Name="btnOne" Height="20" Width="20" Content="1"/>
+            <Button x:Name="btnTwo" Height="20" Width="20" Margin="5" Content=".."/>
+            <Button x:Name="btnThree" Height="20" Width="20" Content="6"/>
+            <Button x:Name="btnNext" Height="20" Width="20" Margin="5" Content="->"/>
+        </StackPanel>
     </Grid>
 </Page>
