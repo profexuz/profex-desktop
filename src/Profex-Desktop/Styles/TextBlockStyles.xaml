@@ -20,14 +20,7 @@
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
     </Style>
 
-    <!--Search place holder textblock style-->
-    <Style x:Key="plholder" TargetType="{x:Type TextBlock}">
-        <Setter Property="Margin" Value="20 0"/>
-        <Setter Property="Text" Value="Izlash..."/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
-    </Style>
+    
 
     <!--#Offerta part-->
     <Style x:Key="topFoydalanuvchi2" TargetType="{x:Type TextBlock}">

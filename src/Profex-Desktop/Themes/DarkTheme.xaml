@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="PrimaryBackground" Color="#141718"/>
-    <SolidColorBrush x:Key="SideBarBackground" Color="#232627"/>
+    <SolidColorBrush x:Key="PrimaryBackground" Color="#182127"/>
+    <SolidColorBrush x:Key="SideBarBackground" Color="#12191F"/>
     <SolidColorBrush x:Key="ProfileImageBackground" Color="#edf6f9"/>
 
     <!--Radio Button Clicked Backround-->
@@ -16,5 +16,10 @@
     <!--Dashboard vacancy paginations background color-->
     <SolidColorBrush x:Key="profexVacancyEnableFalseBackgr" Color="#495057"/>
     <SolidColorBrush x:Key="profexVacancyEnableTrueBackgr" Color="#adb5bd"/>
+    
+    <!--Vacancy component background color-->
+    <SolidColorBrush x:Key="vacancyComponent" Color="#2D3339"/>
+    <!--Cost foregroundcolor-->
+    <SolidColorBrush x:Key="lblCostColor" Color="#28AD21"/>
 
 </ResourceDictionary>
