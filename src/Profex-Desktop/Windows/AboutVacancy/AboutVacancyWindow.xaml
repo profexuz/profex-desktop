@@ -48,8 +48,13 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <!--Vacancy Title part-->
-            <Label Grid.Row="0" x:Name="lblTitle"
+            <Button Grid.Row="0" Margin="310 0 0 35" x:Name="btnClose" 
+                    Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+            <Label x:Name="lblTitle"
                     Style="{DynamicResource lblTitleForVacancy}"/>
+                <Label Margin="10 0" Content="_____________________________________________________________________________________________________" FontSize="16" Foreground="White"/>
+            </StackPanel>
 
             <!--Address part-->
             <StackPanel Grid.Row="1" Orientation="Vertical">
