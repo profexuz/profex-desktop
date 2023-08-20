@@ -22,4 +22,17 @@
     <!--Cost foregroundcolor-->
     <SolidColorBrush x:Key="lblCostColor" Color="#28AD21"/>
 
+    <SolidColorBrush x:Key="lblVacancyTitleColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblVacancyRegionColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblVacancyRegionAnswerColor" Color="#bcb8b1"/>
+    <SolidColorBrush x:Key="lblVacancyDistrictColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblVacancyDistrictAnswerColor" Color="#bcb8b1"/>
+    <SolidColorBrush x:Key="lblVacancyLongLatitudeColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblVacancyLongLatitudeAnswerColor" Color="#bcb8b1"/>
+    <SolidColorBrush x:Key="lblVacancyLongLatitudeAnswerMouseOverColor" Color="#EDF1D6"/>
+    <SolidColorBrush x:Key="GMPColor" Color="#bcb8b1"/>
+    <SolidColorBrush x:Key="txtDescriptionColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="PhoneNumColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="PhoneNumAnswerColor" Color="#bcb8b1"/>
+
 </ResourceDictionary>

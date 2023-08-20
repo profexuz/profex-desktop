@@ -670,5 +670,17 @@ Boshqa maqsadlar uchun, faqatgina Sizning roziligingiz bilan Siz toʼgʼringizda
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
+    
+    <!--For Vacancy Description style-->
+    <Style x:Key="txtDescription" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource txtDescriptionColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
 
 </ResourceDictionary>

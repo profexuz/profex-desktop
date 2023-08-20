@@ -21,6 +21,8 @@ namespace Profex_Desktop.Pages
     /// </summary>
     public partial class Vacancies : Page
     {
+        private string[] values = { "5 KUN", "salomdunyo", "50000 so'm" };
+        
         public Vacancies()
         {
             InitializeComponent();
@@ -30,7 +32,6 @@ namespace Profex_Desktop.Pages
         {
             wrpNewsVacancy.Children.Clear();
             wrpAdvertising.Children.Clear();
-            string[] values = { "5 KUN", "salomdunyo", "50000 so'm" };
             for (int i = 0; i < 6; i++)
             {
                 Vacancy vacancy = new Vacancy();
@@ -42,6 +43,25 @@ namespace Profex_Desktop.Pages
                 Vacancy vacancy = new Vacancy();
                 vacancy.SetData(values);
                 wrpAdvertising.Children.Add(vacancy);
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if(Search.Text.Length > 0)
+            {
+                wrpNewsVacancy.Children.Clear();
+                NewAdded.Visibility = Visibility.Hidden;
+                wrpNewsVacancy.Visibility = Visibility.Hidden;
+                wrpAdvertising.Children.Clear();
+
+                for (int i = 0; i < 30; i++)
+                {
+                    Vacancy vacancy = new Vacancy();
+                    values[1] = Search.Text;
+                    vacancy.SetData(values);
+                    wrpAdvertising.Children.Add(vacancy);
+                }
             }
         }
     }

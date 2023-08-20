@@ -32,7 +32,9 @@
                            Visibility="{Binding ElementName=Search,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
                 <TextBox x:Name="Search" Style="{DynamicResource Search}"/>
             </Grid>
-            <Button x:Name="btnSearch" Style="{DynamicResource btnSearch}"/>
+            <Button x:Name="btnSearch"
+                    Click="btnSearch_Click"
+                    Style="{DynamicResource btnSearch}"/>
 
             <ComboBox x:Name="cmbCategory"
                       Style="{DynamicResource RoundComboBox}">
@@ -48,18 +50,15 @@
                 <ComboBoxItem Content="Boshqa"/>
             </ComboBox>
         </StackPanel>
-
-            <Label Grid.Row="1" x:Name="NewAdded" Style="{DynamicResource newAdded}"/>
-            <ScrollViewer Grid.Row="2" Visibility="Visible">
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Label x:Name="NewAdded" Style="{DynamicResource newAdded}"/>
                 <WrapPanel x:Name="wrpNewsVacancy" HorizontalAlignment="Center" Orientation="Horizontal"/>
 
-            </ScrollViewer>
-
-            <Label Grid.Row="3" x:Name="lblAdvertising" Style="{DynamicResource advertising}"/>
-            <ScrollViewer Grid.Row="4" Visibility="Visible">
-                <WrapPanel x:Name="wrpAdvertising" HorizontalAlignment="Center" Orientation="Horizontal"/>
-
-            </ScrollViewer>
+                <Label x:Name="lblAdvertising" Style="{DynamicResource advertising}"/>
+                <ScrollViewer Visibility="Visible">
+                    <WrapPanel x:Name="wrpAdvertising" HorizontalAlignment="Center" Orientation="Horizontal"/>
+                </ScrollViewer>
+            </StackPanel>
 
         <StackPanel Grid.Row="5" HorizontalAlignment="Center" Orientation="Horizontal">
             <Button x:Name="btnPre" Height="20" Width="20" Margin="5" Content="4-"/>

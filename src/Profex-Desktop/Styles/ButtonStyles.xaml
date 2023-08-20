@@ -105,11 +105,10 @@
                                 Width="{TemplateBinding Width}" VerticalAlignment="{TemplateBinding VerticalAlignment}" 
                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
                             <Path x:Name="icon"
-                                  Grid.Column="1"
-                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
-                                  Fill="White"
+                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
+                                  Fill="{DynamicResource ProfileImageBackground}"
                                   Height="30" Width="30"
-                                  Stretch="UniformToFill"/>
+                                  Stretch="Fill"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="False">
@@ -380,8 +379,8 @@
         </Setter>
     </Style>
 
-    <!--SignIn Buttons style-->
-    <Style x:Key="MenuButton1" TargetType="{x:Type RadioButton}">
+        <!--SignIn Buttons style-->
+        <Style x:Key="MenuButton1" TargetType="{x:Type RadioButton}">
         <Setter Property="Height" Value="35"/>
         <Setter Property="Width" Value="140"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -440,8 +439,8 @@
         </Setter>
     </Style>
 
-    <!--SignUp/SignIn Buttons style-->
-    <Style x:Key="HyperLink" TargetType="{x:Type Button}">
+        <!--SignUp/SignIn Buttons style-->
+        <Style x:Key="HyperLink" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#0077b6"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -480,7 +479,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="RegisterPageCloseButton" TargetType="{x:Type Button}">
+        <Style x:Key="RegisterPageCloseButton" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="30"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
@@ -512,8 +511,8 @@
     </Style>
 
 
-    <!--SignUp button style-->
-    <Style x:Key="bntSignUp" TargetType="{x:Type Button}">
+        <!--SignUp button style-->
+        <Style x:Key="bntSignUp" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Width" Value="290"/>
         <Setter Property="Background" Value="#2d00f7"/>
@@ -552,8 +551,8 @@
         </Setter>
     </Style>
 
-    <!--In Registerpage "I have an account" button style -->
-    <Style x:Key="btnIhavenot" TargetType="{x:Type Button}">
+        <!--In Registerpage "I have an account" button style -->
+        <Style x:Key="btnIhavenot" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -591,8 +590,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!--In Registerpage "I have an account" button style -->
-    <Style x:Key="btnIhave" TargetType="{x:Type Button}">
+        <!--In Registerpage "I have an account" button style -->
+        <Style x:Key="btnIhave" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -631,8 +630,8 @@
         </Setter>
     </Style>
 
-    <!--Offerta window back button-->
-    <Style x:Key="btnBack" TargetType="{x:Type Button}">
+        <!--Offerta window back button-->
+        <Style x:Key="btnBack" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Width" Value="40"/>
         <Setter Property="Background" Value="#f8f9fa"/>
@@ -659,8 +658,8 @@
     </Style>
 
 
-    <!--Change number button style -->
-    <Style x:Key="btnChange" TargetType="{x:Type Button}">
+        <!--Change number button style -->
+        <Style x:Key="btnChange" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="LightGray"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -697,5 +696,99 @@
             </Setter.Value>
         </Setter>
     </Style>
+        
+    
+        <!--Vacancy images radioButtons-->
+        <Style x:Key="Images" TargetType="{x:Type RadioButton}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="B" CornerRadius="10" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" 
+                                Width="{TemplateBinding Width}" VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" x:Name="indicator" Height="12" Width="12" CornerRadius="10"
+                                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <Image Grid.Column="1" Stretch="Uniform" Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="indicator" Property="Background" Value="{DynamicResource ProfileImageBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+        
+     
+        <!--Vacancy GMP Icon Button-->
+        <Style x:Key="GMP" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource GMPColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" BorderThickness="0" Height="{TemplateBinding Height}" 
+                            Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path x:Name="P" Grid.Column="0" Fill="#d80032"
+                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" 
+                                  Height="25" Width="25" 
+                                  Stretch="Uniform" Margin="5 0 0 0"/>
+                            <Label x:Name="Lbl" Grid.Column="1" Content="{DynamicResource GMPVacancy}" Padding="{TemplateBinding Padding}"
+                                   FontFamily="{TemplateBinding FontFamily}" Foreground="{TemplateBinding Foreground}"
+                                   FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                   Margin="5 0"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" Value="#d90429" TargetName="P"/>
+                            <Setter Property="Foreground" Value="{DynamicResource lblVacancyLongLatitudeAnswerMouseOverColor}" TargetName="Lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Fill" Value="#d80032" TargetName="P"/>
+                            <Setter Property="Foreground" Value="{DynamicResource lblVacancyLongLatitudeAnswerColor}" TargetName="Lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" Value="#bf0603" TargetName="P"/>
+                            <Setter Property="Foreground" Value="{DynamicResource lblVacancyLongLatitudeAnswerMouseOverColor}" TargetName="Lbl"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 
 </ResourceDictionary>

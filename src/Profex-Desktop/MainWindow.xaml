@@ -50,7 +50,7 @@
                                 </Grid.RowDefinitions>
                                 <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                 Click="rbDashboard_Click" Style="{DynamicResource SideBarButton}"
-                                                    Tag="{DynamicResource Dashboard}">
+                                                    Tag="{DynamicResource Dashboard1}" RenderTransformOrigin="0.529,0.552">
                                     <RadioButton.ToolTip>
                                         <TextBlock>Asosiy</TextBlock>
                                     </RadioButton.ToolTip>
