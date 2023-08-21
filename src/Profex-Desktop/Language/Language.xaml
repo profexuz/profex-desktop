@@ -16,10 +16,18 @@
     <Label x:Key="labelDistrictVacancy" Foreground="{DynamicResource lblVacancyDistrictColor}">TUMAN</Label>
     <Label x:Key="labelDistrictAnswerVacancy" Foreground="{DynamicResource lblVacancyDistrictAnswerColor}">Chilonzor 9 kv</Label>
     <Label x:Key="labelLongLatitudeVacancy" Foreground="{DynamicResource lblVacancyLongLatitudeColor}">MANZIL</Label>
-    <Label x:Key="GMPVacancy" Foreground="{DynamicResource GMPColor}">Manzilni ko'rish uchun bosing</Label>
+    <Label x:Key="GMPVacancy" Foreground="{DynamicResource GMPColor}">Manzilni ko'rish</Label>
     <Label x:Key="labelPhoneNum" Foreground="{DynamicResource PhoneNumColor}">BUYURTMACHI</Label>
     <Label x:Key="labelPhoneNumAnswer" Foreground="{DynamicResource PhoneNumAnswerColor}">+998913774506</Label>
+    
+    <!--Masters Page-->
+    <Label x:Key="labelMastersHeader" Foreground="{DynamicResource lblMastersHeaderColor}">USTALAR</Label>
+    <Label x:Key="labelMasterNameHeader" Padding="0" Foreground="{DynamicResource lblMastersNameColor}">JAVLONBEK</Label>
+    <Label x:Key="labelMasterSureNameHeader" Padding="0" Foreground="{DynamicResource lblMastersSureNameColor}">YO'LDASHEV</Label>
+    <Label x:Key="labelMasterOnlineHeader" Padding="0" Foreground="{DynamicResource lblMastersOnlineColor}">TARMOQDA</Label>
 
+    <MenuItem x:Key="MasterCategories1" Foreground="{DynamicResource PrimaryBackground}">Qurilish va ta'mirlash</MenuItem>
+    <Label x:Key="MasterCategories2" Foreground="{DynamicResource PrimaryBackground}">Qurilish va ta'mirlash</Label>
 
     <Label x:Key="Profexabouttext" Foreground="{DynamicResource ProfileImageBackground}">Izlash...</Label>
 
