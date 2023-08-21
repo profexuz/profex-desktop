@@ -34,5 +34,18 @@
     <SolidColorBrush x:Key="txtDescriptionColor" Color="#fdfcdc"/>
     <SolidColorBrush x:Key="PhoneNumColor" Color="#fdfcdc"/>
     <SolidColorBrush x:Key="PhoneNumAnswerColor" Color="#bcb8b1"/>
+    <SolidColorBrush x:Key="brLineColor" Color="#edede9"/>
+    <SolidColorBrush x:Key="lblMastersHeaderColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblMastersAccountColor" Color="#8338ec"/>
+    <SolidColorBrush x:Key="lblMastersNameColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblMastersSureNameColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblMastersOnlineColor" Color="#bcb8b1"/>
+    
+    
+    
+    <!--MasterEditPageForeGrounds-->
+    <SolidColorBrush x:Key="lblFirstNameColor" Color="#bcb8b1"/>
+    <SolidColorBrush x:Key="lblFirstNameAnswerColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblLastNameColor" Color="#bcb8b1"/>
 
 </ResourceDictionary>

@@ -239,7 +239,7 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="5 10 0 0"/>
+        <Setter Property="Margin" Value="5"/>
     </Style>
     
     <!--Region label style-->
@@ -304,7 +304,7 @@
     <!--Cost label style-->
     <Style x:Key="lblCostVacancy" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource labelCosts}"/>
-        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontSize" Value="35"/>
         <Setter Property="Foreground" Value="{DynamicResource lblCostColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -353,5 +353,143 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!--PhoneNumAnswer label style-->
+    <Style x:Key="lblHeaderMasters" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="{DynamicResource labelMastersHeader}"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblMastersHeaderColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="10 5"/>
+    </Style>
+
+    <!--Top My Account label for Masters-->
+    <Style x:Key="Myinfo" TargetType="{x:Type Label}">
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border x:Name="B" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="35" Height="50" Width="50"  Background="{DynamicResource lblMastersAccountColor}">
+                        <Ellipse Height="48" Width="48">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Label My Name-->
+    <Style x:Key="MyName" TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="{DynamicResource lblMastersNameColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Content" Value="{DynamicResource labelMasterNameHeader}"/>
+    </Style>
+
+    <!--Label Sure Name-->
+    <Style x:Key="OnlineMaster" TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="{DynamicResource lblMastersOnlineColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Content" Value="{DynamicResource labelMasterOnlineHeader}"/>
+        <Setter Property="Margin" Value="10 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border x:Name="B" BorderThickness="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Grid.Column="0"
+                                  Data="{DynamicResource server}"
+                                  Fill="{DynamicResource lblMastersOnlineColor}"
+                                  Opacity="0.5" Height="10" Width="10"
+                                  Stretch="Uniform"/>
+                            <Label Grid.Column="1" Content="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}"
+                                   Foreground="{TemplateBinding Foreground}" FontFamily="{TemplateBinding FontFamily}"
+                                   Padding="{TemplateBinding Padding}" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Label Fisrt Name For MasterEditePage-->
+    <Style x:Key="lblFirstNameMaster" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Ismi"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblFirstNameColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!--Label Fisrt Name Answer For MasterEditePage-->
+    <Style x:Key="lblFirstNameAnswerMaster" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Javlonbek"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!--Label Last Name For MasterEditePage-->
+    <Style x:Key="lblLastNameMaster" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Familiyasi"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblLastNameColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!--Label PhoneNum For MasterEditePage-->
+    <Style x:Key="lblPhoneNumMaster" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Telefon raqami"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblLastNameColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!--Label IsFree For MasterEditePage-->
+    <Style x:Key="lblIsFree" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Bandman"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblLastNameColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Padding" Value="0"/>
     </Style>
 </ResourceDictionary>

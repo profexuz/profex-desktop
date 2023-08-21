@@ -1,0 +1,123 @@
+﻿<Page x:Class="Profex_Desktop.Pages.MasterEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Profex_Desktop.Pages"
+      mc:Ignorable="d" 
+      Height="auto" Width="auto"
+      Title="MasterEditPage" 
+      Background="Transparent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" x:Name="lblProfile" 
+               Content="PROFILE" Foreground="White"
+               Margin="10 0"
+               FontSize="25" VerticalAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Height="280" Width="280" 
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        BorderBrush="{DynamicResource ProfileImageBackground}"
+                        BorderThickness="1" CornerRadius="10"
+                        Margin="50 50 0 0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Assets/Profile images/DefaultProfileImage.png" />
+                    </Border.Background>
+                </Border>
+
+                <Border Grid.Row="1" Height="50" Width="280"
+                        Margin="50 10 0 0"
+                        CornerRadius="10" BorderThickness="1,1,1,1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                    <Border.BorderBrush>
+                            <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile">
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing Brush="White">
+                                            <GeometryDrawing.Geometry>
+                                                <GeometryGroup>
+                                                    <RectangleGeometry Rect="0,0,50,50" />
+                                                    <RectangleGeometry Rect="50,50,50,50" />
+                                                </GeometryGroup>
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.BorderBrush>
+
+                    <Label Content="Rasm joylash" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" Foreground="White"/>
+                </Border>
+                    
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="40 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Bottom"
+                            Margin="10 45 10 10">
+                    <Label x:Name="lblFistName" Style="{DynamicResource lblFirstNameMaster}"/>
+                    <TextBox Grid.Row="0" Text="JAVLONBEK" Style="{DynamicResource txtFirstNameMaster}"
+                             IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom"
+                            Margin="10 0">
+                    <Label x:Name="lblLastName" Style="{DynamicResource lblLastNameMaster}"/>
+                    <TextBox Grid.Row="0" Text="DJALEKEEV" Style="{DynamicResource txtFirstNameMaster}"
+                             IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom"
+                            Margin="10 10">
+                    <Label x:Name="lblPhoneNum" Style="{DynamicResource lblPhoneNumMaster}"/>
+
+                    <TextBox Grid.Row="0" Text="+998913774506" Style="{DynamicResource txtFirstNameMaster}"
+                                 PreviewTextInput="NumberValidationTextBox"
+                                 IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Vertical" VerticalAlignment="Bottom"
+                            Margin="10 0">
+                    <Label x:Name="lblIsFree" Style="{DynamicResource lblIsFree}"/>
+
+                    <ComboBox x:Name="cmbIsFree" 
+                              Style="{DynamicResource RoundComboBoxMaster}"
+                              HorizontalAlignment="Left" IsReadOnly="True">
+                        <ComboBoxItem IsSelected="True">HA</ComboBoxItem>
+                        <ComboBoxItem>YO'Q</ComboBoxItem>
+                    </ComboBox>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Style="{DynamicResource btnCancel}"/>
+            <Button Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
+        </Grid>
+    </Grid>
+</Page>

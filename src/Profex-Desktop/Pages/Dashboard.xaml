@@ -46,10 +46,11 @@
                     <Label Grid.Row="1" Style="{DynamicResource ProfexInfoUnderHeader}"/>
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark.png"/>
+                        <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark.png"
+                               Height="200" Width="200" Stretch="Fill"/>
                         <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
                                    >Here is a long description that spans across multiple lines. 
                                             It will automatically wrap to the next line as needed.

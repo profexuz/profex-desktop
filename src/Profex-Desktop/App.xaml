@@ -15,6 +15,8 @@
                 <ResourceDictionary Source="Styles/BorderStyles.xaml"/>
                 <ResourceDictionary Source="Styles/ScrollViewerStyle.xaml"/>
                 <ResourceDictionary Source="Styles/ComboBOxStyles.xaml"/>
+                <ResourceDictionary Source="Styles/TabPanelStyles.xaml"/>
+                <ResourceDictionary Source="Styles/MenuStyle.xaml"/>
 
                 <ResourceDictionary Source="TextStyles/TextStyle.xaml"/>
                 <ResourceDictionary Source="Language/Language.xaml"/>

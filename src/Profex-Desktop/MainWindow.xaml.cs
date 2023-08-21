@@ -82,12 +82,14 @@ namespace Profex_Desktop
 
         private void rbMasters_Click(object sender, RoutedEventArgs e)
         {
-
+            MastersPage mastersPage = new MastersPage();
+            PageNavigator.Navigate(mastersPage);
         }
 
         private void rbAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            MasterEditPage masterEdit = new MasterEditPage();
+            PageNavigator.Navigate(masterEdit);
         }
 
         private void rbSetting_Click(object sender, RoutedEventArgs e)
@@ -97,7 +99,14 @@ namespace Profex_Desktop
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch
+            {
+               
+            }
         }
 
         //private void IsChecked(object sender, RoutedEventArgs e)
