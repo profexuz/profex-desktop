@@ -51,6 +51,7 @@ namespace Profex_Desktop
 
         private async void rbDashboard_Click(object sender, RoutedEventArgs e)
         {
+            appName.Content = "ASOSIY";
             Dashboard dashboard = new Dashboard();
             PageNavigator.Navigate(dashboard);
         }
@@ -70,12 +71,14 @@ namespace Profex_Desktop
 
         private void rbVacancies_Click(object sender, RoutedEventArgs e)
         {
+            appName.Content = "ISHLAR";
             Vacancies vacancy = new Vacancies();
             PageNavigator.Navigate(vacancy);
         }
 
         private void rbFAQs_Click(object sender, RoutedEventArgs e)
         {
+            appName.Content = "SAVOL-JAVOB";
             FaqsPage faqsPage = new FaqsPage();
             PageNavigator.Navigate(faqsPage);
         }
@@ -101,18 +104,16 @@ namespace Profex_Desktop
 
         private void rbMasters_Click(object sender, RoutedEventArgs e)
         {
+            appName.Content = "USTALAR";
             MastersPage mastersPage = new MastersPage();
             PageNavigator.Navigate(mastersPage);
         }
 
         private void rbAccount_Click(object sender, RoutedEventArgs e)
         {
+            appName.Content = "PROFILE";
             MasterEditPage masterEdit = new MasterEditPage();
             PageNavigator.Navigate(masterEdit);
-        }
-
-        private void rbSetting_Click(object sender, RoutedEventArgs e)
-        {
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

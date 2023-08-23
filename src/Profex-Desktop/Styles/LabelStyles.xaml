@@ -234,13 +234,13 @@
     <!--Label for about Vacancy Title-->
     <Style x:Key="lblTitleForVacancy" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource labelTitleVacancy}"/>
-        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="{DynamicResource lblVacancyTitleColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Margin" Value="5 10 5 0"/>
     </Style>
     
     <!--Region label style-->
@@ -276,7 +276,6 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="5"/>
     </Style>
 
     <!--District answer label style-->
@@ -299,7 +298,7 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Margin" Value="0"/>
     </Style>
 
     <!--Cost label style-->
@@ -324,7 +323,8 @@
                               Data="{DynamicResource cash}" VerticalAlignment="Center"
                               HorizontalAlignment="Center"
                               Fill="{DynamicResource lblCostColor}"/>
-                        <Label Grid.Column="1" Content="{DynamicResource labelCosts}" Padding="0"/>
+                        <Label Grid.Column="1" Content="{TemplateBinding Content}" 
+                               Foreground="{DynamicResource lblCostColor}" Padding="0"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -340,8 +340,6 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Padding" Value="0"/>
-        <Setter Property="Margin" Value="5"/>
     </Style>
 
     <!--PhoneNumAnswer label style-->

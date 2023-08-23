@@ -181,7 +181,7 @@
                                   VerticalAlignment="Center"
                                   Data="M 0 0 L 4 4 L 8 0 Z"
                                   Stretch="Uniform"
-                                  Height="15" Width="15"
+                                  Height="10" Width="10"
                                   Fill="DodgerBlue" />
                         </ToggleButton>
                         <ContentPresenter Name="ContentSite"

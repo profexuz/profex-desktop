@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.AboutVacancy"
         mc:Ignorable="d"
-        WindowStyle="None" Background="{DynamicResource PrimaryBackground}"
+        WindowStyle="None" 
         Title="AboutVacancyWindow"
         Loaded="Window_Loaded"
-        Height="650" Width="1000" WindowStartupLocation="CenterScreen">
+        Height="650" Width="1200" 
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        ResizeMode="NoResize" Background="Transparent">
 
-
+    <Border CornerRadius="20" Padding="10" BorderThickness="2" BorderBrush="DarkGray"
+        Background="{DynamicResource PrimaryBackground}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="700"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0"
@@ -24,17 +27,17 @@
             <RadioButton x:Name="rbImg" IsChecked="True" Click="rbImg_Click" Style="{DynamicResource Images}"
                 Content="../Assets/Images/somebreakedthing1.jpeg" />
 
-            <RadioButton x:Name="rbImg1"  Click="rbImg1_Click" Style="{DynamicResource Images}"
+            <RadioButton x:Name="rbImg1" Visibility="Hidden" Click="rbImg1_Click" Style="{DynamicResource Images}"
                          Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing2.jpeg"/>
 
-            <RadioButton x:Name="rbImg2"  Click="rbImg2_Click" Style="{DynamicResource Images}"
+            <RadioButton x:Name="rbImg2" Visibility="Hidden" Click="rbImg2_Click" Style="{DynamicResource Images}"
                          Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing3.jpg"/>
 
-            <RadioButton x:Name="rbImg3"  Click="rbImg3_Click" Style="{DynamicResource Images}"
+            <RadioButton x:Name="rbImg3" Visibility="Hidden" Click="rbImg3_Click" Style="{DynamicResource Images}"
                          Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing4.jpg"/>
 
         </StackPanel>
-        <Border Grid.Column="1">
+        <Border Grid.Column="1" CornerRadius="20">
             <Border.Background>
                 <ImageBrush x:Name="imgMain"/>
             </Border.Background>
@@ -75,23 +78,23 @@
                     <Label Grid.Column="0" x:Name="lblDistrict" Style="{DynamicResource lblDistrict}"/>
                     <Label Grid.Column="1" x:Name="lblDistrictAnswer" Style="{DynamicResource lblDistrictAnswer}"/>
                 </Grid>
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0"  x:Name="lblLongLatitudes" Style="{DynamicResource lblLongLangtitude}"/>
-                    <Button Grid.Column="1" x:Name="btnLongLatitudeAnswer" Style="{DynamicResource GMP}" Tag="{DynamicResource maps}"/>
-                </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Foreground="White" Style="{DynamicResource lblPhoneNumVacancy}"/>
-                    <Label Grid.Column="1" Foreground="White" Style="{DynamicResource lblPhoneNumAnswerVacancy}"/>
+                    <Label x:Name="lblUserName" Grid.Column="1" Style="{DynamicResource lblPhoneNumAnswerVacancy}"/>
                 </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"  x:Name="lblPhone" Style="{DynamicResource lblLongLangtitude}"/>
+                    <Label Grid.Column="1" x:Name="lblPhoneNum" Style="{DynamicResource lblPhoneNumAnswerVacancy}"/>
+                </Grid>
+                
             </StackPanel>
             <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
 
@@ -100,17 +103,19 @@
                     BorderBrush="{DynamicResource ProfileImageBackground}"
                     Padding="5" Margin="10">
                 <ScrollViewer Visibility="Visible">
-                    <TextBlock Style="{DynamicResource txtDescription}"
+                    <TextBlock x:Name="txtDesc" Style="{DynamicResource txtDescription}"
                                 Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
                 </ScrollViewer>
             </Border>
 
             <!--Cost for work-->
-            <Label Grid.Row="3" Style="{DynamicResource lblCostVacancy}"/>
+            <Label x:Name="lblCost" Grid.Row="3" Style="{DynamicResource lblCostVacancy}"
+                   Foreground="{DynamicResource lblCostColor}"/>
 
             <!--Take this work button-->
             
 
         </Grid>
     </Grid>
+    </Border>
 </Window>

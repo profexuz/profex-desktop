@@ -5,26 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profex_Desktop.Components.Vacancies"
              mc:Ignorable="d" 
-             Height="250" Width="220" Margin="5">
+             Height="270" Width="220" Margin="5">
     <Border CornerRadius="15" Padding="5" 
             Background="{DynamicResource vacancyComponent}"
             MouseDown="Border_MouseDown"
             Cursor="Hand">
         <Grid>
         <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
-            <StackPanel  Grid.Row="0" Orientation="Horizontal">
-                <Label x:Name="ClockIcon" Style="{DynamicResource ClockIconlabel}"/>
-                <Label x:Name="lblDay" Content="{DynamicResource lblDays}"
-                       Style="{DynamicResource lblDay}"/>
-                <Image Source="/Assets/Images/ProfexLogoDark.png" 
-                       Margin="130 0 0 0" Opacity="0.7"/>
-
-            </StackPanel>
-        <Border Grid.Row="1" Padding="10"
+            
+        <Border Grid.Row="0" Padding="10"
                     Height="auto" CornerRadius="15">
                 <Border.Background>
                     <ImageBrush x:Name="VacancieImg" Stretch="UniformToFill" ImageSource="/Assets/Images/defaultvacanciesimg.jpg"/>
@@ -32,7 +24,9 @@
             </Border>
             <StackPanel Grid.Row="2" Margin="0" Orientation="Vertical">
                 <Label x:Name="lblTitle" Style="{DynamicResource lblTitle}"/>
-                <Label x:Name="lblCost" Style="{DynamicResource lblCost}"/>
+                <Border x:Name="brLine" Height="1" Width="180" 
+                        Background="{DynamicResource bcgBr}" Margin="5"/>
+                <Label x:Name="lblCost" Content="200000 SO'M" Style="{DynamicResource lblCost}"/>
             </StackPanel>
         </Grid>
     </Border>

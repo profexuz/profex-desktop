@@ -15,6 +15,7 @@ public class API
 
     //Vacancies part
     public static readonly string GETALL_VACANCY = BASE_URL + "common/post";
+    public static readonly string GETBYID_VACANCY = BASE_URL + "common/post/join";
 
 
     //Users part

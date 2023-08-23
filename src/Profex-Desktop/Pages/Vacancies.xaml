@@ -20,14 +20,11 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="ISHLAR" Style="{DynamicResource Asosiy}"
-                  HorizontalAlignment="Left"/>
         <StackPanel Grid.Row="0"
                     Orientation="Horizontal"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Center"
                     Margin="0 20">
-            
             <Grid>
                 <Label x:Name="txtblc" Style="{DynamicResource plholder}"
                        Panel.ZIndex="0"
@@ -40,16 +37,6 @@
 
             <ComboBox x:Name="cmbCategory"
                       Style="{DynamicResource RoundComboBox}">
-                <ComboBoxItem Content="1"/>
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="3"/>
-                <ComboBoxItem Content="4"/>
-                <ComboBoxItem Content="5"/>
-                <ComboBoxItem Content="6"/>
-                <ComboBoxItem Content="7"/>
-                <ComboBoxItem Content="8"/>
-                <ComboBoxItem Content="9"/>
-                <ComboBoxItem Content="Boshqa"/>
             </ComboBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical">
