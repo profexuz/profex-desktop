@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.Utils.Url;
+using Profex_Integrated.Services.Vacancies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,9 @@ namespace Profex_Desktop.Windows.AboutVacancy
     /// </summary>
     public partial class AboutVacancyWindow : Window
     {
+        private VacancyService _vacancyService = new VacancyService();
+        public long vacancyId;
+        private string BASE_URL = "http://95.130.227.187/";
         public AboutVacancyWindow()
         {
             InitializeComponent();
@@ -49,17 +54,60 @@ namespace Profex_Desktop.Windows.AboutVacancy
             imgMain.ImageSource = imageSource;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ImageSource imageSource = new BitmapImage(new Uri(rbImg.Content.ToString()!));
-            imgMain.ImageSource = imageSource;
+            try
+            {
+                var result = await _vacancyService.GetByIdAsync(vacancyId);
+                foreach (var item in result)
+                {
+                    if (result != null)
+                    {
+                        if (item.ImagePath.Count > 0)
+                        {
+                            Uri imageUri = new Uri(BASE_URL + item.ImagePath[0], UriKind.Absolute);
+                            imgMain.ImageSource = new BitmapImage(imageUri);
+                            rbImg.Visibility = Visibility.Visible;
+                            rbImg.Content = new BitmapImage(imageUri);
+                            if (item.ImagePath.Count > 1)
+                            {
+                                rbImg1.Visibility = Visibility.Visible;
+                                Uri imageUri1 = new Uri(BASE_URL + item.ImagePath[1], UriKind.Absolute);
+                                rbImg1.Content = new BitmapImage(imageUri1);
+                                if (item.ImagePath.Count > 2)
+                                {
+                                    rbImg2.Visibility = Visibility.Visible;
+                                    Uri imageUri2 = new Uri(BASE_URL + item.ImagePath[2], UriKind.Absolute);
+                                    rbImg2.Content = new BitmapImage(imageUri2);
+                                    if (item.ImagePath.Count > 3)
+                                    {
+                                        rbImg3.Visibility = Visibility.Visible;
+                                        Uri imageUri3 = new Uri(BASE_URL + item.ImagePath[3], UriKind.Absolute);
+                                        rbImg3.Content = new BitmapImage(imageUri3);
+                                    }
+                                }
+                            }
+                        }
+
+
+                        lblTitle.Content = item.Title;
+                        lblRegionAnswer.Content = item.Region;
+                        lblDistrictAnswer.Content = item.District;
+                        lblUserName.Content = item.FirstName + " " + item.LastName;
+                        lblPhoneNum.Content = item.PhoneNumber;
+                        txtDesc.Text = item.Description;
+                        lblCost.Content = item.Price.ToString()+" SO'M";
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Internet bilan muammo yuzaga keldi.");
+            }
+
+
+
         }
-
-        private void btnLongLatitudeAnswer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();

@@ -1,4 +1,6 @@
-﻿using Profex_Desktop.Components.Vacancies;
+﻿using Profex_Desktop.Components.Loading;
+using Profex_Desktop.Components.Vacancies;
+using Profex_Integrated.Services.Vacancies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Profex_Desktop.Pages
 {
@@ -21,26 +24,46 @@ namespace Profex_Desktop.Pages
     /// </summary>
     public partial class Vacancies : Page
     {
-        private string[] values = { "5 KUN", "salomdunyo", "50000 so'm" };
-        
+        private VacancyService _vacancyService = new VacancyService();
+        private string BASE_URL = "http://95.130.227.187/";
+
+
         public Vacancies()
         {
             InitializeComponent();
-        }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        }
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             wrpNewsVacancy.Children.Clear();
             wrpAdvertising.Children.Clear();
-            for (int i = 0; i < 6; i++)
+            var result = await _vacancyService.GetAllAsync(1);
+            string[] values = new string[3];
+            byte count = 0;
+            foreach ( var item in result)
             {
+                if (count == 6) break; count++;
                 Vacancy vacancy = new Vacancy();
+                vacancy.vacancyId = item.Id;
+                values[0] = BASE_URL + item.ImagePath[0];
+                values[1] = item.Title;
+                values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpNewsVacancy.Children.Add(vacancy);
             }
-            for (int i = 0; i < 30; i++)
+            count = 0;
+            foreach (var item in result)
             {
+                if (count <= 6) 
+                { 
+                    count++;
+                    continue;
+                }
                 Vacancy vacancy = new Vacancy();
+                vacancy.vacancyId = item.Id;
+                values[0] = BASE_URL + item.ImagePath[0];
+                values[1] = item.Title;
+                values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpAdvertising.Children.Add(vacancy);
             }
@@ -48,21 +71,7 @@ namespace Profex_Desktop.Pages
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            if(Search.Text.Length > 0)
-            {
-                wrpNewsVacancy.Children.Clear();
-                NewAdded.Visibility = Visibility.Hidden;
-                wrpNewsVacancy.Visibility = Visibility.Hidden;
-                wrpAdvertising.Children.Clear();
-
-                for (int i = 0; i < 30; i++)
-                {
-                    Vacancy vacancy = new Vacancy();
-                    values[1] = Search.Text;
-                    vacancy.SetData(values);
-                    wrpAdvertising.Children.Add(vacancy);
-                }
-            }
+            
         }
     }
 }

@@ -23,20 +23,24 @@ namespace Profex_Desktop.Components.Vacancies
     /// </summary>
     public partial class Vacancy : UserControl
     {
+        public long vacancyId;
         public Vacancy()
         {
             InitializeComponent();
         }
         public void SetData(string[] values)
         {
-            lblDay.Content = values[0];
+            Uri imageUri = new Uri(values[0], UriKind.Absolute);
+            VacancieImg.ImageSource = new BitmapImage(imageUri);
             lblTitle.Content = values[1];
             lblCost.Content = values[2];
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
            AboutVacancyWindow vacancyWindow = new AboutVacancyWindow();
+            vacancyWindow.vacancyId = vacancyId;
             vacancyWindow.Show();
         }
     }
