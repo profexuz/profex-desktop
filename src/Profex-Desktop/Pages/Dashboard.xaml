@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Pages"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       mc:Ignorable="d"
       Height="auto" Width="auto"
       Background="Transparent"
@@ -20,38 +21,37 @@
         </Storyboard>
     </Page.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="400"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Style="{DynamicResource Asosiy}"/>
-            <Border Grid.Row="1" Style="{DynamicResource ProfexInfoBorder}">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="5" Opacity="0.2"/>
-                </Border.Effect>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Style="{DynamicResource ProfexINfoHeader}"/>
-                    <Label Grid.Row="1" Style="{DynamicResource ProfexInfoUnderHeader}"/>
-                    <Grid Grid.Row="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark.png"
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Style="{DynamicResource ProfexInfoBorder}">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" Opacity="0.2"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{DynamicResource ProfexINfoHeader}"/>
+                        <Label Grid.Row="1" Style="{DynamicResource ProfexInfoUnderHeader}"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark.png"
                                Height="200" Width="200" Stretch="Fill"/>
-                        <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
+                            <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
                                    >Here is a long description that spans across multiple lines. 
                                             It will automatically wrap to the next line as needed.
                                             Lorem Ipsum is simply dummy text of 
@@ -66,122 +66,122 @@
                                             passages, and more recently with desktop publishing software like 
                                             Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
 
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Border>
+                </Border>
 
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0" 
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" 
                         Style="{DynamicResource ProfexInfoBorder}"/>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" Height="90" Width="110" 
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Height="90" Width="110" 
                             CornerRadius="30">
-                        <Image Height="90" x:Name="ProfileImg" Source="/Assets/Images/nimalardur.png"/>
-                    </Border>
-                    <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-                        <Label Content="Foydalanuvchilar"
+                            <Image Height="90" x:Name="ProfileImg" Source="/Assets/Images/nimalardur.png"/>
+                        </Border>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Label Content="Foydalanuvchilar"
                            Foreground="{DynamicResource ProfileImageBackground}"
                            FontFamily="{DynamicResource FontFamilyNormal}"
                            FontSize="18" FontWeight="Bold"/>
-                        <Label Content="Soni"
+                            <Label Content="Soni"
                            Foreground="{DynamicResource ProfileImageBackground}"
                            FontFamily="{DynamicResource FontFamilyNormal}"
                            FontSize="16" Opacity="0.5"/>
-                    </StackPanel>
-                    <Label Grid.Column="2"
+                        </StackPanel>
+                        <Label Grid.Column="2" x:Name="AllUsers"
                            Content="125K" 
                            Foreground="White"
                            FontSize="35" VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
-                </Grid>
+                    </Grid>
 
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" 
-                        Style="{DynamicResource ProfexInfoBorder}"/>
-                    <Grid Grid.Column="0">
+                    <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="90"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="0" Height="90" Width="110" 
+                        <Border Grid.Column="0" 
+                        Style="{DynamicResource ProfexInfoBorder}"/>
+                        <Grid Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Height="90" Width="110" 
                             CornerRadius="30">
-                            <Image Height="70" Width="70" x:Name="ProfileIm" Source="/Assets/Images/builders.png"/>
-                        </Border>
-                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-                            <Label Content="Ustalar"
+                                <Image Height="70" Width="70" x:Name="ProfileIm" Source="/Assets/Images/builders.png"/>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Label Content="Ustalar"
                            Foreground="{DynamicResource ProfileImageBackground}"
                            FontFamily="{DynamicResource FontFamilyNormal}"
                            FontSize="18" FontWeight="Bold"/>
-                            <Label Content="Soni"
+                                <Label Content="Soni"
                            Foreground="{DynamicResource ProfileImageBackground}"
                            FontFamily="{DynamicResource FontFamilyNormal}"
                            FontSize="16" Opacity="0.5"/>
-                        </StackPanel>
-                        <Label Grid.Column="2"
+                            </StackPanel>
+                            <Label Grid.Column="2" x:Name="MastersCount"
                            Content="12K" 
                            Foreground="White"
                            FontSize="25" VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
-                    </Grid>
+                        </Grid>
 
-                    <Border Grid.Column="1" 
+                        <Border Grid.Column="1" 
                         Style="{DynamicResource ProfexInfoBorder}"/>
-                    <Grid Grid.Column="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="90"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="90"/>
-                        </Grid.ColumnDefinitions>
-                        <Border Grid.Column="0" Height="90" Width="100" 
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Height="90" Width="100" 
                             CornerRadius="30" Padding="0">
-                            <Image Height="60" x:Name="ProfileImgg" Source="/Assets/Images/Vacancy.png"/>
-                        </Border>
-                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-                            <Label Content="Ishlar"
+                                <Image Height="60" x:Name="ProfileImgg" Source="/Assets/Images/Vacancy.png"/>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Label Content="Ishlar"
                            Foreground="{DynamicResource ProfileImageBackground}"
                            FontFamily="{DynamicResource FontFamilyNormal}"
                            FontSize="18" FontWeight="Bold"/>
-                            <Label Content="Soni"
+                                <Label Content="Soni"
                            Foreground="{DynamicResource ProfileImageBackground}"
                            FontFamily="{DynamicResource FontFamilyNormal}"
                            FontSize="16" Opacity="0.5"/>
-                        </StackPanel>
-                        <Label Grid.Column="2"
+                            </StackPanel>
+                            <Label Grid.Column="2" x:Name="VacancyCount"
                            Content="30K" 
                            Foreground="White"
                            FontSize="25" VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
+                        </Grid>
                     </Grid>
-                </Grid>
 
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="55"/>
-                    <RowDefinition Height="340"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="1" 
+            <Grid Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="340"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="1" 
                         Background="{DynamicResource profexINFObackgr}"
                         CornerRadius="30" Margin="10 0"/>
-                <Border Grid.Row="1" Padding="10 5">
-                    <ScrollViewer
+                    <Border Grid.Row="1" Padding="10 5">
+                        <ScrollViewer
                                         x:Name="stpWord_groupChips"
                                             VerticalScrollBarVisibility="Auto"
                                                     VerticalAlignment="Top"
@@ -193,22 +193,21 @@
 
                         </ScrollViewer>
 
-                </Border>
+                    </Border>
 
-                <Border Grid.Row="2" 
+                    <Border Grid.Row="2" 
                         Background="{DynamicResource profexINFObackgr}"
                         CornerRadius="30" Margin="10 10"/>
-                <Border Grid.Row="2">
-                    <WrapPanel x:Name="wrpVacancies" Orientation="Vertical">
+                    <Border Grid.Row="2">
+                        <WrapPanel x:Name="wrpVacancies" Orientation="Vertical">
 
-                    </WrapPanel>
+                        </WrapPanel>
 
-                </Border>
+                    </Border>
 
 
+                </Grid>
             </Grid>
+
         </Grid>
-        
-    </Grid>
-    
 </Page>

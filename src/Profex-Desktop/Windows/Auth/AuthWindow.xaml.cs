@@ -15,9 +15,6 @@ namespace Profex_Desktop.Windows.Auth
         private LoginPage login = new LoginPage();
         private string signUP = "Ro'yxatdan o'tish"; 
         private string signIn = "Kirish";
-        private string Ihave = "Ro'yxatdan o'tganman";
-        private string Ihavenot = "Ro'yxatdan o'tmaganman";
-        public bool signUp_In { get; set; } = true;
 
 
         public AuthWindow()
@@ -31,7 +28,6 @@ namespace Profex_Desktop.Windows.Auth
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoginPage login = new LoginPage();
             registerFrame.Navigate(login);
         }
 

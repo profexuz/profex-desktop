@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Windows.AuthPages"
       mc:Ignorable="d" 
-      Height="402" Width="360"
+      Height="410" Width="360"
       Title="RegisterPage"
       Background="Transparent">
 
@@ -18,7 +18,7 @@
             <RowDefinition Height="75"/>
             <RowDefinition Height="75"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
 
         <!--First and Last name labels and textboxes-->
@@ -95,13 +95,6 @@
                 Style="{DynamicResource bntSignUp}"
                 IsEnabled="False"
                 Content="Ro'yxatdan o'tish"/>
-        
-        <!--I have an account already-->
-        <Button x:Name="Ihavenotaccount"
-                Click="Ihavenotaccount_Click"
-                Grid.Row="6"
-            Content="Men ro'yxatdan o'tganman" 
-                Style="{DynamicResource btnIhave}"/>
     </Grid>
 </Page>
 

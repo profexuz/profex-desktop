@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Windows.AuthPages"
       mc:Ignorable="d" 
-      Height="400" Width="360"
+      Height="auto" Width="360"
       Title="LoginPage"
       Loaded="Page_Loaded"
       Background="Transparent">

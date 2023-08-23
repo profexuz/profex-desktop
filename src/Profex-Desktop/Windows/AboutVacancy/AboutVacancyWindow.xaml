@@ -22,7 +22,7 @@
                     HorizontalAlignment="Center"
                     Orientation="Vertical">
             <RadioButton x:Name="rbImg" IsChecked="True" Click="rbImg_Click" Style="{DynamicResource Images}"
-                Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing1.jpeg" />
+                Content="../Assets/Images/somebreakedthing1.jpeg" />
 
             <RadioButton x:Name="rbImg1"  Click="rbImg1_Click" Style="{DynamicResource Images}"
                          Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing2.jpeg"/>

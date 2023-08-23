@@ -65,8 +65,8 @@
 
             <Grid Grid.Column="1" Background="#2d00f7">
         <Border  Background="{DynamicResource PrimaryBackground}" CornerRadius="40 0 0 0"/>
-            <Border VerticalAlignment="Center" HorizontalAlignment="Center"
-                Height="450" Width="360" Background="{DynamicResource SideBarBackground}"
+            <Border VerticalAlignment="Top" Margin="0 90 0 0" HorizontalAlignment="Center"
+                Height="auto" Width="360" Background="{DynamicResource SideBarBackground}"
                     CornerRadius="20">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" 

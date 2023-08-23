@@ -17,15 +17,14 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" x:Name="lblProfile" 
-               Content="PROFILE" Foreground="White"
-               Margin="10 0"
-               FontSize="25" VerticalAlignment="Center"/>
+               Content="PROFIL" Style="{DynamicResource Asosiy}"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="70.2"/>
+                <ColumnDefinition Width="259.8"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
@@ -47,29 +46,29 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top">
                     <Border.BorderBrush>
-                            <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile">
-                                <DrawingBrush.Drawing>
-                                    <DrawingGroup>
-                                        <GeometryDrawing Brush="White">
-                                            <GeometryDrawing.Geometry>
-                                                <GeometryGroup>
-                                                    <RectangleGeometry Rect="0,0,50,50" />
-                                                    <RectangleGeometry Rect="50,50,50,50" />
-                                                </GeometryGroup>
-                                            </GeometryDrawing.Geometry>
-                                        </GeometryDrawing>
-                                    </DrawingGroup>
-                                </DrawingBrush.Drawing>
-                            </DrawingBrush>
-                        </Border.BorderBrush>
+                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White">
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                <RectangleGeometry Rect="50,50,50,50" />
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.BorderBrush>
 
                     <Label Content="Rasm joylash" VerticalAlignment="Center"
                                HorizontalAlignment="Center" Foreground="White"/>
                 </Border>
-                    
+
             </Grid>
 
-            <Grid Grid.Column="1" Margin="40 0">
+            <Grid Grid.Column="2" Margin="40,0,40,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>

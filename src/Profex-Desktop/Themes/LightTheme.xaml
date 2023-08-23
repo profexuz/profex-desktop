@@ -1,12 +1,51 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="PrimaryBackground" Color="#ffff"/>
-    <SolidColorBrush x:Key="SideBarBackground" Color="#fefae0"/>
-    <SolidColorBrush x:Key="ProfileImageBackground" Color="#141718"/>
 
-    <!--Radio Button Clicked Backround-->
-    <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
-    <!--Radio Button Mouse Over Background-->
-    <SolidColorBrush x:Key="RadioBUttonMouseOverBackground" Color="#39a0ff"/>
+    <SolidColorBrush x:Key="PrimaryBackground" Color="#fff"/>
+        <SolidColorBrush x:Key="SideBarBackground" Color="#f1f1f1"/>
+        <SolidColorBrush x:Key="ProfileImageBackground" Color="#212529"/>
+
+        <!--Radio Button Clicked Backround-->
+        <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
+        <!--Radio Button Mouse Over Background-->
+        <SolidColorBrush x:Key="RadioBUttonMouseOverBackground" Color="#39a0ff"/>
+
+        <!--Dashboard about profex border background color-->
+        <SolidColorBrush x:Key="profexINFObackgr" Color="#212529"/>
+
+        <!--Dashboard vacancy paginations background color-->
+        <SolidColorBrush x:Key="profexVacancyEnableFalseBackgr" Color="#495057"/>
+        <SolidColorBrush x:Key="profexVacancyEnableTrueBackgr" Color="#adb5bd"/>
+
+        <!--Vacancy component background color-->
+        <SolidColorBrush x:Key="vacancyComponent" Color="#2D3339"/>
+        <!--Cost foregroundcolor-->
+        <SolidColorBrush x:Key="lblCostColor" Color="#28AD21"/>
+
+        <SolidColorBrush x:Key="lblVacancyTitleColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblVacancyRegionColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblVacancyRegionAnswerColor" Color="#bcb8b1"/>
+        <SolidColorBrush x:Key="lblVacancyDistrictColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblVacancyDistrictAnswerColor" Color="#bcb8b1"/>
+        <SolidColorBrush x:Key="lblVacancyLongLatitudeColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblVacancyLongLatitudeAnswerColor" Color="#bcb8b1"/>
+        <SolidColorBrush x:Key="lblVacancyLongLatitudeAnswerMouseOverColor" Color="#EDF1D6"/>
+        <SolidColorBrush x:Key="GMPColor" Color="#bcb8b1"/>
+        <SolidColorBrush x:Key="txtDescriptionColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="PhoneNumColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="PhoneNumAnswerColor" Color="#bcb8b1"/>
+        <SolidColorBrush x:Key="brLineColor" Color="#edede9"/>
+        <SolidColorBrush x:Key="lblMastersHeaderColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblMastersAccountColor" Color="#8338ec"/>
+        <SolidColorBrush x:Key="lblMastersNameColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblMastersSureNameColor" Color="#fdfcdc"/>
+        <SolidColorBrush x:Key="lblMastersOnlineColor" Color="#bcb8b1"/>
+
+
+
+        <!--MasterEditPageForeGrounds-->
+        <SolidColorBrush x:Key="lblFirstNameColor" Color="#bcb8b1"/>
+        <SolidColorBrush x:Key="lblFirstNameAnswerColor" Color="#fdfcdc"/>
+    <SolidColorBrush x:Key="lblLastNameColor" Color="#bcb8b1"/>
 
 </ResourceDictionary>

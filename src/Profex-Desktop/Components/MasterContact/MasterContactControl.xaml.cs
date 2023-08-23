@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Profex_Desktop.Components.MasterContact
 {
@@ -24,12 +14,13 @@ namespace Profex_Desktop.Components.MasterContact
         {
             InitializeComponent();
         }
-        public void SetData(string[] salom)
+        public async void SetData(string[] salom)
         {
-            ProfileImg.ImageSource = new BitmapImage(new Uri(salom[0], UriKind.Relative));
+            Uri imageparse = new Uri(salom[0], UriKind.Absolute);
+            ProfileImg.ImageSource = new BitmapImage(imageparse);
             var bc = new BrushConverter();
-            brBackgr.Background = (Brush)bc.ConvertFrom(salom[2])!;
             NameOfMaster.Content = salom[1];
+            brBackgr.Background = (Brush)bc.ConvertFrom(salom[2])!;
         }
     }
 }

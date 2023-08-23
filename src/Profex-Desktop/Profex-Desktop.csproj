@@ -19,6 +19,8 @@
     <None Remove="Assets\Images\builders.png" />
     <None Remove="Assets\Images\common users.jpg" />
     <None Remove="Assets\Images\defaultvacanciesimg.jpg" />
+    <None Remove="Assets\Images\frequently.png" />
+    <None Remove="Assets\Images\Loading.gif" />
     <None Remove="Assets\Images\nimalardur.png" />
     <None Remove="Assets\Images\ProfexLogoDark.png" />
     <None Remove="Assets\Images\ProfexLogoLight.png" />
@@ -37,6 +39,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Images\frequently.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Images\ProfexLogoDark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -48,6 +56,10 @@
   <ItemGroup>
     <PackageReference Include="DevExpress.Data" Version="23.1.4" />
     <PackageReference Include="ThinkGeo.MapSuite.Layers.GoogleMaps" Version="10.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Profex-Integrated\Profex-Integrated.csproj" />
   </ItemGroup>
 
   <ItemGroup>

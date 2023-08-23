@@ -15,44 +15,19 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Style="{DynamicResource lblHeaderMasters}"/>
-        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="50"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="20"/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" x:Name="lblNameMaster" Style="{DynamicResource MyName}"/>
-                <Label Grid.Row="1" x:Name="lblOnlineMaster" Style="{DynamicResource OnlineMaster}"/>
-            </Grid>
-            <Label Grid.Column="2" Style="{DynamicResource Myinfo}"/>
-            <Border Grid.Column="2" x:Name="BrOnline" CornerRadius="10" Height="10" Width="10"
-                    VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                    Margin="0 0 35 3" Background="{DynamicResource PrimaryBackground}">
-                <Border CornerRadius="10" Height="9" Width="9"
-                    VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                    Margin="0 0 0 0.5" Background="{DynamicResource lblCostColor}"/>
-            </Border>
-        </Grid>
-    
+
         <!--Search part-->
-        <Grid Grid.Row="1" HorizontalAlignment="Left">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Menu Grid.Column="0" Width="150" Margin="20 0" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Transparent">
+            <!--<Menu x:Name="mainMenu" Grid.Column="0" Width="150" Margin="20 0" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Transparent">
                 <MenuItem Header="Kategoriyalar" Foreground="{DynamicResource ProfileImageBackground}" Width="150" Height="30" Background="Transparent">
-                    <MenuItem Header="Qurilish ishlari" Foreground="Black" Background="Transparent">
+                    <MenuItem x:Name="first" Header="Qurilish ishlari" Foreground="Black" Background="Transparent">
                         <MenuItem.Icon>
                             <Path Data="{DynamicResource buiding}" Fill="{DynamicResource lblVacancyDistrictAnswerColor}"
                                   Height="15" Width="15" Stretch="Uniform"/>
@@ -98,7 +73,7 @@
                         <MenuItem Header="Zina qurish va ta'mirlash ishlari"/>
                     </MenuItem>
 
-                <MenuItem Header="Another menuitem"/>
+                    <MenuItem Header="Another menuitem"/>
                     <MenuItem Header="Another menuitem"/>
                     <MenuItem Header="Another menuitem"/>
                     <Separator/>
@@ -106,9 +81,12 @@
                     <MenuItem Header="Another menuitem"/>
                     <MenuItem Header="Another menuitem"/>
                 </MenuItem>
-            </Menu>
-            <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Grid>
+            </Menu>-->
+
+            <Button Grid.Column="0" Content="Kategoriyalar" Style="{DynamicResource btnCategory}"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Grid HorizontalAlignment="Center">
                     <Label Style="{DynamicResource plholder}"
                            Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
                     <TextBox x:Name="txtSearch" Style="{DynamicResource SearchMaser}"/>
@@ -118,7 +96,7 @@
         </Grid>
         
         <!--Main part masters-->
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <WrapPanel x:Name="wrpMasters"/>
             </ScrollViewer>

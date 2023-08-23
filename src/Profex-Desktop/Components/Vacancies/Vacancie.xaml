@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Profex_Desktop.Components.Vacancies"
              mc:Ignorable="d" 
              Height="400" Width="400"
-             Background="Transparent">
+             Background="Transparent"
+             Loaded="Control_Loaded">
     <Border CornerRadius="25" Margin="10 10">
         <StackPanel Orientation="Vertical">
             <Border Margin="10 10 10 0"
