@@ -94,33 +94,51 @@
 
         <Style x:Key="SideBarButton" TargetType="{x:Type RadioButton}">
             <Setter Property="Height" Value="70"/>
-            <Setter Property="Width" Value="70"/>
+            <Setter Property="Width" Value="220"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type RadioButton}">
-                        <Border x:Name="B" CornerRadius="100" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" 
-                                Width="{TemplateBinding Width}" VerticalAlignment="{TemplateBinding VerticalAlignment}" 
-                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
-                            <Path x:Name="icon"
+                        <Border x:Name="B" CornerRadius="10" Background="{TemplateBinding Background}" 
+                                Height="70" 
+                                Width="200" VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                Margin="15 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path x:Name="icon" Grid.Column="0"
                                   Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
                                   Fill="{DynamicResource ProfileImageBackground}"
                                   Height="30" Width="30"
-                                  Stretch="Fill"/>
-                        </Border>
+                                  Stretch="Fill"
+                                  HorizontalAlignment="Left" Margin="10 0"/>
+
+                            <Label x:Name="Lbl" Grid.Column="1" Content="{TemplateBinding Content}" Foreground="{DynamicResource lblFirstNameAnswerColor}"
+                                   FontSize="18" FontFamily="{TemplateBinding FontFamily}"
+                                   VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="False">
                                 <Setter TargetName="B" Property="Background" Value="Transparent"/>
-                            </Trigger>
+                            <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}" TargetName="Lbl"/>
+                        </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="B" Property="Background" Value="{DynamicResource RadioBUttonMouseOverBackground}"/>
-                            </Trigger>
+                            <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
+
+                        </Trigger>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>
                                 <Setter TargetName="icon" Property="Fill" Value="White"/>
-                            </Trigger>
+                                <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
+
+                        </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -519,6 +537,7 @@
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Margin" Value="0 0 0 5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -855,6 +874,39 @@
         <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderThickness="1" CornerRadius="15" BorderBrush="{DynamicResource ProfileImageBackground}"
+                            Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Label Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"
+                               FontSize="{TemplateBinding FontSize}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                   Padding="0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+
+
+    <!--Category button style-->
+    <Style x:Key="btnCategory" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="130"/>
+        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Content" Value="{DynamicResource btnSearchContent}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="30 0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">

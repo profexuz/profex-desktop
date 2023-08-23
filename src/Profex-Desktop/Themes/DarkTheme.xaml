@@ -48,4 +48,10 @@
     <SolidColorBrush x:Key="lblFirstNameAnswerColor" Color="#fdfcdc"/>
     <SolidColorBrush x:Key="lblLastNameColor" Color="#bcb8b1"/>
 
+
+    <SolidColorBrush x:Key="bcgBr" Color="#bcb8b1"/>
+    
+    
+    <SolidColorBrush x:Key="topBcgColor" Color="#bcb8b1"/>
+
 </ResourceDictionary>

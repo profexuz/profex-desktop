@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profex_Desktop.Components.MastersInfo"
              mc:Ignorable="d" 
-             Height="130" Width="330" Margin="8" 
+             Height="130" Width="390" Margin="8" 
              Background="Transparent"
              Loaded="Page_Loaded">
     <Border CornerRadius="20" 

@@ -1,5 +1,9 @@
 ﻿using Profex_Desktop.Windows.Auth;
+using Profex_Dtos.Auth;
+using Profex_Integrated.Services.Auth;
 using System;
+using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,10 +18,13 @@ namespace Profex_Desktop.Windows.AuthPages
     public partial class SmsPage : Page
     {
         private DispatcherTimer timer;
-        private int seconds;
-        private int minut;
         private int totalSeconds = 5 * 60; // 5 minutni sekundga aylantiramiz
         private int remainingSeconds;
+        private AuthMasterService _authMasterService = new AuthMasterService();
+        private VerifyRegisterDto _verifyRegisterDto = new VerifyRegisterDto();
+
+        public string PhoneNum = String.Empty;
+
         public SmsPage()
         {
             InitializeComponent();
@@ -25,11 +32,8 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            // Initialize the timer
-            InitializeComponent();
-            
             remainingSeconds = totalSeconds;
-
+            txtSmsInfo.Text += " " + PhoneNum;
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick!;
@@ -73,14 +77,42 @@ namespace Profex_Desktop.Windows.AuthPages
             
         }
 
-        private void txtSmsCode_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private async void txtSmsCode_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if (txtSmsCode.Text.Length == 4)
+            try
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
-                authWindow?.Close();
+                if (txtSmsCode.Text.Length == 4)
+                {
+                    _verifyRegisterDto.PhoneNumber = PhoneNum;
+                    _verifyRegisterDto.Code = int.Parse(txtSmsCode.Text);
+                    var result = await _authMasterService.VerifyRegisterAsync(_verifyRegisterDto);
+                    if (result.Result == true)
+                    {
+                        string fileName = @"C:\Users\99891\Desktop\Token.txt";
+                        if (File.Exists(fileName))
+                        {
+                            File.Delete(fileName);
+                        }
+                        using (FileStream fs = File.Create(fileName))
+                        {
+                            // Add some text to file    
+                            Byte[] title = new UTF8Encoding(true).GetBytes($"{result.Token}");
+                            fs.Write(title, 0, title.Length);
+                        }
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
+                        authWindow?.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tasdiqlash kodi noto'g'ri");
+                    }
+                }
+            }
+            catch
+            {
+
             }
         }
     }

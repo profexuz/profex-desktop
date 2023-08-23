@@ -28,7 +28,7 @@ namespace Profex_Desktop.Pages
             InitializeComponent();
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             wrpNewsVacancy.Children.Clear();
             wrpAdvertising.Children.Clear();

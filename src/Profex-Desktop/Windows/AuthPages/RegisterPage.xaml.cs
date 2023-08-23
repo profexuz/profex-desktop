@@ -1,6 +1,9 @@
 ﻿using DevExpress.Utils.Design;
 using Profex_Desktop.Windows.Auth;
 using Profex_Desktop.Windows.Offerta_shartlari;
+using Profex_Dtos.Auth;
+using Profex_Integrated.Interfaces;
+using Profex_Integrated.Services.Auth;
 using System;
 using System.Drawing;
 using System.Text.RegularExpressions;
@@ -17,6 +20,9 @@ namespace Profex_Desktop.Windows.AuthPages
     /// </summary>
     public partial class RegisterPage : Page
     {
+        private RegisterDto registerDto = new RegisterDto();
+        private AuthMasterService _authMasterService = new AuthMasterService();
+        
         public RegisterPage()
         {
             InitializeComponent();
@@ -47,23 +53,33 @@ namespace Profex_Desktop.Windows.AuthPages
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void Ihavenotaccount_Click(object sender, RoutedEventArgs e)
+        private async void SignUpbtn_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void SignUpbtn_Click(object sender, RoutedEventArgs e)
-        {
-            if(txtPassword.Password.Length!=0 || txtName.Text.Length != 0 || phoneNum.Text.Length != 0 || txtSurname.Text.Length != 0)
-             
+            if(txtPassword.Password.Length > 0 && txtName.Text.Length > 0 && phoneNum.Text.Length > 0 && txtSurname.Text.Length > 0)
             {
                 if (txtPassword.Password.Length > 3 && txtName.Text.Length > 3 && phoneNum.Text.Length == 12 && txtSurname.Text.Length > 3)
                 {
-                    AuthWindow auth = new AuthWindow();
-                    auth.vis = false;
-                    SmsPage smsPage = new SmsPage();
-                    smsPage.txtSmsInfo.Text += " +" + phoneNum.Text.ToString();
-                    NavigationService.Navigate(smsPage);    
+                    registerDto.FirstName = txtName.Text;
+                    registerDto.LastName = txtSurname.Text.ToString();
+                    registerDto.PhoneNumber = "+"+phoneNum.Text.ToString();
+                    registerDto.Password = txtPassword.Password.ToString();
+                    bool res = await _authMasterService.RegisterAsync(registerDto);
+
+                    if (res)
+                    {
+                        var result = await _authMasterService.SendCodeForRegisterAsync(registerDto.PhoneNumber);
+                        if (result)
+                        {
+                            SmsPage smsPage = new SmsPage();
+                            smsPage.PhoneNum = "+" + phoneNum.Text;
+                            NavigationService.Navigate(smsPage);
+                        }
+                        
+                    }
+                    else
+                    {
+                        
+                    }    
                 }
                 else
                 {

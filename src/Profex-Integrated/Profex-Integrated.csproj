@@ -11,4 +11,15 @@
     <Folder Include="Security\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Profex-Dtos\Profex-Dtos.csproj" />
+    <ProjectReference Include="..\Profex-ViewModels\Profex-ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>

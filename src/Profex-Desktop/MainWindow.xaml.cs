@@ -1,11 +1,12 @@
-﻿using Profex_Desktop.Components.MasterContact;
+﻿using Profex_Desktop.Components.Loading;
 using Profex_Desktop.Pages;
-using Profex_Desktop.Themes;
+using Profex_Integrated.Services.Auth.JwtToken;
+using Profex_Integrated.Services.Masters;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Profex_Desktop
 {
@@ -14,6 +15,12 @@ namespace Profex_Desktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IdentityService _identityService;
+        private JwtParser jwtParser = new JwtParser();
+        private MasterService _masterService = new MasterService();
+        private string BASEIMG_URL = "http://95.130.227.187/";
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -42,10 +49,23 @@ namespace Profex_Desktop
             this.WindowState = WindowState.Minimized;
         }
 
-        private void rbDashboard_Click(object sender, RoutedEventArgs e)
+        private async void rbDashboard_Click(object sender, RoutedEventArgs e)
         {
             Dashboard dashboard = new Dashboard();
             PageNavigator.Navigate(dashboard);
+        }
+
+        async System.Threading.Tasks.Task ShowIndicator()
+        {
+            Task.Factory.StartNew(async () =>
+            {
+                await Dispatcher.InvokeAsync(() =>
+                {
+                    wrpLoading.Children.Clear();
+                    LoadingUserControll loadingUserControll = new LoadingUserControll();
+                    wrpLoading.Children.Add(loadingUserControll);
+                });
+            });
         }
 
         private void rbVacancies_Click(object sender, RoutedEventArgs e)
@@ -56,23 +76,22 @@ namespace Profex_Desktop
 
         private void rbFAQs_Click(object sender, RoutedEventArgs e)
         {
-
+            FaqsPage faqsPage = new FaqsPage();
+            PageNavigator.Navigate(faqsPage);
         }
 
-        private void Window_loading(object sender, RoutedEventArgs e)
+        private async void Window_loading(object sender, RoutedEventArgs e)
         {
-            //if(ProfileMyName.Text.Length > 10)
-            //{
-            //    string name = string.Empty, name1 = ProfileMyName.Text;
-            //    byte count = 0;
-            //    foreach(var n in name1)
-            //    {
-            //        if (count == 7) break;
-            //        name = name+ n;
-            //        count++;
-            //    }
-            //    ProfileMyName.Text = name + "...";
-            //}
+            string tokenString = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEzIiwiRmlyc3ROYW1lIjoiSmF2bG9uYmVrIiwiTGFzdE5hbWUiOiJEamFsZWtlZXYiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6Iis5OTg5MTM3NzQ1MDYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNYXN0ZXIiLCJleHAiOjE2OTI4ODAzNzYsImlzcyI6Imh0dHA6Ly9wcm9mZXgudXoiLCJhdWQiOiJQcm9GZXgifQ.UGojGvHrmbNrND0-D1cJFmTdP6KSbKXNge9VAAXNbzo";
+            IdentityService tokenModel = jwtParser.ParseToken(tokenString);
+
+            var result = await _masterService.GetByIdAsync(tokenModel.Id);
+            string imageUrl = BASEIMG_URL + result.ImagePath;
+            Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
+            MyPhoto.ImageSource = new BitmapImage(imageUri);
+            MyName.Content = tokenModel.FirstName.ToUpper();
+            rbDashboard.IsChecked = true;
+
         }
 
         private void ToggleButton_PreviewStylusSystemGesture(object sender, StylusSystemGestureEventArgs e)
@@ -94,7 +113,6 @@ namespace Profex_Desktop
 
         private void rbSetting_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -105,7 +123,7 @@ namespace Profex_Desktop
             }
             catch
             {
-               
+
             }
         }
 

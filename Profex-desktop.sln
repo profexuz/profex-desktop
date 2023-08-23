@@ -6,21 +6,19 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F1CD034-A281-417F-A10C-D9998F42D7F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profex-Dtos", "src\Profex-Dtos\Profex-Dtos.csproj", "{B03BA6C2-E205-48B0-AD2C-150972A08746}"
-	ProjectSection(ProjectDependencies) = postProject
-		{93D15C54-F1C0-45E4-824E-8DB141F6425E} = {93D15C54-F1C0-45E4-824E-8DB141F6425E}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profex-Integrated", "src\Profex-Integrated\Profex-Integrated.csproj", "{7B4D98CA-0EA1-4A11-98ED-B70E419C25EC}"
 	ProjectSection(ProjectDependencies) = postProject
+		{8A633310-431B-49F0-B2DD-4677EF0BF7C4} = {8A633310-431B-49F0-B2DD-4677EF0BF7C4}
 		{B03BA6C2-E205-48B0-AD2C-150972A08746} = {B03BA6C2-E205-48B0-AD2C-150972A08746}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profex-ViewModels", "src\Profex-ViewModels\Profex-ViewModels.csproj", "{8A633310-431B-49F0-B2DD-4677EF0BF7C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profex-Desktop", "src\Profex-Desktop\Profex-Desktop.csproj", "{93D15C54-F1C0-45E4-824E-8DB141F6425E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7B4D98CA-0EA1-4A11-98ED-B70E419C25EC} = {7B4D98CA-0EA1-4A11-98ED-B70E419C25EC}
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profex-Desktop", "src\Profex-Desktop\Profex-Desktop.csproj", "{93D15C54-F1C0-45E4-824E-8DB141F6425E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

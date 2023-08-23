@@ -1,19 +1,14 @@
 ﻿using Profex_Desktop.Components.MasterContact;
+using Profex_Integrated.Services.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Profex_Desktop.Components.Vacancies
@@ -23,8 +18,11 @@ namespace Profex_Desktop.Components.Vacancies
     /// </summary>
     public partial class Vacancie : UserControl
     {
-        private string[] imagePaths = 
-            { 
+        private UserService _userService = new UserService();
+        private string BASE_URL = "http://95.130.227.187/";
+        private List<string[]> list = new List<string[]>();
+        private string[] imagePaths =
+            {
             "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing1.jpeg",
             "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing2.jpeg",
             "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing3.jpg",
@@ -36,20 +34,12 @@ namespace Profex_Desktop.Components.Vacancies
         {
             InitializeComponent();
 
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(5); // Change image every 4 seconds
-            timer.Tick += Timer_Tick;
-            timer.Start();
-
-            // Display the initial image
-            UpdateImage();
         }
-        public void SetData(string[] list)
+        public void SetData(string[] lists)
         {
             wrpContac.Children.Clear();
-
             MasterContactControl master = new MasterContactControl();
-            master.SetData(list);
+            master.SetData(lists);
             wrpContac.Children.Add(master);
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -57,29 +47,13 @@ namespace Profex_Desktop.Components.Vacancies
             currentElement = (currentElement + 1) % imagePaths.Length;
             AnimateCarousel();
         }
-        private void UpdateImage()
+        private async void UpdateImage()
         {
             string imagePath = imagePaths[currentElement];
             BitmapImage bitmapImage = new BitmapImage(new Uri(imagePath, UriKind.Relative));
             VacancieImg.ImageSource = bitmapImage;
 
 
-            string[] names =
-            {
-                "Tiqildiyev Teshavoy", 
-                "G'aniyev Boltavoy", 
-                "Tursunaliyev G'iybadulla",
-                "Yo'lchiyev Jumavoy",
-                "Toshmatov Eshmat", 
-                "Aliyev Vali",
-            };
-
-            string[] list1 =
-            {
-                "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\defaultimagaUserDark.jpg",
-                names[currentElement],
-                MakeRandom()
-            };
 
             List<Border> borderList = new List<Border>()
             {
@@ -96,7 +70,7 @@ namespace Profex_Desktop.Components.Vacancies
             wrpContac.Children.Clear();
 
             MasterContactControl master = new MasterContactControl();
-            master.SetData(list1);
+            master.SetData(list[0]);
             wrpContac.Children.Add(master);
 
         }
@@ -175,6 +149,33 @@ namespace Profex_Desktop.Components.Vacancies
         {
             if (currentElement == 4) currentElement = 0;
             else currentElement++;
+            UpdateImage();
+        }
+
+        private async void Control_Loaded(object sender, RoutedEventArgs e)
+        {
+            var alluser = await _userService.GetAllAsync();
+            short count = 0;
+
+            foreach (var user in alluser)
+            {
+                string[] list1 = new string[3];
+
+                if (count == 5) break; count++;
+                string imageUrl = BASE_URL + user.ImagePath;
+
+                list1[0] = imageUrl.ToString();
+                list1[1] = user.FirstName + " " + user.LastName;
+                list1[2] = MakeRandom();
+                list.Add(list1);
+            }
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(5); // Change image every 4 seconds
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+            // Display the initial image
             UpdateImage();
         }
     }

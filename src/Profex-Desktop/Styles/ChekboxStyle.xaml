@@ -3,6 +3,9 @@
     <Style x:Key="SwitchButton" TargetType="{x:Type CheckBox}">
         <Setter Property="Height" Value="50"/>
         <Setter Property="Width" Value="30"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="50"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
