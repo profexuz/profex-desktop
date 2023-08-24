@@ -8,4 +8,6 @@ public interface IUserService
 
     public Task<IList<User>> GetAllAsync();
 
+    public Task<User> GetByIdAsync(long id);
+
 }

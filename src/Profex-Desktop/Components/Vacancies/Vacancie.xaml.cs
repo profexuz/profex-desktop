@@ -1,5 +1,7 @@
 ﻿using Profex_Desktop.Components.MasterContact;
 using Profex_Integrated.Services.Users;
+using Profex_Integrated.Services.Vacancies;
+using Profex_ViewModels.Vacancies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +21,12 @@ namespace Profex_Desktop.Components.Vacancies
     public partial class Vacancie : UserControl
     {
         private UserService _userService = new UserService();
+        private VacancyService _vacancyService= new VacancyService();
         private string BASE_URL = "http://95.130.227.187/";
         private List<string[]> list = new List<string[]>();
-        private string[] imagePaths =
-            {
-            "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing1.jpeg",
-            "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing2.jpeg",
-            "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing3.jpg",
-            "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing4.jpg",
-            "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Images\\somebreakedthing5.jpg"};
+        private string[] imagePaths = new string[5];
+        private string[] description = new string[5];
+
         private int currentElement = 0;
         private DispatcherTimer timer;
         public Vacancie()
@@ -50,14 +49,18 @@ namespace Profex_Desktop.Components.Vacancies
         private async void UpdateImage()
         {
             string imagePath = imagePaths[currentElement];
-            BitmapImage bitmapImage = new BitmapImage(new Uri(imagePath, UriKind.Relative));
-            VacancieImg.ImageSource = bitmapImage;
-
+            if(imagePath == null)
+            {
+                imagePath = BASE_URL+ "media\\images\\IMG_91678077-3baf-47ff-81a7-4359f3825c39.png";
+            }
+            Uri imageUri = new Uri(imagePath, UriKind.Absolute);
+            VacancieImg.ImageSource = new BitmapImage(imageUri);
+            txtDescription.Text= description[currentElement];
 
 
             List<Border> borderList = new List<Border>()
             {
-                br1,br2,br3,br4,br5,
+                br1,br2,br3,br4,br5
             };
 
             var bc = new BrushConverter();
@@ -154,21 +157,42 @@ namespace Profex_Desktop.Components.Vacancies
 
         private async void Control_Loaded(object sender, RoutedEventArgs e)
         {
-            var alluser = await _userService.GetAllAsync();
-            short count = 0;
-
-            foreach (var user in alluser)
+            var allvacancy = await _vacancyService.GetAllAsync(1);
+            short count1 = 0, index=0, imgindex=0;
+            foreach (var item in allvacancy)
             {
-                string[] list1 = new string[3];
+                if (item.ImagePath.Count < 1)   continue;
+                if (count1 == 4) break;
+                    imagePaths[index] = BASE_URL + item.ImagePath[0];
+                description[index++] = item.Description;
+                var getByIdUser = await _userService.GetByIdAsync(item.UserId);
+                    string[] list1 = new string[3];
 
-                if (count == 5) break; count++;
-                string imageUrl = BASE_URL + user.ImagePath;
-
-                list1[0] = imageUrl.ToString();
-                list1[1] = user.FirstName + " " + user.LastName;
-                list1[2] = MakeRandom();
-                list.Add(list1);
+                    string imageUrl = BASE_URL + getByIdUser.ImagePath;
+                    list1[0] = imageUrl.ToString();
+                    list1[1] = getByIdUser.FirstName + " " + getByIdUser.LastName;
+                    list1[2] = MakeRandom();
+                    list.Add(list1);
+                count1++;
             }
+
+
+
+            //var alluser = await _userService.GetAllAsync();
+            //short count = 0;
+
+            //foreach (var user in alluser)
+            //{
+            //    string[] list1 = new string[3];
+
+            //    if (count == 5) break; count++;
+            //    string imageUrl = BASE_URL + user.ImagePath;
+
+            //    list1[0] = imageUrl.ToString();
+            //    list1[1] = user.FirstName + " " + user.LastName;
+            //    list1[2] = MakeRandom();
+            //    list.Add(list1);
+            //}
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(5); // Change image every 4 seconds

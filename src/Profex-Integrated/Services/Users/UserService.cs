@@ -63,4 +63,33 @@ public class UserService : IUserService
             }
         }
     }
+
+    public async Task<User> GetByIdAsync(long id)
+    {
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(API.GETBYID_USERS);
+                var response = await client.GetAsync($"{client.BaseAddress}?userId={id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    var masterViewModel = JsonConvert.DeserializeObject<User>(responseContent);
+                    return masterViewModel;
+                }
+                else
+                {
+                    // Agar javob yaxshi kelmasa, bo'sh obyektni qaytarish
+                    return new User();
+                }
+            }
+        }
+        catch
+        {
+            // Xato yuzaga kelsa, hammasini o'zgartirishsiz
+            return new User();
+        }
+    }
 }

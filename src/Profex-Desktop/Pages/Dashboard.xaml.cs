@@ -42,7 +42,7 @@ namespace Profex_Desktop.Pages
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             await MyTask();
-            AddVacancieElement();
+            
         }
         private async Task<bool> Loading_InfosAsync()
         {
@@ -52,6 +52,8 @@ namespace Profex_Desktop.Pages
             {
                 usersCount = await _userService.CountAsync();
                 var result = await _masterService.GetAllAsync();
+                var vacancy = await _vacancyService.GetAllAsync(1);
+                vacanciesCount= vacancy.Count;
                 mastersCount = result.Count;
                 await CountAllUsers();
                 short count = 0;
@@ -78,38 +80,9 @@ namespace Profex_Desktop.Pages
 
                 //##################################
 
-                //var vacancy = await _vacancyService.GetAllAsync();
-                //short countV = 0;
-
-                //foreach (var vac in vacancy)
-                //{
-                //    if (countV == 5) break; countV++;
-
-                //    //Download img from api url
-                //    System.Drawing.Image image = DownloadImageFromUrl("http://95.130.227.187/" + vac.ImagePath);
-                //    string rootPath = @"C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images";
-                //    string fileName = "";
-                //    if (res.ImagePath.Contains("\\"))
-                //    {
-                //        fileName = System.IO.Path.Combine(rootPath, res.ImagePath.Split("\\")[2]);
-                //    }
-                //    else
-                //    {
-                //        fileName = System.IO.Path.Combine(rootPath, res.ImagePath.Split("/")[2]);
-                //    }
-                //    image.Save(fileName);
-
-                //    string[] list =
-                //    {
-                //            fileName,
-                //            res.FirstName+" "+res.LastName,
-                //            MakeRandom()
-
-                //    };
-                //    MasterContactControl mastercontact = new MasterContactControl();
-                //    mastercontact.SetData(list);
-                //    wrpGroups.Children.Add(mastercontact);
-                //}
+                wrpVacancies.Children.Clear();
+                Vacancie vacancie = new Vacancie();
+                wrpVacancies.Children.Add(vacancie);
 
                 return true;
             }
@@ -121,9 +94,7 @@ namespace Profex_Desktop.Pages
 
         private void AddVacancieElement()
         {
-            wrpVacancies.Children.Clear();
-            Vacancie vacancie = new Vacancie();
-            wrpVacancies.Children.Add(vacancie);
+            
         }
 
         private static string MakeRandom()
@@ -146,19 +117,19 @@ namespace Profex_Desktop.Pages
             if (usersCount + mastersCount >= 10000)
                 AllUsers.Content = $"{(usersCount + mastersCount) / 1000}K";
             else
-                AllUsers.Content = (usersCount + mastersCount).ToString();
+                AllUsers.Content = (usersCount + mastersCount).ToString() + " ta";
 
             if (vacanciesCount >= 10000)
                 VacancyCount.Content = $"{vacanciesCount / 1000}K";
             else
             {
-                VacancyCount.Content = vacanciesCount;
+                VacancyCount.Content = vacanciesCount+" ta";
             }
             if (mastersCount >= 10000)
                 MastersCount.Content = $"{mastersCount / 1000}K";
             else
             {
-                MastersCount.Content = mastersCount.ToString();
+                MastersCount.Content = mastersCount.ToString() + " ta";
             }
         }
 

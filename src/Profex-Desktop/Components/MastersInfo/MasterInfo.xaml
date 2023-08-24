@@ -22,14 +22,14 @@
                 Margin="10 0">
             <Ellipse Height="48" Width="48">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Assets/Profile images/DefaultProfileImage.png" />
+                    <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Profile images/DefaultProfileImage.png" />
                 </Ellipse.Fill>
             </Ellipse>
         </Border>
-        <Label Grid.Row="0" Content="Falonchi Pistonchiyev" Foreground="White" VerticalAlignment="Center"
-               Margin="70  0 0 20" FontSize="18"/>
-            <Label Grid.Row="0" Content="+998913774506" Foreground="White" Opacity="0.5" VerticalAlignment="Bottom"
-               Margin="70 0 0 10" FontSize="13"/>
+        <Label Grid.Row="0" x:Name="lblname" Content="Falonchi Pistonchiyev" Foreground="White" VerticalAlignment="Center"
+               Margin="70  0 0 20" FontSize="18" FontWeight="Bold"/>
+            <Label Grid.Row="0" x:Name="phone" Content="+998913774506" Foreground="White" Opacity="0.5" VerticalAlignment="Bottom"
+               Margin="70 0 0 10" FontSize="16"/>
 
             <ScrollViewer x:Name="MyScrollViewer" Grid.Row="1"
                           Visibility="Visible" Padding="2">

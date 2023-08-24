@@ -34,12 +34,13 @@
                         BorderThickness="1" CornerRadius="10"
                         Margin="50 50 0 0">
                     <Border.Background>
-                        <ImageBrush ImageSource="/Assets/Profile images/DefaultProfileImage.png" />
+                        <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Profile images/DefaultProfileImage.png" />
                     </Border.Background>
                 </Border>
 
-                <Border Grid.Row="1" Height="50" Width="280"
+                <Border x:Name="brUpload" Grid.Row="1" Height="50" Width="280"
                         Margin="50 10 0 0"
+                        MouseDown="brUpload_MouseDown"
                         CornerRadius="10" BorderThickness="1,1,1,1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top">
@@ -76,20 +77,21 @@
                 <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Bottom"
                             Margin="10 45 10 10">
                     <Label x:Name="lblFistName" Style="{DynamicResource lblFirstNameMaster}"/>
-                    <TextBox Grid.Row="0" Text="JAVLONBEK" Style="{DynamicResource txtFirstNameMaster}"
+                    <TextBox x:Name="txtFName" Grid.Row="0" Text="JAVLONBEK" Style="{DynamicResource txtFirstNameMaster}"
                              IsReadOnly="True"/>
+                    
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom"
                             Margin="10 0">
                     <Label x:Name="lblLastName" Style="{DynamicResource lblLastNameMaster}"/>
-                    <TextBox Grid.Row="0" Text="DJALEKEEV" Style="{DynamicResource txtFirstNameMaster}"
+                    <TextBox  x:Name="txtLName"  Grid.Row="0" Text="DJALEKEEV" Style="{DynamicResource txtFirstNameMaster}"
                              IsReadOnly="True"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom"
                             Margin="10 10">
                     <Label x:Name="lblPhoneNum" Style="{DynamicResource lblPhoneNumMaster}"/>
 
-                    <TextBox Grid.Row="0" Text="+998913774506" Style="{DynamicResource txtFirstNameMaster}"
+                    <TextBox  x:Name="txtNum"  Grid.Row="0" Text="998913774506" Style="{DynamicResource txtFirstNameMaster}"
                                  PreviewTextInput="NumberValidationTextBox"
                                  IsReadOnly="True"/>
                 </StackPanel>
@@ -113,8 +115,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{DynamicResource btnCancel}"/>
-            <Button Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
+            <Button x:Name="btnCancel" Click="btnCancel_Click" Visibility="Hidden" Grid.Column="0" Style="{DynamicResource btnCancel}"/>
+            <Button x:Name="btnChange" Click="btnChange_Click" Grid.Column="0" Content="O'zgartirish" Style="{DynamicResource btnCancel}"/>
+            <Button x:Name="btnSave" Click="btnSave_Click" Visibility="Hidden" Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
         </Grid>
     </Grid>
 </Page>

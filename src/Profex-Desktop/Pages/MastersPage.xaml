@@ -83,7 +83,6 @@
                 </MenuItem>
             </Menu>-->
 
-            <Button Grid.Column="0" Content="Kategoriyalar" Style="{DynamicResource btnCategory}"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Grid HorizontalAlignment="Center">
@@ -91,7 +90,8 @@
                            Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
                     <TextBox x:Name="txtSearch" Style="{DynamicResource SearchMaser}"/>
                 </Grid>
-                <Button x:Name="btnSearch" Style="{DynamicResource btnSearchMaster}"/>
+                <Button x:Name="btnSearch" 
+                        Click="btnSearch_Click" Style="{DynamicResource btnSearchMaster}"/>
             </StackPanel>
         </Grid>
         
