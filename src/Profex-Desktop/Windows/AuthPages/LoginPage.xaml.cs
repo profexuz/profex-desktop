@@ -42,6 +42,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
         {
+            SignUpbtn.IsEnabled = false;
             if(pswBox.Password.Length>3 && phoneNum.Text.Length == 12)
             {
                 _loginDto.PhoneNumber = "+"+phoneNum.Text;

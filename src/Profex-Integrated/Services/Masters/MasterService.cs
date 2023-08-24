@@ -129,7 +129,7 @@ public class MasterService : IMasterService
                 formData.Add(Number, "PhoneNumber");
                 formData.Add(ImagePath, "ImagePath");
                 formData.Add(IsFree, "IsFree");
-                var result = await client.PostAsync(client.BaseAddress, formData);
+                var result = await client.PostAsync($"{client.BaseAddress}/{id}", formData);
 
                 // If the upload failed there is not a lot we can do 
                 if (result.IsSuccessStatusCode)

@@ -32,6 +32,7 @@ namespace Profex_Desktop.Pages
         private MasterService _masterService = new MasterService();
         private JwtParser jwtParser = new JwtParser();
         private MasterUpdateDto _masterViewModel = new MasterUpdateDto();
+        private string selectedFilePath = "";
 
         public MasterEditPage()
         {
@@ -70,7 +71,7 @@ namespace Profex_Desktop.Pages
                 // Agar fayl tanlansa va rasm fayli bo'lsa
                 if (result == true)
                 {
-                    string selectedFilePath = openFileDialog.FileName;
+                    selectedFilePath = openFileDialog.FileName;
 
                     // Tanlangan rasm faylini olish va kerakli ishlar bilan davom etish
                     // Misol uchun: Tanlangan rasmni bir joyga joylash va uni ko'rsatish
@@ -107,6 +108,12 @@ namespace Profex_Desktop.Pages
             _masterViewModel.FirstName = txtFName.Text;
             _masterViewModel.LastName = txtLName.Text;
             _masterViewModel.PhoneNumber = "+"+txtNum.Text;
+            if(_masterViewModel.ImagePath != null)
+                _masterViewModel.ImagePath = selectedFilePath.ToString();
+            else
+            {
+                _masterViewModel.ImagePath = "C:\\Users\\99891\\Desktop\\profex-desktop\\src\\Profex-Desktop\\Assets\\Profile images\\DefaultProfileImage.png";
+            }
             if (cmbIsFree.SelectedIndex == 1)
             {
                 _masterViewModel.IsFree = true;
@@ -127,6 +134,10 @@ namespace Profex_Desktop.Pages
                 btnSave.Visibility = Visibility.Hidden;
                 btnCancel.Visibility = Visibility.Hidden;
                 btnChange.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("Internet bilan muammo yuzaga keldi!");
             }
 
         }
