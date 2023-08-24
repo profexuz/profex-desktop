@@ -11,6 +11,8 @@ public class API
 
     public static readonly string GETALL_MASTERS = BASE_URL + "common/master";
     public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";
+    public static readonly string SEARCH_MASTERS = BASE_URL + "common/master/search";
+    public static readonly string UPDATE_MASTERS = BASE_URL + "common/master";
 
 
     //Vacancies part
@@ -21,5 +23,6 @@ public class API
     //Users part
     public static readonly string COUNT_USERS = BASE_URL + "common/user/count";
     public static readonly string GETALL_USERS = BASE_URL + "common/user/get-all";
+    public static readonly string GETBYID_USERS = BASE_URL + "common/user/getbyId";
 
 }

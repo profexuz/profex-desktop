@@ -40,7 +40,8 @@
                         />
 
             </Grid>
-            <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
+            <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}" 
+                       x:Name="txtDescription" 
                        Margin="10" Padding="10 0"
                        Text="Bu yerda vakandiya joylagan odam 
                        muammo haqida qisqacha aytib ketadi."/>

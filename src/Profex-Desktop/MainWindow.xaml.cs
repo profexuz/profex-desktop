@@ -3,6 +3,7 @@ using Profex_Desktop.Pages;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Masters;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -85,8 +86,9 @@ namespace Profex_Desktop
 
         private async void Window_loading(object sender, RoutedEventArgs e)
         {
-            string tokenString = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEzIiwiRmlyc3ROYW1lIjoiSmF2bG9uYmVrIiwiTGFzdE5hbWUiOiJEamFsZWtlZXYiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6Iis5OTg5MTM3NzQ1MDYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNYXN0ZXIiLCJleHAiOjE2OTI4ODAzNzYsImlzcyI6Imh0dHA6Ly9wcm9mZXgudXoiLCJhdWQiOiJQcm9GZXgifQ.UGojGvHrmbNrND0-D1cJFmTdP6KSbKXNge9VAAXNbzo";
-            IdentityService tokenModel = jwtParser.ParseToken(tokenString);
+            string path = @"C:\Users\99891\Desktop\Token.txt";
+            string token = File.ReadAllText(path);
+            IdentityService tokenModel = jwtParser.ParseToken(token);
 
             var result = await _masterService.GetByIdAsync(tokenModel.Id);
             string imageUrl = BASEIMG_URL + result.ImagePath;
