@@ -42,6 +42,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
         {
+            SignUpbtn.IsEnabled = false;
             if(pswBox.Password.Length>3 && phoneNum.Text.Length == 12)
             {
                 _loginDto.PhoneNumber = "+"+phoneNum.Text;
@@ -68,14 +69,17 @@ namespace Profex_Desktop.Windows.AuthPages
                 else
                 {
                     MessageBox.Show("Telefon raqam yoki parol noto'g'ri kiritilgan!");
+                    SignUpbtn.IsEnabled = true;
+
                 }
-                
+
             }
             else
             {
                 MessageBox.Show("Iltimos ma'lumotlarni to'liq kiriting!");
+                SignUpbtn.IsEnabled = true;
             }
-            
+
         }
     }
 }

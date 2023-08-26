@@ -22,7 +22,7 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-                <Border x:Name="br" Width="auto" Height="auto" Grid.Row="0" MouseDown="Window_MouseDown" 
+                <Border x:Name="br" Cursor="SizeAll" Background="{DynamicResource PrimaryBackground}" Width="auto" Height="auto" Grid.Row="0" MouseDown="Window_MouseDown" 
                        />
                 <StackPanel Grid.Row="0" Orientation="Horizontal"
                         Margin="0 0 10 0" HorizontalAlignment="Right">

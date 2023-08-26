@@ -24,12 +24,12 @@
         <Grid>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Style="{DynamicResource ProfexInfoBorder}">
@@ -51,20 +51,14 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="/Assets/Images/ProfexLogoDark.png"
                                Height="200" Width="200" Stretch="Fill"/>
-                            <TextBlock Grid.Column="1" Style="{DynamicResource profexAbout}"
-                                   >Here is a long description that spans across multiple lines. 
-                                            It will automatically wrap to the next line as needed.
-                                            Lorem Ipsum is simply dummy text of 
-                                            the printing and typesetting industry. 
-                                            Lorem Ipsum has been the industry's standard 
-                                            dummy text ever since the 1500s, when an unknown 
-                                            printer took a galley of type and scrambled it to 
-                                            make a type specimen book. It has survived not only 
-                                            five centuries, but also the leap into electronic typesetting, 
-                                            remaining essentially unchanged. It was popularised in the 1960s 
-                                            with the release of Letraset sheets containing Lorem Ipsum 
-                                            passages, and more recently with desktop publishing software like 
-                                            Aldus PageMaker including versions of Lorem Ipsum.</TextBlock>
+                        <TextBlock VerticalAlignment="Center" Grid.Column="1" Style="{DynamicResource profexAbout}"
+                                   >Profex dasturi – bu ishchilarni toifalar boʼyicha qidirish va ijrochilarni ish bilan taʼminlashda ishlatiladigan kompaniyaning mulki boʼlgan aloqa dasturi;
+
+Foydalanuvchi – shaxsan oʼzi harakat qiladigan va voyaga (18 yoshga) yetgan, Ofertani qabul qilgan va shaxsiy va kasbiy mahoratiga oid maʼlumotlarni, avvalgi ishi haqidagi maʼlumotlarni veb-sahifada va / yoki mobil ilovada joylashtirgan toʼliq qobiliyatli jismoniy shaxs;
+
+Buyurtmachi – ijrochini qidirish uchun vazifani (ish sharoitlarini) nashr etadigan veb-sahifa va mobil ilovaning roʼyxatdan oʼtgan foydalanuvchisi;
+
+Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼridan-toʼgʼri veb-sahifa, mobil ilova xizmatiga tegishli va isteʼmolchining manfaatlari va ehtiyojlarini qondirish uchun foydalaniladigan har qanday harakat;</TextBlock>
 
                         </Grid>
                     </Grid>

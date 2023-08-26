@@ -2,11 +2,18 @@
 using Profex_Dtos.Auth;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Security;
+using Profex_Integrated.Services.Auth.JwtToken;
+using Profex_Integrated.Services.Masters;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Profex_Integrated.Services.Auth;
 
 public class AuthMasterService : IAuthMasterService
 {
+    private JwtParser _jwtParser = new JwtParser();
     public async Task<(bool Result, string Token)> LoginAsync(LoginDto loginDto)
     {
         try
@@ -28,8 +35,12 @@ public class AuthMasterService : IAuthMasterService
                 {
                     string responseContent = await result.Content.ReadAsStringAsync();
                     dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent)!;
-                    string token = jsonResponse.token;
-                    return (Result: jsonResponse.result, Token: token);
+                    var token = IdentitySingelton.GetInstance();
+                    token.Token = jsonResponse.token.ToString();
+                    IdentityService tokenModel = _jwtParser.ParseToken(token.Token);
+                    token.Id = tokenModel.Id;
+
+                    return (Result: jsonResponse.result, Token: token.Token);
                 }
                 else
                 {
@@ -93,7 +104,7 @@ public class AuthMasterService : IAuthMasterService
             {
                 return true;
             }
-            return false;
+            else return false;
 
         }
         catch
@@ -122,9 +133,11 @@ public class AuthMasterService : IAuthMasterService
                 if (result.IsSuccessStatusCode)
                 {
                     string responseContent = await result.Content.ReadAsStringAsync();
-                    dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent)!;
-                    string token = jsonResponse.token;
-                    return (Result: true, Token: token);
+                    dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent)!;                    var token = IdentitySingelton.GetInstance();
+                    token.Token = jsonResponse.token.ToString();
+                    IdentityService tokenModel = _jwtParser.ParseToken(token.Token);
+                    token.Id = tokenModel.Id;
+                    return (Result: true, Token: token.Token);
                 }
                 else
                 {
@@ -137,4 +150,6 @@ public class AuthMasterService : IAuthMasterService
             return (Result: false, Token: ""); ;
         }
     }
+
+    
 }

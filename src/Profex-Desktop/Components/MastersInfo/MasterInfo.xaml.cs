@@ -21,7 +21,7 @@ namespace Profex_Desktop.Components.MastersInfo
     /// </summary>
     public partial class MasterInfo : UserControl
     {
-        private string BASE_URL = "http://95.130.227.187/";
+        private string BASE_URL = "http://95.130.227.187:8080/";
         public MasterInfo()
         {
             InitializeComponent();

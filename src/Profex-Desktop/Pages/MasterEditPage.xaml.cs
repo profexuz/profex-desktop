@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils.Url;
 using Profex_Dtos.Masters;
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Masters;
 using Profex_ViewModels.Masters;
@@ -29,9 +30,14 @@ namespace Profex_Desktop.Pages
     /// </summary>
     public partial class MasterEditPage : Page
     {
+
+        private string _path = @"C:\Users\99891\Desktop\Token.txt";
         private MasterService _masterService = new MasterService();
         private JwtParser jwtParser = new JwtParser();
         private MasterUpdateDto _masterViewModel = new MasterUpdateDto();
+        private string selectedFilePath = "";
+        private string BASEIMG_URL = "http://localhost:5230/";
+
 
         public MasterEditPage()
         {
@@ -62,7 +68,7 @@ namespace Profex_Desktop.Pages
                 Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
 
                 // Foydalanuvchi faylni tanlashi mumkin bo'lgan fayl formatlari
-                openFileDialog.Filter = "Rasm fayllari|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Barcha fayllar|*.*";
+                openFileDialog.Filter = "Rasm fayllari|*.jpg;*.jpeg;*.png;|Barcha fayllar|*.*";
 
                 // Faylni tanlash va natijani oluvchi oynani ochish
                 bool? result = openFileDialog.ShowDialog();
@@ -70,7 +76,16 @@ namespace Profex_Desktop.Pages
                 // Agar fayl tanlansa va rasm fayli bo'lsa
                 if (result == true)
                 {
-                    string selectedFilePath = openFileDialog.FileName;
+                    selectedFilePath = openFileDialog.FileName;
+                    if (selectedFilePath.Contains(".jpg") | selectedFilePath.Contains(".jpeg") | selectedFilePath.Contains(".png"))
+                    {
+                        btnSave.IsEnabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faqat 'jpg','jpeg' va 'png' formatdagi rasmlarni yuklay olasiz", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        btnSave.IsEnabled = false;
+                    }
 
                     // Tanlangan rasm faylini olish va kerakli ishlar bilan davom etish
                     // Misol uchun: Tanlangan rasmni bir joyga joylash va uni ko'rsatish
@@ -100,22 +115,33 @@ namespace Profex_Desktop.Pages
             btnCancel.Visibility = Visibility.Visible;
             btnChange.Visibility = Visibility.Hidden;
 
-            string path = @"C:\Users\99891\Desktop\Token.txt";
-            string token = File.ReadAllText(path);
+
+            string token = File.ReadAllText(_path);
             IdentityService identityService = jwtParser.ParseToken(token);
 
             _masterViewModel.FirstName = txtFName.Text;
             _masterViewModel.LastName = txtLName.Text;
             _masterViewModel.PhoneNumber = "+"+txtNum.Text;
-            if (cmbIsFree.SelectedIndex == 1)
+            if (selectedFilePath != "")
             {
-                _masterViewModel.IsFree = true;
+                _masterViewModel.ImagePath = selectedFilePath.ToString();
+                btnSave.IsEnabled = true;
             }
+
             else
+            {
+                var res = await _masterService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
+                _masterViewModel.ImagePath = res.ImagePath;
+                btnSave.IsEnabled = true;
+            }
+            if (cmbIsFree.SelectedIndex == 0)
             {
                 _masterViewModel.IsFree = false;
             }
-
+            else
+            {
+                _masterViewModel.IsFree = true;
+            }
             var result = await _masterService.UpdateAsync(identityService.Id, _masterViewModel);
             if (result == true)
             {
@@ -127,6 +153,12 @@ namespace Profex_Desktop.Pages
                 btnSave.Visibility = Visibility.Hidden;
                 btnCancel.Visibility = Visibility.Hidden;
                 btnChange.Visibility = Visibility.Visible;
+                MainWindow main = new MainWindow();
+                main.Show();
+            }
+            else
+            {
+                MessageBox.Show("Internet bilan muammo yuzaga keldi!");
             }
 
         }
@@ -136,11 +168,32 @@ namespace Profex_Desktop.Pages
             btnSave.Visibility = Visibility.Visible;
             btnCancel.Visibility = Visibility.Visible;
             btnChange.Visibility = Visibility.Hidden;
+            brUpload.IsEnabled = true;
+            txtFName.Text = "";
+            txtLName.Text = "";
+            txtNum.Text = "";
 
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
             cmbIsFree.IsReadOnly = false;
         }
+
+        private async void Page_loaded(object sender, RoutedEventArgs e)
+        {
+            string token = File.ReadAllText(_path);
+            IdentityService identityService = jwtParser.ParseToken(token);
+            var result = await _masterService.GetByIdAsync(identityService.Id);
+            txtFName.Text = result.FirstName.ToUpper();
+            txtLName.Text = result.LastName.ToUpper();
+            txtNum.Text = result.PhoneNumber.ToUpper().Substring(1);
+            if (result.IsFree == true)
+                cmbIsFree.SelectedIndex = 0;
+            else 
+                cmbIsFree.SelectedIndex = 1;
+            string imageUrl = BASEIMG_URL + result.ImagePath;
+            Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
+            imgProfile.ImageSource = new BitmapImage(imageUri);
+    }
     }
 }
