@@ -1,5 +1,6 @@
 ﻿using Profex_Desktop.Components.Loading;
 using Profex_Desktop.Pages;
+using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Masters;
 using System;
@@ -19,7 +20,7 @@ namespace Profex_Desktop
         private IdentityService _identityService;
         private JwtParser jwtParser = new JwtParser();
         private MasterService _masterService = new MasterService();
-        private string BASEIMG_URL = "http://95.130.227.187/";
+        private string BASEIMG_URL = "http://localhost:5230/";
 
 
         public MainWindow()
@@ -86,15 +87,11 @@ namespace Profex_Desktop
 
         private async void Window_loading(object sender, RoutedEventArgs e)
         {
-            string path = @"C:\Users\99891\Desktop\Token.txt";
-            string token = File.ReadAllText(path);
-            IdentityService tokenModel = jwtParser.ParseToken(token);
-
-            var result = await _masterService.GetByIdAsync(tokenModel.Id);
+            var result = await _masterService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
             string imageUrl = BASEIMG_URL + result.ImagePath;
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             MyPhoto.ImageSource = new BitmapImage(imageUri);
-            MyName.Content = tokenModel.FirstName.ToUpper();
+            MyName.Content = result.FirstName;
             rbDashboard.IsChecked = true;
 
         }

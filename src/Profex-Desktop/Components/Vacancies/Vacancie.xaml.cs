@@ -1,10 +1,8 @@
 ﻿using Profex_Desktop.Components.MasterContact;
 using Profex_Integrated.Services.Users;
 using Profex_Integrated.Services.Vacancies;
-using Profex_ViewModels.Vacancies;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -21,8 +19,8 @@ namespace Profex_Desktop.Components.Vacancies
     public partial class Vacancie : UserControl
     {
         private UserService _userService = new UserService();
-        private VacancyService _vacancyService= new VacancyService();
-        private string BASE_URL = "http://95.130.227.187/";
+        private VacancyService _vacancyService = new VacancyService();
+        private string BASE_URL = "http://95.130.227.187:8080/";
         private List<string[]> list = new List<string[]>();
         private string[] imagePaths = new string[5];
         private string[] description = new string[5];
@@ -49,13 +47,13 @@ namespace Profex_Desktop.Components.Vacancies
         private async void UpdateImage()
         {
             string imagePath = imagePaths[currentElement];
-            if(imagePath == null)
+            if (imagePath == null)
             {
-                imagePath = BASE_URL+ "media\\images\\IMG_91678077-3baf-47ff-81a7-4359f3825c39.png";
+                imagePath = BASE_URL + "media\\images\\IMG_91678077-3baf-47ff-81a7-4359f3825c39.png";
             }
             Uri imageUri = new Uri(imagePath, UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);
-            txtDescription.Text= description[currentElement];
+            txtDescription.Text = description[currentElement];
 
 
             List<Border> borderList = new List<Border>()
@@ -72,9 +70,12 @@ namespace Profex_Desktop.Components.Vacancies
             borderList[currentElement].Background = (Brush)bc.ConvertFrom("#495057")!;
             wrpContac.Children.Clear();
 
-            MasterContactControl master = new MasterContactControl();
-            master.SetData(list[0]);
-            wrpContac.Children.Add(master);
+            if (list.Count > 0)
+            {
+                MasterContactControl master = new MasterContactControl();
+                master.SetData(list[0]);
+                wrpContac.Children.Add(master);
+            }
 
         }
 
@@ -158,21 +159,21 @@ namespace Profex_Desktop.Components.Vacancies
         private async void Control_Loaded(object sender, RoutedEventArgs e)
         {
             var allvacancy = await _vacancyService.GetAllAsync(1);
-            short count1 = 0, index=0, imgindex=0;
+            short count1 = 0, index = 0, imgindex = 0;
             foreach (var item in allvacancy)
             {
-                if (item.ImagePath.Count < 1)   continue;
+                if (item.ImagePath.Count < 1) continue;
                 if (count1 == 4) break;
-                    imagePaths[index] = BASE_URL + item.ImagePath[0];
+                imagePaths[index] = BASE_URL + item.ImagePath[0];
                 description[index++] = item.Description;
                 var getByIdUser = await _userService.GetByIdAsync(item.UserId);
-                    string[] list1 = new string[3];
+                string[] list1 = new string[3];
 
-                    string imageUrl = BASE_URL + getByIdUser.ImagePath;
-                    list1[0] = imageUrl.ToString();
-                    list1[1] = getByIdUser.FirstName + " " + getByIdUser.LastName;
-                    list1[2] = MakeRandom();
-                    list.Add(list1);
+                string imageUrl = BASE_URL + getByIdUser.ImagePath;
+                list1[0] = imageUrl.ToString();
+                list1[1] = getByIdUser.FirstName + " " + getByIdUser.LastName;
+                list1[2] = MakeRandom();
+                list.Add(list1);
                 count1++;
             }
 

@@ -2,8 +2,8 @@
 
 public class API
 {
-    public static readonly string BASEIMG_URL = "http://95.130.227.187";
-    public static readonly string BASE_URL = "http://95.130.227.187/api/";
+    public static readonly string BASEIMG_URL = "http://localhost:5230/";
+    public static readonly string BASE_URL = "http://localhost:5230/api/";
     public static readonly string REGISTER_URL = BASE_URL+"master/register";
     public static readonly string SENDCODE_URL = BASE_URL+"master/register/send-code";
     public static readonly string VERIFY_URL = BASE_URL+"master/register/verify";

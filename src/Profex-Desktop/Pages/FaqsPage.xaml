@@ -25,17 +25,62 @@
             </Border>
 
             <StackPanel Grid.Column="1" Orientation="Vertical">
-                <Border Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
-                    
+                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{DynamicResource lblFirstNameAnswerMaster}">
+                            Ishni qanday topaman?
+                        </Label>
+                        <TextBlock Style="{DynamicResource profexAbout}" TextWrapping="Wrap" Grid.Row="1">
+                                Javob:    Dasturda vakansiyalar bo'limi bor.Vakansiya bo'limiga o'tganingizda siz hohlagan category dagi vakansiyani tanlab.
+Ish beruvchi bilan bog'lansangiz bo'ladi.
+                        </TextBlock>
+                    </Grid>
                 </Border>
-                <Border Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
-
+                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{DynamicResource lblFirstNameAnswerMaster}">
+                            Men ham ish joylay olamanmi?
+                        </Label>
+                        <TextBlock Style="{DynamicResource profexAbout}" TextWrapping="Wrap" Grid.Row="1">
+                                Javob: Hozircha yo'q! Ammo dasturning keyingi versiyalarida siz ham ish joylay olishingiz mumkin bo'ladi.
+                        </TextBlock>
+                    </Grid>
                 </Border>
-                <Border Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
-
+                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{DynamicResource lblFirstNameAnswerMaster}">
+                            Ish joylagan odamni qanday topaman?
+                        </Label>
+                        <TextBlock Style="{DynamicResource profexAbout}" TextWrapping="Wrap" Grid.Row="1">
+                                Javob: Siz ishlamoqchi bo'lgan ishni tanlaysiz va sizga oyna ochiladi. U yerda ish jouylagan odamning ish haqida hamma ma'lumoti turadi. Shu jumldan ishn joylagan odamning telefon raqami ham.
+                        </TextBlock>
+                    </Grid>
                 </Border>
-                <Border Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
-
+                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{DynamicResource lblFirstNameAnswerMaster}">
+                            Ish tugagandan
+                        </Label>
+                        <TextBlock Style="{DynamicResource profexAbout}" TextWrapping="Wrap" Grid.Row="1">
+                                Javob: Siz ishlamoqchi bo'lgan ishni tanlaysiz va sizga oyna ochiladi. U yerda ish jouylagan odamning ish haqida hamma ma'lumoti turadi. Shu jumldan ishn joylagan odamning telefon raqami ham.
+                        </TextBlock>
+                    </Grid>
                 </Border>
             </StackPanel>
         </Grid>

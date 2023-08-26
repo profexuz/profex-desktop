@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       Height="auto" Width="auto"
       Title="MasterEditPage" 
-      Background="Transparent">
+      Background="Transparent"
+      Loaded="Page_loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -38,7 +39,7 @@
                     </Border.Background>
                 </Border>
 
-                <Border x:Name="brUpload" Grid.Row="1" Height="50" Width="280"
+                <Border x:Name="brUpload" IsEnabled="False" Grid.Row="1" Height="50" Width="280"
                         Margin="50 10 0 0"
                         MouseDown="brUpload_MouseDown"
                         CornerRadius="10" BorderThickness="1,1,1,1"

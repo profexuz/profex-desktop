@@ -55,7 +55,8 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUpbtn_Click(object sender, RoutedEventArgs e)
         {
-            if(txtPassword.Password.Length > 0 && txtName.Text.Length > 0 && phoneNum.Text.Length > 0 && txtSurname.Text.Length > 0)
+            SignUpbtn.IsEnabled = false;
+            if (txtPassword.Password.Length > 0 && txtName.Text.Length > 0 && phoneNum.Text.Length > 0 && txtSurname.Text.Length > 0)
             {
                 if (txtPassword.Password.Length > 3 && txtName.Text.Length > 3 && phoneNum.Text.Length == 12 && txtSurname.Text.Length > 3)
                 {
@@ -78,17 +79,22 @@ namespace Profex_Desktop.Windows.AuthPages
                     }
                     else
                     {
-                        
-                    }    
+                        SignUpbtn.IsEnabled = true;
+
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Ma'lumotlar to'liq kiritlmagan");
+                    SignUpbtn.IsEnabled = true;
+
                 }
             }
             else
             {
                 MessageBox.Show("Ma'lumotlar bo'sh bo'lmasligi kerak");
+                SignUpbtn.IsEnabled = true;
+
             }
 
         }

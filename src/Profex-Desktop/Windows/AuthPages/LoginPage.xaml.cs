@@ -69,14 +69,17 @@ namespace Profex_Desktop.Windows.AuthPages
                 else
                 {
                     MessageBox.Show("Telefon raqam yoki parol noto'g'ri kiritilgan!");
+                    SignUpbtn.IsEnabled = true;
+
                 }
-                
+
             }
             else
             {
                 MessageBox.Show("Iltimos ma'lumotlarni to'liq kiriting!");
+                SignUpbtn.IsEnabled = true;
             }
-            
+
         }
     }
 }

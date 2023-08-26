@@ -5,15 +5,20 @@ using Profex_Dtos.Masters;
 using Profex_Integrated.Entities.Masters;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Security;
+using Profex_Integrated.Services.Auth;
 using Profex_ViewModels.Masters;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Profex_Integrated.Services.Masters;
 
 public class MasterService : IMasterService
 {
+    private AuthMasterService _masterAuth = new AuthMasterService();
     public async Task<IList<MasterViewModel>> GetAllAsync()
     {
 
@@ -107,49 +112,41 @@ public class MasterService : IMasterService
         throw new NotImplementedException();
     }
 
+    
+
     public async Task<bool> UpdateAsync(long id, MasterUpdateDto dto)
     {
         try
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(API.UPDATE_MASTERS);
-
-            using (var formData = new MultipartFormDataContent())
+            using (HttpClient client = new HttpClient())
             {
-                StringContent Id = new StringContent(id.ToString());
-                StringContent FirstName = new StringContent(dto.FirstName.ToString());
-                StringContent LastName = new StringContent(dto.LastName.ToString());
-                StringContent Number = new StringContent(dto.PhoneNumber.ToString());
-                StringContent ImagePath = new StringContent(dto.ImagePath.ToString());
-                StringContent IsFree = new StringContent(dto.IsFree.ToString());
-                // Try as I might C# adds a CrLf to the end of the job_id tag - so have to strip it in ruby
-                formData.Add(Id, "Id");
-                formData.Add(FirstName, "FirstName");
-                formData.Add(LastName, "LastName");
-                formData.Add(Number, "PhoneNumber");
-                formData.Add(ImagePath, "ImagePath");
-                formData.Add(IsFree, "IsFree");
-                var result = await client.PostAsync($"{client.BaseAddress}/{id}", formData);
+                var token = IdentitySingelton.GetInstance().Token;
+                var request = new HttpRequestMessage(HttpMethod.Put, API.UPDATE_MASTERS + $"/{id}");
+                request.Headers.Add("Authorization", $"Bearer {token}");
+                using (var content = new MultipartFormDataContent())
+                {
 
-                // If the upload failed there is not a lot we can do 
-                if (result.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
+                    content.Add(new StringContent(dto.FirstName), "FirstName");
+                    content.Add(new StringContent(dto.LastName), "LastName");
+                    content.Add(new StringContent(dto.PhoneNumber), "PhoneNumber");
+                    content.Add(new StringContent(dto.IsFree.ToString()), "IsFree");
+                    content.Add(new StreamContent(File.OpenRead(dto.ImagePath)), "ImagePath", dto.ImagePath);
+                    request.Content = content;
+
+                    var response = await client.SendAsync(request);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var res = await response.Content.ReadAsStringAsync();
+                        return true;
+                    }
                     return false;
                 }
             }
         }
-        catch
+        catch (Exception ex)
         {
+            Console.WriteLine("Exception: " + ex.Message);
             return false;
         }
-    }
-
-    public Task UpdateAsync(long id, MasterViewModel masterViewModel)
-    {
-        throw new NotImplementedException();
     }
 }

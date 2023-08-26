@@ -63,7 +63,7 @@ namespace Profex_Desktop.Pages
                     if (count == 6) break; count++;
 
                     //Download img from api url
-                    string imageUrl = "http://95.130.227.187/" + res.ImagePath;
+                    string imageUrl = "http://localhost:5230/" + res.ImagePath;
 
                     string[] list =
                     {
