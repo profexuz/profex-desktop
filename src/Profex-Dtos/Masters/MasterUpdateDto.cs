@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace Profex_Dtos.Masters;
+﻿namespace Profex_Dtos.Masters;
 
 public class MasterUpdateDto
 {

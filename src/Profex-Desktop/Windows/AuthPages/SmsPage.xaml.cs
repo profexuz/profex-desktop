@@ -40,7 +40,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
             UpdateTimerDisplay(); // Soatni boshlang'ich ko'rsatish
             timer.Start();
-            
+
         }
         private async void Timer_Tick(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace Profex_Desktop.Windows.AuthPages
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
-            
+
         }
 
         private async void txtSmsCode_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)

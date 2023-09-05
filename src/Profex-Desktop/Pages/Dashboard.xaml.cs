@@ -7,7 +7,6 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 
 namespace Profex_Desktop.Pages
 {
@@ -42,7 +41,7 @@ namespace Profex_Desktop.Pages
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             await MyTask();
-            
+
         }
         private async Task<bool> Loading_InfosAsync()
         {
@@ -53,7 +52,7 @@ namespace Profex_Desktop.Pages
                 usersCount = await _userService.CountAsync();
                 var result = await _masterService.GetAllAsync();
                 var vacancy = await _vacancyService.GetAllAsync(1);
-                vacanciesCount= vacancy.Count;
+                vacanciesCount = vacancy.Count;
                 mastersCount = result.Count;
                 await CountAllUsers();
                 short count = 0;
@@ -94,7 +93,7 @@ namespace Profex_Desktop.Pages
 
         private void AddVacancieElement()
         {
-            
+
         }
 
         private static string MakeRandom()
@@ -123,7 +122,7 @@ namespace Profex_Desktop.Pages
                 VacancyCount.Content = $"{vacanciesCount / 1000}K";
             else
             {
-                VacancyCount.Content = vacanciesCount+" ta";
+                VacancyCount.Content = vacanciesCount + " ta";
             }
             if (mastersCount >= 10000)
                 MastersCount.Content = $"{mastersCount / 1000}K";

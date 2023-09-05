@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
-using Profex_ViewModels.Masters;
 using Profex_ViewModels.Users;
 
 namespace Profex_Integrated.Services.Users;

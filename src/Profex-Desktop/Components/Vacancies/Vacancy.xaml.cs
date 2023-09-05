@@ -1,20 +1,8 @@
-﻿using Profex_Desktop.Pages;
-using Profex_Desktop.Windows.AboutVacancy;
-using Profex_Desktop.Windows.AuthPages;
+﻿using Profex_Desktop.Windows.AboutVacancy;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Profex_Desktop.Components.Vacancies
 {
@@ -39,7 +27,7 @@ namespace Profex_Desktop.Components.Vacancies
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-           AboutVacancyWindow vacancyWindow = new AboutVacancyWindow();
+            AboutVacancyWindow vacancyWindow = new AboutVacancyWindow();
             vacancyWindow.vacancyId = vacancyId;
             vacancyWindow.Show();
         }

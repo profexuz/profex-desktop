@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Profex_Integrated.Interfaces;
-using System.IdentityModel.Tokens.Jwt;
+﻿using Profex_Integrated.Interfaces;
 
 namespace Profex_Integrated.Services.Auth.JwtToken;
 

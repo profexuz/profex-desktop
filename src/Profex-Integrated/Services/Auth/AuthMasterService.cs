@@ -4,10 +4,6 @@ using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
-using Profex_Integrated.Services.Masters;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Profex_Integrated.Services.Auth;
 
@@ -133,7 +129,7 @@ public class AuthMasterService : IAuthMasterService
                 if (result.IsSuccessStatusCode)
                 {
                     string responseContent = await result.Content.ReadAsStringAsync();
-                    dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent)!;                    var token = IdentitySingelton.GetInstance();
+                    dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent)!; var token = IdentitySingelton.GetInstance();
                     token.Token = jsonResponse.token.ToString();
                     IdentityService tokenModel = _jwtParser.ParseToken(token.Token);
                     token.Id = tokenModel.Id;
@@ -151,5 +147,5 @@ public class AuthMasterService : IAuthMasterService
         }
     }
 
-    
+
 }
