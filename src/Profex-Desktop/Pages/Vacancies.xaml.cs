@@ -11,7 +11,8 @@ namespace Profex_Desktop.Pages
     public partial class Vacancies : Page
     {
         private VacancyService _vacancyService = new VacancyService();
-        private string BASE_URL = "http://95.130.227.187/";
+        //private string BASE_URL = "http://95.130.227.187/";
+        private string BASE_URL = "https://localhost:7145/";
 
 
         public Vacancies()
@@ -55,9 +56,49 @@ namespace Profex_Desktop.Pages
             }
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            string searchText = Search.Text; // Qidiruv so'zini olish
 
+            // Qidiruvni boshlash uchun VacancyService dan foydalanish
+            var searchResults = await _vacancyService.SearchAsync(searchText);
+
+            wrpNewsVacancy.Children.Clear();
+            wrpAdvertising.Children.Clear();
+
+            string[] values = new string[3];
+            byte count = 0;
+
+            foreach (var item in searchResults)
+            {
+                if (count == 6) break;
+                Vacancy vacancy = new Vacancy();
+                vacancy.vacancyId = item.Id;
+                values[0] = BASE_URL + item.ImagePath[0];
+                values[1] = item.Title;
+                values[2] = item.Price.ToString();
+                vacancy.SetData(values);
+                wrpNewsVacancy.Children.Add(vacancy);
+                count++;
+            }
+
+            count = 0;
+
+            foreach (var item in searchResults)
+            {
+                if (count <= 6)
+                {
+                    count++;
+                    continue;
+                }
+                Vacancy vacancy = new Vacancy();
+                vacancy.vacancyId = item.Id;
+                values[0] = BASE_URL + item.ImagePath[0];
+                values[1] = item.Title;
+                values[2] = item.Price.ToString();
+                vacancy.SetData(values);
+                wrpAdvertising.Children.Add(vacancy);
+            }
         }
     }
 }

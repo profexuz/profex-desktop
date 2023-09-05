@@ -65,8 +65,35 @@ public class VacancyService : IVacancyService
         }
     }
 
-    public Task<IList<Vacancy>> SearchAsync(string search)
+    public async Task<IList<Vacancy>> SearchAsync(string search)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(API.SEARCH_VACANCY);
+
+                // Qidiruv so'zini query parametri sifatida qo'shish
+                var response = await client.GetAsync($"{client.BaseAddress}?search={search}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    var vacancies = JsonConvert.DeserializeObject<IList<Vacancy>>(responseContent);
+                    return vacancies;
+                }
+                else
+                {
+                    // Agar javob yaxshi kelmasa, bo'sh ro'yxatni qaytarish
+                    return new List<Vacancy>();
+                }
+            }
+        }
+        catch
+        {
+            // Xato yuzaga kelsa, hammasini o'zgartirishsiz
+            return new List<Vacancy>();
+        }
     }
 }

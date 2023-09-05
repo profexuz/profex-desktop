@@ -12,6 +12,7 @@ public class API
     public static readonly string GETALL_MASTERS = BASE_URL + "common/master";
     public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";
     public static readonly string SEARCH_MASTERS = BASE_URL + "common/master/search";
+    public static readonly string SEARCH_VACANCY = BASE_URL + "api/common/post/search";
     public static readonly string UPDATE_MASTERS = BASE_URL + "common/master";
 
 
