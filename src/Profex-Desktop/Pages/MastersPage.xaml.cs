@@ -11,7 +11,8 @@ namespace Profex_Desktop.Pages
     public partial class MastersPage : Page
     {
         private MasterService _masterService = new MasterService();
-        private string BASE_URL = "http://95.130.227.187:8080/";
+        private string BASE_URL = "http://localhost:5230/";
+        /*private string BASE_URL = "http://95.130.227.187:8080/";*/
         public MastersPage()
         {
             InitializeComponent();

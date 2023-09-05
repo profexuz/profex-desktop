@@ -19,7 +19,7 @@ namespace Profex_Desktop.Pages
     public partial class MasterEditPage : Page
     {
 
-        private string _path = @"C:\Users\99891\Desktop\Token.txt";
+        private string _path = "C:\\Users\\jumakulov\\Desktop\\Token.txt";
         private MasterService _masterService = new MasterService();
         private JwtParser jwtParser = new JwtParser();
         private MasterUpdateDto _masterViewModel = new MasterUpdateDto();
