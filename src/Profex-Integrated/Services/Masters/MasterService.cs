@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Profex_Dtos.Auth;
 using Profex_Dtos.Masters;
 using Profex_Integrated.Entities.Masters;
 using Profex_Integrated.Helpers;
@@ -8,11 +6,6 @@ using Profex_Integrated.Interfaces;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth;
 using Profex_ViewModels.Masters;
-using System.ComponentModel.DataAnnotations;
-using System.Net.Http.Headers;
-using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Profex_Integrated.Services.Masters;
 
@@ -33,7 +26,7 @@ public class MasterService : IMasterService
                 if (result.IsSuccessStatusCode)
                 {
                     var responseContent = await result.Content.ReadAsStringAsync();
-                    var res =  JsonConvert.DeserializeObject<IList<MasterViewModel>>(responseContent);
+                    var res = JsonConvert.DeserializeObject<IList<MasterViewModel>>(responseContent);
                     return res;
                 }
                 else
@@ -112,7 +105,7 @@ public class MasterService : IMasterService
         throw new NotImplementedException();
     }
 
-    
+
 
     public async Task<bool> UpdateAsync(long id, MasterUpdateDto dto)
     {

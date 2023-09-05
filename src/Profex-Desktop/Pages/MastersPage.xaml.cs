@@ -1,8 +1,5 @@
-﻿using DevExpress.Utils.About;
-using Profex_Desktop.Components.MastersInfo;
+﻿using Profex_Desktop.Components.MastersInfo;
 using Profex_Integrated.Services.Masters;
-using System.Linq;
-using System.Security.Cryptography.Pkcs;
 using System.Windows;
 using System.Windows.Controls;
 

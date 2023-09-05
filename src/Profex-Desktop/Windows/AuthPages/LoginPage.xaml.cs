@@ -1,15 +1,13 @@
 ﻿using Profex_Desktop.Windows.Auth;
 using Profex_Dtos.Auth;
 using Profex_Integrated.Services.Auth;
-using System.IO;
 using System;
-using System.Runtime.CompilerServices;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Threading.Tasks;
 
 namespace Profex_Desktop.Windows.AuthPages
 {
@@ -43,9 +41,9 @@ namespace Profex_Desktop.Windows.AuthPages
         private async void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
         {
             SignUpbtn.IsEnabled = false;
-            if(pswBox.Password.Length>3 && phoneNum.Text.Length == 12)
+            if (pswBox.Password.Length > 3 && phoneNum.Text.Length == 12)
             {
-                _loginDto.PhoneNumber = "+"+phoneNum.Text;
+                _loginDto.PhoneNumber = "+" + phoneNum.Text;
                 _loginDto.Password = pswBox.Password;
                 var result = await _authMasterService.LoginAsync(_loginDto);
                 if (result.Result == true)

@@ -13,7 +13,7 @@ namespace Profex_Desktop.Windows.Auth
         public bool vis { get; set; } = true;
         private RegisterPage register = new RegisterPage();
         private LoginPage login = new LoginPage();
-        private string signUP = "Ro'yxatdan o'tish"; 
+        private string signUP = "Ro'yxatdan o'tish";
         private string signIn = "Kirish";
 
 

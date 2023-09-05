@@ -1,18 +1,8 @@
-﻿using DevExpress.Utils.Url;
-using Profex_Integrated.Services.Vacancies;
+﻿using Profex_Integrated.Services.Vacancies;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Profex_Desktop.Windows.AboutVacancy
 {
@@ -96,7 +86,7 @@ namespace Profex_Desktop.Windows.AboutVacancy
                         lblUserName.Content = item.FirstName + " " + item.LastName;
                         lblPhoneNum.Content = item.PhoneNumber;
                         txtDesc.Text = item.Description;
-                        lblCost.Content = item.Price.ToString()+" SO'M";
+                        lblCost.Content = item.Price.ToString() + " SO'M";
                     }
                 }
             }

@@ -1,17 +1,9 @@
-﻿using DevExpress.Utils.Design;
-using Profex_Desktop.Windows.Auth;
-using Profex_Desktop.Windows.Offerta_shartlari;
+﻿using Profex_Desktop.Windows.Offerta_shartlari;
 using Profex_Dtos.Auth;
-using Profex_Integrated.Interfaces;
 using Profex_Integrated.Services.Auth;
-using System;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using Color = System.Windows.Media.Color;
-using ColorConverter = System.Windows.Media.ColorConverter;
 
 namespace Profex_Desktop.Windows.AuthPages
 {
@@ -22,7 +14,7 @@ namespace Profex_Desktop.Windows.AuthPages
     {
         private RegisterDto registerDto = new RegisterDto();
         private AuthMasterService _authMasterService = new AuthMasterService();
-        
+
         public RegisterPage()
         {
             InitializeComponent();
@@ -30,7 +22,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private void checkbox_Checked(object sender, RoutedEventArgs e)
         {
-            
+
             if (checkbox.IsChecked == true)
             {
                 SignUpbtn.IsEnabled = true;
@@ -62,7 +54,7 @@ namespace Profex_Desktop.Windows.AuthPages
                 {
                     registerDto.FirstName = txtName.Text;
                     registerDto.LastName = txtSurname.Text.ToString();
-                    registerDto.PhoneNumber = "+"+phoneNum.Text.ToString();
+                    registerDto.PhoneNumber = "+" + phoneNum.Text.ToString();
                     registerDto.Password = txtPassword.Password.ToString();
                     bool res = await _authMasterService.RegisterAsync(registerDto);
 
@@ -75,7 +67,7 @@ namespace Profex_Desktop.Windows.AuthPages
                             smsPage.PhoneNum = "+" + phoneNum.Text;
                             NavigationService.Navigate(smsPage);
                         }
-                        
+
                     }
                     else
                     {
