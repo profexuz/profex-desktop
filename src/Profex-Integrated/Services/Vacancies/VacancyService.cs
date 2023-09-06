@@ -75,7 +75,9 @@ public class VacancyService : IVacancyService
                 client.BaseAddress = new Uri(API.SEARCH_VACANCY);
 
                 // Qidiruv so'zini query parametri sifatida qo'shish
-                var response = await client.GetAsync($"{client.BaseAddress}?search={search}");
+                //var response = await client.GetAsync($"{client.BaseAddress}?search={search}");
+                var response = await client.GetAsync($"?search={search}");
+                //https://localhost:7145/api/common/master/search?search=das&page=1
 
                 if (response.IsSuccessStatusCode)
                 {

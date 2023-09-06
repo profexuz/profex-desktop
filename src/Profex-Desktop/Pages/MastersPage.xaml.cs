@@ -1,7 +1,9 @@
 ﻿using Profex_Desktop.Components.MastersInfo;
 using Profex_Integrated.Services.Masters;
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Profex_Desktop.Pages
 {
@@ -32,7 +34,10 @@ namespace Profex_Desktop.Pages
             foreach (var master in search)
             {
                 MasterInfo info = new MasterInfo();
-                maste[0] = (master.ImagePath);
+                maste[0] = BASE_URL + (master.ImagePath);
+                //string rasm = BASE_URL + (master.ImagePath);
+                //Uri imageUri = new Uri(rasm, UriKind.Absolute);
+                //maste[0] = (imageUri.ToString());
                 maste[1] = (master.FirstName + " " + master.LastName);
                 maste[2] = (master.PhoneNumber);
                 maste[3] = (master.IsFree.ToString());
