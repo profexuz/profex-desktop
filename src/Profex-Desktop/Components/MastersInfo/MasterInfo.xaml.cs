@@ -10,14 +10,16 @@ namespace Profex_Desktop.Components.MastersInfo
     /// </summary>
     public partial class MasterInfo : UserControl
     {
-        private string BASE_URL = "http://95.130.227.187:8080/";
+        //private string BASE_URL = "http://95.130.227.187:8080/";
+        //private string BASE_URL = "http://localhost:7145/";
+        private string BASE_URL = "http://localhost:5230/";
         public MasterInfo()
         {
             InitializeComponent();
         }
         public void SetData(string[] masterskills)
         {
-            string imageUrl = BASE_URL + masterskills[0];
+            string imageUrl = masterskills[0];
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             imgProfile.ImageSource = new BitmapImage(imageUri);
             lblname.Content = masterskills[1];

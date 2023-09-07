@@ -13,7 +13,10 @@ namespace Profex_Desktop.Windows.AboutVacancy
     {
         private VacancyService _vacancyService = new VacancyService();
         public long vacancyId;
-        private string BASE_URL = "http://95.130.227.187/";
+        //private string BASE_URL = "http://95.130.227.187/";
+        private string BASE_URL = "http://localhost:5230/";
+        private string BASEIMG_URL = "http://localhost:5230/";
+
         public AboutVacancyWindow()
         {
             InitializeComponent();
@@ -55,24 +58,28 @@ namespace Profex_Desktop.Windows.AboutVacancy
                     {
                         if (item.ImagePath.Count > 0)
                         {
-                            Uri imageUri = new Uri(BASE_URL + item.ImagePath[0], UriKind.Absolute);
+                            //Uri imageUri = new Uri(BASE_URL + item.ImagePath[0], UriKind.Absolute);
+                            Uri imageUri = new Uri(BASEIMG_URL + item.ImagePath[0], UriKind.Absolute);
                             imgMain.ImageSource = new BitmapImage(imageUri);
                             rbImg.Visibility = Visibility.Visible;
                             rbImg.Content = new BitmapImage(imageUri);
                             if (item.ImagePath.Count > 1)
                             {
                                 rbImg1.Visibility = Visibility.Visible;
-                                Uri imageUri1 = new Uri(BASE_URL + item.ImagePath[1], UriKind.Absolute);
+                                //Uri imageUri1 = new Uri(BASE_URL + item.ImagePath[1], UriKind.Absolute);
+                                Uri imageUri1 = new Uri(BASEIMG_URL + item.ImagePath[1], UriKind.Absolute);
                                 rbImg1.Content = new BitmapImage(imageUri1);
                                 if (item.ImagePath.Count > 2)
                                 {
                                     rbImg2.Visibility = Visibility.Visible;
-                                    Uri imageUri2 = new Uri(BASE_URL + item.ImagePath[2], UriKind.Absolute);
+                                    //Uri imageUri2 = new Uri(BASE_URL + item.ImagePath[2], UriKind.Absolute);
+                                    Uri imageUri2 = new Uri(BASEIMG_URL + item.ImagePath[2], UriKind.Absolute);
                                     rbImg2.Content = new BitmapImage(imageUri2);
                                     if (item.ImagePath.Count > 3)
                                     {
                                         rbImg3.Visibility = Visibility.Visible;
-                                        Uri imageUri3 = new Uri(BASE_URL + item.ImagePath[3], UriKind.Absolute);
+                                        //Uri imageUri3 = new Uri(BASE_URL + item.ImagePath[3], UriKind.Absolute);
+                                        Uri imageUri3 = new Uri(BASEIMG_URL + item.ImagePath[3], UriKind.Absolute);
                                         rbImg3.Content = new BitmapImage(imageUri3);
                                     }
                                 }

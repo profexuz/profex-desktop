@@ -14,7 +14,7 @@ namespace Profex_Desktop.Pages
     {
         private MasterService _masterService = new MasterService();
         private string BASE_URL = "http://localhost:5230/";
-        /*private string BASE_URL = "http://95.130.227.187:8080/";*/
+        
         public MastersPage()
         {
             InitializeComponent();
@@ -34,9 +34,8 @@ namespace Profex_Desktop.Pages
             foreach (var master in search)
             {
                 MasterInfo info = new MasterInfo();
-                maste[0] = BASE_URL + (master.ImagePath);
-                //string rasm = BASE_URL + (master.ImagePath);
-                //Uri imageUri = new Uri(rasm, UriKind.Absolute);
+                maste[0] = BASE_URL + master.ImagePath;
+
                 //maste[0] = (imageUri.ToString());
                 maste[1] = (master.FirstName + " " + master.LastName);
                 maste[2] = (master.PhoneNumber);

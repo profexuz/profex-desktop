@@ -4,7 +4,7 @@ namespace Profex_Integrated.Helpers;
 
 public class API
 {
-    public static readonly string BASEIMG_URL = "http://localhost:5230/";
+    public static readonly string BASEIMG_URL = "http://localhost:7145/";
     public static readonly string BASE_URL = "http://localhost:5230/api/";
     public static readonly string REGISTER_URL = BASE_URL + "master/register";
     public static readonly string SENDCODE_URL = BASE_URL + "master/register/send-code";
