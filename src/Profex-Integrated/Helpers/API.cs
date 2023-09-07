@@ -1,4 +1,6 @@
-﻿namespace Profex_Integrated.Helpers;
+﻿using static System.Net.WebRequestMethods;
+
+namespace Profex_Integrated.Helpers;
 
 public class API
 {
@@ -23,6 +25,7 @@ public class API
 
     //Users part
     public static readonly string COUNT_USERS = BASE_URL + "common/user/count";
+    //public static readonly string COUNT_USERS = "https://localhost:7145/api/common/user/count";
     public static readonly string GETALL_USERS = BASE_URL + "common/user/get-all";
     public static readonly string GETBYID_USERS = BASE_URL + "common/user/getbyId";
 
