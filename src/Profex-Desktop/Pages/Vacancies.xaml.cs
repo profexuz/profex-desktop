@@ -11,7 +11,7 @@ namespace Profex_Desktop.Pages
     public partial class Vacancies : Page
     {
         private VacancyService _vacancyService = new VacancyService();
-        private string BASE_URL = "https://localhost:5230/";
+        private string BASE_URL = "https://localhost:7145/";
 
 
         public Vacancies()
