@@ -48,7 +48,7 @@ namespace Profex_Desktop.Windows.AuthPages
                 var result = await _authMasterService.LoginAsync(_loginDto);
                 if (result.Result == true)
                 {
-                    string fileName = "C:\\Users\\jumakulov\\Desktop\\Token.txt";
+                    string fileName = "C:\\Users\\Public\\Token.txt";
                     if (File.Exists(fileName))
                     {
                         File.Delete(fileName);

@@ -88,7 +88,7 @@ namespace Profex_Desktop.Windows.AuthPages
                     var result = await _authMasterService.VerifyRegisterAsync(_verifyRegisterDto);
                     if (result.Result == true)
                     {
-                        string fileName = @"C:\Users\99891\Desktop\Token.txt";
+                        string fileName = @"";
                         if (File.Exists(fileName))
                         {
                             File.Delete(fileName);
