@@ -17,7 +17,9 @@ namespace Profex_Desktop.Components.Vacancies
     {
         private UserService _userService = new UserService();
         private VacancyService _vacancyService = new VacancyService();
-        private string BASE_URL = "http://localhost:5230/";
+        //private string BASE_URL = "http://localhost:5230/";
+        private string BASE_URL = "http://64.227.42.134:4040/";
+
 
         private List<string[]> list = new List<string[]>();
         private string[] imagePaths = new string[5];

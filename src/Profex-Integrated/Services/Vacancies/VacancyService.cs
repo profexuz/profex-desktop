@@ -44,6 +44,7 @@ public class VacancyService : IVacancyService
             {
                 client.BaseAddress = new Uri(API.GETBYID_VACANCY);
                 var response = await client.GetAsync($"{client.BaseAddress}/{id}");
+                //http://64.227.42.134:4040/api/common/post/byId/8
 
                 if (response.IsSuccessStatusCode)
                 {

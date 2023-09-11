@@ -24,7 +24,8 @@ namespace Profex_Desktop.Pages
         private JwtParser jwtParser = new JwtParser();
         private MasterUpdateDto _masterViewModel = new MasterUpdateDto();
         private string selectedFilePath = "";
-        private string BASEIMG_URL = "http://localhost:5230/";
+        //private string BASEIMG_URL = "http://localhost:5230/";
+        private string BASEIMG_URL = "http://64.227.42.134:4040/";
 
 
         public MasterEditPage()

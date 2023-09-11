@@ -243,6 +243,18 @@
         <Setter Property="Margin" Value="5 10 5 0"/>
     </Style>
     
+    <!--Label for about Master information-->
+    <Style x:Key="lblTitleForMaster" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Information about the master"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyTitleColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 10 5 0"/>
+    </Style>
+
     <!--Region label style-->
     <Style x:Key="lblRegion" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource labelRegionVacancy}"/>
@@ -255,6 +267,20 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
+    
+    <!--FirstName label style-->
+    <Style x:Key="lblFirstName" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Name"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyRegionColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
 
     <!--Region answer label style-->
     <Style x:Key="lblRegionAnswer" TargetType="{x:Type Label}">
@@ -266,6 +292,20 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
+    
+    <!--LastName label style-->
+    <Style x:Key="lblLastName" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Surname"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyRegionColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
 
     <!--District label style-->
     <Style x:Key="lblDistrict" TargetType="{x:Type Label}">
@@ -288,6 +328,28 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
+    
+    <!--FirstName answer label style-->
+    <Style x:Key="lblFirstNameAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="OZODBEK"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyDistrictAnswerColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+    
+    <!--LastName answer label style-->
+    <Style x:Key="lblLastNameAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="JUMAKULOV"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyDistrictAnswerColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
 
     <!--LongLatitude label style-->
     <Style x:Key="lblLongLangtitude" TargetType="{x:Type Label}">
@@ -299,6 +361,19 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="0"/>
+    </Style>
+    
+    <!--Telefon label style-->
+    <Style x:Key="lblTelefon" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Telefon"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyRegionColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
 
     <!--Cost label style-->
@@ -334,6 +409,17 @@
     <!--PhoneNum label style-->
     <Style x:Key="lblPhoneNumVacancy" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource labelPhoneNum}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource PhoneNumColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    
+    <!--IsFree label style-->
+    <Style x:Key="lblIsFreee" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="IsFree"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Foreground" Value="{DynamicResource PhoneNumColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>

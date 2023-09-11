@@ -16,13 +16,17 @@
                     Margin="5" Background="#c12ebf">
                 <Ellipse Height="48" Width="48">
                     <Ellipse.Fill>
-                        <ImageBrush x:Name="ProfileImg" ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                        <ImageBrush x:Name="ProfileImg"  ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                        
                     </Ellipse.Fill>
                 </Ellipse>
             </Border>
             <Border x:Name="NameBorder" CornerRadius="25" Background="{DynamicResource PrimaryBackground}" 
                     Width="250"
-                    Height="50">
+                    Height="50"
+                     MouseLeftButtonDown="MasterInforKorish"
+                    Cursor="Hand"
+                    >
             <Label x:Name="NameOfMaster" 
                    Content="Alisher Sultanov"
                    FontSize="18" Margin="5"

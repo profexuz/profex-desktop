@@ -29,7 +29,7 @@ namespace Profex_Desktop.Components.Vacancies
 
             AboutVacancyWindow vacancyWindow = new AboutVacancyWindow();
             vacancyWindow.vacancyId = vacancyId;
-            vacancyWindow.Show();
+            vacancyWindow.ShowDialog();
         }
     }
 }
