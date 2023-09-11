@@ -30,6 +30,12 @@
     <None Remove="Assets\Images\somebreakedthing4.jpg" />
     <None Remove="Assets\Images\somebreakedthing5.jpg" />
     <None Remove="Assets\Images\Vacancy.png" />
+    <None Remove="Assets\Profile images - Copy\default image.jpg" />
+    <None Remove="Assets\Profile images - Copy\default imageLight.jpg" />
+    <None Remove="Assets\Profile images - Copy\defaultimagaUser.jpg" />
+    <None Remove="Assets\Profile images - Copy\defaultimagaUserDark.jpg" />
+    <None Remove="Assets\Profile images - Copy\DefaultProfileImage.png" />
+    <None Remove="Assets\Profile images - Copy\DefaultProfileImage1.png" />
     <None Remove="Assets\Profile images\default image.jpg" />
     <None Remove="Assets\Profile images\default imageLight.jpg" />
     <None Remove="Assets\Profile images\defaultimagaUser.jpg" />
@@ -91,6 +97,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\Vacancy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images - Copy\default image.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images - Copy\default imageLight.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images - Copy\defaultimagaUser.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images - Copy\defaultimagaUserDark.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images - Copy\DefaultProfileImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Profile images - Copy\DefaultProfileImage1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Profile images\default image.jpg">

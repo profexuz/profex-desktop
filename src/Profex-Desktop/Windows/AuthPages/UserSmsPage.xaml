@@ -1,0 +1,52 @@
+﻿<Page x:Class="Profex_Desktop.Windows.AuthPages.UserSmsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Profex_Desktop.Windows.AuthPages"
+      mc:Ignorable="d" 
+      Title="SmsPage"
+      Height="402" Width="360"
+      Background="White"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="80"/>-->
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <!--Last name part-->
+        <StackPanel Grid.Row="1"
+                        Orientation="Vertical">
+
+            <!--Last name textbox-->
+            <TextBlock x:Name="txtSmsInfo" Style="{DynamicResource UsersmsMessage}"/>
+        </StackPanel>
+        <!--Last name part-->
+        <StackPanel Grid.Row="2"
+                        Orientation="Vertical">
+            <!--Last name textbox-->
+            <TextBox x:Name="txtSmsCode" Style="{DynamicResource UserFullname}"
+                     PreviewTextInput="NumberValidationTextBox"    
+                     MaxLength="4" Margin="10 20" KeyDown="txtSmsCode_KeyDown" Text=""/>
+        </StackPanel>
+
+        <Label x:Name="lblSecond" Grid.Row="3" Content="04:59"
+               Style="{DynamicResource Usersecond}"/>
+
+        <Button Grid.Row="4"
+                x:Name="Idonthave" Click="ChangeNumber_Click"
+                Style="{DynamicResource UserbtnChange}">
+            <TextBlock
+                TextDecorations="Underline">
+                Raqamni o'zgartirish
+            </TextBlock>
+        </Button>
+    </Grid>
+</Page>
+
