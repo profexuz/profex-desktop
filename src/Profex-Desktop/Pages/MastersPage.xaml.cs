@@ -13,7 +13,8 @@ namespace Profex_Desktop.Pages
     public partial class MastersPage : Page
     {
         private MasterService _masterService = new MasterService();
-        private string BASE_URL = "http://localhost:5230/";
+        //private string BASE_URL = "http://localhost:5230/";
+        private string BASE_URL = "http://64.227.42.134:4040/";
         
         public MastersPage()
         {
@@ -35,11 +36,9 @@ namespace Profex_Desktop.Pages
             {
                 MasterInfo info = new MasterInfo();
                 maste[0] = BASE_URL + master.ImagePath;
-
-                //maste[0] = (imageUri.ToString());
                 maste[1] = (master.FirstName + " " + master.LastName);
                 maste[2] = (master.PhoneNumber);
-                maste[3] = (master.IsFree.ToString());
+                maste[3] = master.IsFree ? "bo'sh" : "band";
                 maste[4] = (master.CreatedAt.ToString());
                 info.SetData(maste);
                 wrpMasters.Children.Add(info);
@@ -63,7 +62,8 @@ namespace Profex_Desktop.Pages
                     maste[0] = (master.ImagePath);
                     maste[1] = (master.FirstName + " " + master.LastName);
                     maste[2] = (master.PhoneNumber);
-                    maste[3] = (master.IsFree.ToString());
+                    //maste[3] = (master.IsFree.ToString());
+                    maste[3] = master.IsFree ? "bo'sh" : "band";
                     maste[4] = (master.CreatedAt.ToString());
                     info.SetData(maste);
                     wrpMasters.Children.Add(info);

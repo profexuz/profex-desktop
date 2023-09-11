@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Profex_Desktop.Windows.AboutMaster;
+using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -21,6 +23,13 @@ namespace Profex_Desktop.Components.MasterContact
             var bc = new BrushConverter();
             NameOfMaster.Content = salom[1];
             brBackgr.Background = (Brush)bc.ConvertFrom(salom[2])!;
+        }
+
+        private void MasterInforKorish(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            //MessageBox.Show("Ishladi");
+            AboutMasterWindow ms = new AboutMasterWindow();
+            ms.ShowDialog();
         }
     }
 }
