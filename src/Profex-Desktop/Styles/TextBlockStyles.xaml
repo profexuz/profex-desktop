@@ -670,7 +670,26 @@ Boshqa maqsadlar uchun, faqatgina Sizning roziligingiz bilan Siz toʼgʼringizda
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
-    
+
+    <!--User For Profile Name style-->
+    <Style x:Key="UsersmsMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Text" Value="Telefon raqamizga faollashtirish kodi bilan 
+                                     SMS jo'natdik"/>
+        <Setter Property="Padding" Value="0 20 0 0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+
+
+
+
+
     <!--For Vacancy Description style-->
     <Style x:Key="txtDescription" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{DynamicResource txtDescriptionColor}"/>

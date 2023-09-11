@@ -497,7 +497,49 @@
         </Setter>
     </Style>
 
-        <Style x:Key="RegisterPageCloseButton" TargetType="{x:Type Button}">
+    <!--User SignUp/SignIn Buttons style-->
+    <Style x:Key="UserHyperLink" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" Background="{TemplateBinding Background}">
+                        <Label Grid.Row="0"
+                                   x:Name="textl" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   Padding="{TemplateBinding Padding}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="textl" Property="Foreground" Value="#0582ca"/>
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="textl" Property="Foreground" Value="#001f54"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="RegisterPageCloseButton" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="30"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
@@ -570,7 +612,49 @@
         </Setter>
     </Style>
 
-        <!--In Registerpage "I have an account" button style -->
+    <!--UserSignUp button style-->
+    <Style x:Key="UserbntSignUp" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="290"/>
+        <Setter Property="Background" Value="Yellow"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Margin" Value="0 0 0 5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" CornerRadius="10" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
+                            Background="{TemplateBinding Background}">
+                        <Label x:Name="lbl" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="{TemplateBinding FontFamily}" Foreground="Black"
+                               FontWeight="Bold"
+                               FontSize="{TemplateBinding FontSize}"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="yellow" TargetName="B"/>
+                            <Setter Property="Foreground" Value="black" TargetName="lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Background" Value="yellow" TargetName="B"/>
+                            <Setter Property="Foreground" Value="black" TargetName="lbl"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="lightyellow" TargetName="B"/>
+                            <Setter Property="Foreground" Value="black" TargetName="lbl"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--In Registerpage "I have an account" button style -->
         <Style x:Key="btnIhavenot" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="Red"/>
@@ -715,9 +799,48 @@
             </Setter.Value>
         </Setter>
     </Style>
-        
-    
-        <!--Vacancy images radioButtons-->
+
+    <!--User Change number button style -->
+    <Style x:Key="UserbtnChange" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" Background="{TemplateBinding Background}">
+                        <Label x:Name="lbl" Content="{TemplateBinding Content}"
+                               Foreground="{TemplateBinding Foreground}"
+                               FontSize="{TemplateBinding FontSize}"
+                               FontFamily="{TemplateBinding FontFamily}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="Black" TargetName="lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="Black" TargetName="lbl"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Transparent" TargetName="B"/>
+                            <Setter Property="Foreground" Value="Black" TargetName="lbl"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--Vacancy images radioButtons-->
         <Style x:Key="Images" TargetType="{x:Type RadioButton}">
         <Setter Property="Height" Value="50"/>
         <Setter Property="Width" Value="50"/>

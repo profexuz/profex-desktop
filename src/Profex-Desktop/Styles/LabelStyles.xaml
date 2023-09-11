@@ -45,6 +45,20 @@
         <Setter Property="Margin" Value="40 5"/>
     </Style>
 
+    <!--User Register: FullRegister label styles-->
+
+    <Style x:Key="UserFullregister" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="Content" Value="{DynamicResource Profexheadershort}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="40 5"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
     <!--Search place holder textblock style-->
     <Style x:Key="plholder" TargetType="{x:Type Label}">
         <Setter Property="Margin" Value="5 0"/>
@@ -160,7 +174,20 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="40 5"/>
     </Style>
-    
+
+    <!--#:User offerta part-->
+    <Style x:Key="Usersecond" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Content" Value="{DynamicResource Profexheadershort}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="40 5"/>
+    </Style>
+
     <!--#New added label-->
     <Style x:Key="newAdded" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource newAddedContent}"/>
