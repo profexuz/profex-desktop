@@ -12,6 +12,7 @@ namespace Profex_Desktop.Components.MasterContact
     /// </summary>
     public partial class MasterContactControl : UserControl
     {
+        public long ustaId;
         public MasterContactControl()
         {
             InitializeComponent();
@@ -29,7 +30,9 @@ namespace Profex_Desktop.Components.MasterContact
         {
             //MessageBox.Show("Ishladi");
             AboutMasterWindow ms = new AboutMasterWindow();
+            ms.ustaId = ustaId;
             ms.ShowDialog();
+            //ms.ShowDialog();
         }
     }
 }
