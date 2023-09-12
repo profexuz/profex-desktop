@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profex_Desktop.Windows.AboutMaster;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -12,6 +13,7 @@ namespace Profex_Desktop.Components.MastersInfo
     {
         //private string BASE_URL = "http://localhost:5230/";
         private string BASE_URL = "http://64.227.42.134:4040/";
+        //private long ustaId;
         public MasterInfo()
         {
             InitializeComponent();

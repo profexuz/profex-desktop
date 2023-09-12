@@ -20,7 +20,18 @@
                 <ColumnDefinition Width="500"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border Background="AliceBlue" x:Name="MasterRasmi"/>
+            <Border 
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    BorderBrush="Red"
+                    Margin="10 10 0 0 ">
+                <!--BorderBrush="{DynamicResource ProfileImageBackground}"-->
+                <!--BorderThickness="1" CornerRadius="10"
+                Margin="50 50 0 0"-->
+                <Border.Background>
+                    <ImageBrush x:Name="MasterRasmi" />
+                </Border.Background>
+            </Border>
             <!--<StackPanel Grid.Column="0"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"

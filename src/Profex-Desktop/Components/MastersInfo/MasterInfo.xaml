@@ -10,7 +10,8 @@
              Loaded="Page_Loaded">
     <Border CornerRadius="20" 
             Background="{DynamicResource SideBarBackground}"
-            Padding="4">
+            Padding="4"
+            >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
