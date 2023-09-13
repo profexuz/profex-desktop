@@ -4,18 +4,19 @@ using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
+using System.Text;
 
 namespace Profex_Integrated.Services.Auth;
 
-public class AuthMasterService : IAuthMasterService
+public class AuthUserService : IAuthUserService
 {
     private JwtParser _jwtParser = new JwtParser();
     public async Task<(bool Result, string Token)> LoginAsync(LoginDto loginDto)
     {
-        try
+        /*try
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(API.LOGIN_URL);
+            client.BaseAddress = new Uri(API.USERLOGIN_URL);
 
             using (var formData = new MultipartFormDataContent())
             {
@@ -47,9 +48,41 @@ public class AuthMasterService : IAuthMasterService
         catch
         {
             return (Result: false, Token: ""); ;
-        }
-    }
+        }*/
+        try
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(API.USERLOGIN_URL);
 
+            // JSON formatiga o'tkazish
+            string jsonContent = JsonConvert.SerializeObject(loginDto);
+            HttpContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            var result = await client.PostAsync(client.BaseAddress, content);
+
+            // If the upload failed there is not a lot we can do 
+            if (result.IsSuccessStatusCode)
+            {
+                string responseContent = await result.Content.ReadAsStringAsync();
+                dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent)!;
+                var token = IdentitySingelton.GetInstance();
+                token.Token = jsonResponse.token.ToString();
+                IdentityService tokenModel = _jwtParser.ParseToken(token.Token);
+                token.Id = tokenModel.Id;
+
+                return (Result: jsonResponse.result, Token: token.Token);
+            }
+            else
+            {
+                return (Result: false, Token: "");
+            }
+        }
+        catch
+        {
+            return (Result: false, Token: "");
+        }
+
+    }
 
 
     public async Task<bool> RegisterAsync(RegisterDto dto)
@@ -57,7 +90,7 @@ public class AuthMasterService : IAuthMasterService
         try
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(API.REGISTER_URL);
+            client.BaseAddress = new Uri(API.USERREGISTER_URL);
 
             using (var formData = new MultipartFormDataContent())
             {
@@ -90,7 +123,7 @@ public class AuthMasterService : IAuthMasterService
         {
             HttpClient client = new HttpClient();
             var phoneNumber = Uri.EscapeDataString(phone);
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{API.SENDCODE_URL}?phone=%2B{phone.Substring(1)}");
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{API.USERSENDCODE_URL}?phone=%2B{phone.Substring(1)}");
             request.Headers.Add("phone", phone);
             var collection = new List<KeyValuePair<string, string>>();
             collection.Add(new("phone", phone));
@@ -116,7 +149,7 @@ public class AuthMasterService : IAuthMasterService
         try
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(API.VERIFY_URL);
+            client.BaseAddress = new Uri(API.USERVERIFY_URL);
 
             using (var formData = new MultipartFormDataContent())
             {
@@ -148,6 +181,4 @@ public class AuthMasterService : IAuthMasterService
             return (Result: false, Token: ""); ;
         }
     }
-
-
 }

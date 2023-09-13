@@ -13,18 +13,18 @@
         Loaded="Window_Loaded"
         MouseDown="Window_MouseDown">
     <Grid>
-        <Grid Background="{DynamicResource PrimaryBackground}">
+        <Grid Height="600" VerticalAlignment="Top" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border Background="Yellow" CornerRadius="0 0 40 0">
-                <Grid>
+            <Border Background="{DynamicResource UserFirstBackground}" CornerRadius="0 0 40 0">
+                <Grid >
                     <Label x:Name="Sign" Content="Ro'yxatdan o'tish" HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        Margin="20 10" FontFamily="{DynamicResource FontFamilyNormal}"
                        FontSize="30"
-                       Foreground="Black"
+                       Foreground="{DynamicResource UserSecondaryTextColor}"
                            FontWeight="Bold"/>
 
                     <Border Grid.Column="0" Width="300" Height="300"
@@ -32,7 +32,7 @@
                         
                         <Border.Background>
                             
-                            <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Profile images/pngwing.com (2).png"  />
+                            <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Profile images/userFoto.png"/>
                         </Border.Background>
                     </Border>
 
@@ -40,23 +40,23 @@
                             VerticalAlignment="Center"
                             Margin="30 290 0 0">
                         <Label Content="Salom!" 
-                       Foreground="Black"
+                       Foreground="{DynamicResource UserSecondaryTextColor}"
                        FontSize="30" FontWeight="Bold"/>
                         <Border Background="Yellow"
-                            Height="3" Width="50"
+                            Height="3" Width="100"
                             Margin="5 0 0 10"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left"/>
 
                         <TextBlock TextWrapping="Wrap" 
-                       Foreground="Black"
+                       Foreground="{DynamicResource UserSecondaryTextColor}"
                        FontSize="18" Margin="5 10" FontFamily="{DynamicResource FontFamilyNormal}">
                             Xizmat olishni hoxlaysizmi? <LineBreak/>
                                Ro'yxatdan o'ting.
                         </TextBlock>
 
                         <TextBlock TextWrapping="Wrap" Text="20k+ Foydalanuvchilar o' xizmarlarini muvaffaqqiyatli yakunlashgan" 
-                       Foreground="Black" Margin="5 10" Opacity="0.5"
+                       Foreground="{DynamicResource UserSecondaryTextColor}" Margin="5 10" Opacity="0.5"
                        FontSize="14"/>
 
 
@@ -84,7 +84,7 @@
 
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"
                             HorizontalAlignment="Left" Margin="10 5 0 0">
-                            <RadioButton x:Name="SignUp" IsChecked="{Binding IsSignUpChecked}" Checked="SignUp_Checked" Content="Ro'yxatdan o'tish" Foreground="Black"
+                            <RadioButton x:Name="SignUp" IsChecked="{Binding IsSignUpChecked}" Checked="SignUp_Checked" Content="Ro'yxatdan o'tish" Foreground="Black" 
                                   Style="{DynamicResource  MenuButton}"/>
                             <RadioButton x:Name="SignIn" IsChecked="{Binding IsSignInChecked}" Checked="SignIn_Checked" Content="Kirish" Foreground="Black"
                             Style="{DynamicResource  MenuButton1}"/>
@@ -92,10 +92,10 @@
                         </StackPanel>
                         <Border VerticalAlignment="Top" HorizontalAlignment="Center"
                             CornerRadius="20" Background="{DynamicResource SideBarBackground}">
-                            <Border.Effect>
+                            <!--<Border.Effect>
                                 <DropShadowEffect Direction="90" BlurRadius="10" 
                                               ShadowDepth="0.8" Opacity="0.2"/>
-                            </Border.Effect>
+                            </Border.Effect>-->
                             <Grid>
                                 <Frame x:Name="registerFrame" NavigationUIVisibility="Hidden"/>
 

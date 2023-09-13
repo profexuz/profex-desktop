@@ -40,9 +40,16 @@
     <SolidColorBrush x:Key="lblMastersNameColor" Color="#fdfcdc"/>
     <SolidColorBrush x:Key="lblMastersSureNameColor" Color="#fdfcdc"/>
     <SolidColorBrush x:Key="lblMastersOnlineColor" Color="#bcb8b1"/>
-    
-    
-    
+    <SolidColorBrush x:Key="lblUserOnlineColor" Color="LightGreen"/>
+    <SolidColorBrush x:Key="UserPrimaryBackground" Color="#182127"/>
+    <SolidColorBrush x:Key="UserFirstBackground" Color="#0E1621"/>
+    <SolidColorBrush x:Key="UserSecondaryBackground" Color="#31475C"/>
+    <SolidColorBrush x:Key="UserPrimaryTextColor" Color="#768C9E"/>
+    <SolidColorBrush x:Key="UserSecondaryTextColor" Color="#5EB5F7"/>
+    <SolidColorBrush x:Key="UserSelectedBackground" Color="#17212B"/>
+
+
+
     <!--MasterEditPageForeGrounds-->
     <SolidColorBrush x:Key="lblFirstNameColor" Color="#bcb8b1"/>
     <SolidColorBrush x:Key="lblFirstNameAnswerColor" Color="#fdfcdc"/>

@@ -1,0 +1,175 @@
+﻿<Window x:Class="Profex_Desktop.UserMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Profex_Desktop"
+               mc:Ignorable="d"
+        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource UserPrimaryBackground}"
+        AllowsTransparency="True"
+        Title="MainWindow" 
+        Height="800" 
+        Width="1400"
+        
+        Loaded="Window_loading">
+    <Border Background="{DynamicResource UserSecondaryBackground}" 
+            CornerRadius="30">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="br" Cursor="SizeAll" Background="{DynamicResource PrimaryBackground}" Width="auto" Height="auto" Grid.Row="0" MouseDown="Window_MouseDown" 
+                       />
+                <StackPanel Grid.Row="0" Orientation="Horizontal"
+                        Margin="0 0 10 0" HorizontalAlignment="Right">
+                    <Button x:Name="btnMinimize" Click="btnMinimize_Click" Style="{DynamicResource MinimizedButton}"/>
+                    <Button x:Name="btnMaximize" Click="btnMaximize_Click" Style="{DynamicResource MaximizedButton}"/>
+                    <Button x:Name="btnClose" Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
+                </StackPanel>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="265"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <!--#region SideBar-->
+                    <Border Grid.Column="0" CornerRadius="0,0,20,20" BorderBrush="White"
+                                    BorderThickness="0" Background="{DynamicResource UserFirstBackground}" 
+                                        Width="240" HorizontalAlignment="Left"
+                                Margin="15 0 0 10" Padding="10 120 10 0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
+                            </Grid.RowDefinitions>
+                            <RadioButton x:Name="rbDashboard" Grid.Row="0"
+                                               Checked="rbDashboard_Click"
+                                              Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource Dashboard1}"
+                                             Content="ASOSIY">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Asosiy</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+                            <RadioButton x:Name="rbVacancies" Grid.Row="1" 
+                                                Click="rbVacancies_Click" Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource Vacansies}"
+                                             Content="ISHLAR">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>E'lonlar</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+                            <RadioButton x:Name="rbMasters" Grid.Row="2" 
+                                                Click="rbMasters_Click" Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource Masters}"
+                                             Content="USTALAR">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Ustalar</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+                            <RadioButton x:Name="rbAccount" Grid.Row="3" 
+                                                Click="rbAccount_Click" Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource MyAccount}"
+                                             Content="PROFILIM">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Mening profilm</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+                            <RadioButton x:Name="rbMyPost" Grid.Row="4" 
+                                                Click="rbAccount_Click" Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource MyAccount}"
+                                             Content="My Posts">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Mening profilm</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+
+                            <RadioButton x:Name="rbFAQs" Grid.Row="5"
+                                                Click="rbFAQs_Click" Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource FAQs}"
+                                             Content="FAQs">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Tez-tez so'raladigan savollar</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+                            <Grid Grid.Row="5" >
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+
+                    <Border Grid.Column="0" VerticalAlignment="Top" Height="1" Width="230"
+                            Margin="50 80 48 0" Background="{DynamicResource bcgBr}"/>
+
+                    <!--#endregion-->
+
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="727*"/>
+                            <ColumnDefinition Width="408*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" BorderBrush="#EFFFFD" 
+                                BorderThickness="0,0,0,2" Margin="0,0,10,0"
+                                CornerRadius="0,0,20,20"
+                                Background="{DynamicResource UserPrimaryBackground}" Grid.ColumnSpan="2">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="5" ShadowDepth="4" Color="Black" Opacity="0.7"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="appName" Content="ASOSIY" Style="{DynamicResource UserAsosiy}"/>
+                                <Label Grid.Column="1" x:Name="UserMyName" Style="{DynamicResource UserMyName}"/>
+                                <Label Grid.Column="1" Style="{DynamicResource OnlineUser}"/>
+                                <Label Grid.Column="2" Style="{DynamicResource Myinfo}">
+                                    <Border x:Name="B" BorderThickness="0" CornerRadius="35" Height="60" Width="60"  Background="White">
+                                        <Ellipse Height="58" Width="58">
+                                            <Ellipse.Fill>
+                                                <ImageBrush x:Name="MyPhoto" ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                    </Border>
+                                </Label>
+                            </Grid>
+                        </Border>
+
+                        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="224*"/>
+                                    <ColumnDefinition Width="759*"/>
+                                    <ColumnDefinition Width="19*"/>
+                                    <ColumnDefinition Width="133*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame x:Name="PageNavigator" 
+                                NavigationUIVisibility="Hidden" Padding="10"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                ScrollViewer.CanContentScroll="True" Grid.ColumnSpan="4" Navigated="PageNavigator_Navigated" />
+                                <WrapPanel x:Name="wrpLoading" Visibility="Visible"
+                                        Height="250" Width="250" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="218,0,0,0" Grid.Column="1"/>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
