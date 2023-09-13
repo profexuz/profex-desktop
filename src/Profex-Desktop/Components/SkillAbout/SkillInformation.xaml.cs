@@ -34,6 +34,7 @@ namespace Profex_Desktop.Components.SkillAbout
             //MessageBox.Show("Hozircha bu categoryga doir skillar mavjud emas!");
             CategorySkillsWindow skw = new CategorySkillsWindow();
             skw.ShowDialog();
+            //yana ozgartirdim
         }
     }
 }
