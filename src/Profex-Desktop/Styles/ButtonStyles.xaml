@@ -43,7 +43,7 @@
                         <Border x:Name="B"
                             Background="{DynamicResource SideBarBackground}"
                             CornerRadius="50">
-                            <Path Fill="#768C9E" 
+                        <Path Fill="#768C9E" 
                               Data="{DynamicResource maximize}" Height="10" Width="10" Stretch="UniformToFill"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -144,8 +144,70 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!--User SideBarbutton-->
+    <Style x:Key="UserSideBarButton" TargetType="{x:Type RadioButton}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+          
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="B" CornerRadius="0 20 20 0" 
+                                Height="70" 
+                                Width="240" VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                Margin="15 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path x:Name="icon" Grid.Column="0"
+                                  Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
+                                  Fill="{DynamicResource UserPrimaryTextColor}"
+                                  Height="20" Width="20"
+                                  Stretch="UniformToFill"
+                                  HorizontalAlignment="Left" Margin="10 0"/>
 
-        <Style x:Key="LightMode" TargetType="{x:Type Button}">
+                            <Label x:Name="Lbl"
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}" 
+                                   Foreground="{DynamicResource UserPrimaryTextColor}"
+                                   FontSize="18" 
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}" TargetName="Lbl"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="{DynamicResource UserSelectedBackground}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}" TargetName="Lbl"/>
+
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="{DynamicResource UserSelectedBackground}"/>
+                            <Setter TargetName="icon" Property="Fill" Value="{DynamicResource UserSecondaryTextColor}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}" TargetName="Lbl"/>
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="LightMode" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="70"/>
             <Setter Property="Width" Value="70"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -616,8 +678,8 @@
     <Style x:Key="UserbntSignUp" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Width" Value="290"/>
-        <Setter Property="Background" Value="Yellow"/>
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="{DynamicResource UserPrimaryBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="17"/>
         <Setter Property="Margin" Value="0 0 0 5"/>
@@ -636,17 +698,17 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="yellow" TargetName="B"/>
-                            <Setter Property="Foreground" Value="black" TargetName="lbl"/>
+                            <Setter Property="Background" Value="{DynamicResource UserPrimaryBackground}" TargetName="B"/>
+                            <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}" TargetName="lbl"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="False">
-                            <Setter Property="Background" Value="yellow" TargetName="B"/>
-                            <Setter Property="Foreground" Value="black" TargetName="lbl"/>
+                            <Setter Property="Background" Value="{DynamicResource UserPrimaryBackground}" TargetName="B"/>
+                            <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}" TargetName="lbl"/>
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="lightyellow" TargetName="B"/>
-                            <Setter Property="Foreground" Value="black" TargetName="lbl"/>
+                            <Setter Property="Background" Value="white" TargetName="B"/>
+                            <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}" TargetName="lbl"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -14,6 +14,12 @@ public class API
     public static readonly string LOGIN_URL = BASE_URL + "master/register/login";
 
 
+    public static readonly string USERREGISTER_URL = BASE_URL + "user/register";
+    public static readonly string USERSENDCODE_URL = BASE_URL + "user/register/send-code";
+    public static readonly string USERVERIFY_URL = BASE_URL + "user/register/verify";
+    public static readonly string USERLOGIN_URL = BASE_URL + "user/login";
+
+
 
     public static readonly string GETALL_MASTERS = BASE_URL + "common/master";
     public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";

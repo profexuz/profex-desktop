@@ -121,7 +121,7 @@
                                 <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" x:Name="appName" Content="ASOSIY" Style="{DynamicResource Asosiy}"/>
-                                <Label Grid.Column="1" x:Name="MyName" Style="{DynamicResource MyName}"/>
+                                <Label Grid.Column="1" x:Name="MyName" Style="{DynamicResource UserMyName}"/>
                             <Label Grid.Column="1" Style="{DynamicResource OnlineMaster}"/>
                             <Label Grid.Column="2" Style="{DynamicResource Myinfo}">
                                 <Border x:Name="B" BorderThickness="0" CornerRadius="35" Height="60" Width="60"  Background="{DynamicResource lblMastersAccountColor}">

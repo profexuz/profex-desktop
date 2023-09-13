@@ -42,6 +42,7 @@
     <None Remove="Assets\Profile images\defaultimagaUserDark.jpg" />
     <None Remove="Assets\Profile images\DefaultProfileImage.png" />
     <None Remove="Assets\Profile images\DefaultProfileImage1.png" />
+    <None Remove="Assets\Profile images\userFoto.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -135,6 +136,7 @@
     <Resource Include="Assets\Profile images\DefaultProfileImage1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Profile images\userFoto.png" />
   </ItemGroup>
 
 </Project>

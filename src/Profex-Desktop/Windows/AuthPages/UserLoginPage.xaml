@@ -33,7 +33,7 @@
                      PreviewTextInput="NumberValidationTextBox"
                      MaxLength="12"
                      BorderThickness="1"
-                     BorderBrush="Black" TextChanged="phoneNum_TextChanged" Text=""/>
+                     BorderBrush="Black"/>
 
             <!--Phone number textbox-->
         </StackPanel>
