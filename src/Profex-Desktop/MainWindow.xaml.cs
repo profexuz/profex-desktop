@@ -127,6 +127,14 @@ namespace Profex_Desktop
             }
         }
 
+        private void rbSkills_Click(object sender, RoutedEventArgs e)
+        {
+            appName.Content = "SKILLS";
+            SkillsPage skillsPage = new SkillsPage();
+            PageNavigator.Navigate(skillsPage);
+
+        }
+
         //private void IsChecked(object sender, RoutedEventArgs e)
         //{
         //    if (chkbox.IsChecked == true)

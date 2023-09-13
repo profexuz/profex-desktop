@@ -28,7 +28,7 @@
             <Grid>
                 <Label x:Name="txtblc" Style="{DynamicResource plholder}"
                        Panel.ZIndex="0"
-                           Visibility="{Binding ElementName=Search,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
+                           Visibility="{Binding ElementName=Search,Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
                 <TextBox x:Name="Search" Style="{DynamicResource Search}"/>
             </Grid>
             <Button x:Name="btnSearch"
