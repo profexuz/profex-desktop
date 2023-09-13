@@ -3,7 +3,6 @@ using Profex_Desktop.Components.Vacancies;
 using Profex_Integrated.Services.Masters;
 using Profex_Integrated.Services.Users;
 using Profex_Integrated.Services.Vacancies;
-using Profex_ViewModels.Masters;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -63,10 +62,7 @@ namespace Profex_Desktop.Pages
                 foreach (var res in result)
                 {
                     if (count == 6) break; count++;
-                    //string imageUrl = "http://64.227.42.134:4040/" + res.ImagePath;
                     string imageUrl = BASE_URL + res.ImagePath;
-                    //MasterViewModel masterViewModel = new MasterViewModel();
-                    //masterViewModel.Id = res.Id;
                     MasterContactControl ms =  new MasterContactControl();
                     ms.ustaId = res.Id;
                     string[] list =
@@ -77,8 +73,6 @@ namespace Profex_Desktop.Pages
                         MakeRandom()
 
                 };
-                    //MasterContactControl mastercontact = new MasterContactControl();
-                    //mastercontact.SetData(list);
                     ms.SetData(list);
                     wrpGroups.Children.Add(ms);
                 }

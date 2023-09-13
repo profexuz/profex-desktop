@@ -1,6 +1,5 @@
 ﻿using Profex_Desktop.Windows.AboutMaster;
 using System;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,11 +27,9 @@ namespace Profex_Desktop.Components.MasterContact
 
         private void MasterInforKorish(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //MessageBox.Show("Ishladi");
             AboutMasterWindow ms = new AboutMasterWindow();
             ms.ustaId = ustaId;
             ms.ShowDialog();
-            //ms.ShowDialog();
         }
     }
 }

@@ -50,6 +50,7 @@
                                     <RowDefinition Height="80"/>
                                     <RowDefinition Height="80"/>
                                     <RowDefinition Height="80"/>
+                                    <RowDefinition Height="80"/>
                                 </Grid.RowDefinitions>
                                 <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                Checked="rbDashboard_Click"
@@ -84,7 +85,18 @@
                                         <TextBlock>Mening profilm</TextBlock>
                                     </RadioButton.ToolTip>
                                 </RadioButton>
-                                <RadioButton x:Name="rbFAQs" Grid.Row="4"
+                                
+                            <RadioButton x:Name="rbSkill" Grid.Row="4" 
+                                Click="rbSkills_Click" Style="{DynamicResource SideBarButton}"
+                                    Tag="{DynamicResource SkillsIco}"
+                                         
+                                    Content="SKILLS">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Skills</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+
+                            <RadioButton x:Name="rbFAQs" Grid.Row="5"
                                                 Click="rbFAQs_Click" Style="{DynamicResource SideBarButton}"
                                                     Tag="{DynamicResource FAQs}"
                                              Content="FAQs">

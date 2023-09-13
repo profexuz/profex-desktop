@@ -1,7 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using Profex_Desktop.Components.Vacancies;
+﻿using Profex_Desktop.Components.Vacancies;
 using Profex_Integrated.Services.Vacancies;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 

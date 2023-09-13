@@ -280,8 +280,21 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
+    
+    <!--Skills label style-->
+    <Style x:Key="lblSkillStyle" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Name"/>
+        <Setter Property="FontSize" Value="45"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblVacancyRegionColor}"/>
+        <Setter Property="FontFamily" Value="Consolas"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
 
-
+    
     <!--Region answer label style-->
     <Style x:Key="lblRegionAnswer" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource labelRegionAnswerVacancy}"/>
