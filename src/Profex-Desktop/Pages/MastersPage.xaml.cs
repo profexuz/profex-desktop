@@ -57,7 +57,7 @@ namespace Profex_Desktop.Pages
                 foreach (var master in search)
                 {
                     MasterInfo info = new MasterInfo();
-                    maste[0] = (master.ImagePath);
+                    maste[0] = BASE_URL+ master.ImagePath;
                     maste[1] = (master.FirstName + " " + master.LastName);
                     maste[2] = (master.PhoneNumber);
                     //maste[3] = (master.IsFree.ToString());

@@ -19,7 +19,6 @@ namespace Profex_Desktop
         private IdentityService _identityService;
         private JwtParser jwtParser = new JwtParser();
         private MasterService _masterService = new MasterService();
-        //private string BASEIMG_URL = "http://localhost:5230/";
         private string BASEIMG_URL = "http://64.227.42.134:4040/";
 
 
