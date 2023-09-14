@@ -1,11 +1,10 @@
 ﻿using Profex_Desktop.Components.SkillAbout;
-using Profex_Integrated.Services.Masters;
 using Profex_Integrated.Services.Skills;
-using System.Linq;
+using Profex_ViewModels.Categories;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using Profex_ViewModels.Categories;
 
 namespace Profex_Desktop.Pages
 {
@@ -15,7 +14,9 @@ namespace Profex_Desktop.Pages
     public partial class SkillsPage : Page
     {
         public long skillId;
+        public long kerakSkillId;
         public long page = 1;
+        public long CategoryId;
         private SkillsService _skillsService = new SkillsService();
         private long categoryCount = 0;
         public SkillsPage()
@@ -24,7 +25,7 @@ namespace Profex_Desktop.Pages
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
-        {}
+        { }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -33,35 +34,6 @@ namespace Profex_Desktop.Pages
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            /*wrpSkills.Children.Clear();
-            try
-            {
-                var result = await _skillsService.GetAllAysnc(page);
-                categoryCount = result.Count();
-                foreach (var item in result)
-                {
-                    SkillInformation ms = new SkillInformation();
-                    ms.skillId = item.Id;
-
-                    // CategoryViewModel obyektini olib tashlash
-                    var category = new CategoryViewModel
-                    {
-                        Id = item.Id, // CategoryId ni o'zgartiring, agar qo'shimcha ma'lumotlar bor bo'lsa
-                        Name = item.Name // CategoryName ni o'zgartiring, agar qo'shimcha ma'lumotlar bor bo'lsa
-                    };
-
-                    // SkillInformation komponentiga CategoryViewModel obyektini uzatish
-                    ms.SetData(category);
-
-                    wrpSkills.Children.Add(ms);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-
-
             wrpSkills.Children.Clear();
             try
             {
@@ -71,18 +43,16 @@ namespace Profex_Desktop.Pages
                 {
                     SkillInformation ms = new SkillInformation();
                     ms.skillId = item.Id;
+                    ms.CategoryId = item.Id;
 
-                    // CategoryViewModel obyektini olib tashlash
                     var category = new CategoryViewModel
                     {
-                        Id = item.Id, // CategoryId ni o'zgartiring, agar qo'shimcha ma'lumotlar bor bo'lsa
-                        Name = item.Name // CategoryName ni o'zgartiring, agar qo'shimcha ma'lumotlar bor bo'lsa
+                        Id = item.Id,
+                        Name = item.Name
                     };
 
-                    // SkillInformation komponentiga CategoryViewModel obyektini uzatish
                     ms.SetData(category);
 
-                    // Har bir SkillInformation komponentini WrapPanel ga qo'shib berish
                     wrpSkills.Children.Add(ms);
                 }
             }
@@ -90,44 +60,6 @@ namespace Profex_Desktop.Pages
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
-            /*wrpSkills.Children.Clear();
-            try
-            {
-                //var result = await _skillsService.GetAllAysnc(1);
-                var result = await _skillsService.GetAllAysnc(page);
-                categoryCount = result.Count();
-                foreach (var item in result)
-                {
-                    SkillInformation ms = new SkillInformation();
-                    ms.skillId = item.Id;
-                    string[] list =
-                    {
-                        item.Name,
-                    };
-                    ms.SetData(list);
-                    // Category nomini alohida alohida o'zgartirish
-                    if (category1.DataContext == null)
-                    {
-                        category1.DataContext = item.Name;
-                    }
-                    else if (category2.DataContext == null)
-                    {
-                        category2.DataContext = item.Name;
-                    }
-                    //wrpSkills.Children.Add(ms);
-                }
-            }
-            catch (Exception ex)
-            {
-                //return false;
-                MessageBox.Show(ex.Message);
-            }
-        }*/
-
         }
     }
 }

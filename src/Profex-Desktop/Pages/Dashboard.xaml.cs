@@ -63,11 +63,11 @@ namespace Profex_Desktop.Pages
                 {
                     if (count == 6) break; count++;
                     string imageUrl = BASE_URL + res.ImagePath;
-                    MasterContactControl ms =  new MasterContactControl();
+                    MasterContactControl ms = new MasterContactControl();
                     ms.ustaId = res.Id;
                     string[] list =
                     {
-                        
+
                         imageUrl,
                         res.FirstName+" "+res.LastName,
                         MakeRandom()

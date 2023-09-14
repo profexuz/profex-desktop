@@ -50,7 +50,7 @@ namespace Profex_Desktop.Pages
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpAdvertising.Children.Add(vacancy);
-                
+
             }
         }
 

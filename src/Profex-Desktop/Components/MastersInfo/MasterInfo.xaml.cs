@@ -1,5 +1,4 @@
-﻿using Profex_Desktop.Windows.AboutMaster;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -27,7 +26,7 @@ namespace Profex_Desktop.Components.MastersInfo
             lblname.Content = masterskills[1];
             phone.Content = masterskills[2];
             wrpSkills.Children.Clear();
-            
+
 
             for (int i = 3; i < 5; i++)
             {

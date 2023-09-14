@@ -13,6 +13,8 @@ namespace Profex_Desktop.Components.SkillAbout
     {
         public long skillId;
 
+        public long CategoryId;
+
         public SkillInformation()
         {
             InitializeComponent();
@@ -22,6 +24,8 @@ namespace Profex_Desktop.Components.SkillAbout
             if (category != null)
             {
                 NameOfMaster.Content = category.Name;
+                CategoryId = category.Id;
+                //skw.skillId = CategoryId;
             }
             else
             {
@@ -31,10 +35,11 @@ namespace Profex_Desktop.Components.SkillAbout
 
         private void SkillQoshish(object sender, MouseButtonEventArgs e)
         {
-            //MessageBox.Show("Hozircha bu categoryga doir skillar mavjud emas!");
-            CategorySkillsWindow skw = new CategorySkillsWindow();
+
+            //CategorySkillsWindow skw = new CategorySkillsWindow();
+            //skw.skillId = CategoryId;
+            CategorySkillsWindow skw = new CategorySkillsWindow(CategoryId);
             skw.ShowDialog();
-            //yana ozgartirdim
         }
     }
 }

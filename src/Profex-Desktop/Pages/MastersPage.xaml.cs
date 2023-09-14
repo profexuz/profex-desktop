@@ -1,9 +1,7 @@
 ﻿using Profex_Desktop.Components.MastersInfo;
 using Profex_Integrated.Services.Masters;
-using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 
 namespace Profex_Desktop.Pages
 {
@@ -15,7 +13,7 @@ namespace Profex_Desktop.Pages
         private MasterService _masterService = new MasterService();
         //private string BASE_URL = "http://localhost:5230/";
         private string BASE_URL = "http://64.227.42.134:4040/";
-        
+
         public MastersPage()
         {
             InitializeComponent();
