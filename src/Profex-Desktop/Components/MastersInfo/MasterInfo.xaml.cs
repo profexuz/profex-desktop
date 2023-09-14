@@ -12,6 +12,7 @@ namespace Profex_Desktop.Components.MastersInfo
     {
         //private string BASE_URL = "http://localhost:5230/";
         private string BASE_URL = "http://64.227.42.134:4040/";
+        //private long ustaId;
         public MasterInfo()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Profex_Desktop.Components.MastersInfo
             lblname.Content = masterskills[1];
             phone.Content = masterskills[2];
             wrpSkills.Children.Clear();
-            
+
 
             for (int i = 3; i < 5; i++)
             {

@@ -22,8 +22,10 @@
     <None Remove="Assets\Images\frequently.png" />
     <None Remove="Assets\Images\Loading.gif" />
     <None Remove="Assets\Images\nimalardur.png" />
+    <None Remove="Assets\Images\plusss.jpg" />
     <None Remove="Assets\Images\ProfexLogoDark.png" />
     <None Remove="Assets\Images\ProfexLogoLight.png" />
+    <None Remove="Assets\Images\qoshish.png" />
     <None Remove="Assets\Images\somebreakedthing1.jpeg" />
     <None Remove="Assets\Images\somebreakedthing2.jpeg" />
     <None Remove="Assets\Images\somebreakedthing3.jpg" />
@@ -53,9 +55,11 @@
     <Resource Include="Assets\Images\Loading.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Images\plusss.jpg" />
     <Resource Include="Assets\Images\ProfexLogoDark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Images\qoshish.png" />
     <Resource Include="Assets\Images\somebreakedthing3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

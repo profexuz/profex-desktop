@@ -20,6 +20,7 @@ namespace Profex_Desktop.Pages
         private long mastersCount = 0;
         private long usersCount = 0;
         private long vacanciesCount = 0;
+        private string BASE_URL = "http://64.227.42.134:4040/";
         private MasterService _masterService = new MasterService();
         private VacancyService _vacancyService = new VacancyService();
         private UserService _userService = new UserService();
@@ -49,9 +50,7 @@ namespace Profex_Desktop.Pages
             wrpVacancies.Children.Clear();
             try
             {
-                //usersCount = await _userService.CountAsync();
                 var usCount = await _userService.CountAsync();
-
                 var result = await _masterService.GetAllAsync();
                 var vacancy = await _vacancyService.GetAllAsync(1);
                 vacanciesCount = vacancy.Count;
@@ -63,21 +62,19 @@ namespace Profex_Desktop.Pages
                 foreach (var res in result)
                 {
                     if (count == 6) break; count++;
-
-                    //Download img from api url
-                    //string imageUrl = "http://localhost:5230/" + res.ImagePath;
-                    string imageUrl = "http://64.227.42.134:4040/" + res.ImagePath;
-
+                    string imageUrl = BASE_URL + res.ImagePath;
+                    MasterContactControl ms = new MasterContactControl();
+                    ms.ustaId = res.Id;
                     string[] list =
                     {
+
                         imageUrl,
                         res.FirstName+" "+res.LastName,
                         MakeRandom()
 
                 };
-                    MasterContactControl mastercontact = new MasterContactControl();
-                    mastercontact.SetData(list);
-                    wrpGroups.Children.Add(mastercontact);
+                    ms.SetData(list);
+                    wrpGroups.Children.Add(ms);
                 }
 
 

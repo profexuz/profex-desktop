@@ -13,6 +13,8 @@
             Background="Transparent">
         <StackPanel Orientation="Horizontal">
             <Border x:Name="brBackgr" CornerRadius="50" Height="50" Width="50"
+                    MouseLeftButtonDown="MasterInforKorish"
+                    Cursor="Hand"
                     Margin="5" Background="#c12ebf">
                 <Ellipse Height="48" Width="48">
                     <Ellipse.Fill>
@@ -24,8 +26,6 @@
             <Border x:Name="NameBorder" CornerRadius="25" Background="{DynamicResource PrimaryBackground}" 
                     Width="250"
                     Height="50"
-                     MouseLeftButtonDown="MasterInforKorish"
-                    Cursor="Hand"
                     >
             <Label x:Name="NameOfMaster" 
                    Content="Alisher Sultanov"

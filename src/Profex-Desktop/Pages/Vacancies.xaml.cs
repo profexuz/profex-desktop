@@ -1,7 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using Profex_Desktop.Components.Vacancies;
+﻿using Profex_Desktop.Components.Vacancies;
 using Profex_Integrated.Services.Vacancies;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,11 +11,7 @@ namespace Profex_Desktop.Pages
     public partial class Vacancies : Page
     {
         private VacancyService _vacancyService = new VacancyService();
-        //private string BASE_URL = "https://localhost:7145/";
         private string BASE_URL = "http://64.227.42.134:4040/";
-
-
-
         public Vacancies()
         {
             InitializeComponent();
@@ -56,7 +50,7 @@ namespace Profex_Desktop.Pages
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpAdvertising.Children.Add(vacancy);
-                
+
             }
         }
 

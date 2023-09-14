@@ -1,11 +1,7 @@
-﻿using static System.Net.WebRequestMethods;
-
-namespace Profex_Integrated.Helpers;
+﻿namespace Profex_Integrated.Helpers;
 
 public class API
 {
-    //public static readonly string BASEIMG_URL = "http://localhost:7145/";
-    //public static readonly string BASE_URL = "http://localhost:5230/api/";
     public static readonly string BASEIMG_URL = "http://64.227.42.134:4040/";
     public static readonly string BASE_URL = "http://64.227.42.134:4040/api/";
     public static readonly string REGISTER_URL = BASE_URL + "master/register";
@@ -31,7 +27,7 @@ public class API
 
     //Vacancies part
     public static readonly string GETALL_VACANCY = BASE_URL + "common/post";
-    
+
 
     //buni API ni korib chiqish kerak hali ishlamadi
     //public static readonly string GETBYID_VACANCY = BASE_URL + "common/post/join";
@@ -44,4 +40,19 @@ public class API
     public static readonly string GETALL_USERS = BASE_URL + "common/user/get-all";
     public static readonly string GETBYID_USERS = BASE_URL + "common/user/getbyId";
 
+    //category part
+    public static readonly string GET_ALL_CATEGORY = BASE_URL + "common/category";
+
+
+    // skill part
+    public static readonly string GET_ALL_BY_CATEGORY_ID = BASE_URL + "common/category/allSkillsBy/categoryId";
+
+    public static readonly string GET_ADD_SKILL = BASE_URL + "tokenmaster/addSkill";
+    
+
+
+    //common/category/allSkillsBy/categoryId?categoryId=2&page=1
+
+    public static readonly string GET_BY_SKILL_ID = BASE_URL + "common/skills";
+    //http://64.227.42.134:4040/api/common/skills/6
 }
