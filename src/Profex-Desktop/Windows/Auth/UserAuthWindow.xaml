@@ -28,11 +28,13 @@
                            FontWeight="Bold"/>
 
                     <Border Grid.Column="0" Width="300" Height="300"
-                        VerticalAlignment="Top" Margin="0 50">
+                        VerticalAlignment="Top" Margin="0 50"
+                            CornerRadius="200">
                         
                         <Border.Background>
                             
-                            <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Profile images/userFoto.png"/>
+                            <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Profile images/DefoultUserImage.jpg" /> 
+                            
                         </Border.Background>
                     </Border>
 
