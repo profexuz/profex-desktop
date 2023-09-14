@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profex_Desktop.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,32 +54,41 @@ namespace Profex_Desktop
 
         private void rbAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            appName.Content = "PROFILE";
+            UserMasterEditPage masterEdit = new UserMasterEditPage();
+            PageNavigator.Navigate(masterEdit);
         }
 
         private void rbDashboard_Click(object sender, RoutedEventArgs e)
         {
-
+            appName.Content = "ASOSIY";
+            UserDashboard dashboard = new UserDashboard();
+            PageNavigator.Navigate(dashboard);
         }
 
         private void rbFAQs_Click(object sender, RoutedEventArgs e)
         {
-
+            appName.Content = "SAVOL-JAVOB";
+            UserFaqsPage faqsPage = new UserFaqsPage();
+            PageNavigator.Navigate(faqsPage);
         }
 
         private void rbMasters_Click(object sender, RoutedEventArgs e)
         {
-
+            appName.Content = "USTALAR";
+            UserMastersPage mastersPage = new UserMastersPage();
+            PageNavigator.Navigate(mastersPage);
         }
 
         private void rbVacancies_Click(object sender, RoutedEventArgs e)
         {
-
+            appName.Content = "ISHLAR";
+            UserVacancies vacancy = new UserVacancies();
+            PageNavigator.Navigate(vacancy);
         }
 
         private void Window_loading(object sender, RoutedEventArgs e)
-        {
-
+        { 
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

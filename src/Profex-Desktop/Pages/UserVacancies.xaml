@@ -1,0 +1,52 @@
+﻿<Page x:Class="Profex_Desktop.Pages.UserVacancies"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Profex_Desktop.Pages"
+      mc:Ignorable="d" 
+      Height="auto" Width="auto"
+      Title="Vacancies"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0 20">
+            <Grid>
+                <Label x:Name="txtblc" Style="{DynamicResource plholder}"
+                       Panel.ZIndex="0"
+                           Visibility="{Binding ElementName=Search,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
+                <TextBox x:Name="Search" Style="{DynamicResource Search}"/>
+            </Grid>
+            <Button x:Name="btnSearch"
+                    Click="btnSearch_Click"
+                    Style="{DynamicResource btnSearch}"/>
+
+            <ComboBox x:Name="cmbCategory"
+                      Style="{DynamicResource RoundComboBox}">
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Label x:Name="NewAdded" Style="{DynamicResource newAdded}"/>
+            <WrapPanel x:Name="wrpNewsVacancy" HorizontalAlignment="Center" Orientation="Horizontal"/>
+
+            <Label x:Name="lblAdvertising" Style="{DynamicResource advertising}"/>
+            <ScrollViewer Visibility="Visible">
+                <WrapPanel x:Name="wrpAdvertising" HorizontalAlignment="Center" Orientation="Horizontal"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>

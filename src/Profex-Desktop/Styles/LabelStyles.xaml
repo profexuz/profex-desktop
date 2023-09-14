@@ -515,7 +515,7 @@
         <Setter Property="Margin" Value="0 10 0 0"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="Content" Value="Jalikeev"/>
+        <Setter Property="Content" Value="Jovliev"/>
     </Style>
 
 
