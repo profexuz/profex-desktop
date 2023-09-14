@@ -18,7 +18,12 @@ public class API
 
 
     public static readonly string GETALL_MASTERS = BASE_URL + "common/master";
-    public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";
+    //  public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";
+
+    public static readonly string GETBYID_MASTERS = BASE_URL + "common/master/withSkills";
+    //http://64.227.42.134:4040/api/common/master/withSkills/12
+
+
     public static readonly string SEARCH_MASTERS = BASE_URL + "common/master/search";
     public static readonly string SEARCH_VACANCY = BASE_URL + "common/post/search";
     //public static readonly string UPDATE_MASTERS = BASE_URL + "common/master";

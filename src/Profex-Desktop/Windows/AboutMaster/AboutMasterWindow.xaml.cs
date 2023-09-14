@@ -1,5 +1,7 @@
 ﻿using Profex_Integrated.Services.Masters;
+using Profex_ViewModels.Masters;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -28,15 +30,31 @@ namespace Profex_Desktop.Windows.AboutMaster
             try
             {
                 var result = await _masterService.GetByIdAsync(ustaId);
-                string imageUrl = BASE_URL + result.ImagePath;
-                Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
-                MasterRasmi.ImageSource = new BitmapImage(imageUri);
+  
+                if (result != null)
+                {
+                    string imageUrl = BASE_URL + result.ImagePath;
+                    Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
+                    MasterRasmi.ImageSource = new BitmapImage(imageUri);
 
-                lblTitle.Content = "ABOUT FOR MASTERS";
-                lblFirstNameAnswer.Content = result.FirstName;
-                lblLastNameAnswer.Content = result.LastName;
-                lblPhoneNumerAns.Content = result.PhoneNumber;
-                lblIsFree.Content = result.IsFree ? "bo'sh" : "band";
+                    lblTitle.Content = "ABOUT FOR MASTERS";
+                    lblFirstNameAnswer.Content = result.FirstName;
+                    lblLastNameAnswer.Content = result.LastName;
+                    lblPhoneNumerAns.Content = result.PhoneNumber;
+                    lblIsFree.Content = result.IsFree ? "bo'sh" : "band";
+                    string satr = "";
+                    List<MasterViewModel.SkillMaster> skills = result.MasterSkills;
+                    foreach (var skill in skills)
+                    {
+                        satr += skill.Title + "\n";
+                    }
+
+                    txtSkill.Text = satr;
+                }
+                else
+                {
+                    MessageBox.Show("Master not found or an error occurred while fetching data.");
+                }
             }
             catch (Exception ex)
             {

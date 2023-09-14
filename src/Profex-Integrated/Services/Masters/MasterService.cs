@@ -19,7 +19,7 @@ public class MasterService : IMasterService
         {
             try
             {
-                client.BaseAddress = new Uri(API.GETALL_MASTERS);
+                client.BaseAddress = new Uri(API.GETALL_MASTERS+"?page=2");
                 var result = await client.GetAsync(client.BaseAddress);
 
                 // If the upload failed there is not a lot we can do 
