@@ -59,7 +59,7 @@ namespace Profex_Desktop.Windows.AuthPages
                         Byte[] title = new UTF8Encoding(true).GetBytes($"{result.Token}");
                         fs.Write(title, 0, title.Length);
                     }
-                    UserMainWindow userMainWindow = new UserMainWindow();
+                    MainWindow userMainWindow = new MainWindow();
                     userMainWindow.Show();
                     AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
                     authWindow?.Close();

@@ -38,7 +38,7 @@ namespace Profex_Desktop.Windows.AboutMaster
                 lblPhoneNumerAns.Content = result.PhoneNumber;
                 lblIsFree.Content = result.IsFree ? "bo'sh" : "band";
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Internet bilan muammo yuzaga keldi.");
             }

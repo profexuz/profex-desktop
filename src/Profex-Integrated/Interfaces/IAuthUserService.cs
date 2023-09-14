@@ -1,5 +1,4 @@
 ﻿using Profex_Dtos.Auth;
-using Profex_ViewModels.Vacancies;
 
 namespace Profex_Integrated.Interfaces;
 

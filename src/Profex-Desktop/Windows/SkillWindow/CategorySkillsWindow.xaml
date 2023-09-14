@@ -13,7 +13,7 @@
         AllowsTransparency="True"
         WindowStyle="None"
         ResizeMode="NoResize" 
-        Background="Green">
+        Background="Blue">
 
     <!--WindowStyle="None"
     AllowsTransparency="True">
@@ -42,11 +42,10 @@
         <!--<Border Grid.Row="0">
             <Label Content="Skills" Style="{DynamicResource lblSkillStyle}"/>
         </Border>-->
-        <Border Grid.Row="1" Background="Blue">
+        <Border Grid.Row="1">
             <ScrollViewer>
-                <WrapPanel>
-                    <!-- Add your items here -->
-                </WrapPanel>
+                <WrapPanel x:Name="wrpPanel" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent"/>
+
             </ScrollViewer>
         </Border>
     </Grid>
