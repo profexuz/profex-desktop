@@ -129,12 +129,14 @@
                             <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}" TargetName="Lbl"/>
                         </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="B" Property="Background" Value="{DynamicResource RadioBUttonMouseOverBackground}"/>
+                                <!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioBUttonMouseOverBackground}"/>-->
+                                <Setter TargetName="B" Property="Background" Value="blue"/>
                             <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
 
                         </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>
+                                <!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>-->
+                                <Setter TargetName="B" Property="Background" Value="blue"/>
                                 <Setter TargetName="icon" Property="Fill" Value="White"/>
                                 <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
 

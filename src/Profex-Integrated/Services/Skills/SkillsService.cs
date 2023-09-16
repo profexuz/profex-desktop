@@ -4,6 +4,7 @@ using Profex_Integrated.Interfaces;
 using Profex_ViewModels.Categories;
 using Profex_ViewModels.Masters;
 using Profex_ViewModels.Skills;
+using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -16,6 +17,7 @@ namespace Profex_Integrated.Services.Skills
         private string Token = "Master";
         public string token;
 
+        
         public async Task<IList<CategoryViewModel>> GetAllAysnc(long page)
         {
             using (HttpClient client = new HttpClient())
@@ -57,6 +59,7 @@ namespace Profex_Integrated.Services.Skills
                         string responseContent = await response.Content.ReadAsStringAsync();
                         var skilview = JsonConvert.DeserializeObject<IList<SkillViewModel>>(responseContent);
                         return skilview;
+                        
                     }
                     else
                     {
@@ -135,11 +138,15 @@ namespace Profex_Integrated.Services.Skills
         public async Task<MasterViewModel> GetAllMySkills(long masterId)
         {
             try
-            {
+            {           
+
                 using (HttpClient client = new HttpClient())
                 {
+
                     client.BaseAddress = new Uri(API.MY_ALL_SKILL);
-                    var response = await client.GetAsync($"{client.BaseAddress}/{masterId}");
+
+                    //var response = await client.GetAsync($"{client.BaseAddress}/{12}");
+                    var response = await client.GetAsync($"{client.BaseAddress}/{12}");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -163,11 +170,83 @@ namespace Profex_Integrated.Services.Skills
         {
             try
             {
+                string tokenFilePath = "C:\\Users\\Public\\Token.txt";
+
+                if (File.Exists(tokenFilePath))
+                {
+                    token = File.ReadAllText(tokenFilePath).Trim();
+                }
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri($"{API.REMOVE_MY_SKILL}/{skillId}"); // Yangi manzil
+
+                    // Add the authentication token to the request headers.
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    var response = await client.DeleteAsync(""); // Bo'sh qo'shimcha so'rovni yuboring
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return 1; // Success
+                    }
+                    else if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        return -2; // Unauthorized
+                    }
+                    else
+                    {
+                        return 0; // Other errors
+                    }
+                }
+            }
+            catch
+            {
+                return -1; // Exception occurred
+            }
+            /*try
+            {
+                string tokenFilePath = "C:\\Users\\Public\\Token.txt";
+
+                if (File.Exists(tokenFilePath))
+                {
+                    token = File.ReadAllText(tokenFilePath).Trim();
+                }
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(API.REMOVE_MY_SKILL);
+
+                    // Add the authentication token to the request headers.
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    var response = await client.DeleteAsync(skillId.ToString()); // Use skillId directly in the URL
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return 1; // Success
+                    }
+                    else if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        return -2; // Unauthorized
+                    }
+                    else
+                    {
+                        return 0; // Other errors
+                    }
+                }
+            }
+            catch
+            {
+                return -1; // Exception occurred
+            }*/
+            /*try
+            {
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(API.REMOVE_MY_SKILL);
                     var response = await client.DeleteAsync($"{client.BaseAddress}/{skillId}");
-
+                    
                     if (response.IsSuccessStatusCode)
                     {
                         return 1;
@@ -182,6 +261,9 @@ namespace Profex_Integrated.Services.Skills
             {
                 return -1;
             }
+*/
+
         }
+
     }
 }

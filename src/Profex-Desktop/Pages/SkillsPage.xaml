@@ -28,7 +28,7 @@
             </Grid.ColumnDefinitions>
         <Grid Grid.Column ="1">
             <Button x:Name="btnMySkills" 
-                    Content="qidiruv" Foreground="White"
+                    Content="My Skills" Foreground="White"
         Click="btnMySkills_Click" Style="{DynamicResource btnSearchMaster}"/>
         </Grid>
         </Grid>

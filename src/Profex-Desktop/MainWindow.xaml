@@ -111,7 +111,8 @@
 
                    
                     <Border Grid.Column="0" VerticalAlignment="Top" Height="1" Width="230"
-                            Margin="50 80 48 0" Background="{DynamicResource bcgBr}"/>
+                            Margin="50 80 48 0" Background="blue"/>
+                            <!--Margin="50 80 48 0" Background="{DynamicResource bcgBr}"/>-->
 
                 <!--#endregion-->
 
@@ -121,8 +122,9 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="10"/>
                         </Grid.RowDefinitions>
-                        <Border Grid.Row="0" BorderBrush="{DynamicResource bcgBr}" 
-                                BorderThickness="0,0,0,0.5" Margin="0 0 10 0">
+                        <!--<Border Grid.Row="0" BorderBrush="{DynamicResource bcgBr}"--> 
+                        <Border Grid.Row="0" BorderBrush="Blue" 
+                                BorderThickness="0,0,0,1" Margin="0 0 10 0">
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="5" ShadowDepth="4" Color="Black" Opacity="0.7"/>
                             </Border.Effect>
@@ -133,7 +135,7 @@
                                 <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" x:Name="appName" Content="ASOSIY" Style="{DynamicResource Asosiy}"/>
-                                <Label Grid.Column="1" x:Name="MyName" Style="{DynamicResource UserMyName}"/>
+                                <Label Grid.Column="1" x:Name="MyName" Style="{DynamicResource MyName}"/>
                             <Label Grid.Column="1" Style="{DynamicResource OnlineMaster}"/>
                             <Label Grid.Column="2" Style="{DynamicResource Myinfo}">
                                 <Border x:Name="B" BorderThickness="0" CornerRadius="35" Height="60" Width="60"  Background="{DynamicResource lblMastersAccountColor}">

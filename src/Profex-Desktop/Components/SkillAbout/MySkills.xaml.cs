@@ -23,6 +23,7 @@ namespace Profex_Desktop.Components.SkillAbout
     public partial class MySkills : UserControl
     {
         public long SkillId;
+        public long MasterId;
 
         private SkillsService _skillsService = new SkillsService();
 
@@ -47,23 +48,23 @@ namespace Profex_Desktop.Components.SkillAbout
         {
             try
             {
-                var result = await _skillsService.AddSkill(SkillId);
+                var result = await _skillsService.RemoveMySkill(SkillId);
 
                 // Check the result and take appropriate action.
                 if (result == 1)
                 {
                     // Skill added successfully, you can update your UI here if needed.
-                    MessageBox.Show("Skill added successfully!");
+                    MessageBox.Show("Skill removed successfully!");
                 }
                 else if (result == 0)
                 {
                     // Handle the case where adding the skill failed.
-                    MessageBox.Show("skill has already exists.");
+                    MessageBox.Show("skill has already removed.");
                 }
                 else if (result == -1)
                 {
                     // Handle unexpected errors.
-                    MessageBox.Show("An error occurred while adding the skill.");
+                    MessageBox.Show("An error occurred while removed the skill.");
                 }
             }
             catch
@@ -72,6 +73,34 @@ namespace Profex_Desktop.Components.SkillAbout
             }
 
         }
-    
+
+        private async void SkillChopish(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var result = await _skillsService.RemoveMySkill(SkillId);
+
+                // Check the result and take appropriate action.
+                if (result == 1)
+                {
+                    // Skill added successfully, you can update your UI here if needed.
+                    MessageBox.Show("Skill removed successfully!");
+                }
+                else if (result == 0)
+                {
+                    // Handle the case where adding the skill failed.
+                    MessageBox.Show("skill has already removed.");
+                }
+                else if (result == -1)
+                {
+                    // Handle unexpected errors.
+                    MessageBox.Show("An error occurred while removed the skill.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("internet is slow!");
+            }
+        }
     }
 }
