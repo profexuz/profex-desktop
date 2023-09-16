@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Profex_Desktop.Components.SkillAbout;
+using Profex_Integrated.Services.Skills;
+using Profex_ViewModels.Skills;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Profex_Desktop.Windows.SkillWindow
 {
@@ -19,14 +11,54 @@ namespace Profex_Desktop.Windows.SkillWindow
     /// </summary>
     public partial class MySkillWindow : Window
     {
+        public long masterId;
+        MySkills msk = new MySkills();
+        private SkillsService _skillsService = new SkillsService();
+        public long MySkillCount;
         public MySkillWindow()
         {
             InitializeComponent();
         }
 
+        public MySkillWindow(long MasterId)
+        {
+            InitializeComponent();
+            this.masterId = MasterId;
+        }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            wrpPanel.Children.Clear();
+            try
+            {
+                var result = await _skillsService.GetAllMySkills(masterId);
+
+                foreach (var item in result.MasterSkills)
+                {
+                    MySkills msk = new MySkills();
+
+                    var myskill = new SkillViewModel
+                    {
+                        Id = item.Id,
+                        Title = item.Title,
+                        Description = item.Description,
+                        CategoryId = item.CategoryId,
+                    };
+
+                    msk.SetData(myskill);
+
+                    wrpPanel.Children.Add(msk);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
+            
 }

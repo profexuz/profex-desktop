@@ -25,6 +25,7 @@
     <Label x:Key="labelMasterNameHeader" Padding="0" Foreground="{DynamicResource lblMastersNameColor}">DJALEKEEV</Label>
     <Label x:Key="labelMasterSureNameHeader" Padding="0" Foreground="{DynamicResource lblMastersSureNameColor}">YO'LDASHEV</Label>
     <Label x:Key="labelMasterOnlineHeader" Padding="0" Foreground="{DynamicResource lblMastersOnlineColor}">TARMOQDA</Label>
+    <Label x:Key="labelMasterOnlineHeader1" Padding="0" Foreground="White">TARMOQDA</Label>
     <Label x:Key="labelUserOnlineHeader" Padding="0" Foreground="{DynamicResource lblUserOnlineColor}">TARMOQDA</Label>
 
 

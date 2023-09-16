@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Profex_Desktop.Components.SkillAbout"
              mc:Ignorable="d" 
              Height="auto" Width="600"
+             Margin="5"
              >
     <Border CornerRadius="10" 
     Background="Blue">
@@ -16,15 +17,17 @@
             </Grid.ColumnDefinitions>
             <Label x:Name="NameOfSkill" Grid.Column="0"
                    Content="Skill info"
-                   FontSize="18" Margin="5"
+                   FontSize="18" Margin="5 0 0 0"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
                    FontFamily="{DynamicResource FontFamilyNormal}"
                    
                    FontWeight="SemiBold"/>
             <Button Grid.Column="1" Background="White"
+                    Cursor="Hand"
                     Tag="{DynamicResource Delete}"
                     Style="{DynamicResource MySkillButton}"
+                    Click="SkillChopish"
                     />
         </Grid>
     </Border>

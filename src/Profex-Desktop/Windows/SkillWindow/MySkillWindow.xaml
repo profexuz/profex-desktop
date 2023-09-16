@@ -5,36 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.SkillWindow"
         mc:Ignorable="d"
-        Height="650" Width="1200" 
+        Title="Skills"
+        Height="650" Width="800" 
         WindowStartupLocation="CenterScreen" 
         AllowsTransparency="True"
         WindowStyle="None"
         ResizeMode="NoResize" 
-        Background="#1450A3">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="6*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="9*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
-                <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"
+        Loaded="Window_Loaded"
+        Background="#182127">
+    <Border BorderBrush="Blue" BorderThickness="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"
             Margin="10" x:Name="btnClose" 
             Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
-            </Grid>
-            <Grid Grid.Column="0">
-                <Label Content="My Skills" Style="{DynamicResource lblSkillStyle}"/>
-            </Grid>
+                </Grid>
+                <Grid Grid.Column="0">
+                    <Label Content="My skills" Style="{DynamicResource lblSkillStyle}"/>
+                </Grid>
 
+            </Grid>
+            <Border Grid.Row="1" BorderThickness="1" BorderBrush="Blue">
+                <ScrollViewer>
+                    <WrapPanel x:Name="wrpPanel" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent"/>
+
+                </ScrollViewer>
+            </Border>
         </Grid>
-        <Border Grid.Row="1">
-            <ScrollViewer>
-                <WrapPanel x:Name="wrpPanel" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent"/>
-            </ScrollViewer>
-        </Border>
-    </Grid>
+
+    </Border>
+
 </Window>

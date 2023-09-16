@@ -507,7 +507,8 @@
     
     <!--Label My Name-->
     <Style x:Key="MyName" TargetType="{x:Type Label}">
-        <Setter Property="Foreground" Value="{DynamicResource lblMastersNameColor}"/>
+        <!--//<Setter Property="Foreground" Value="{DynamicResource lblMastersNameColor}"/>-->
+        <Setter Property="Foreground" Value="blue"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="FontSize" Value="18"/>
@@ -543,7 +544,7 @@
         <Setter Property="Height" Value="50"/>
         <Setter Property="VerticalAlignment" Value="Bottom"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="Content" Value="{DynamicResource labelMasterOnlineHeader}"/>
+        <Setter Property="Content" Value="{DynamicResource labelMasterOnlineHeader1}"/>
         <Setter Property="Margin" Value="0 0 0 5"/>
         <Setter Property="Template">
             <Setter.Value>

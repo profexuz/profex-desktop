@@ -14,7 +14,6 @@ namespace Profex_Desktop.Components.SkillAbout
         public long skillId;
 
         public long CategoryId;
-
         public SkillInformation()
         {
             InitializeComponent();
@@ -31,15 +30,6 @@ namespace Profex_Desktop.Components.SkillAbout
                 MessageBox.Show("Ma'lumotlar topilmadi");
             }
         }
-
-        /*private void SkillQoshish(object sender, MouseButtonEventArgs e)
-        {
-
-            //CategorySkillsWindow skw = new CategorySkillsWindow();
-            //skw.skillId = CategoryId;
-            CategorySkillsWindow skw = new CategorySkillsWindow(CategoryId);
-            skw.ShowDialog();
-        }*/
 
         private void SkillQoshish(object sender, RoutedEventArgs e)
         {
