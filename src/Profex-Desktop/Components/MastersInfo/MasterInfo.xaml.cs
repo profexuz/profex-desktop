@@ -10,9 +10,7 @@ namespace Profex_Desktop.Components.MastersInfo
     /// </summary>
     public partial class MasterInfo : UserControl
     {
-        //private string BASE_URL = "http://localhost:5230/";
         private string BASE_URL = "http://64.227.42.134:4040/";
-        //private long ustaId;
         public MasterInfo()
         {
             InitializeComponent();
@@ -20,16 +18,12 @@ namespace Profex_Desktop.Components.MastersInfo
         public void SetData(string[] masterskills)
         {
             string imageUrl = masterskills[0];
-            /*Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
-            imgProfile.ImageSource = new BitmapImage(imageUri);*/
             if (Uri.TryCreate(imageUrl, UriKind.Absolute, out Uri imageUri))
             {
                 imgProfile.ImageSource = new BitmapImage(imageUri);
             }
             else
             {
-                // Noto'g'ri URL formatida xabar chiqaring yoki URL-ni o'zgartiring.
-                // Misol: MessageBox.Show("Noto'g'ri URL formatida xatolik");
             }
 
             lblname.Content = masterskills[1];
