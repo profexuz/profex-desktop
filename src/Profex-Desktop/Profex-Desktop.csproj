@@ -19,6 +19,7 @@
     <None Remove="Assets\Images\builders.png" />
     <None Remove="Assets\Images\common users.jpg" />
     <None Remove="Assets\Images\defaultvacanciesimg.jpg" />
+    <None Remove="Assets\Images\deleteButton.png" />
     <None Remove="Assets\Images\frequently.png" />
     <None Remove="Assets\Images\Loading.gif" />
     <None Remove="Assets\Images\nimalardur.png" />
@@ -49,6 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Images\deleteButton.png" />
     <Resource Include="Assets\Images\frequently.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

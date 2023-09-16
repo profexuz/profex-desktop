@@ -1,4 +1,6 @@
-﻿namespace Profex_Integrated.Helpers;
+﻿using static System.Net.WebRequestMethods;
+
+namespace Profex_Integrated.Helpers;
 
 public class API
 {
@@ -53,7 +55,10 @@ public class API
     public static readonly string GET_ALL_BY_CATEGORY_ID = BASE_URL + "common/category/allSkillsBy/categoryId";
 
     public static readonly string GET_ADD_SKILL = BASE_URL + "tokenmaster/addSkill";
-    
+
+    public static readonly string MY_ALL_SKILL = BASE_URL + "common/master/withSkills";
+
+    public static readonly string REMOVE_MY_SKILL = BASE_URL + "tokenmaster/dSkill";
 
 
     //common/category/allSkillsBy/categoryId?categoryId=2&page=1

@@ -24,9 +24,6 @@ namespace Profex_Desktop.Pages
             InitializeComponent();
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        { }
-
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
@@ -60,6 +57,11 @@ namespace Profex_Desktop.Pages
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnMySkills_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -17,7 +17,6 @@ namespace Profex_Desktop.Components.Vacancies
     {
         private UserService _userService = new UserService();
         private VacancyService _vacancyService = new VacancyService();
-        //private string BASE_URL = "http://localhost:5230/";
         private string BASE_URL = "http://64.227.42.134:4040/";
 
 
@@ -127,11 +126,16 @@ namespace Profex_Desktop.Components.Vacancies
         private static string MakeRandom()
         {
             Random random = new Random();
-            int n = random.Next(0, 15);
-            string[] colors1 =
+            int n = 0;
+            /*string[] colors1 =
             {
                 "#2e933c", "#90f1ef", "#e4ff1a", "#f2545b", "#6e2594", "#4059ad", "#ff8552", "#ef3054", "#ee6c4d",
                 "#83af9d","#b7bb80", "#eac763", "#e49f61", "#df765f","#d94e5d"
+            };*/
+            string[] colors1 =
+            {
+                "#2e933c"
+                
             };
             string selected = colors1[n];
             return selected;

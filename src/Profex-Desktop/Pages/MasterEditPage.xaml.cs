@@ -113,7 +113,9 @@ namespace Profex_Desktop.Pages
             _masterViewModel.PhoneNumber = "+" + txtNum.Text;
             if (selectedFilePath != "")
             {
-                _masterViewModel.ImagePath = selectedFilePath.ToString();
+                //_masterViewModel.ImagePath = selectedFilePath.ToString();
+                //_masterViewModel.ImagePath = selectedFilePath.ToString();
+                _masterViewModel.ImagePath = selectedFilePath;
                 btnSave.IsEnabled = true;
             }
 
@@ -158,10 +160,10 @@ namespace Profex_Desktop.Pages
             btnCancel.Visibility = Visibility.Visible;
             btnChange.Visibility = Visibility.Hidden;
             brUpload.IsEnabled = true;
-            txtFName.Text = "";
+            /*txtFName.Text = "";
             txtLName.Text = "";
             txtNum.Text = "";
-
+*/
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
