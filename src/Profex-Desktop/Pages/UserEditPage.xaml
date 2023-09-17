@@ -1,10 +1,10 @@
-﻿<Page x:Class="Profex_Desktop.Pages.UserMasterEditPage"
+﻿<Page x:Class="Profex_Desktop.Pages.UserEditPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Pages"
-      mc:Ignorable="d" 
+     mc:Ignorable="d" 
       Height="auto" Width="auto"
       Title="MasterEditPage" 
       Background="Transparent"
@@ -91,10 +91,9 @@
                 <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom"
                             Margin="10 10">
                     <Label x:Name="lblPhoneNum" Style="{DynamicResource lblPhoneNumMaster}"/>
-
-                    <TextBox  x:Name="txtNum"  Grid.Row="0" Text="998943737734" Style="{DynamicResource txtFirstNameMaster}"
+                    <TextBox  x:Name="txtNum" Text="998943737734" Style="{DynamicResource txtFirstNameMaster}"
                                  PreviewTextInput="NumberValidationTextBox"
-                                 IsReadOnly="True"/>
+                                 IsReadOnly="True" TextChanged="txtNum_TextChanged"/>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Orientation="Vertical" VerticalAlignment="Bottom"
                             Margin="10 0">
@@ -103,7 +102,7 @@
                     <ComboBox x:Name="cmbIsFree" 
                               Style="{DynamicResource RoundComboBoxMaster}"
                               HorizontalAlignment="Left" IsReadOnly="True">
-                        <ComboBoxItem IsSelected="True">Yo'q</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">HA</ComboBoxItem>
                         <ComboBoxItem>YO'Q</ComboBoxItem>
                     </ComboBox>
 
