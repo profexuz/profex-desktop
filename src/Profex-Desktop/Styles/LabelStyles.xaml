@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
-    
+
+
     <Style x:Key="Asosiy" TargetType="{x:Type Label}">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -13,8 +13,8 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
-    
-    
+
+
     <!-- User Asosiy -->
     <Style x:Key="UserAsosiy" TargetType="{x:Type Label}">
         <Setter Property="FontSize" Value="20"/>
@@ -27,7 +27,7 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
-    
+
     <Style x:Key="ProfexINfoHeader" TargetType="{x:Type Label}">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Padding" Value="0"/>
@@ -37,7 +37,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5 0 0 0"/>
     </Style>
-    
+
     <Style x:Key="ProfexInfoUnderHeader" TargetType="{x:Type Label}">
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Padding" Value="0"/>
@@ -47,7 +47,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5 0 0 0"/>
     </Style>
-    
+
     <!--Register: FullRegister label styles-->
 
     <Style x:Key="Fullregister" TargetType="{x:Type Label}">
@@ -178,7 +178,7 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Content" Value="16 yoshgacha boʼlgan bolalar"/>
     </Style>
-    
+
     <!--#:Offerta part-->
     <Style x:Key="second" TargetType="{x:Type Label}">
         <Setter Property="FontSize" Value="17"/>
@@ -190,7 +190,7 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="40 5"/>
     </Style>
-    
+
     <!--#New added label-->
     <Style x:Key="newAdded" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource newAddedContent}"/>
@@ -208,7 +208,7 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
-    
+
     <!--Clock Icon Label-->
     <Style x:Key="ClockIconlabel" TargetType="{x:Type Label}">
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -218,7 +218,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Label}">
                     <Border x:Name="B" BorderThickness="0">
-                    <Path x:Name="icon"
+                        <Path x:Name="icon"
                                   Data="{DynamicResource Clock}"
                                   Fill="{DynamicResource ProfileImageBackground}"
                                   Height="15" Width="15"
@@ -272,7 +272,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5 10 5 0"/>
     </Style>
-    
+
     <!--Label for about Master information-->
     <Style x:Key="lblTitleForMaster" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Information about the master"/>
@@ -297,7 +297,7 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
-    
+
     <!--FirstName label style-->
     <Style x:Key="lblFirstName" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Name"/>
@@ -310,7 +310,7 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
-    
+
     <!--Skills label style-->
     <Style x:Key="lblSkillStyle" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Name"/>
@@ -324,7 +324,7 @@
         <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
 
-    
+
     <!--Region answer label style-->
     <Style x:Key="lblRegionAnswer" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="{DynamicResource labelRegionAnswerVacancy}"/>
@@ -335,7 +335,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
-    
+
     <!--LastName label style-->
     <Style x:Key="lblLastName" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Surname"/>
@@ -371,7 +371,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
-    
+
     <!--FirstName answer label style-->
     <Style x:Key="lblFirstNameAnswer" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="OZODBEK"/>
@@ -382,7 +382,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
-    
+
     <!--LastName answer label style-->
     <Style x:Key="lblLastNameAnswer" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="JUMAKULOV"/>
@@ -405,7 +405,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="0"/>
     </Style>
-    
+
     <!--Telefon label style-->
     <Style x:Key="lblTelefon" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Telefon"/>
@@ -459,7 +459,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
-    
+
     <!--IsFree label style-->
     <Style x:Key="lblIsFreee" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="IsFree"/>
@@ -504,7 +504,7 @@
         <Setter Property="Height" Value="70"/>
         <Setter Property="Width" Value="70"/>
     </Style>
-    
+
     <!--Label My Name-->
     <Style x:Key="MyName" TargetType="{x:Type Label}">
         <!--//<Setter Property="Foreground" Value="{DynamicResource lblMastersNameColor}"/>-->
@@ -622,7 +622,7 @@
     <!--Label Fisrt Name Answer For MasterEditePage-->
     <Style x:Key="lblFirstNameAnswerMaster" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Javlonbek"/>
-        <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
@@ -678,5 +678,143 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="20 50"/>
         <Setter Property="Padding" Value="0"/>
+    </Style>
+
+
+    <!--User post information-->
+    <Style x:Key="lblTitleForUserPost" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Information about the  User post !"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 10 5 0"/>
+    </Style>
+
+    <!--Post title label style-->
+    <Style x:Key="lblPostTitle" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Title"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
+    <!--PostTitle answer label style-->
+    <Style x:Key="lblPostTitleAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Bogbon kerak"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!--Price label style-->
+    <Style x:Key="lblPrice" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Price"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
+    <!--Price answer label style-->
+    <Style x:Key="lblPriceAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="250000"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!--UserRegion label style-->
+    <Style x:Key="lblUserRegion" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Region"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
+    <!--UserRegionAnswer answer label style-->
+    <Style x:Key="lblUserRegionAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Surxondaryo"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!--UserDistrict label style-->
+    <Style x:Key="lblUserDistrict" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Region"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
+    <!--UserRegionAnswer answer label style-->
+    <Style x:Key="lblUserDistrictAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Termiz"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!--UserTelefon label style-->
+    <Style x:Key="lblUserTelefon" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Telefon"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
+    <!--PhoneNumAnswer label style-->
+    <Style x:Key="lblUserPhoneNumAnswer" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="{DynamicResource labelUserPhoneNumAnswer}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5"/>
     </Style>
 </ResourceDictionary>
