@@ -9,14 +9,14 @@
     <SolidColorBrush x:Key="RadioButtonBackGround" Color="#0084ff"/>
     <!--Radio Button Mouse Over Background-->
     <SolidColorBrush x:Key="RadioBUttonMouseOverBackground" Color="#39a0ff"/>
-    
+
     <!--Dashboard about profex border background color-->
     <SolidColorBrush x:Key="profexINFObackgr" Color="#212529"/>
-    
+
     <!--Dashboard vacancy paginations background color-->
     <SolidColorBrush x:Key="profexVacancyEnableFalseBackgr" Color="#495057"/>
     <SolidColorBrush x:Key="profexVacancyEnableTrueBackgr" Color="#adb5bd"/>
-    
+
     <!--Vacancy component background color-->
     <SolidColorBrush x:Key="vacancyComponent" Color="#2D3339"/>
     <!--Cost foregroundcolor-->
@@ -47,6 +47,9 @@
     <SolidColorBrush x:Key="UserPrimaryTextColor" Color="#768C9E"/>
     <SolidColorBrush x:Key="UserSecondaryTextColor" Color="#5EB5F7"/>
     <SolidColorBrush x:Key="UserSelectedBackground" Color="#17212B"/>
+    <SolidColorBrush x:Key="SearchBachground" Color="#242F3D"/>
+    <SolidColorBrush x:Key="FontBachground" Color="#1F2936"/>
+
 
 
 
@@ -57,8 +60,8 @@
 
 
     <SolidColorBrush x:Key="bcgBr" Color="#bcb8b1"/>
-    
-    
+
+
     <SolidColorBrush x:Key="topBcgColor" Color="#bcb8b1"/>
 
 </ResourceDictionary>
