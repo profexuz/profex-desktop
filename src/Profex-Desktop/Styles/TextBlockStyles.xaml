@@ -11,16 +11,16 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
-    
+
     <!--For Profex about text style-->
     <Style x:Key="profexAbout" TargetType="{x:Type TextBlock}">
         <Setter  Property="TextWrapping" Value="Wrap"/>
         <Setter Property="FontSize" Value="16"/>
-        <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
     </Style>
 
-    
+
 
     <!--#Offerta part-->
     <Style x:Key="topFoydalanuvchi2" TargetType="{x:Type TextBlock}">
@@ -604,7 +604,7 @@ IX. YaKUNIY QOIDАLАR
         <Setter Property="FontSize" Value="17"/>
         <Setter Property="Text" Value="1. Siz yuborgan xabarlar orqali sizdan toʼgʼridan-toʼgʼri maʼlumot oladigan Xizmatimiz yoki toʼlov operatorlarimiz yoki ular orqali mavjud boʼlgan alohida xizmat koʼrsatuvchi provayderlarimizga havolasi boʼlgan har qanday dastur yoki kontent orqali uchinchi shaxslar tomonidan toʼplangan maʼlumotlar. Shaxsiy maʼlumotlaringizni uchinchi shaxslar tomonidan toʼplash va ulardan foydalanish qoidalari haqida ushbu shaxslardan oʼzingiz maʼlumot olishingiz mumkin. 2. Bizning veb-sahifa/MI yordamida xizmatlardan foydalanuvchi yoki xizmatlarni taqdim etuvchi tomonidan, bizning veb-sahifa/MI xizmatlari orqali chat yoki tezkor xabar almashish tizimlarining boshqa funktsiyalaridan foydalangan holda toʼplangan maʼlumotlar."/>
     </Style>
-    
+
     <Style x:Key="topFoydalanuvchi10" TargetType="{x:Type TextBlock}">
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Foreground" Value="Black"/>
@@ -705,6 +705,18 @@ Boshqa maqsadlar uchun, faqatgina Sizning roziligingiz bilan Siz toʼgʼringizda
     <!--For Vacancy Description style-->
     <Style x:Key="txtbPlaceholderForSearch" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{DynamicResource txtDescriptionColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <!--For UserPost Description style-->
+    <Style x:Key="txtUserPostDescription" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="VerticalAlignment" Value="Top"/>

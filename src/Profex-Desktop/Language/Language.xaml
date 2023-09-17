@@ -19,7 +19,9 @@
     <Label x:Key="GMPVacancy" Foreground="{DynamicResource GMPColor}">Manzilni ko'rish</Label>
     <Label x:Key="labelPhoneNum" Foreground="{DynamicResource PhoneNumColor}">BUYURTMACHI</Label>
     <Label x:Key="labelPhoneNumAnswer" Foreground="{DynamicResource PhoneNumAnswerColor}">+998913774506</Label>
-    
+    <Label x:Key="labelUserPhoneNumAnswer" Foreground="{DynamicResource PhoneNumAnswerColor}">+998944666466</Label>
+
+
     <!--Masters Page-->
     <Label x:Key="labelMastersHeader" Foreground="{DynamicResource lblMastersHeaderColor}">USTALAR</Label>
     <Label x:Key="labelMasterNameHeader" Padding="0" Foreground="{DynamicResource lblMastersNameColor}">DJALEKEEV</Label>
