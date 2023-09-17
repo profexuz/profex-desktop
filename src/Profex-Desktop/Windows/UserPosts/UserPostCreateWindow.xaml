@@ -1,0 +1,261 @@
+﻿<Window x:Class="Profex_Desktop.Windows.UserPosts.UserPostCreateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Profex_Desktop.Windows.UserPosts"
+        mc:Ignorable="d"
+            WindowStyle="None" 
+    Title="AboutVacancyWindow"
+    Loaded="Window_Loaded"
+    Height="650" Width="1200" 
+    WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+    ResizeMode="NoResize" Background="{DynamicResource PrimaryBackground}">
+
+    <Border CornerRadius="20" Padding="10" BorderThickness="0 0 0 2" BorderBrush="WHITE"
+    Background="{DynamicResource PrimaryBackground}">
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border 
+                    BorderThickness="0 0 0 3"
+                    CornerRadius="10"
+                    BorderBrush="White"
+                
+                    Margin="0,10,12,0">
+                <Border.Background>
+                    <ImageBrush x:Name="MasterRasmi"/>
+                </Border.Background>
+            </Border>
+            --><!--<StackPanel Grid.Column="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Orientation="Vertical">-->
+            <!--<RadioButton x:Name="rbImg" IsChecked="True" Click="rbImg_Click" Style="{DynamicResource Images}"
+            Content="../Assets/Images/somebreakedthing1.jpeg" />
+
+                <RadioButton x:Name="rbImg1" Visibility="Hidden" Click="rbImg1_Click" Style="{DynamicResource Images}"
+                     Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing2.jpeg"/>
+
+                <RadioButton x:Name="rbImg2" Visibility="Hidden" Click="rbImg2_Click" Style="{DynamicResource Images}"
+                     Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing3.jpg"/>
+
+                <RadioButton x:Name="rbImg3" Visibility="Hidden" Click="rbImg3_Click" Style="{DynamicResource Images}"
+                     Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing4.jpg"/>-->
+            <!--
+
+            </StackPanel>--><!--
+            <Border Grid.Column="1" CornerRadius="20">
+                <Border.Background>
+                    <ImageBrush x:Name="imgMain"/>
+                </Border.Background>
+            </Border>
+            <Grid Grid.Column="2" Margin="0 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="230"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+                --><!--Vacancy Title part--><!--
+                <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Margin="10" x:Name="btnClose" 
+                Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
+                <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center">
+                    <Label x:Name="lblTitle"
+                Style="{DynamicResource lblTitleForUserPost}"/>
+
+                    <Border Style="{DynamicResource brLine}"/>
+                </StackPanel>
+
+                --><!--Address part--><!--
+                <StackPanel Grid.Row="1" Orientation="Vertical">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lblFirstName" Style="{DynamicResource lblPostTitle}" Margin="8,0,0,0"/>
+                        <Label Grid.Column="1" x:Name="lblFirstNameAnswer" Style="{DynamicResource lblPostTitleAnswer}"/>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lblLastName" Style="{DynamicResource lblPrice}" Margin="8,0,0,0"/>
+                        <Label Grid.Column="1" x:Name="lblLastNameAnswer" Style="{DynamicResource lblPriceAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblIsFree" Grid.Column="1" Style="{DynamicResource lblPhoneNumAnswerVacancy}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"  x:Name="lblUserReg" Style="{DynamicResource lblUserRegion}" Margin="8,0,0,0"/>
+                        <Label Grid.Column="1" x:Name="lblUserRegAns" Style="{DynamicResource lblUserRegionAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"  x:Name="lblUserDistr" Style="{DynamicResource lblUserDistrict}" Margin="8,0,0,0"/>
+                        <Label Grid.Column="1" x:Name="lblUserDistrictans" Style="{DynamicResource lblUserDistrictAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"  x:Name="lblPhone" Style="{DynamicResource lblUserTelefon}" Margin="8,0,0,0"/>
+                        <Label Grid.Column="1" x:Name="lblPhoneNumerAns" Style="{DynamicResource lblPhoneNumAnswerVacancy}"/>
+                    </Grid>
+
+                </StackPanel>
+                <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
+
+                --><!--Description--><!--
+                <Border Grid.Row="2" CornerRadius="15" BorderThickness="0 0 0 1" 
+                BorderBrush="White"
+                        Background="{DynamicResource UserSecondaryBackground}"
+                Padding="5" Margin="10">
+                    <ScrollViewer Visibility="Visible">
+                        <TextBlock x:Name="txtSkill" Style="{DynamicResource txtUserPostDescription}"
+                            Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </Grid>-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="580"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Orientation="Vertical">
+                <RadioButton x:Name="rbImg" IsChecked="True" Click="rbImg_Click" Style="{DynamicResource Images}"
+                Content="../Assets/Images/somebreakedthing1.jpeg" />
+
+                <RadioButton x:Name="rbImg1" Visibility="Hidden" Click="rbImg1_Click" Style="{DynamicResource Images}"
+                         Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing2.jpeg"/>
+
+                <RadioButton x:Name="rbImg2" Visibility="Hidden" Click="rbImg2_Click" Style="{DynamicResource Images}"
+                         Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing3.jpg"/>
+
+                <RadioButton x:Name="rbImg3" Visibility="Hidden" Click="rbImg3_Click" Style="{DynamicResource Images}"
+                         Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing4.jpg"/>
+
+            </StackPanel>
+            <Border Grid.Column="1" CornerRadius="20" BorderThickness="4 1 4 4"
+                    BorderBrush="White">
+                <Border.Background>
+                    <ImageBrush x:Name="imgMain" />
+                </Border.Background>
+            </Border>
+            <Grid Grid.Column="2" Margin="0 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="270"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+                <!--Vacancy Title part-->
+                <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"
+                    Margin="10" x:Name="btnClose" 
+                    Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
+                <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center">
+                    <Label x:Name="lblTitle"
+                    Style="{DynamicResource lblTitleForUserPost}"/>
+                    <Border Style="{DynamicResource brLine}"/>
+                </StackPanel>
+
+                <!--Address part-->
+                <StackPanel Grid.Row="1" Orientation="Vertical">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lblPostTitle" Style="{DynamicResource lblPostTitle}"/>
+                        <Label Grid.Column="1" x:Name="lblPostTitleAnswer" Style="{DynamicResource lblPostTitleAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lblPrice" Style="{DynamicResource lblPrice}"/>
+                        <Label Grid.Column="1" x:Name="lblPriceAnswer" Style="{DynamicResource lblPriceAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lbl"/>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lblUserRegion" Style="{DynamicResource lblUserRegion}"/>
+                        <Label Grid.Column="1" x:Name="lblUserRegionAnswer" Style="{DynamicResource lblUserRegionAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lblUserDistrict" Style="{DynamicResource lblUserDistrict}"/>
+                        <Label Grid.Column="1" x:Name="lblUserDistrictAnswer" Style="{DynamicResource lblUserDistrictAnswer}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"  x:Name="lblUserTelefon" Style="{DynamicResource lblUserTelefon}"/>
+                        <Label Grid.Column="1" x:Name="lblUserPhoneNumAnswer" Style="{DynamicResource lblUserPhoneNumAnswer}"/>
+                    </Grid>
+
+                </StackPanel>
+                <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
+
+                <!--Description-->
+                <Border Grid.Row="2" CornerRadius="15" BorderThickness="0 2 0 2" 
+                        
+                    BorderBrush="{DynamicResource ProfileImageBackground}"
+                    Padding="5" Margin="10">
+                    <ScrollViewer Visibility="Visible" Background="{DynamicResource UserFirstBackground}">
+                        <TextBlock x:Name="txtDesc" Style="{DynamicResource txtUserPostDescription}"
+                                Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+                    </ScrollViewer>
+                </Border>
+
+                <!--Cost for work-->
+                <Label x:Name="lblCost" Grid.Row="3" Style="{DynamicResource lblCostVacancy}"
+                   Foreground="{DynamicResource lblCostColor}"/>
+
+                <!--Take this work button-->
+
+
+            </Grid>
+        </Grid>
+    </Border>
+    
+</Window>

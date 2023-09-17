@@ -1,8 +1,8 @@
 
-﻿using Profex_Desktop.Pages;
+using Profex_Desktop.Pages;
 using System.Windows;
 
-﻿using System.Windows;
+using System.Windows;
 
 using System.Windows.Input;
 
@@ -45,12 +45,7 @@ namespace Profex_Desktop
             this.WindowState = WindowState.Minimized;
         }
 
-        private void rbAccount_Click(object sender, RoutedEventArgs e)
-        {
-            appName.Content = "PROFILE";
-            UserMasterEditPage masterEdit = new UserMasterEditPage();
-            PageNavigator.Navigate(masterEdit);
-        }
+
 
         private void rbDashboard_Click(object sender, RoutedEventArgs e)
         {
@@ -81,12 +76,28 @@ namespace Profex_Desktop
         }
 
         private void Window_loading(object sender, RoutedEventArgs e)
-        { 
+        {
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void rbMyPost_Click(object sender, RoutedEventArgs e)
+        {
+            appName.Content = "My Posts";
+            UserPostPage userPostPage = new UserPostPage();
+            PageNavigator.Navigate(userPostPage);
+        }
+
+
+
+        private void rbProfil_Click(object sender, RoutedEventArgs e)
+        {
+            appName.Content = "PROFILE";
+            UserEditPage userEditPage = new UserEditPage();
+            PageNavigator.Navigate(userEditPage);
         }
     }
 }
