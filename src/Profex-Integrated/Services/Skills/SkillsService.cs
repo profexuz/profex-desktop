@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_ViewModels.Categories;
 using Profex_ViewModels.Masters;
 using Profex_ViewModels.Skills;
@@ -16,8 +17,10 @@ namespace Profex_Integrated.Services.Skills
         public static long MasterId;
         private string Token = "Master";
         public string token;
+        private string _path = "C:\\Users\\Public\\Token.txt";
+        private JwtParser jwtParser = new JwtParser();
 
-        
+
         public async Task<IList<CategoryViewModel>> GetAllAysnc(long page)
         {
             using (HttpClient client = new HttpClient())
@@ -138,15 +141,16 @@ namespace Profex_Integrated.Services.Skills
         public async Task<MasterViewModel> GetAllMySkills(long masterId)
         {
             try
-            {           
-
+            {
+                string token1 = File.ReadAllText(_path);
+                IdentityService identityService = jwtParser.ParseToken(token1);
+                
                 using (HttpClient client = new HttpClient())
                 {
 
                     client.BaseAddress = new Uri(API.MY_ALL_SKILL);
 
-                    //var response = await client.GetAsync($"{client.BaseAddress}/{12}");
-                    var response = await client.GetAsync($"{client.BaseAddress}/{12}");
+                    var response = await client.GetAsync($"{client.BaseAddress}/{identityService.Id}");
 
                     if (response.IsSuccessStatusCode)
                     {

@@ -1,9 +1,12 @@
-﻿using Profex_Dtos.Masters;
+﻿using Microsoft.AspNetCore.Http.Internal;
+using Profex_Dtos.Masters;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Masters;
+using Profex_ViewModels.Masters;
 using System;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -111,7 +114,7 @@ namespace Profex_Desktop.Pages
             _masterViewModel.FirstName = txtFName.Text;
             _masterViewModel.LastName = txtLName.Text;
             _masterViewModel.PhoneNumber = "+" + txtNum.Text;
-            if (selectedFilePath != "")
+            /*if (selectedFilePath != "")
             {
                 //_masterViewModel.ImagePath = selectedFilePath.ToString();
                 //_masterViewModel.ImagePath = selectedFilePath.ToString();
@@ -125,6 +128,31 @@ namespace Profex_Desktop.Pages
                 _masterViewModel.ImagePath = res.ImagePath;
                 btnSave.IsEnabled = true;
             }
+*/
+
+            if (!string.IsNullOrEmpty(selectedFilePath))
+            {
+                // Faylni IFormFile ko'rinishida yaratish
+                var fileBytes = File.ReadAllBytes(selectedFilePath);
+                var fileName = Path.GetFileName(selectedFilePath);
+                _masterViewModel.ImagePath = new FormFile(new MemoryStream(fileBytes), 0, fileBytes.Length, null, fileName);
+                btnSave.IsEnabled = true;
+            }
+            else
+            {
+                var res = await _masterService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
+
+                // _masterViewModel.ImagePath ga ro'yxatni o'rnating
+                _masterViewModel.ImagePath = new FormFile(new MemoryStream(Encoding.UTF8.GetBytes(res.ImagePath)), 0, res.ImagePath.Length, null, Path.GetFileName(res.ImagePath));
+                btnSave.IsEnabled = true;
+
+
+
+            }
+
+
+
+
             if (cmbIsFree.SelectedIndex == 0)
             {
                 _masterViewModel.IsFree = false;

@@ -124,7 +124,12 @@ public class MasterService : IMasterService
                     content.Add(new StringContent(dto.LastName), "LastName");
                     content.Add(new StringContent(dto.PhoneNumber), "PhoneNumber");
                     content.Add(new StringContent(dto.IsFree.ToString()), "IsFree");
-                    content.Add(new StringContent(dto.ImagePath), "ImagePath", dto.ImagePath);
+                    //content.Add(new StringContent(dto.ImagePath), "ImagePath", dto.ImagePath);
+                    if(dto.ImagePath != null)
+                    {
+                        // Ma'lumotlarni IFormFile turidagi ma'lumot sifatida qo'shish
+                        content.Add(new StreamContent(dto.ImagePath.OpenReadStream()), "ImagePath", dto.ImagePath.FileName);
+                    }
                     request.Content = content;
 
                     var response = await client.SendAsync(request);
