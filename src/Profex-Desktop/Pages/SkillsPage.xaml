@@ -29,7 +29,8 @@
         <Grid Grid.Column ="1">
             <Button x:Name="btnMySkills" 
                     Content="My Skills" Foreground="White"
-        Click="btnMySkills_Click" Style="{DynamicResource btnSearchMaster}"/>
+                    Click="btnMySkills_Click" 
+                    Style="{DynamicResource btnSearchMaster}"/>
         </Grid>
         </Grid>
         <Grid Grid.Row="1">

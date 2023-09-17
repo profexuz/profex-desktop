@@ -1018,6 +1018,7 @@
                                    Padding="0"/>
                     </Border>
                 </ControlTemplate>
+                
             </Setter.Value>
         </Setter>
     </Style>
