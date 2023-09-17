@@ -25,7 +25,13 @@
             </Border>
 
             <StackPanel Grid.Column="1" Orientation="Vertical">
-                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                <Border Padding="10" 
+                        BorderBrush="#EFFFFD" 
+                        BorderThickness="0,0,0,2" 
+                        CornerRadius="0 0 20 20" 
+                        Height="120" Width="500" 
+                        Margin="10" 
+                        Background="{DynamicResource SideBarBackground}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
@@ -40,7 +46,13 @@ Ish beruvchi bilan bog'lansangiz bo'ladi.
                         </TextBlock>
                     </Grid>
                 </Border>
-                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                <Border Padding="10" 
+                        BorderBrush="#EFFFFD" 
+                        BorderThickness="0,0,0,2"
+                        CornerRadius="0 0 20 20" 
+                        Height="120" Width="500" 
+                        Margin="10" 
+                        Background="{DynamicResource SideBarBackground}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
@@ -54,7 +66,13 @@ Ish beruvchi bilan bog'lansangiz bo'ladi.
                         </TextBlock>
                     </Grid>
                 </Border>
-                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                <Border Padding="10" 
+                        BorderBrush="#EFFFFD" 
+                        BorderThickness="0,0,0,2"
+                        CornerRadius="0 0 20 20"
+                        Height="120" Width="500" 
+                        Margin="10" 
+                        Background="{DynamicResource SideBarBackground}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
@@ -68,7 +86,13 @@ Ish beruvchi bilan bog'lansangiz bo'ladi.
                         </TextBlock>
                     </Grid>
                 </Border>
-                <Border Padding="10" Height="120" Width="500" Margin="10" Background="{DynamicResource SideBarBackground}">
+                <Border Padding="10"
+                        BorderBrush="#EFFFFD" 
+                        BorderThickness="0,0,0,2"
+                        CornerRadius="0 0 20 20"
+                        Height="120" Width="500" 
+                        Margin="10" 
+                        Background="{DynamicResource SideBarBackground}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
