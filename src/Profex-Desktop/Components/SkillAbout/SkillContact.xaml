@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profex_Desktop.Components.SkillAbout"
-             mc:Ignorable="d" Height="auto"
-             Width="auto"
+             mc:Ignorable="d" 
+             Height="39"
+             Width="600"
              Margin="10 5 10 10"
              Cursor="Hand">
     <Border CornerRadius="10" 
-        Background="#0084FF">
-        <StackPanel Orientation="Horizontal">
+        Background="#12191F">
+        <!--<StackPanel Orientation="Horizontal">
             <Border x:Name="NameBorder" CornerRadius="0" Margin="5 10 7 10" Background="{DynamicResource PrimaryBackground}" 
                 Width="1000"
                 Height="50"
@@ -35,6 +36,29 @@
                     </Ellipse.Fill>
                 </Ellipse>
             </Border>
-        </StackPanel>
+        </StackPanel>-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="NameOfSkill" Grid.Column="0"
+                    Content="Skill info"
+                    FontSize="18" Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    FontFamily="{DynamicResource FontFamilyNormal}"
+                    Foreground="White"
+                    FontWeight="SemiBold"/>
+            
+            <Button Grid.Column="1" 
+                    Background="White"
+                    x:Name="btn"
+                    Click="SkillQoshish"
+                    Cursor="Hand"
+            Tag="{DynamicResource plus1}"
+            Style="{DynamicResource plusButton}"
+            />
+        </Grid>
     </Border>
 </UserControl>

@@ -14,7 +14,6 @@ namespace Profex_Desktop.Components.SkillAbout
         public long skillId;
 
         public long CategoryId;
-
         public SkillInformation()
         {
             InitializeComponent();
@@ -25,7 +24,6 @@ namespace Profex_Desktop.Components.SkillAbout
             {
                 NameOfMaster.Content = category.Name;
                 CategoryId = category.Id;
-                //skw.skillId = CategoryId;
             }
             else
             {
@@ -33,11 +31,8 @@ namespace Profex_Desktop.Components.SkillAbout
             }
         }
 
-        private void SkillQoshish(object sender, MouseButtonEventArgs e)
+        private void SkillQoshish(object sender, RoutedEventArgs e)
         {
-
-            //CategorySkillsWindow skw = new CategorySkillsWindow();
-            //skw.skillId = CategoryId;
             CategorySkillsWindow skw = new CategorySkillsWindow(CategoryId);
             skw.ShowDialog();
         }

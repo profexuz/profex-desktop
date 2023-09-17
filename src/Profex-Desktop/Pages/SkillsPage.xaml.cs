@@ -1,4 +1,5 @@
 ﻿using Profex_Desktop.Components.SkillAbout;
+using Profex_Desktop.Windows.SkillWindow;
 using Profex_Integrated.Services.Skills;
 using Profex_ViewModels.Categories;
 using System;
@@ -23,9 +24,6 @@ namespace Profex_Desktop.Pages
         {
             InitializeComponent();
         }
-
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        { }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +58,17 @@ namespace Profex_Desktop.Pages
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnMySkills_Click(object sender, RoutedEventArgs e)
+        {
+            MySkillWindow msk = new MySkillWindow();
+            msk.ShowDialog();
+        }
+
+        private void btnMySkills_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Profex_Integrated.Helpers;
+﻿using static System.Net.WebRequestMethods;
+
+namespace Profex_Integrated.Helpers;
 
 public class API
 {
@@ -18,7 +20,12 @@ public class API
 
 
     public static readonly string GETALL_MASTERS = BASE_URL + "common/master";
-    public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";
+    //  public static readonly string GETBYID_MASTERS = BASE_URL + "common/master";
+
+    public static readonly string GETBYID_MASTERS = BASE_URL + "common/master/withSkills";
+    //http://64.227.42.134:4040/api/common/master/withSkills/12
+
+
     public static readonly string SEARCH_MASTERS = BASE_URL + "common/master/search";
     public static readonly string SEARCH_VACANCY = BASE_URL + "common/post/search";
     //public static readonly string UPDATE_MASTERS = BASE_URL + "common/master";
@@ -48,7 +55,10 @@ public class API
     public static readonly string GET_ALL_BY_CATEGORY_ID = BASE_URL + "common/category/allSkillsBy/categoryId";
 
     public static readonly string GET_ADD_SKILL = BASE_URL + "tokenmaster/addSkill";
-    
+
+    public static readonly string MY_ALL_SKILL = BASE_URL + "common/master/withSkills";
+
+    public static readonly string REMOVE_MY_SKILL = BASE_URL + "tokenmaster/dSkill";
 
 
     //common/category/allSkillsBy/categoryId?categoryId=2&page=1

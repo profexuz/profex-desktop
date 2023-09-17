@@ -61,7 +61,7 @@ namespace Profex_Desktop.Pages
             // Qidiruvni boshlash uchun VacancyService dan foydalanish
             var searchResults = await _vacancyService.SearchAsync(searchText);
 
-            wrpNewsVacancy.Children.Clear();
+            wrpNewsVacancy.Children.Clear();    
             wrpAdvertising.Children.Clear();
             string[] values = new string[3];
             byte count = 0;

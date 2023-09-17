@@ -19,7 +19,7 @@ public class MasterService : IMasterService
         {
             try
             {
-                client.BaseAddress = new Uri(API.GETALL_MASTERS);
+                client.BaseAddress = new Uri(API.GETALL_MASTERS+"?page=2");
                 var result = await client.GetAsync(client.BaseAddress);
 
                 // If the upload failed there is not a lot we can do 
@@ -114,7 +114,8 @@ public class MasterService : IMasterService
             using (HttpClient client = new HttpClient())
             {
                 var token = IdentitySingelton.GetInstance().Token;
-                var request = new HttpRequestMessage(HttpMethod.Put, API.UPDATE_MASTERS + $"/{id}");
+                //var request = new HttpRequestMessage(HttpMethod.Put, API.UPDATE_MASTERS + $"/{id}");
+                var request = new HttpRequestMessage(HttpMethod.Put, API.UPDATE_MASTERS);
                 request.Headers.Add("Authorization", $"Bearer {token}");
                 using (var content = new MultipartFormDataContent())
                 {
@@ -123,7 +124,12 @@ public class MasterService : IMasterService
                     content.Add(new StringContent(dto.LastName), "LastName");
                     content.Add(new StringContent(dto.PhoneNumber), "PhoneNumber");
                     content.Add(new StringContent(dto.IsFree.ToString()), "IsFree");
-                    content.Add(new StreamContent(File.OpenRead(dto.ImagePath)), "ImagePath", dto.ImagePath);
+                    //content.Add(new StringContent(dto.ImagePath), "ImagePath", dto.ImagePath);
+                    if(dto.ImagePath != null)
+                    {
+                        // Ma'lumotlarni IFormFile turidagi ma'lumot sifatida qo'shish
+                        content.Add(new StreamContent(dto.ImagePath.OpenReadStream()), "ImagePath", dto.ImagePath.FileName);
+                    }
                     request.Content = content;
 
                     var response = await client.SendAsync(request);
