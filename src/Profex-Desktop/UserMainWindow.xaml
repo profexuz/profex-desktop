@@ -77,8 +77,8 @@
                                     <TextBlock>Ustalar</TextBlock>
                                 </RadioButton.ToolTip>
                             </RadioButton>
-                            <RadioButton x:Name="rbAccount" Grid.Row="3" 
-                                                Click="rbAccount_Click" Style="{DynamicResource UserSideBarButton}"
+                            <RadioButton x:Name="rbProfil" Grid.Row="3" 
+                                                Click="rbProfil_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource MyAccount}"
                                              Content="PROFILIM">
                                 <RadioButton.ToolTip>
@@ -86,7 +86,7 @@
                                 </RadioButton.ToolTip>
                             </RadioButton>
                             <RadioButton x:Name="rbMyPost" Grid.Row="4" 
-                                                Click="rbAccount_Click" Style="{DynamicResource UserSideBarButton}"
+                                                Click="rbMyPost_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource MyAccount}"
                                              Content="My Posts">
                                 <RadioButton.ToolTip>
