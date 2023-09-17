@@ -1,0 +1,62 @@
+﻿<Page x:Class="Profex_Desktop.Pages.UserPostPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Profex_Desktop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddWordGroupPage"
+      Loaded="Page_Loaded">
+
+    <Border Margin="10"
+            CornerRadius="10">
+        <Grid Margin="0 5 0 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="193*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal" Grid.ColumnSpan="3" Margin="292,0,0,0">
+                <Border CornerRadius="10"
+                        Background="{DynamicResource SearchBachground}"
+                        Width="400">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Width="20" Height="20" Stretch="Uniform"
+                            Fill="{DynamicResource UserSecondaryTextColor}"
+                            Data="{DynamicResource search}"/>
+                        <TextBox x:Name="tbSearch"
+                                 Grid.Column="1"
+                                 VerticalAlignment="Center"
+                                 FontSize="16"
+                                 Margin="5 0 5 0"
+                                 FontFamily="Jetbrains mono"
+                                 Foreground="White"
+                                 BorderThickness="0"
+                                 Background="{DynamicResource SearchBachground}"/>
+                    </Grid>
+                </Border>
+                <Button x:Name="btnCreate"
+                        Click="btnCreate_Click" 
+                            Style="{DynamicResource SuccessButton}"
+                            Content="Create"
+                            HorizontalAlignment="Right"/>
+            </StackPanel>
+            <ScrollViewer Grid.Row="1" Margin="5,5,5,5" Grid.ColumnSpan="3">
+                <WrapPanel  x:Name="wrpWords_Groups" >
+
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Page>
