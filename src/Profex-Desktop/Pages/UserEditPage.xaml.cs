@@ -16,18 +16,33 @@ using System.Windows.Shapes;
 namespace Profex_Desktop.Pages
 {
     /// <summary>
-    /// Interaction logic for UserMasterEditPage.xaml
+    /// Interaction logic for UserEditPage.xaml
     /// </summary>
-    public partial class UserMasterEditPage : Page
+    public partial class UserEditPage : Page
     {
-        public UserMasterEditPage()
+        public UserEditPage()
         {
             InitializeComponent();
         }
 
-        private void brUpload_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtNum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void brUpload_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+                
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -45,12 +60,12 @@ namespace Profex_Desktop.Pages
 
         }
 
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        private void Page_loaded(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Page_loaded(object sender, RoutedEventArgs e)
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
 
         }
