@@ -45,19 +45,20 @@
                                 Margin="15 0 0 10" Padding="10 120 10 0">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="80"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="79"/>
                                 </Grid.RowDefinitions>
                                 <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                Checked="rbDashboard_Click"
                                               Style="{DynamicResource SideBarButton}"
-                                                    Tag="{DynamicResource Dashboard1}"
+                                                    Tag="{DynamicResource Dashboard2}"
                                              Content="ASOSIY">
                                     <RadioButton.ToolTip>
                                         <TextBlock>Asosiy</TextBlock>
@@ -81,7 +82,7 @@
                                 </RadioButton>
                                 <RadioButton x:Name="rbAccount" Grid.Row="3" 
                                                 Click="rbAccount_Click" Style="{DynamicResource SideBarButton}"
-                                                    Tag="{DynamicResource MyAccount}"
+                                                    Tag="{DynamicResource MyAccountDemo}"
                                              Content="PROFILIM">
                                     <RadioButton.ToolTip>
                                         <TextBlock>Mening profilm</TextBlock>
@@ -98,12 +99,26 @@
                                 </RadioButton.ToolTip>
                             </RadioButton>
 
-                            <RadioButton x:Name="rbRequst" Grid.Row="6" 
-                            Click="rbRequst_Click" Style="{DynamicResource SideBarButton}"
-                            Tag="{DynamicResource SkillsIco}"
-                            Content="Requests">
+
+                            <RadioButton x:Name="rbMyRequests" Grid.Row="7" 
+                                Click="rbMyRequests_Click"
+                                         Style="{DynamicResource SideBarButton}"
+                                            Tag="{DynamicResource MyRequests}"
+                                                Content="My requests">
                                 <RadioButton.ToolTip>
-                                    <TextBlock>Skills</TextBlock>
+                                    <TextBlock>MyRequests</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+
+
+
+
+                            <RadioButton x:Name="rbRequst" Grid.Row="6" 
+                                Click="rbRequst_Click" Style="{DynamicResource SideBarButton}"
+                                    Tag="{DynamicResource Requests}"
+                                        Content="Requests">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Requests</TextBlock>
                                 </RadioButton.ToolTip>
                             </RadioButton>
 
