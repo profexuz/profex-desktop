@@ -134,6 +134,13 @@ namespace Profex_Desktop
 
         }
 
+        private void rbRequst_Click(object sender, RoutedEventArgs e)
+        {
+            appName.Content = "Request";
+            RequestPage rqPage = new RequestPage();
+            PageNavigator.Navigate(rqPage);
+        }
+
         //private void IsChecked(object sender, RoutedEventArgs e)
         //{
         //    if (chkbox.IsChecked == true)
