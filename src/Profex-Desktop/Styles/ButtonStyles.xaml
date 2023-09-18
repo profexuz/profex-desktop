@@ -135,26 +135,26 @@
                             <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
 
                         </Trigger>
-                        <Trigger Property="IsChecked" Value="True">
-                            <!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>-->
+                        <!--<Trigger Property="IsChecked" Value="True">
+                            --><!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>--><!--
                             <Setter TargetName="B" Property="Background" Value="blue"/>
                             <Setter TargetName="icon" Property="Fill" Value="White"/>
                             <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
 
                             <Trigger Property="IsMouseOver" Value="True">
-                                <!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioBUttonMouseOverBackground}"/>-->
+                                --><!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioBUttonMouseOverBackground}"/>--><!--
                                 <Setter TargetName="B" Property="Background" Value="blue"/>
                             <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
 
                         </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>-->
+                                --><!--<Setter TargetName="B" Property="Background" Value="{DynamicResource RadioButtonBackGround}"/>--><!--
                                 <Setter TargetName="B" Property="Background" Value="blue"/>
                                 <Setter TargetName="icon" Property="Fill" Value="White"/>
                                 <Setter Property="Foreground" Value="{DynamicResource profexINFObackgr}" TargetName="Lbl"/>
 
 
-                        </Trigger>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -1243,7 +1243,7 @@
                         </Trigger>
                     </ControlTemplate.Triggers>
 
-                    <Trigger Property="IsMouseOver" Value="False">
+                    <!--<Trigger Property="IsMouseOver" Value="False">
                         <Setter TargetName="B" Property="Background" Value="Transparent"/>
                             <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
                         </Trigger>
@@ -1259,7 +1259,7 @@
                         <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
 
                     </Trigger>
-                </ControlTemplate.Triggers>
+                </ControlTemplate.Triggers>-->
 
                 </ControlTemplate>
             </Setter.Value>
@@ -1268,7 +1268,7 @@
 
 
 
-    <Style x:Key="SuccessButton" TargetType="{x:Type Button}">
+    <!--<Style x:Key="SuccessButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10 0"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -1295,9 +1295,9 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
-    <Style x:Key="UpdateButton" TargetType="{x:Type Button}">
+    <!--<Style x:Key="UpdateButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10 0"/>
         <Setter Property="Padding" Value="80"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -1355,7 +1355,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
 
 
