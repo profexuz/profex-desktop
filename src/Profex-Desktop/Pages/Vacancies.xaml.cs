@@ -26,7 +26,7 @@ namespace Profex_Desktop.Pages
             byte count = 0;
             foreach (var item in result)
             {
-                if (count == 6) break; count++;
+                if (count ==3 ) break; count++;
                 Vacancy vacancy = new Vacancy();
                 vacancy.vacancyId = item.Id;
                 values[0] = BASE_URL + item.ImagePath[0];
@@ -38,7 +38,7 @@ namespace Profex_Desktop.Pages
             count = 0;
             foreach (var item in result)
             {
-                if (count <= 6)
+                if (count == 12)
                 {
                     count++;
                     continue;

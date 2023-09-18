@@ -64,5 +64,8 @@ public class API
     //common/category/allSkillsBy/categoryId?categoryId=2&page=1
 
     public static readonly string GET_BY_SKILL_ID = BASE_URL + "common/skills";
-    //http://64.227.42.134:4040/api/common/skills/6
+
+
+    //requests parts http://64.227.42.134:4040/api/tokenmaster/request/post
+    public static readonly string SENT_REQUEST = BASE_URL + "tokemaster/request/post";
 }
