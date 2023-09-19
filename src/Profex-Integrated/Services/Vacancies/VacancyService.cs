@@ -110,6 +110,9 @@ public class VacancyService : IVacancyService
     }
 
 
+    
+
+
     public async Task<int> RemoveAsync(long PostId)
     {
         try
@@ -144,4 +147,5 @@ public class VacancyService : IVacancyService
             return -1;
         }
     }
+
 }
