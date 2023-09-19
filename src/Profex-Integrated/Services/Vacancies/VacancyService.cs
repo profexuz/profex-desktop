@@ -99,4 +99,6 @@ public class VacancyService : IVacancyService
             return new List<Vacancy>();
         }
     }
+
+    
 }

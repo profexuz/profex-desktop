@@ -36,7 +36,7 @@ public class API
     public static readonly string GETALL_VACANCY = BASE_URL + "common/post";
 
 
-    //buni API ni korib chiqish kerak hali ishlamadi
+    
     //public static readonly string GETBYID_VACANCY = BASE_URL + "common/post/join";
     public static readonly string GETBYID_VACANCY = BASE_URL + "common/post/byId";
 
@@ -68,4 +68,6 @@ public class API
 
     //requests parts http://64.227.42.134:4040/api/tokenmaster/request/post
     public static readonly string SENT_REQUEST = BASE_URL + "tokemaster/request/post";
+                        //tokenmaster/posts/requested?page=1
+    public static readonly string GET_ALL_REQUEST = BASE_URL + "tokenmaster/posts/requested";
 }
