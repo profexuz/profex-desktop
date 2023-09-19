@@ -46,7 +46,7 @@
                             HorizontalAlignment="Center"/>
                 <Button Grid.Column="1"
                     x:Name="btnDelete"
-                        Click="btnCreate_Click" 
+                        Click="btnDelete_Click" 
                             Style="{DynamicResource DeleteButton}"
                             Content="Delete"
                             HorizontalAlignment="Center"/>
