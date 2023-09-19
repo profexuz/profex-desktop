@@ -104,7 +104,7 @@
                                 Click="rbMyRequests_Click"
                                          Style="{DynamicResource SideBarButton}"
                                             Tag="{DynamicResource MyRequests}"
-                                                Content="My requests">
+                                                Content="My requests" Checked="rbMyRequests_Checked">
                                 <RadioButton.ToolTip>
                                     <TextBlock>MyRequests</TextBlock>
                                 </RadioButton.ToolTip>
