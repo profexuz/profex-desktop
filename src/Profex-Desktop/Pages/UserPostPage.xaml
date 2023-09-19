@@ -43,7 +43,9 @@
                                  FontFamily="Jetbrains mono"
                                  Foreground="White"
                                  BorderThickness="0"
+                                 KeyDown="tbSearch_KeyDown"
                                  Background="{DynamicResource SearchBachground}"/>
+                        
                     </Grid>
                 </Border>
                 <Button x:Name="btnCreate"

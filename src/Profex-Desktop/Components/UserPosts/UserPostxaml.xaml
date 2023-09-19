@@ -40,7 +40,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnUpdate"
-                        Click="btnCreate_Click" 
+                        Click="btnUpdate_Click" 
                             Style="{DynamicResource UpdateButton}"
                             Content="Update"
                             HorizontalAlignment="Center"/>
