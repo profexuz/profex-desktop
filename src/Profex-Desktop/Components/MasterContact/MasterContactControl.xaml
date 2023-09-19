@@ -13,7 +13,7 @@
             Background="Transparent">
         <StackPanel Orientation="Horizontal">
             <Border x:Name="brBackgr" CornerRadius="50" Height="50" Width="50"
-                    MouseLeftButtonDown="MasterInforKorish"
+                    MouseDown="MasterInforKorish"
                     Cursor="Hand"
                     Margin="5" Background="#c12ebf">
                 <Ellipse Height="48" Width="48">
