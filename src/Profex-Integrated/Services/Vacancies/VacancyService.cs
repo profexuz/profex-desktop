@@ -1,12 +1,21 @@
 ﻿using Newtonsoft.Json;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_ViewModels.Vacancies;
+using System.Net;
+using System.Net.Http.Headers;
 
 namespace Profex_Integrated.Services.Vacancies;
 
 public class VacancyService : IVacancyService
 {
+    string token = String.Empty;
+    public static long PostId;
+    public static long UserId;
+    private string Token = "User";
+    private string _path = "C:\\Users\\Public\\Token.txt";
+    private JwtParser jwtParser = new JwtParser();
     public async Task<IList<Vacancy>> GetAllAsync(int page)
     {
         using (HttpClient client = new HttpClient())
@@ -97,6 +106,42 @@ public class VacancyService : IVacancyService
         {
             // Xato yuzaga kelsa, hammasini o'zgartirishsiz
             return new List<Vacancy>();
+        }
+    }
+
+
+    public async Task<int> RemoveAsync(long PostId)
+    {
+        try
+        {
+            string tokenFilePath = "C:\\Users\\Public\\Token.txt";
+            if (File.Exists(tokenFilePath))
+            {
+                token = File.ReadAllText(tokenFilePath).Trim();
+            }
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri($"{API.REMOVE_MY_POST}/{PostId}");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                var response = await client.DeleteAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return 1;
+                }
+                else if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    return -2;
+                }
+            }
+
+            // If none of the conditions above are met, return a default value
+            return -1;
+        }
+        catch
+        {
+            // Handle exceptions here and return an appropriate value
+            return -1;
         }
     }
 }
