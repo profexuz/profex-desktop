@@ -46,7 +46,8 @@ public class API
 
     public static readonly string GETALL_USERS = BASE_URL + "common/user/get-all";
     public static readonly string GETBYID_USERS = BASE_URL + "common/user/getbyId";
-
+    public static readonly string REMOVE_MY_POST = BASE_URL + "user/post";
+        //http://64.227.42.134:4040/api/user/post/18
     //category part
     public static readonly string GET_ALL_CATEGORY = BASE_URL + "common/category";
 
@@ -59,6 +60,8 @@ public class API
     public static readonly string MY_ALL_SKILL = BASE_URL + "common/master/withSkills";
 
     public static readonly string REMOVE_MY_SKILL = BASE_URL + "tokenmaster/dSkill";
+
+    
 
 
     //common/category/allSkillsBy/categoryId?categoryId=2&page=1

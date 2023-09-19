@@ -1268,7 +1268,7 @@
 
 
 
-    <!--<Style x:Key="SuccessButton" TargetType="{x:Type Button}">
+    <Style x:Key="SuccessButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10 0"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -1295,9 +1295,10 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
+    </Style>
 
-    <!--<Style x:Key="UpdateButton" TargetType="{x:Type Button}">
+    
+    <Style x:Key="UpdateButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10 0"/>
         <Setter Property="Padding" Value="80"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -1355,7 +1356,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
+    </Style>
 
 
 
