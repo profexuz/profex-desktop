@@ -8,9 +8,12 @@
       Height="auto" 
       Width="auto"
       Background="Transparent"
+      Loaded="Page_Loaded"
       Title="MyRequestsPage">
 
     <Grid>
-        
+        <ScrollViewer Visibility="Visible">
+            <WrapPanel x:Name="wrpAdvertising" HorizontalAlignment="Center" Orientation="Horizontal"  Background="Transparent"/>
+        </ScrollViewer>
     </Grid>
 </Page>
