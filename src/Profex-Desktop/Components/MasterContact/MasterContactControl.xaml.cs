@@ -12,6 +12,7 @@ namespace Profex_Desktop.Components.MasterContact
     public partial class MasterContactControl : UserControl
     {
         public long ustaId;
+        public long MasterId;
         public MasterContactControl()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace Profex_Desktop.Components.MasterContact
             Uri imageparse = new Uri(salom[0], UriKind.Absolute);
             ProfileImg.ImageSource = new BitmapImage(imageparse);
             var bc = new BrushConverter();
+            
             NameOfMaster.Content = salom[1];
             brBackgr.Background = (Brush)bc.ConvertFrom(salom[2])!;
         }
@@ -28,7 +30,9 @@ namespace Profex_Desktop.Components.MasterContact
         private void MasterInforKorish(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             AboutMasterWindow ms = new AboutMasterWindow();
-            ms.ustaId = ustaId;
+            //ms.ustaId = MasterOd;
+            //ms.ustaId = MasterId;
+            ms.ustaId = MasterId;
             ms.ShowDialog();
         }
     }
