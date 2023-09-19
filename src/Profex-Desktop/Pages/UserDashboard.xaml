@@ -170,7 +170,7 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="1" 
-                        Background="{DynamicResource profexINFObackgr}"
+                        Background="#12191F"
                         CornerRadius="30" Margin="10 0"/>
                 <Border Grid.Row="1" Padding="10 5">
                     <ScrollViewer
@@ -188,7 +188,7 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                 </Border>
 
                 <Border Grid.Row="2" 
-                        Background="{DynamicResource profexINFObackgr}"
+                        Background="#12191F"
                         CornerRadius="30" Margin="10 10"/>
                 <Border Grid.Row="2">
                     <WrapPanel x:Name="wrpVacancies">

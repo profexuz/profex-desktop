@@ -51,11 +51,12 @@
                                 <RowDefinition Height="65"/>
                                 <RowDefinition Height="65"/>
                                 <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
                             </Grid.RowDefinitions>
                             <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                Checked="rbDashboard_Click"
                                               Style="{DynamicResource UserSideBarButton}"
-                                                    Tag="{DynamicResource Dashboard1}"
+                                                    Tag="{DynamicResource Dashboard2}"
                                              Content="ASOSIY">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Asosiy</TextBlock>
@@ -79,7 +80,7 @@
                             </RadioButton>
                             <RadioButton x:Name="rbProfil" Grid.Row="3" 
                                                 Click="rbProfil_Click" Style="{DynamicResource UserSideBarButton}"
-                                                    Tag="{DynamicResource MyAccount}"
+                                                    Tag="{DynamicResource MyAccountDemo}"
                                              Content="PROFILIM">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Mening profilm</TextBlock>
@@ -94,7 +95,17 @@
                                 </RadioButton.ToolTip>
                             </RadioButton>
 
-                            <RadioButton x:Name="rbFAQs" Grid.Row="5"
+
+                            <RadioButton x:Name="rbSorovlarim" Grid.Row="5"
+                                                Click="rbSorovlar" Style="{DynamicResource UserSideBarButton}"
+                                                    Tag="{DynamicResource MyRequests}"
+                                             Content="So'rovlarim">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Menga yuborilgan so'rovlar</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+
+                            <RadioButton x:Name="rbFAQs" Grid.Row="6"
                                                 Click="rbFAQs_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource FAQs}"
                                              Content="FAQs">
