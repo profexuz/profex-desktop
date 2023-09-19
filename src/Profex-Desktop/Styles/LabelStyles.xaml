@@ -693,6 +693,22 @@
         <Setter Property="Margin" Value="5 10 5 0"/>
     </Style>
 
+
+    <!--Post Category label style-->
+    <Style x:Key="lblCategory" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Category"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+
+
+
     <!--Post title label style-->
     <Style x:Key="lblPostTitle" TargetType="{x:Type Label}">
         <Setter Property="Content" Value="Title"/>
@@ -770,7 +786,7 @@
 
     <!--UserDistrict label style-->
     <Style x:Key="lblUserDistrict" TargetType="{x:Type Label}">
-        <Setter Property="Content" Value="Region"/>
+        <Setter Property="Content" Value="District"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>

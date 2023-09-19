@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profex_Desktop.Windows.UserPosts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,11 @@ namespace Profex_Desktop.Pages
             InitializeComponent();
         }
 
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        private async void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-
+            UserPostCreateWindow userPostCreateWindow = new UserPostCreateWindow();
+            userPostCreateWindow.ShowDialog();
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
