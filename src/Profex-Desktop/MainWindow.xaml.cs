@@ -148,6 +148,11 @@ namespace Profex_Desktop
             PageNavigator.Navigate(myRqPage);
         }
 
+        private void rbMyRequests_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void IsChecked(object sender, RoutedEventArgs e)
         //{
         //    if (chkbox.IsChecked == true)
