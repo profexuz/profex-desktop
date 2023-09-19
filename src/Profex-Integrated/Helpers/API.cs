@@ -43,11 +43,14 @@ public class API
 
     //Users part
     public static readonly string COUNT_USERS = BASE_URL + "common/user/count";
-
     public static readonly string GETALL_USERS = BASE_URL + "common/user/get-all";
     public static readonly string GETBYID_USERS = BASE_URL + "common/user/getbyId";
     public static readonly string REMOVE_MY_POST = BASE_URL + "user/post";
-        //http://64.227.42.134:4040/api/user/post/18
+    public static readonly string UPDATE_USER_PROFILE = BASE_URL + "tokenuser";
+    public static readonly string CREATE_POST = BASE_URL + "user/post";
+    public static readonly string GET_ALL_MY_POSTS = BASE_URL + "common/post/user";
+                            //http://64.227.42.134:4040/api/common/post/user/6?page=1
+
     //category part
     public static readonly string GET_ALL_CATEGORY = BASE_URL + "common/category";
 
@@ -73,4 +76,7 @@ public class API
     public static readonly string SENT_REQUEST = BASE_URL + "tokemaster/request/post";
                         //tokenmaster/posts/requested?page=1
     public static readonly string GET_ALL_REQUEST = BASE_URL + "tokenmaster/posts/requested";
+
+    public static readonly string GET_ALL_REQUEST_USESR = BASE_URL +"user/post/all/withrequest";
+    //http://64.227.42.134:4040/api/user/post/all/withrequest
 }
