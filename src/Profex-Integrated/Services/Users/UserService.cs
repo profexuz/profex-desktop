@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Profex_Dtos.Masters;
+using Profex_Dtos.Users;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Security;
 using Profex_ViewModels.Users;
 
 namespace Profex_Integrated.Services.Users;
@@ -89,6 +92,45 @@ public class UserService : IUserService
         {
             // Xato yuzaga kelsa, hammasini o'zgartirishsiz
             return new User();
+        }
+    }
+
+
+    public async Task<bool> UpdateAsync(long id, UserUpdateDto dto)
+    {
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var token = IdentitySingelton.GetInstance().Token;
+                var request = new HttpRequestMessage(HttpMethod.Put, API.UPDATE_USER_PROFILE);
+                request.Headers.Add("Authorization", $"Bearer {token}");
+                using (var content = new MultipartFormDataContent())
+                {
+                    content.Add(new StringContent(dto.FirstName), "FirstName");
+                    content.Add(new StringContent(dto.LastName), "LastName");
+                    content.Add(new StringContent(dto.PhoneNumber), "PhoneNumber");
+
+                    if (dto.ImagePath != null)
+                    {
+                        content.Add(new StreamContent(dto.ImagePath.OpenReadStream()), "ImagePath", dto.ImagePath.FileName);
+                    }
+                    request.Content = content;
+
+                    var response = await client.SendAsync(request);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var res = await response.Content.ReadAsStringAsync();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Exception: " + ex.Message);
+            return false;
         }
     }
 }
