@@ -213,6 +213,8 @@ namespace Profex_Desktop.Pages
             string imageUrl = BASEIMG_URL + result.ImagePath;
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             imgProfile.ImageSource = new BitmapImage(imageUri);
+            loader.Visibility = Visibility.Collapsed;
+            loader1.Visibility = Visibility.Collapsed;
         }
     }
 }
