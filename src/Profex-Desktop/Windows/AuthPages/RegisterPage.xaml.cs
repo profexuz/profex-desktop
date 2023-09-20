@@ -47,6 +47,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUpbtn_Click(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility;
             SignUpbtn.IsEnabled = false;
             if (txtPassword.Password.Length > 0 && txtName.Text.Length > 0 && phoneNum.Text.Length > 0 && txtSurname.Text.Length > 0)
             {
@@ -65,6 +66,7 @@ namespace Profex_Desktop.Windows.AuthPages
                         {
                             SmsPage smsPage = new SmsPage();
                             smsPage.PhoneNum = "+" + phoneNum.Text;
+                            loader.Visibility = Visibility.Collapsed;
                             NavigationService.Navigate(smsPage);
                         }
 

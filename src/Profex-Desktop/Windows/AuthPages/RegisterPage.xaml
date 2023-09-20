@@ -4,97 +4,110 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Windows.AuthPages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
       mc:Ignorable="d" 
       Height="410" Width="360"
       Title="RegisterPage"
       Background="Transparent">
-
     <Grid>
-        <Grid.RowDefinitions>
-            <!--<RowDefinition Height="80"/>-->
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="55"/>
-        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="80"/>-->
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="55"/>
+            </Grid.RowDefinitions>
 
-        <!--First and Last name labels and textboxes-->
-            
-            <!--First name part-->
-            <StackPanel Grid.Row="1"
-                        Orientation="Vertical">
+            <!--First and Last name labels and textboxes-->
                 
-                <!--Firs name label-->
-            <Label Content="Ismi"
-                   Style="{DynamicResource Fullregister}"/>
-                
-                <!--First name textbox-->
-                <TextBox x:Name="txtName" Style="{DynamicResource Fullname}"
-                         MaxLength="25"/>
-            </StackPanel>
-            
-            <!--Last name part-->
-            <StackPanel Grid.Row="2"
-                        Orientation="Vertical">
-
-                <!--Last name label-->
-            <Label Content="Familiyasi"
-                   Style="{DynamicResource Fullregister}"/>
-
-                <!--Last name textbox-->
-                <TextBox x:Name="txtSurname" Style="{DynamicResource Fullname}"
-                         MaxLength="25"/>
+                <!--First name part-->
+                <StackPanel Grid.Row="1"
+                            Orientation="Vertical">
+                    
+                    <!--Firs name label-->
+                <Label Content="Ismi"
+                       Style="{DynamicResource Fullregister}"/>
+                    
+                    <!--First name textbox-->
+                    <TextBox x:Name="txtName" Style="{DynamicResource Fullname}"
+                             MaxLength="25"/>
                 </StackPanel>
-            
-        <!--Phone number part-->
-        <StackPanel Grid.Row="3" 
-                    Orientation="Vertical">
+                
+                <!--Last name part-->
+                <StackPanel Grid.Row="2"
+                            Orientation="Vertical">
 
-            <!--Phone number label-->
-            <Label Grid.Column="0" Content="Telefon raqami"
-                   Style="{DynamicResource Fullregister}"/>
+                    <!--Last name label-->
+                <Label Content="Familiyasi"
+                       Style="{DynamicResource Fullregister}"/>
 
-            <!--Phone number textbox-->
-            <TextBox x:Name="phoneNum" Style="{DynamicResource Fullname}"
-                     PreviewTextInput="NumberValidationTextBox"
-                     MaxLength="12"/>
-        </StackPanel>
+                    <!--Last name textbox-->
+                    <TextBox x:Name="txtSurname" Style="{DynamicResource Fullname}"
+                             MaxLength="25"/>
+                    </StackPanel>
+                
+            <!--Phone number part-->
+            <StackPanel Grid.Row="3" 
+                        Orientation="Vertical">
 
-        <!--Password part-->
-        <StackPanel Grid.Row="4" 
-                    Orientation="Vertical">
+                <!--Phone number label-->
+                <Label Grid.Column="0" Content="Telefon raqami"
+                       Style="{DynamicResource Fullregister}"/>
 
-            <!--Password label-->
-            <Label Grid.Column="0" Content="Parol yarating"
-                   Style="{DynamicResource Fullregister}"/>
+                <!--Phone number textbox-->
+                <TextBox x:Name="phoneNum" Style="{DynamicResource Fullname}"
+                         PreviewTextInput="NumberValidationTextBox"
+                         MaxLength="12"/>
+            </StackPanel>
 
-            <!--Password textbox-->
-            <PasswordBox x:Name="txtPassword" Style="{DynamicResource Password}"/>
-        </StackPanel>
+            <!--Password part-->
+            <StackPanel Grid.Row="4" 
+                        Orientation="Vertical">
 
-        <!--Offerta shartlari-->
-        <CheckBox Grid.Row="5" 
-                  x:Name="checkbox"
-                  Foreground="Black"
-                  Margin="40 10"
-                  FontSize="12" Click="checkbox_Checked">
-            <Button x:Name="btnOfferta"
-                    Click="btnOfferta_Clicked" 
-                    Content="Ommaviy oferta shartlari bilan tanishdim" 
-                    Style="{DynamicResource HyperLink}"/>
-        </CheckBox>
+                <!--Password label-->
+                <Label Grid.Column="0" Content="Parol yarating"
+                       Style="{DynamicResource Fullregister}"/>
+
+                <!--Password textbox-->
+                <PasswordBox x:Name="txtPassword" Style="{DynamicResource Password}"/>
+            </StackPanel>
+
+            <!--Offerta shartlari-->
+            <CheckBox Grid.Row="5" 
+                      x:Name="checkbox"
+                      Foreground="Black"
+                      Margin="40 10"
+                      FontSize="12" Click="checkbox_Checked">
+                <Button x:Name="btnOfferta"
+                        Click="btnOfferta_Clicked" 
+                        Content="Ommaviy oferta shartlari bilan tanishdim" 
+                        Style="{DynamicResource HyperLink}"/>
+            </CheckBox>
 
 
-        <!--Register button-->
-        <Button Grid.Row="6" 
-                x:Name="SignUpbtn"
-                Click="SignUpbtn_Click"
-                Style="{DynamicResource bntSignUp}"
-                IsEnabled="False"
-                Content="Ro'yxatdan o'tish"/>
+            <!--Register button-->
+            <Button Grid.Row="6" 
+                    x:Name="SignUpbtn"
+                    Click="SignUpbtn_Click"
+                    Style="{DynamicResource bntSignUp}"
+                    IsEnabled="False"
+                    Content="Ro'yxatdan o'tish"/>
+        </Grid>
+        <fa:ImageAwesome
+                        Grid.Column="2"
+                        x:Name="loader"
+                        Icon="Spinner"
+                        Visibility="Visible"
+                        Spin="True"
+                        Foreground="{DynamicResource Loaders}"
+                        Margin="0 0 0 0"
+                        Height="200"
+                        Width="200"
+                        />
     </Grid>
 </Page>
 
