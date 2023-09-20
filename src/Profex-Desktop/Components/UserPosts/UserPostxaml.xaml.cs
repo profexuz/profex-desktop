@@ -32,6 +32,7 @@ namespace Profex_Desktop.Components.UserPosts
             Uri imageUri = new Uri(values[0], UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);
             lbName.Content = values[1];
+            loader.Visibility = Visibility.Collapsed;
         }
         /*public void SetData1(Vacancy vacancy)
         {
