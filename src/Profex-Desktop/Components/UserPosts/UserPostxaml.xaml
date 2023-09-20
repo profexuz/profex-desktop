@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profex_Desktop.Components.UserPosts"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+      
              mc:Ignorable="d" 
              Height="265" Width="330"
              Margin="10 10">
@@ -17,6 +19,16 @@
                  <ImageBrush x:Name="VacancieImg" Stretch="UniformToFill" ImageSource="/Assets/Images/defaultvacanciesimg.jpg"/>
             </Border.Background>
         </Border>
+        <fa:ImageAwesome
+                Grid.Column="2"
+                x:Name="loader"
+                Icon="Spinner"
+                Visibility="Visible"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="0 0 0 0"
+                Height="60"
+                />
         <Border Grid.Row="1" CornerRadius="10">
             <Grid  
                 Background="{DynamicResource UserFirstBackground}" Height="100" VerticalAlignment="Top"
