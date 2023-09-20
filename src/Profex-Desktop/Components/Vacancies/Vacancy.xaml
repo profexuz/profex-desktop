@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Profex_Desktop.Components.Vacancies"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"      
              mc:Ignorable="d" 
              Height="270" Width="220" Margin="5">
     <Border CornerRadius="15" Padding="5" 
@@ -21,6 +22,16 @@
                 <Border.Background>
                     <ImageBrush x:Name="VacancieImg" Stretch="UniformToFill" ImageSource="/Assets/Images/defaultvacanciesimg.jpg"/>
                 </Border.Background>
+                <fa:ImageAwesome
+                Grid.Row="0"
+                x:Name="loader"
+                Icon="Spinner"
+                Visibility="Visible"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="0 0 0 0"
+                Height="60"
+                />
             </Border>
             <StackPanel Grid.Row="2" Margin="0" Orientation="Vertical">
                 <Label x:Name="lblTitle" Style="{DynamicResource lblTitle}"/>
