@@ -53,6 +53,7 @@ namespace Profex_Desktop.Pages
 
                     wrpSkills.Children.Add(ms);
                 }
+                loader.Visibility = Visibility.Collapsed;
             }
             catch (Exception ex)
             {
