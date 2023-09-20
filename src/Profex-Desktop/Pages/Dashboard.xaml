@@ -99,7 +99,7 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Icon="Spinner"
                         Visibility="Visible"
                         Spin="True"
-                        Foreground="White"
+                        Foreground="{DynamicResource Loaders}"
                         Margin="0 0 0 0"
                         Height="80"
                         
@@ -150,11 +150,20 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Icon="Spinner"
                         Visibility="Visible"
                         Spin="True"
-                        Foreground="White"
+                        Foreground="{DynamicResource Loaders}"
                         Margin="0 0 0 0"
                         Height="80"
-                        Width="80"
-                        />
+                        Width="80" RenderTransformOrigin="0.701,0.683"
+                        >
+                        <fa:ImageAwesome.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="173.86048799999998"/>
+                                <TranslateTransform X="-33.634" Y="-27.476"/>
+                            </TransformGroup>
+                        </fa:ImageAwesome.RenderTransform>
+                    </fa:ImageAwesome>
 
                     <Border Grid.Column="1" 
                         Style="{DynamicResource ProfexInfoBorder}"/>
@@ -174,7 +183,7 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Icon="Spinner"
                         Visibility="Visible"
                         Spin="True"
-                        Foreground="White"
+                        Foreground="{DynamicResource Loaders}"
                         Margin="0 0 0 0"
                         Height="80"
                         Width="80"
@@ -232,7 +241,7 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Spin="True"
                         Height="200"
                         Width="200"
-                        Foreground="White"
+                        Foreground="{DynamicResource Loaders}"
                         />
 
 
@@ -254,7 +263,7 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Spin="True"
                         Height="100"
                         Width="100"
-                        Foreground="White"
+                        Foreground="{DynamicResource Loaders}"
                         />
 
             </Grid>
