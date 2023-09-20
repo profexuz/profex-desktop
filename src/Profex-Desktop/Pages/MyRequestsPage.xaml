@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Pages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      
       mc:Ignorable="d" 
       Height="auto" 
       Width="auto"
@@ -15,5 +17,15 @@
         <ScrollViewer Visibility="Visible">
             <WrapPanel x:Name="wrpAdvertising" HorizontalAlignment="Center" Orientation="Horizontal"  Background="Transparent"/>
         </ScrollViewer>
+        <fa:ImageAwesome
+                Grid.Column="2"
+                x:Name="loader"
+                Icon="Spinner"
+                Visibility="Visible"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="0 0 0 0"
+                Height="100"
+                />
     </Grid>
 </Page>

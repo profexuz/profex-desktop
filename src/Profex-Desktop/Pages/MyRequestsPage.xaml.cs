@@ -71,6 +71,7 @@ namespace Profex_Desktop.Pages
                 wrpAdvertising.Children.Add(rqm);
 
             }
+            loader.Visibility = Visibility.Collapsed;
         }
     }
 }
