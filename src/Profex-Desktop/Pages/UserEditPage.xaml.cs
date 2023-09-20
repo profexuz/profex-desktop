@@ -169,6 +169,8 @@ namespace Profex_Desktop.Pages
             string imageUrl = BASEIMG_URL + result.ImagePath;
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             imgProfile.ImageSource = new BitmapImage(imageUri);
+            loader.Visibility = Visibility.Collapsed;
+            loader2.Visibility = Visibility.Collapsed;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
