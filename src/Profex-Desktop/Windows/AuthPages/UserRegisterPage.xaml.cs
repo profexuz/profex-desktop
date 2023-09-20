@@ -47,6 +47,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUserbtn_Click(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility;
             SignUpbtn.IsEnabled = false;
             if (txtPassword.Password.Length > 0 && txtName.Text.Length > 0 && phoneNum1.Text.Length > 0 && txtSurname.Text.Length > 0)
             {
@@ -65,6 +66,7 @@ namespace Profex_Desktop.Windows.AuthPages
                         {
                             SmsPage smsPage = new SmsPage();
                             smsPage.PhoneNum = "+" + phoneNum1.Text;
+                            loader.Visibility = Visibility.Collapsed;
                             NavigationService.Navigate(smsPage);
                         }
 
@@ -77,6 +79,7 @@ namespace Profex_Desktop.Windows.AuthPages
                 }
                 else
                 {
+                    loader.Visibility = Visibility.Collapsed;
                     MessageBox.Show("Ma'lumotlar to'liq kiritlmagan");
                     SignUpbtn.IsEnabled = true;
 
@@ -84,6 +87,7 @@ namespace Profex_Desktop.Windows.AuthPages
             }
             else
             {
+                loader.Visibility = Visibility.Collapsed;
                 MessageBox.Show("Ma'lumotlar bo'sh bo'lmasligi kerak");
                 SignUpbtn.IsEnabled = true;
 
