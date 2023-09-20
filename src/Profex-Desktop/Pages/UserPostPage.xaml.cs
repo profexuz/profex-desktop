@@ -45,6 +45,7 @@ namespace Profex_Desktop.Pages
                 values[2] = item.Price.ToString();
                 vck.SetData(values);
                 wrpWords_Groups.Children.Add(vck);
+                loader.Visibility = Visibility.Collapsed;
             }
         }
 
