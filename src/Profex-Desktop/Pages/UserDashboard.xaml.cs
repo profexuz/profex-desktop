@@ -66,6 +66,11 @@ namespace Profex_Desktop.Pages
                 usersCount = usCount;
                 await CountAllUsers();
                 short count = 0;
+                loader.Visibility = Visibility.Collapsed;
+                loader2.Visibility = Visibility.Collapsed;
+                loader3.Visibility = Visibility.Collapsed;
+                loader4.Visibility = Visibility.Collapsed;
+                loader5.Visibility = Visibility.Collapsed;
 
                 foreach (var res in result)
                 {
