@@ -53,6 +53,7 @@ namespace Profex_Desktop.Pages
                 maste[4] = (master.CreatedAt.ToString());
                 info.SetData(maste);
                 wrpMasters.Children.Add(info);
+                loader.Visibility = Visibility.Collapsed;
             }
         }
 
