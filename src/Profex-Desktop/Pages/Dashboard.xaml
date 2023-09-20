@@ -118,6 +118,18 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" 
                         Style="{DynamicResource ProfexInfoBorder}"/>
+
+                    <fa:ImageAwesome
+                Grid.Column="0"
+                x:Name="loader4"
+                Icon="Spinner"
+                Visibility="Visible"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="0 0 0 0"
+                Height="80"
+                />
+
                     <Grid Grid.Column="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="90"/>
@@ -144,26 +156,6 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                            FontSize="25" VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
                     </Grid>
-                    <fa:ImageAwesome
-                        Grid.Column="0"
-                        x:Name="loader4"
-                        Icon="Spinner"
-                        Visibility="Visible"
-                        Spin="True"
-                        Foreground="{DynamicResource Loaders}"
-                        Margin="0 0 0 0"
-                        Height="80"
-                        Width="80" RenderTransformOrigin="0.701,0.683"
-                        >
-                        <fa:ImageAwesome.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="173.86048799999998"/>
-                                <TranslateTransform X="-33.634" Y="-27.476"/>
-                            </TransformGroup>
-                        </fa:ImageAwesome.RenderTransform>
-                    </fa:ImageAwesome>
 
                     <Border Grid.Column="1" 
                         Style="{DynamicResource ProfexInfoBorder}"/>
@@ -239,8 +231,8 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Icon="Spinner"
                         Visibility="Visible"
                         Spin="True"
-                        Height="200"
-                        Width="200"
+                        Height="100"
+                        Width="100"
                         Foreground="{DynamicResource Loaders}"
                         />
 
@@ -261,8 +253,8 @@ Xizmat/Ish – tovarlarni yetkazib berish bilan bogʼliq boʼlmagan, toʼgʼrida
                         Icon="Spinner"
                         Visibility="Visible"
                         Spin="True"
-                        Height="100"
-                        Width="100"
+                        Height="80"
+                        Width="80"
                         Foreground="{DynamicResource Loaders}"
                         />
 
