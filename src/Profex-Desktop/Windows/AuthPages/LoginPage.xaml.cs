@@ -40,6 +40,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility;
             SignUpbtn.IsEnabled = false;
             if (pswBox.Password.Length > 3 && phoneNum.Text.Length == 12)
             {
@@ -60,6 +61,7 @@ namespace Profex_Desktop.Windows.AuthPages
                         fs.Write(title, 0, title.Length);
                     }
                     MainWindow userMainWindow = new MainWindow();
+                    loader.Visibility = Visibility.Collapsed;
                     userMainWindow.Show();
                     AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
                     authWindow?.Close();
