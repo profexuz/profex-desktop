@@ -20,6 +20,7 @@ namespace Profex_Desktop.Components.Vacancies
         {
             Uri imageUri = new Uri(values[0], UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);
+            loader.Visibility = System.Windows.Visibility.Collapsed;
             lblTitle.Content = values[1];
             lblCost.Content = values[2];
         }
