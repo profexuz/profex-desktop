@@ -38,6 +38,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void SignUpbtn_Clicked(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility;
             SignUpbtn.IsEnabled = false;
             if (pswBox.Password.Length > 3 && phoneNum.Text.Length == 12)
             {
@@ -58,12 +59,14 @@ namespace Profex_Desktop.Windows.AuthPages
                         fs.Write(title, 0, title.Length);
                     }
                     UserMainWindow mainWindow = new UserMainWindow();
+                    loader.Visibility = Visibility.Collapsed;
                     mainWindow.Show();
                     UserAuthWindow authWindow = Window.GetWindow(this) as UserAuthWindow;
                     authWindow?.Close();
                 }
                 else
                 {
+                    loader.Visibility = Visibility.Collapsed;
                     MessageBox.Show("Telefon raqam yoki parol noto'g'ri kiritilgan!");
                     SignUpbtn.IsEnabled = true;
 
@@ -72,6 +75,7 @@ namespace Profex_Desktop.Windows.AuthPages
             }
             else
             {
+                loader.Visibility = Visibility.Collapsed;
                 MessageBox.Show("Iltimos ma'lumotlarni to'liq kiriting!");
                 SignUpbtn.IsEnabled = true;
             }
