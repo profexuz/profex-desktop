@@ -101,12 +101,11 @@
                         Grid.Column="2"
                         x:Name="loader"
                         Icon="Spinner"
-                        Visibility="Visible"
+                        Visibility="Hidden"
                         Spin="True"
                         Foreground="{DynamicResource Loaders}"
                         Margin="0 0 0 0"
-                        Height="200"
-                        Width="200"
+                        Height="100"                    
                         />
     </Grid>
 </Page>

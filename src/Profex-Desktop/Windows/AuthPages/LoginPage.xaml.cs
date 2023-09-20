@@ -68,6 +68,7 @@ namespace Profex_Desktop.Windows.AuthPages
                 }
                 else
                 {
+                    loader.Visibility = Visibility.Hidden;
                     MessageBox.Show("Telefon raqam yoki parol noto'g'ri kiritilgan!");
                     SignUpbtn.IsEnabled = true;
 
@@ -76,6 +77,7 @@ namespace Profex_Desktop.Windows.AuthPages
             }
             else
             {
+                loader.Visibility = Visibility.Hidden;
                 MessageBox.Show("Iltimos ma'lumotlarni to'liq kiriting!");
                 SignUpbtn.IsEnabled = true;
             }

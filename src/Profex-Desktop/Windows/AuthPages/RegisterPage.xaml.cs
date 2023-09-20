@@ -79,6 +79,7 @@ namespace Profex_Desktop.Windows.AuthPages
                 }
                 else
                 {
+                    loader.Visibility = Visibility.Hidden;
                     MessageBox.Show("Ma'lumotlar to'liq kiritlmagan");
                     SignUpbtn.IsEnabled = true;
 
@@ -86,6 +87,7 @@ namespace Profex_Desktop.Windows.AuthPages
             }
             else
             {
+                loader.Visibility = Visibility.Hidden;
                 MessageBox.Show("Ma'lumotlar bo'sh bo'lmasligi kerak");
                 SignUpbtn.IsEnabled = true;
 
