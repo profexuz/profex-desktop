@@ -32,7 +32,7 @@ namespace Profex_Desktop.Components.MasterContact
             AboutMasterWindow ms = new AboutMasterWindow();
             //ms.ustaId = MasterOd;
             //ms.ustaId = MasterId;
-            ms.ustaId = MasterId;
+            ms.ustaId = ustaId;
             ms.ShowDialog();
         }
     }
