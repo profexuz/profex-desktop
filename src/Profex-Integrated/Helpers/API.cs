@@ -64,7 +64,10 @@ public class API
 
     public static readonly string REMOVE_MY_SKILL = BASE_URL + "tokenmaster/dSkill";
 
-    
+    public static readonly string CATEGORY_GET_ALL = BASE_URL + "common/category";
+    //http://64.227.42.134:4040/api/common/category?page=1
+
+
 
 
     //common/category/allSkillsBy/categoryId?categoryId=2&page=1

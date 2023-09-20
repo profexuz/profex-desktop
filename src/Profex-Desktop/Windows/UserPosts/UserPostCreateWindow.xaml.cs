@@ -1,10 +1,14 @@
 ﻿
 using Profex_Integrated.Interfaces;
+using Profex_Integrated.Services.Categories;
 using Profex_Integrated.Services.Posts;
 using Profex_Integrated.Services.Skills;
+using Profex_ViewModels.Categories;
 using Profex_ViewModels.Skills;
 using Profex_ViewModels.Vacancies;
+using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace Profex_Desktop.Windows.UserPosts
@@ -17,7 +21,9 @@ namespace Profex_Desktop.Windows.UserPosts
         
         public long categoryId;
         private PostService _postService = new PostService();
-        
+        private CategoryService _categoryService = new CategoryService();
+        List<string> lst = new List<string>();
+
         public UserPostCreateWindow()
         {
             InitializeComponent();
@@ -105,6 +111,23 @@ namespace Profex_Desktop.Windows.UserPosts
             {
                 MessageBox.Show("internet is slow!");
             }
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var resultCatrgory = await _categoryService.GetAll(1);
+            
+
+            foreach(var item in resultCatrgory)
+                lst.Add(item.Name);
+            cmbCourses.ItemsSource = new List<CategoryViewModel>();
+            cmbCourses.ItemsSource = lst;
+
+            /*if (resultCatrgory != null)
+            {
+                foreach (var cat in resultCatrgory)
+                    cmbCourses.Items.Add(cat.Name);
+            }*/
         }
     }
 }
