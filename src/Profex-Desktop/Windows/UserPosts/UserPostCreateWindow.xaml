@@ -10,6 +10,7 @@
         Background="{DynamicResource UserFirstBackground}"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+        Loaded="Window_Loaded"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
@@ -177,12 +178,12 @@
                             <ComboBox x:Name="cmbCourses" 
                                 DisplayMemberPath="Group_Name"
                                 SelectedValuePath="id"
-                                Style="{DynamicResource FormComboBox}">
-
+                                Foreground="Blue">
+                                
                                 <ComboBox.Resources>
-                                    <!-- Colour of ComboBoxItem -->
+                                     <!--Colour of ComboBoxItem--> 
                                     <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#222" />
-                                    <!-- Mouse over colour of ComboBoxItem -->
+                                     <!--Mouse over colour of ComboBoxItem--> 
                                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="SlateGray" />
 
                                     <LinearGradientBrush x:Key="ComboBox.Static.Background" EndPoint="0,1" StartPoint="0,0">
