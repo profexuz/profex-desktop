@@ -1,15 +1,12 @@
-﻿
-using Profex_Integrated.Interfaces;
+﻿using Profex_Desktop.Windows.UserPostImage;
+using Profex_Dtos.Post;
 using Profex_Integrated.Services.Categories;
 using Profex_Integrated.Services.Posts;
-using Profex_Integrated.Services.Skills;
 using Profex_ViewModels.Categories;
-using Profex_ViewModels.Skills;
 using Profex_ViewModels.Vacancies;
+using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Input;
 
 namespace Profex_Desktop.Windows.UserPosts
 {
@@ -18,8 +15,9 @@ namespace Profex_Desktop.Windows.UserPosts
     /// </summary>
     public partial class UserPostCreateWindow : Window
     {
-        
-        public long categoryId;
+        List<CategoryViewModel> list = new List<CategoryViewModel>();
+        public long CategoryId;
+        public long PostId;
         private PostService _postService = new PostService();
         private CategoryService _categoryService = new CategoryService();
         List<string> lst = new List<string>();
@@ -28,25 +26,17 @@ namespace Profex_Desktop.Windows.UserPosts
         {
             InitializeComponent();
         }
-        /*public void SetData(SkillViewModel skill)
+        public UserPostCreateWindow(long categoryId)
         {
-            if (skill != null)
-            {
-                NameOfSkill.Content = skill.Title;
-                categoryId = skill.CategoryId;
-                SkillId = skill.Id;
-            }
-            else
-            {
-                MessageBox.Show("Ma'lumotlar topilmadi");
-            }
-        }*/
+            InitializeComponent();
+            CategoryId = categoryId;
+        }
         public void SetData(Vacancy vacancy)
         {
             if(vacancy!=null)
             {
                 
-                categoryId = vacancy.CategoryId;
+                CategoryId = vacancy.CategoryId;
                 lblPostTitle.Content = vacancy.Title;
                 lblPrice.Content = vacancy.Price.ToString();
                 lblUserRegion.Content = vacancy.Region;
@@ -55,79 +45,71 @@ namespace Profex_Desktop.Windows.UserPosts
                 rbDefenation.Text = vacancy.Description;
             }
         }
+        public void SetDat(PostCreateDto dto)
+        {
+            if(dto!=null)
+            {
+                CategoryId = dto.CategoryId;
+                lblPostTitle.Content = dto.Title;
+                lblPrice.Content=dto.Price.ToString();
+                lblUserRegion.Content = dto.Region;
+                lblUserDistrict.Content = dto.District;
+                txtPhoneNumber.Text = dto.PhoneNumber.ToString();
+                rbDefenation.Text = dto.Deccription.ToString();
+            }
+        }
 
         private void btnCreateWindowClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-
-        private void btnPicture_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void btnPicture2_MouseDown(object sender, MouseButtonEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-        }
-
-
-        private void btnPicture3_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void btnPicture4_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void btnPicture5_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
+            var resultCatrgory = await _categoryService.GetAll(1);
+            foreach(var iiii in resultCatrgory)
+            {
+                PostId = iiii.Id;
+            }
         }
 
         private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var result = await _postService.AddSkill(categoryId);
 
-                if (result == 1)
-                {
-                    MessageBox.Show("Skill added successfully!");
-                }
-                else if (result == 0)
-                {
-                    MessageBox.Show("skill has already exists.");
-                }
-                else if (result == -1)
-                {
-                    MessageBox.Show("An error occurred while adding the skill.");
-                }
-            }
-            catch
+            PostCreateDto dto = new PostCreateDto();
+            //dto.CategoryId = int.Parse(cmbCategory.Text);
+            dto.Title = txtTitle.Text;
+            //CategoryId = dto.CategoryId;
+            dto.CategoryId = CategoryId;
+            dto.Price = double.Parse(txtPrice.Text);
+            dto.Deccription = rbDefenation.Text;
+            dto.Region = txtRegion.Text;
+            dto.District = txtDistrict.Text;
+            dto.Latidute = 12323;
+            dto.Longitude = 12321;
+            dto.PhoneNumber = txtPhoneNumber.Text;
+            var res = await _postService.AddPost(dto);
+            var reeesult = MessageBox.Show("Postingiz muvofaqiyatli ravishda yaratildi , Postga surat qoyasizmi?", "Warning", MessageBoxButton.YesNo);
+            if(reeesult== MessageBoxResult.Yes)
             {
-                MessageBox.Show("internet is slow!");
+                UserPostImageWindow us = new UserPostImageWindow();
+                //PostId = us.PostId;
+                
+                us.PostId = PostId;
+                
+                us.ShowDialog();
+                ///MessageBox.Show("Bu funksiya xali qoshilmadi jarayonda");
             }
-        }
-
-        private async void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            var resultCatrgory = await _categoryService.GetAll(1);
+            else
+            {
+                this.Close();
+            }
             
 
-            foreach(var item in resultCatrgory)
-                lst.Add(item.Name);
-            cmbCourses.ItemsSource = new List<CategoryViewModel>();
-            cmbCourses.ItemsSource = lst;
 
-            /*if (resultCatrgory != null)
-            {
-                foreach (var cat in resultCatrgory)
-                    cmbCourses.Items.Add(cat.Name);
-            }*/
+
+
+
         }
     }
 }

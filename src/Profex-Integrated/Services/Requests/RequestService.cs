@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_ViewModels.Requests;
-using Profex_ViewModels.Vacancies;
 using System.Net.Http.Headers;
 
 namespace Profex_Integrated.Services.Requests

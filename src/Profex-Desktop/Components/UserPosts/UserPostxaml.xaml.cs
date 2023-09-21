@@ -20,6 +20,7 @@ namespace Profex_Desktop.Components.UserPosts
     public partial class UserPostxaml : UserControl
     {
         public long vacancyId;
+        public long lastID;
         private PostService _postService = new PostService();
         private VacancyService _vacancyService = new VacancyService();
         
@@ -32,6 +33,7 @@ namespace Profex_Desktop.Components.UserPosts
             Uri imageUri = new Uri(values[0], UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);
             lbName.Content = values[1];
+
             loader.Visibility = Visibility.Collapsed;
         }
         /*public void SetData1(Vacancy vacancy)
@@ -45,15 +47,7 @@ namespace Profex_Desktop.Components.UserPosts
             values[1] = vacancy.Title;
             values[2] = vacancy.Price.ToString();
 
-            // Natijani o'zgaruvchilarga o'rnating (masalan, bu o'zgaruvchilarni panelga chiqaring):
-            // this.ImageUrl = values[0];
-            // this.Title = values[1];
-            // this.Price = values[2];
-
-            // Boshqa qo'shimcha xizmatlar (masalan, rasmni yuklash) ham qo'shishingiz kerak bo'lishi mumkin.
         }
-*/
-
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             UserPostUpdateWindow userUpd = new UserPostUpdateWindow();
@@ -63,10 +57,8 @@ namespace Profex_Desktop.Components.UserPosts
 
         private async void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            //bu xali yozilmabdi
             try
-            {
-                //var result = await _skillsService.RemoveMySkill(SkillId);
+            { 
                 var result = await _vacancyService.RemoveAsync(vacancyId);
 
                 // Check the result and take appropriate action.
