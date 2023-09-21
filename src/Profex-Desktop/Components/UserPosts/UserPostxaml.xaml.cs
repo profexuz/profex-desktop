@@ -33,7 +33,19 @@ namespace Profex_Desktop.Components.UserPosts
             Uri imageUri = new Uri(values[0], UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);
             lbName.Content = values[1];
-            
+
+            loader.Visibility = Visibility.Collapsed;
+        }
+        /*public void SetData1(Vacancy vacancy)
+        {
+            // O'zgaruvchilarni Vacancy obyekti ma'lumotlari bilan to'ldiring
+            // Misol: Agar Vacancy obyekti xususiyatlari "Image", "Title", va "Price" bo'lsa
+            // Siz o'zgaruvchilarni shunday to'ldirishingiz mumkin:
+
+            string[] values = new string[3];
+            values[0] = API.BASE_URL + vacancy.ImagePath[0];
+            values[1] = vacancy.Title;
+            values[2] = vacancy.Price.ToString();
 
         }
         private void btnUpdate_Click(object sender, RoutedEventArgs e)

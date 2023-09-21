@@ -86,7 +86,6 @@ namespace Profex_Desktop.Pages
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
-            cmbIsFree.IsReadOnly = false;
 
             btnSave.Visibility = Visibility.Hidden;
             btnCancel.Visibility = Visibility.Hidden;
@@ -103,7 +102,6 @@ namespace Profex_Desktop.Pages
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
-            cmbIsFree.IsReadOnly = false;
         }
 
         private async void btnSave_Click(object sender, RoutedEventArgs e)
@@ -169,6 +167,8 @@ namespace Profex_Desktop.Pages
             string imageUrl = BASEIMG_URL + result.ImagePath;
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             imgProfile.ImageSource = new BitmapImage(imageUri);
+            loader.Visibility = Visibility.Collapsed;
+            loader2.Visibility = Visibility.Collapsed;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)

@@ -65,6 +65,7 @@ namespace Profex_Desktop.Pages
                 inc.SetData(values);
                     
                 wrpWords_Groups.Children.Add(vck);
+                loader.Visibility = Visibility.Collapsed;
             }
             
             

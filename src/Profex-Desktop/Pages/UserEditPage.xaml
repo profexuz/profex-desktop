@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Profex_Desktop.Pages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"      
      mc:Ignorable="d" 
       Height="auto" Width="auto"
       Title="MasterEditPage" 
@@ -38,6 +39,16 @@
                         <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Profile images/DefoultUserImage.jpg" />
                     </Border.Background>
                 </Border>
+                <fa:ImageAwesome
+                Grid.Row="0"
+                x:Name="loader"
+                Icon="Spinner"
+                Visibility="Visible"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="50 0 0 0"
+                Height="80"
+                />
 
                 <Border x:Name="brUpload" IsEnabled="False" Grid.Row="1" Height="50" Width="280"
                         Margin="50 10 0 0"
@@ -95,22 +106,25 @@
                                  PreviewTextInput="NumberValidationTextBox"
                                  IsReadOnly="True" TextChanged="txtNum_TextChanged"/>
                 </StackPanel>
-                <StackPanel Grid.Row="3" Orientation="Vertical" VerticalAlignment="Bottom"
-                            Margin="10 0">
-                    <Label x:Name="lblIsFree" Style="{DynamicResource lblIsFree}"/>
-
-                    <ComboBox x:Name="cmbIsFree" 
-                              Style="{DynamicResource RoundComboBoxMaster}"
-                              HorizontalAlignment="Left" IsReadOnly="True">
-                        <ComboBoxItem IsSelected="True">HA</ComboBoxItem>
-                        <ComboBoxItem>YO'Q</ComboBoxItem>
-                    </ComboBox>
-
-                </StackPanel>
-            </Grid>
+                <Grid Grid.Row="4" HorizontalAlignment="Right">
+                    <Button x:Name="btnCancel" Click="btnCancel_Click" Visibility="Hidden" Grid.Column="0" Style="{DynamicResource btnCancel}"/>
+                    <Button x:Name="btnChange" Click="btnChange_Click" Grid.Column="0" Content="O'zgartirish" Style="{DynamicResource btnCancel}"/>
+                    <Button x:Name="btnSave" Click="btnSave_Click" Visibility="Hidden" Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
+                </Grid>
+        </Grid>
+            <fa:ImageAwesome
+                Grid.Column="2"
+                x:Name="loader2"
+                Icon="Spinner"
+                Visibility="Visible"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="0 0 0 0"
+                Height="100"
+                />
         </Grid>
 
-        <Grid Grid.Row="1">
+        <!--<Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -118,6 +132,6 @@
             <Button x:Name="btnCancel" Click="btnCancel_Click" Visibility="Hidden" Grid.Column="0" Style="{DynamicResource btnCancel}"/>
             <Button x:Name="btnChange" Click="btnChange_Click" Grid.Column="0" Content="O'zgartirish" Style="{DynamicResource btnCancel}"/>
             <Button x:Name="btnSave" Click="btnSave_Click" Visibility="Hidden" Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
-        </Grid>
+        </Grid>-->
     </Grid>
 </Page>

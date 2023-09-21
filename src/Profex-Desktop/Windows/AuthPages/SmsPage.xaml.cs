@@ -66,6 +66,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private void ChangeNumber_Click(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility.Collapsed;
             NavigationService.GoBack();
         }
 
@@ -79,6 +80,7 @@ namespace Profex_Desktop.Windows.AuthPages
 
         private async void txtSmsCode_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
+            loader.Visibility = Visibility;
             try
             {
                 if (txtSmsCode.Text.Length == 4)
@@ -100,12 +102,14 @@ namespace Profex_Desktop.Windows.AuthPages
                             fs.Write(title, 0, title.Length);
                         }
                         MainWindow mainWindow = new MainWindow();
+                        loader.Visibility = Visibility.Collapsed;
                         mainWindow.Show();
                         AuthWindow authWindow = Window.GetWindow(this) as AuthWindow;
                         authWindow?.Close();
                     }
                     else
                     {
+                        loader.Visibility = Visibility.Collapsed;
                         MessageBox.Show("Tasdiqlash kodi noto'g'ri");
                     }
                 }

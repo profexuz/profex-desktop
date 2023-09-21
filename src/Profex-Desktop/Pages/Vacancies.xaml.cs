@@ -34,6 +34,7 @@ namespace Profex_Desktop.Pages
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpNewsVacancy.Children.Add(vacancy);
+                loader.Visibility = Visibility.Collapsed;
             }
             count = 0;
             foreach (var item in result)
@@ -50,12 +51,14 @@ namespace Profex_Desktop.Pages
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpAdvertising.Children.Add(vacancy);
-
+                loader2.Visibility = Visibility.Collapsed;
             }
         }
 
         private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility;
+            loader2.Visibility = Visibility;
             string searchText = Search.Text; // Qidiruv so'zini olish
 
             // Qidiruvni boshlash uchun VacancyService dan foydalanish
@@ -77,6 +80,7 @@ namespace Profex_Desktop.Pages
                 vacancy.SetData(values);
                 wrpNewsVacancy.Children.Add(vacancy);
                 count++;
+                loader.Visibility = Visibility.Collapsed;
             }
 
             count = 0;
@@ -95,6 +99,7 @@ namespace Profex_Desktop.Pages
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
                 wrpAdvertising.Children.Add(vacancy);
+                
             }
         }
     }

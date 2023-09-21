@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.Auth"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="AuthWindow" Height="600" Width="950"
         WindowStartupLocation="CenterScreen"
@@ -96,8 +97,8 @@
                     </StackPanel>
             </Border>
         </Grid>
-        
-    </Grid>
+
+        </Grid>
         <Button x:Name="btnClose" Click="btnClose_Clicked" 
                 Style="{DynamicResource RegisterPageCloseButton}"/>
     </Grid>

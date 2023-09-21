@@ -19,6 +19,7 @@ namespace Profex_Desktop.Pages
 
         private async void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
+            
             //wrpNewsVacancy.Children.Clear();
             wrpAdvertising.Children.Clear();
             var result = await _vacancyService.GetAllAsync(1);
@@ -38,7 +39,9 @@ namespace Profex_Desktop.Pages
             //count = 0;
             foreach (var item in result)
             {
-                if (count == 6) break; count++;
+                if (count == 6) break; 
+                loader.Visibility = System.Windows.Visibility.Hidden;
+                count++;
                 
                 /*Vacancy vacancy = new Vacancy();
                 vacancy.vacancyId = item.Id;
@@ -57,6 +60,7 @@ namespace Profex_Desktop.Pages
                 wrpAdvertising.Children.Add(rqm);
                     
             }
+
         }
     }
 }

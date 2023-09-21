@@ -50,6 +50,7 @@
     <SolidColorBrush x:Key="SearchBachground" Color="#242F3D"/>
     <SolidColorBrush x:Key="FontBachground" Color="#1F2936"/>
     <SolidColorBrush x:Key="UserTitleColor" Color="White"/>
+    <SolidColorBrush x:Key="Loaders" Color="#5EB5F7"/>
 
 
 
