@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.UserPosts"
        mc:Ignorable="d"
-        Title="SellerProductCreateWindow" Height="750" Width="900"
+        Title="SellerProductCreateWindow" Height="750" Width="530"
         AllowsTransparency="True"
         Background="{DynamicResource UserFirstBackground}"
         WindowStartupLocation="CenterScreen"
@@ -28,114 +28,11 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            
             <Border Grid.Column="0"
-                    CornerRadius="0 0 0 10"
-                    Background="{DynamicResource UserPrimaryBackground}">
-                <StackPanel Orientation="Vertical" >
-                    <Label Content="Rasm qo'shish"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Margin="18 10 0 5"
-                           Foreground="{DynamicResource UserSecondaryTextColor}"/>
-                    <StackPanel Orientation="Horizontal">
-                        <Border x:Name="btnPicture"
-                                    Height="180"
-                                    Width="200"
-                                    Cursor="Hand"
-                                    Margin="20 10 0 0"  
-                                    BorderThickness="1 3 1 3"
-                                    CornerRadius="12"
-                                BorderBrush="White"
-                                Background="{DynamicResource UserPrimaryBackground}"
-                                MouseDown="btnPicture_MouseDown">
-                            <!--<Border.Background>
-                                <ImageBrush Stretch="UniformToFill" x:Name="Img1"/>
-                            </Border.Background>-->
-                            
-                            <Path  x:Name="ImgIcon" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="White"
-                                    Stretch="Uniform"/>
-                        </Border>
-                        <Border x:Name="btnPicture2"
-                                Visibility="Hidden"
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture2_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img2" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon2" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Border x:Name="btnPicture3"
-                                Visibility="Hidden"                                
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture3_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img3" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon3" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                        <Border x:Name="btnPicture4" 
-                                Visibility="Hidden"                                
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture4_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img4" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon4" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Border x:Name="btnPicture5"
-                                Visibility="Hidden"                                
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture5_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img5" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon5" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-            <Border Grid.Column="1"
                 CornerRadius="0 0 10 0">
                 <StackPanel Margin="10 0">
 
@@ -157,44 +54,27 @@
                             <ColumnDefinition Width="150"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" x:Name="lblCategory" Style="{DynamicResource lblCategory}"/>
-                        <Border Grid.Column="1"
-                                    Background="#E9E9E9"
-                                    Margin="-10 0 0 0"
-                                    CornerRadius="10"
-                                    BorderThickness="0 0 0 3"
-                                    BorderBrush="White">
-                            <!--<ComboBox x:Name="cmbCategory"
-                                      Background="{DynamicResource UserSecondaryBackground}"
-                                      Height="35" Width="270"
-                                      FontSize="16"
-                                      BorderThickness="0"
-                                      BorderBrush="{DynamicResource UserTitleColor}"
-                                      Foreground="{DynamicResource UserTitleColor}"
-                                      VerticalAlignment="Center"
-                                      SelectedIndex="0" SelectionChanged="cmbCategory_SelectionChanged">
-
-                            </ComboBox>-->
-                            <ComboBox x:Name="cmbCourses" 
+                        <!--<Label Grid.Column="0" x:Name="lblCategory" Style="{DynamicResource lblCategory}"/>
+                        <ComboBox x:Name="cmbCategory"
                                 DisplayMemberPath="Group_Name"
                                 SelectedValuePath="id"
-                                Foreground="Blue">
-                                
-                                <ComboBox.Resources>
-                                     <!--Colour of ComboBoxItem--> 
-                                    <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#222" />
-                                     <!--Mouse over colour of ComboBoxItem--> 
-                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="SlateGray" />
+                                      Height="35"
+                                Foreground="Blue" Grid.ColumnSpan="2" Margin="140,0,0,0">
 
-                                    <LinearGradientBrush x:Key="ComboBox.Static.Background" EndPoint="0,1" StartPoint="0,0">
-                                        <GradientStop Color="Blue" Offset="0.0"/>
-                                        <GradientStop Color="Blue" Offset="1.0"/>
-                                    </LinearGradientBrush>
-                                </ComboBox.Resources>
-                            </ComboBox>
+                            <ComboBox.Resources>
+                                --><!--Colour of ComboBoxItem--><!--
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#222" />
+                                --><!--Mouse over colour of ComboBoxItem--><!--
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="SlateGray" />
+
+                                <LinearGradientBrush x:Key="ComboBox.Static.Background" EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="Blue" Offset="0.0"/>
+                                    <GradientStop Color="Blue" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </ComboBox.Resources>
+                        </ComboBox>-->
 
 
-                        </Border>
                     </Grid>
 
                     <StackPanel Grid.Row="1" Orientation="Vertical">
@@ -320,6 +200,7 @@
                         
                     BorderBrush="{DynamicResource ProfileImageBackground}"
                     Padding="5" Margin="10 15 10 15">
+
                         <TextBox x:Name="rbDefenation"
                       VerticalAlignment="Top"
                       FontSize="16"
@@ -340,7 +221,6 @@
                             Margin="10 15" Height="50" 
                             Style="{DynamicResource SuccessButton}" 
                             Content="Save"/>
-
                 </StackPanel>
             </Border>
         </Grid>
