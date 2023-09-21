@@ -86,7 +86,6 @@ namespace Profex_Desktop.Pages
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
-            cmbIsFree.IsReadOnly = false;
 
             btnSave.Visibility = Visibility.Hidden;
             btnCancel.Visibility = Visibility.Hidden;
@@ -103,7 +102,6 @@ namespace Profex_Desktop.Pages
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
-            cmbIsFree.IsReadOnly = false;
         }
 
         private async void btnSave_Click(object sender, RoutedEventArgs e)
