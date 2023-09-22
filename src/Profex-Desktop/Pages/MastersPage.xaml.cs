@@ -27,7 +27,7 @@ namespace Profex_Desktop.Pages
         private async void Loading()
         {
             wrpMasters.Children.Clear();
-
+            
             string[] maste = new string[5];
             var search = await _masterService.GetAllAsync();
             foreach (var master in search)
@@ -40,6 +40,7 @@ namespace Profex_Desktop.Pages
                 maste[4] = (master.CreatedAt.ToString());
                 info.SetData(maste);
                 wrpMasters.Children.Add(info);
+                loader.Visibility = Visibility.Collapsed;
             }
         }
 

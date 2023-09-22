@@ -14,6 +14,7 @@ namespace Profex_Desktop.Windows.AboutVacancy
         private VacancyService _vacancyService = new VacancyService();
         public long vacancyId;
         public long UserId;
+        public long ImageId;
         //private string BASE_URL = "http://localhost:5230/";
         private string BASE_URL = "http://64.227.42.134:4040/";
 

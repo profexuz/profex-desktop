@@ -31,34 +31,6 @@ namespace Profex_Desktop.Windows.UserPosts
             InitializeComponent();
             CategoryId = categoryId;
         }
-        public void SetData(Vacancy vacancy)
-        {
-            if(vacancy!=null)
-            {
-                
-                CategoryId = vacancy.CategoryId;
-                lblPostTitle.Content = vacancy.Title;
-                lblPrice.Content = vacancy.Price.ToString();
-                lblUserRegion.Content = vacancy.Region;
-                lblUserDistrict.Content = vacancy.District;
-                txtPhoneNumber.Text = vacancy.PhoneNumber.ToString();
-                rbDefenation.Text = vacancy.Description;
-            }
-        }
-        public void SetDat(PostCreateDto dto)
-        {
-            if(dto!=null)
-            {
-                CategoryId = dto.CategoryId;
-                lblPostTitle.Content = dto.Title;
-                lblPrice.Content=dto.Price.ToString();
-                lblUserRegion.Content = dto.Region;
-                lblUserDistrict.Content = dto.District;
-                txtPhoneNumber.Text = dto.PhoneNumber.ToString();
-                rbDefenation.Text = dto.Deccription.ToString();
-            }
-        }
-
         private void btnCreateWindowClose_Click(object sender, RoutedEventArgs e)
         {
             Close();

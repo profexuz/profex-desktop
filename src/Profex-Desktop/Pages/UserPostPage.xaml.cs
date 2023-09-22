@@ -21,6 +21,7 @@ namespace Profex_Desktop.Pages
         private PostService _postService = new PostService();
         private VacancyService _vacancyService = new VacancyService();
         public long LastId;
+        public long ImageId;
         private string BASE_URL = "http://64.227.42.134:4040/";
         
         public UserPostPage()
@@ -41,6 +42,12 @@ namespace Profex_Desktop.Pages
                 if (count == 6) break; count++;
                 UserPostxaml vck = new UserPostxaml();
                 vck.vacancyId = item.Id;
+                vck.categoryId = item.CategoryId;
+//                vck.ImageId = item.Images; 
+                foreach(var iteeeeem in item.Images)
+                {
+                    vck.ImageId = iteeeeem.Id;
+                }
                 values[0] = BASE_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
