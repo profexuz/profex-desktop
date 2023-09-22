@@ -29,7 +29,7 @@
                 </Grid.ColumnDefinitions>
             <Grid Grid.Column ="1">
                 <Button x:Name="btnMySkills" 
-                        Content="My Skills" Foreground="White"
+                        Content="Mahoratlarim" Foreground="White"
                         Click="btnMySkills_Click" 
                         Style="{DynamicResource btnSearchMaster}"/>
             </Grid>
