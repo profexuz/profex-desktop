@@ -42,7 +42,6 @@ namespace Profex_Desktop
             {
                 this.WindowState = WindowState.Maximized;
             }
-
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -52,7 +51,7 @@ namespace Profex_Desktop
 
         private async void rbDashboard_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "ASOSIY";
+            appName.Content = "Asosiy";
             Dashboard dashboard = new Dashboard();
             PageNavigator.Navigate(dashboard);
         }
@@ -72,14 +71,14 @@ namespace Profex_Desktop
 
         private void rbVacancies_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "ISHLAR";
+            appName.Content = "Ishlar";
             Vacancies vacancy = new Vacancies();
             PageNavigator.Navigate(vacancy);
         }
 
         private void rbFAQs_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "SAVOL-JAVOB";
+            appName.Content = "Savol-javob";
             FaqsPage faqsPage = new FaqsPage();
             PageNavigator.Navigate(faqsPage);
         }
@@ -102,14 +101,14 @@ namespace Profex_Desktop
 
         private void rbMasters_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "USTALAR";
+            appName.Content = "Ustalar";
             MastersPage mastersPage = new MastersPage();
             PageNavigator.Navigate(mastersPage);
         }
 
         private void rbAccount_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "PROFILE";
+            appName.Content = "Profilim";
             MasterEditPage masterEdit = new MasterEditPage();
             PageNavigator.Navigate(masterEdit);
         }
@@ -128,7 +127,7 @@ namespace Profex_Desktop
 
         private void rbSkills_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "SKILLS";
+            appName.Content = "Mahoratlarim";
             SkillsPage skillsPage = new SkillsPage();
             PageNavigator.Navigate(skillsPage);
 
@@ -136,14 +135,14 @@ namespace Profex_Desktop
 
         private void rbRequst_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "Request";
+            appName.Content = "So'rovlar";
             RequestPage rqPage = new RequestPage();
             PageNavigator.Navigate(rqPage);
         }
 
         private void rbMyRequests_Click(object sender, RoutedEventArgs e)
         {
-            appName.Content = "My Requests";
+            appName.Content = "So'rovlarim";
             MyRequestsPage myRqPage = new MyRequestsPage();
             PageNavigator.Navigate(myRqPage);
         }

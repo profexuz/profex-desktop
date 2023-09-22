@@ -31,7 +31,7 @@
                     <Border x:Name="brLine" Height="1" Width="180" 
                     Background="{DynamicResource bcgBr}" Margin="5"/>
                     <Label x:Name="lblCost" Content="200000 SO'M" Style="{DynamicResource lblCost}"/>
-                    <Button x:Name="BtnRequst" Height="20" Margin="5" Width="130" Content="send request" Foreground="Red" FontSize="10" Background="#CCCCCC" Click="BtnRequst_Click"/>
+                    <Button x:Name="BtnRequst" Height="20" Margin="5" Width="130" Content="so'rov jo'natish" Foreground="Red" FontSize="10" Background="#CCCCCC" Click="BtnRequst_Click"/>
                 </StackPanel>
             </Grid>
         </Border>

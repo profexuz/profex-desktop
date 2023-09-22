@@ -1,4 +1,5 @@
-﻿using Profex_Integrated.Services.Masters;
+﻿using Profex_Integrated.Helpers;
+using Profex_Integrated.Services.Masters;
 using Profex_ViewModels.Masters;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,6 @@ namespace Profex_Desktop.Windows.AboutMaster
     {
         private MasterService _masterService = new MasterService();
         public long ustaId;
-        private string BASE_URL = "http://64.227.42.134:4040/";
         public AboutMasterWindow()
         {
             InitializeComponent();
@@ -33,11 +33,11 @@ namespace Profex_Desktop.Windows.AboutMaster
   
                 if (result != null)
                 {
-                    string imageUrl = BASE_URL + result.ImagePath;
+                    string imageUrl = API.BASEIMG_URL + result.ImagePath;
                     Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
                     MasterRasmi.ImageSource = new BitmapImage(imageUri);
 
-                    lblTitle.Content = "ABOUT FOR MASTERS";
+                    lblTitle.Content = "Usta haqida ma'lumot";
                     lblFirstNameAnswer.Content = result.FirstName;
                     lblLastNameAnswer.Content = result.LastName;
                     lblPhoneNumerAns.Content = result.PhoneNumber;
@@ -53,7 +53,8 @@ namespace Profex_Desktop.Windows.AboutMaster
                 }
                 else
                 {
-                    MessageBox.Show("Master not found or an error occurred while fetching data.");
+                    //MessageBox.Show("Master not found or an error occurred while fetching data.");
+                    MessageBox.Show("Usta topilmadi yoki nomalum xatolik yuz berdi.");
                 }
             }
             catch (Exception ex)

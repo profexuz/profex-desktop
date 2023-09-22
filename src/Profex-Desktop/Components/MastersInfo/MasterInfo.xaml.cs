@@ -10,7 +10,6 @@ namespace Profex_Desktop.Components.MastersInfo
     /// </summary>
     public partial class MasterInfo : UserControl
     {
-        private string BASE_URL = "http://64.227.42.134:4040/";
         public MasterInfo()
         {
             InitializeComponent();

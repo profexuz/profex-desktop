@@ -3,7 +3,6 @@ using Profex_Integrated.Services.Categories;
 using Profex_ViewModels.Categories;
 using System;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 
 namespace Profex_Desktop.Windows.AboutCategory

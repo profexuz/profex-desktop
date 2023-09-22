@@ -64,7 +64,7 @@ namespace Profex_Desktop.Windows.UserPostImage
             var res = await _postService.UpdatePostImage(imageID,dto);
             if (res == 1)
             {
-                MessageBox.Show("Muvoffaqiyatli yaratildi");
+                MessageBox.Show("Muvoffaqiyatli yangilandi");
                 this.Close();
             }
             else if (res == 0)
