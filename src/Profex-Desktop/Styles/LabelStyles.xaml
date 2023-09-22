@@ -711,7 +711,7 @@
 
     <!--Post title label style-->
     <Style x:Key="lblPostTitle" TargetType="{x:Type Label}">
-        <Setter Property="Content" Value="Title"/>
+        <Setter Property="Content" Value="Sarlavha"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -736,7 +736,7 @@
 
     <!--Price label style-->
     <Style x:Key="lblPrice" TargetType="{x:Type Label}">
-        <Setter Property="Content" Value="Price"/>
+        <Setter Property="Content" Value="Marxi"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -761,7 +761,7 @@
 
     <!--UserRegion label style-->
     <Style x:Key="lblUserRegion" TargetType="{x:Type Label}">
-        <Setter Property="Content" Value="Region"/>
+        <Setter Property="Content" Value="Viloyat"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -786,7 +786,7 @@
 
     <!--UserDistrict label style-->
     <Style x:Key="lblUserDistrict" TargetType="{x:Type Label}">
-        <Setter Property="Content" Value="District"/>
+        <Setter Property="Content" Value="Tuman"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
