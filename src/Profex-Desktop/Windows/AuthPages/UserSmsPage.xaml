@@ -9,7 +9,7 @@
       mc:Ignorable="d" 
       Title="SmsPage"
       Height="402" Width="360"
-      Background="White"
+      Background="#008CFF"
       Loaded="Page_Loaded">
 
     <Grid>
@@ -41,7 +41,7 @@
 
             <Label x:Name="lblSecond" Grid.Row="3" Content="04:59" 
                    FontWeight="Bold"
-                   Foreground="{DynamicResource UserSecondaryTextColor}"
+                   Foreground="red"
                    Style="{DynamicResource second}"/>
 
             <Button Grid.Row="4"

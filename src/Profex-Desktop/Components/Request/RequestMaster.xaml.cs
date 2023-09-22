@@ -26,6 +26,7 @@ namespace Profex_Desktop.Components.Request
             VacancieImg.ImageSource = new BitmapImage(imageUri);
             lblTitle.Content = values[1];
             lblCost.Content = values[2];
+            loader.Visibility = Visibility.Collapsed;
         }
 
         private async void BtnRequst_Click(object sender, RoutedEventArgs e)

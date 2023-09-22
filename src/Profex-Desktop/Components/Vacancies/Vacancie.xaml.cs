@@ -101,6 +101,7 @@ namespace Profex_Desktop.Components.Vacancies
                 MasterContactControl master = new MasterContactControl();
                 master.SetData(list[0]);
                 wrpContac.Children.Add(master);
+                loader.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -142,31 +143,36 @@ namespace Profex_Desktop.Components.Vacancies
         }
 
         private void br1_MouseDown(object sender, MouseButtonEventArgs e)
-        {
+        {   
             currentElement = 0;
             UpdateImage();
         }
 
         private void br2_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
+            loader.Visibility = Visibility.Visible;
             currentElement = 1;
             UpdateImage();
         }
 
         private void br3_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            loader.Visibility = Visibility.Visible;
             currentElement = 2;
             UpdateImage();
         }
 
         private void br4_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            loader.Visibility = Visibility.Visible;
             currentElement = 3;
             UpdateImage();
         }
 
         private void br5_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            loader.Visibility = Visibility.Visible;
             currentElement = 4;
             UpdateImage();
         }

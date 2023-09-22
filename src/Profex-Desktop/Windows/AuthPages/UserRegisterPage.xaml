@@ -8,7 +8,7 @@
   mc:Ignorable="d" 
       Height="410" Width="360"
       Title="RegisterPage"
-      Background="White"
+      Background="#008CFF"
       >
     <Grid>
         <Grid>
