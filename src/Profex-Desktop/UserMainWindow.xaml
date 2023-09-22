@@ -57,7 +57,7 @@
                                                Checked="rbDashboard_Click"
                                               Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource Dashboard2}"
-                                             Content="ASOSIY">
+                                             Content="Asosiy">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Asosiy</TextBlock>
                                 </RadioButton.ToolTip>
@@ -65,7 +65,7 @@
                             <RadioButton x:Name="rbVacancies" Grid.Row="1" 
                                                 Click="rbVacancies_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource Vacansies}"
-                                             Content="ISHLAR">
+                                             Content="Ishlar">
                                 <RadioButton.ToolTip>
                                     <TextBlock>E'lonlar</TextBlock>
                                 </RadioButton.ToolTip>
@@ -73,7 +73,7 @@
                             <RadioButton x:Name="rbMasters" Grid.Row="2" 
                                                 Click="rbMasters_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource Masters}"
-                                             Content="USTALAR">
+                                             Content="Ustalar">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Ustalar</TextBlock>
                                 </RadioButton.ToolTip>
@@ -81,7 +81,7 @@
                             <RadioButton x:Name="rbProfil" Grid.Row="3" 
                                                 Click="rbProfil_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource MyAccountDemo}"
-                                             Content="PROFILIM">
+                                             Content="Profilim">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Mening profilm</TextBlock>
                                 </RadioButton.ToolTip>
@@ -89,7 +89,7 @@
                             <RadioButton x:Name="rbMyPost" Grid.Row="4" 
                                                 Click="rbMyPost_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource MyAccount}"
-                                             Content="My Posts">
+                                             Content="Postlarim">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Mening profilm</TextBlock>
                                 </RadioButton.ToolTip>
@@ -108,7 +108,7 @@
                             <RadioButton x:Name="rbFAQs" Grid.Row="6"
                                                 Click="rbFAQs_Click" Style="{DynamicResource UserSideBarButton}"
                                                     Tag="{DynamicResource FAQs}"
-                                             Content="FAQs">
+                                             Content="Savol-javob">
                                 <RadioButton.ToolTip>
                                     <TextBlock>Tez-tez so'raladigan savollar</TextBlock>
                                 </RadioButton.ToolTip>
