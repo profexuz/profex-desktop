@@ -6,6 +6,7 @@ using Profex_Integrated.Services.Posts;
 using Profex_ViewModels.Categories;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
@@ -15,35 +16,32 @@ using System.Windows.Media.Imaging;
 namespace Profex_Desktop.Windows.UserPostImage
 {
     /// <summary>
-    /// Interaction logic for UserPostImageWindow.xaml
+    /// Interaction logic for UserPostImageUpdateWindow.xaml
     /// </summary>
-    public partial class UserPostImageWindow : Window
+    public partial class UserPostImageUpdateWindow : Window
     {
         private string selectedFilePath = "";
         List<CategoryViewModel> list = new List<CategoryViewModel>();
         //public long CategoryId;
         public long PostId;
         string lastIdFilePath = @"C:\Users\Public\LastID.txt";
+        string AuthPath = @"C:\Users\Public\Token.txt";
         public long lastId;
+        public long imageID;
 
         private PostService _postService = new PostService();
         private PostImageService _postImageService = new PostImageService();
         private CategoryService _categoryService = new CategoryService();
         int s = 0;
-        List<string> lst = new List<string>();
-        public UserPostImageWindow()
+        public UserPostImageUpdateWindow()
         {
             InitializeComponent();
         }
 
-        public void SetData(string[] values)
-        {
-            lastId = long.Parse(values[3]);
-        }
         private async void BtnImage_Click(object sender, RoutedEventArgs e)
         {
-            if(File.Exists(lastIdFilePath))
-{
+            if (File.Exists(lastIdFilePath))
+            {
                 string lastIdContent = File.ReadAllText(lastIdFilePath);
                 if (int.TryParse(lastIdContent, out int lastId))
                 {
@@ -57,21 +55,19 @@ namespace Profex_Desktop.Windows.UserPostImage
             {
                 // Faylni IFormFile ko'rinishida yaratish
                 var fileBytes = File.ReadAllBytes(selectedFilePath);
-                var fileName = Path.GetFileName(selectedFilePath);
+                var fileName = System.IO.Path.GetFileName(selectedFilePath);
                 dto.ImagePath = new FormFile(new MemoryStream(fileBytes), 0, fileBytes.Length, null, fileName);
                 BtnImage.IsEnabled = true;
             }
 
             //var res = await _postImageService.AddPostImage(dto);
-            var res = await _postService.AddPostImage(dto);
-            if(res==1)
+            var res = await _postService.UpdatePostImage(imageID,dto);
+            if (res == 1)
             {
                 MessageBox.Show("Muvoffaqiyatli yaratildi");
-                //UserPostImageWindow ms = new UserPostImageWindow();
                 this.Close();
-                //ms.Close();
             }
-            else if(res==0)
+            else if (res == 0)
             {
                 MessageBox.Show("Qandaydir xatolik mavjud berdi, keyinroq qaytadan urinib ko'ring!");
                 this.Close();
@@ -85,7 +81,6 @@ namespace Profex_Desktop.Windows.UserPostImage
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
             var clickedElement = sender as UIElement;
 
             if (clickedElement != null)
@@ -118,11 +113,10 @@ namespace Profex_Desktop.Windows.UserPostImage
                     ImageSource imageSource = new BitmapImage(new Uri(selectedFilePath));
                     // imageSource ni WPF Image elementiga berish mumkin
                     PostImage.ImageSource = imageSource;
-                    
-                }
-                
-            }
 
+                }
+
+            }
         }
 
         private void btnCreateWindowClose_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@ namespace Profex_Desktop.Components.Categories
         {
             categoryId = categoryViewModel.Id;
             CategoryTitle.Content = categoryViewModel.Name;
-        }
+        } 
 
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {

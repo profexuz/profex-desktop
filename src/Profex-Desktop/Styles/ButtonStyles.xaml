@@ -1044,7 +1044,7 @@
         <Setter Property="Width" Value="180"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="50 20"/>
+        <Setter Property="Margin" Value="12 20 0 0"/>
         <Setter Property="Content" Value="Bekor qilish"/>
         <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -1065,13 +1065,45 @@
         </Setter>
     </Style>
 
+    
+    
+    <!--Btn change button style-->
+    <Style x:Key="btnCHANGE" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="15 20 0 0"/>
+        <Setter Property="Content" Value="Bekor qilish"/>
+        <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderThickness="1" CornerRadius="15" BorderBrush="{DynamicResource ProfileImageBackground}"
+                        Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Label Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"
+                           FontSize="{TemplateBinding FontSize}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                               Padding="0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
     <!--Save Changes button style-->
     <Style x:Key="btnSaveChanges" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="50"/>
         <Setter Property="Width" Value="180"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="125 20"/>
+        <Setter Property="Margin" Value="35 20 0 0"/>
         <Setter Property="Content" Value="Saqlash"/>
         <Setter Property="Foreground" Value="{DynamicResource lblFirstNameAnswerColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -1298,6 +1330,38 @@
     </Style>
 
     
+    
+    
+    <!--Joylash button-->
+    <Style x:Key="JoylashButton" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10 0"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" CornerRadius="5" Background="Yellow">
+                        <Label FontSize="16"
+                           FontWeight="SemiBold"
+                           FontFamily="Jetbrains Mono"
+                           Foreground="White"
+                           Content="{TemplateBinding Content}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="#F4CA16"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="#C9A712"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="UpdateButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10 0"/>
         <Setter Property="Padding" Value="80"/>

@@ -5,287 +5,304 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.UserPosts"
         mc:Ignorable="d"
-        Title="SellerProductCreateWindow" Height="750" Width="900"
+        Title="SellerProductCreateWindow" Height="750" Width="530"
         AllowsTransparency="True"
-        Background="{DynamicResource UserFirstBackground}"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Row="0"
-                CornerRadius="10 10 0 0"
-                Background="{DynamicResource UserPrimaryBackground}">
-            <Button x:Name="btnCreateWindowClose"
-                    Click="btnCreateWindowClose_Click"
-                    Style="{DynamicResource CloseButton}"                    
-                    HorizontalAlignment="Right"/>
-        </Border>
-
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Column="0"
-                    CornerRadius="0 0 0 10"
-                    Background="{DynamicResource UserSecondaryBackground}">
-                <StackPanel Orientation="Vertical" >
-                    <Label Content="Rasm qo'shish"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Margin="18 10 0 5"
-                           Foreground="{DynamicResource UserSecondaryTextColor}"/>
-                    <StackPanel Orientation="Horizontal">
-                        <Border x:Name="btnPicture"
-                                    Height="180"
-                                    Width="200"
-                                    Cursor="Hand"
-                                    Margin="20 10 0 0"  
-                                    BorderThickness="1 3 1 3"
-                                    CornerRadius="12"
-                                BorderBrush="White"
-                                Background="{DynamicResource UserPrimaryBackground}"
-                                MouseDown="btnPicture_MouseDown">
-                            <!--<Border.Background>
-                                <ImageBrush Stretch="UniformToFill" x:Name="Img1"/>
-                            </Border.Background>-->
-
-                            <Path  x:Name="ImgIcon" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="White"
-                                    Stretch="Uniform"/>
-                        </Border>
-                        <Border x:Name="btnPicture2"
-                                Visibility="Hidden"
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture2_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img2" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon2" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Border x:Name="btnPicture3"
-                                Visibility="Hidden"                                
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture3_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img3" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon3" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                        <Border x:Name="btnPicture4" 
-                                Visibility="Hidden"                                
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture4_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img4" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon4" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Border x:Name="btnPicture5"
-                                Visibility="Hidden"                                
-                                Height="180"
-                                Width="200"
-                                Cursor="Hand"
-                                Margin="20 10 0 0"  
-                                BorderThickness="1"
-                                BorderBrush="White"
-                                MouseDown="btnPicture5_MouseDown">
-                            <Border.Background>
-                                <ImageBrush  x:Name="Img5" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Path  x:Name="ImgIcon5" Height="70" Width="70"
-                                    Data="{DynamicResource pilus}"
-                                    Fill="{DynamicResource UserSecondaryBackground}"
-                                    Stretch="Uniform"/>
-                        </Border>
-                    </StackPanel>
-                </StackPanel>
+    <Border Background="{DynamicResource UserFirstBackground}" CornerRadius="0 0 0 0" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+            CornerRadius="10 10 0 0"
+            Background="{DynamicResource UserSecondaryTextColor}">
+                <Button x:Name="btnCreateWindowClose"
+                Click="btnCreateWindowClose_Click"
+                Style="{DynamicResource CloseButton}"                    
+                HorizontalAlignment="Right"/>
             </Border>
-            <Border Grid.Column="1"
-                CornerRadius="0 0 10 0">
-                <StackPanel Margin="10 0">
 
-                    <Label Content="Malumotlarni o'zgartiring"
-                                   FontSize="24"
-                           FontWeight="Bold"
-                                   Margin="11 10 0 0"
-                                   Foreground="{DynamicResource UserSecondaryTextColor}"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Border Grid.Column="0"
+                CornerRadius="0 0 0 10"
+                Background="{DynamicResource UserSecondaryBackground}">
+            <StackPanel Orientation="Vertical" >
+                <Label Content="Rasm qo'shish"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="18 10 0 5"
+                       Foreground="{DynamicResource UserSecondaryTextColor}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Border x:Name="btnPicture"
+                                Height="180"
+                                Width="200"
+                                Cursor="Hand"
+                                Margin="20 10 0 0"  
+                                BorderThickness="1 3 1 3"
+                                CornerRadius="12"
+                            BorderBrush="White"
+                            Background="{DynamicResource UserPrimaryBackground}"
+                            MouseDown="btnPicture_MouseDown">
+                        -->
+                <!--<Border.Background>
+                            <ImageBrush Stretch="UniformToFill" x:Name="Img1"/>
+                        </Border.Background>-->
+                <!--
 
-                    <StackPanel Grid.Column="0"
-                                    Margin="0"
-                                    VerticalAlignment="Center">
-                    </StackPanel>
-                    <!--Address part-->
-                    <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" x:Name="lblPostTitle" Style="{DynamicResource lblPostTitle}"/>
-                            <Border Grid.Column="1"
-                                    Background="{DynamicResource UserSecondaryBackground}"
-                                    Margin="-10 0 0 0"
-                                    CornerRadius="10"
-                                    BorderThickness="0 0 0 3"
-                                    BorderBrush="White">
-                                <TextBox x:Name="txtTitle" FontSize="16"
-                                         Margin="10 5"
-                                         BorderThickness="0"
-                                         VerticalAlignment="Center"
-                                         Background="{DynamicResource UserSecondaryBackground}"
-                                         MaxLength="40"
-                                         Foreground="{DynamicResource UserTitleColor}"/>
-                            </Border>
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" x:Name="lblPrice" Style="{DynamicResource lblPrice}"/>
-                            <Border Grid.Column="1"
-                                    Background="{DynamicResource UserSecondaryBackground}"
-                                    Margin="-10 20 0 0"
-                                    CornerRadius="10"
-                                    BorderThickness="0 0 0 3"
-                                    BorderBrush="White">
-                                <TextBox x:Name="txtPrice" FontSize="16"
-                                         Margin="10 5"
-                                         BorderThickness="0"
-                                         VerticalAlignment="Center"
-                                         Background="{DynamicResource UserSecondaryBackground}"
-                                         MaxLength="40"
-                                         Foreground="{DynamicResource UserTitleColor}"/>
-                            </Border>
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" x:Name="lbl"/>
-                        </Grid>
-
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" x:Name="lblUserRegion" Style="{DynamicResource lblUserRegion}"/>
-                            <Border Grid.Column="1"
-                                    Background="{DynamicResource UserSecondaryBackground}"
-                                    Margin="-10 20 0 0"
-                                    CornerRadius="10"
-                                    BorderThickness="0 0 0 3"
-                                    BorderBrush="White">
-                                <TextBox x:Name="txtRegion" FontSize="16"
-                                         Margin="10 5"
-                                         BorderThickness="0"
-                                         VerticalAlignment="Center"
-                                         Background="{DynamicResource UserSecondaryBackground}"
-                                         MaxLength="40"
-                                         Foreground="{DynamicResource UserTitleColor}"/>
-                            </Border>
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" x:Name="lblUserDistrict" Style="{DynamicResource lblUserDistrict}"/>
-                            <Border Grid.Column="1"
-                                    Background="{DynamicResource UserSecondaryBackground}"
-                                    Margin="-10 20 0 0"
-                                    CornerRadius="10"
-                                    BorderThickness="0 0 0 3"
-                                    BorderBrush="White">
-                                <TextBox x:Name="txtDistrict" FontSize="16"
-                                         Margin="10 5"
-                                         BorderThickness="0"
-                                         VerticalAlignment="Center"
-                                         Background="{DynamicResource UserSecondaryBackground}"
-                                         MaxLength="40"
-                                         Foreground="{DynamicResource UserTitleColor}"/>
-                            </Border>
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0"  x:Name="lblUserTelefon" Style="{DynamicResource lblUserTelefon}" Margin="5,0,0,0"/>
-                            <Border Grid.Column="1"
-                                    Background="{DynamicResource UserSecondaryBackground}"
-                                    Margin="-10 20 0 0"
-                                    CornerRadius="10"
-                                    BorderThickness="0 0 0 3"
-                                    BorderBrush="White">
-                                <TextBox x:Name="txtPhoneNumber" FontSize="16"
-                                         Margin="10 5"
-                                         BorderThickness="0"
-                                         VerticalAlignment="Center"
-                                         Background="{DynamicResource UserSecondaryBackground}"
-                                         MaxLength="40"
-                                         Foreground="{DynamicResource UserTitleColor}"/>
-                            </Border>
-                        </Grid>
-
-                    </StackPanel>
-                    <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
-
-                    <!--Description-->
-                    <Border Grid.Row="2" CornerRadius="15" BorderThickness="0 2 0 2" 
-                        
-                    BorderBrush="{DynamicResource ProfileImageBackground}"
-                    Padding="5" Margin="10 100 10 0">
-                        <ScrollViewer Visibility="Visible" Background="{DynamicResource UserFirstBackground}">
-                            <TextBlock x:Name="txtDesc" Style="{DynamicResource txtUserPostDescription}"
-                                Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
-                        </ScrollViewer>
+                        <Path  x:Name="ImgIcon" Height="70" Width="70"
+                                Data="{DynamicResource pilus}"
+                                Fill="White"
+                                Stretch="Uniform"/>
                     </Border>
-
-                    <Button x:Name="btnUpdate"
-                            Click="btnUpdate_Click"
-                            Margin="10 15" Height="50" 
-                            Style="{DynamicResource UpdateButton}" 
-                            Content="O'zgartirish"/>
-
+                    <Border x:Name="btnPicture2"
+                            Visibility="Hidden"
+                            Height="180"
+                            Width="200"
+                            Cursor="Hand"
+                            Margin="20 10 0 0"  
+                            BorderThickness="1"
+                            BorderBrush="White"
+                            MouseDown="btnPicture2_MouseDown">
+                        <Border.Background>
+                            <ImageBrush  x:Name="Img2" Stretch="UniformToFill"/>
+                        </Border.Background>
+                        <Path  x:Name="ImgIcon2" Height="70" Width="70"
+                                Data="{DynamicResource pilus}"
+                                Fill="{DynamicResource UserSecondaryBackground}"
+                                Stretch="Uniform"/>
+                    </Border>
                 </StackPanel>
-            </Border>
+                <StackPanel Orientation="Horizontal">
+                    <Border x:Name="btnPicture3"
+                            Visibility="Hidden"                                
+                            Height="180"
+                            Width="200"
+                            Cursor="Hand"
+                            Margin="20 10 0 0"  
+                            BorderThickness="1"
+                            BorderBrush="White"
+                            MouseDown="btnPicture3_MouseDown">
+                        <Border.Background>
+                            <ImageBrush  x:Name="Img3" Stretch="UniformToFill"/>
+                        </Border.Background>
+                        <Path  x:Name="ImgIcon3" Height="70" Width="70"
+                                Data="{DynamicResource pilus}"
+                                Fill="{DynamicResource UserSecondaryBackground}"
+                                Stretch="Uniform"/>
+                    </Border>
+                    <Border x:Name="btnPicture4" 
+                            Visibility="Hidden"                                
+                            Height="180"
+                            Width="200"
+                            Cursor="Hand"
+                            Margin="20 10 0 0"  
+                            BorderThickness="1"
+                            BorderBrush="White"
+                            MouseDown="btnPicture4_MouseDown">
+                        <Border.Background>
+                            <ImageBrush  x:Name="Img4" Stretch="UniformToFill"/>
+                        </Border.Background>
+                        <Path  x:Name="ImgIcon4" Height="70" Width="70"
+                                Data="{DynamicResource pilus}"
+                                Fill="{DynamicResource UserSecondaryBackground}"
+                                Stretch="Uniform"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border x:Name="btnPicture5"
+                            Visibility="Hidden"                                
+                            Height="180"
+                            Width="200"
+                            Cursor="Hand"
+                            Margin="20 10 0 0"  
+                            BorderThickness="1"
+                            BorderBrush="White"
+                            MouseDown="btnPicture5_MouseDown">
+                        <Border.Background>
+                            <ImageBrush  x:Name="Img5" Stretch="UniformToFill"/>
+                        </Border.Background>
+                        <Path  x:Name="ImgIcon5" Height="70" Width="70"
+                                Data="{DynamicResource pilus}"
+                                Fill="{DynamicResource UserSecondaryBackground}"
+                                Stretch="Uniform"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>-->
+                <Border Grid.Column="0"
+            >
+                    <StackPanel Margin="10 0" RenderTransformOrigin="0.507,0.536">
+
+                        <Label Content="Malumotlarni o'zgartiring"
+                               FontSize="24"
+                       FontWeight="Bold"
+                               Margin="11 10 0 0"
+                               Foreground="{DynamicResource UserSecondaryTextColor}"/>
+
+                        <StackPanel Grid.Column="0"
+                                Margin="0"
+                                VerticalAlignment="Center">
+                        </StackPanel>
+                        <!--Address part-->
+                        <StackPanel Grid.Row="1" Orientation="Vertical">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="lblPostTitle" Style="{DynamicResource lblPostTitle}"/>
+                                <Border Grid.Column="1"
+                                Background="{DynamicResource UserSecondaryBackground}"
+                                Margin="-10 0 0 0"
+                                CornerRadius="10"
+                                BorderThickness="0 0 0 3"
+                                BorderBrush="White">
+                                    <TextBox x:Name="txtTitle" FontSize="16"
+                                     Margin="10 5"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"
+                                     Background="{DynamicResource UserSecondaryBackground}"
+                                     MaxLength="40"
+                                     Foreground="{DynamicResource UserTitleColor}"/>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="lblPrice" Style="{DynamicResource lblPrice}"/>
+                                <Border Grid.Column="1"
+                                Background="{DynamicResource UserSecondaryBackground}"
+                                Margin="-10 20 0 0"
+                                CornerRadius="10"
+                                BorderThickness="0 0 0 3"
+                                BorderBrush="White">
+                                    <TextBox x:Name="txtPrice" FontSize="16"
+                                     Margin="10 5"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"
+                                     Background="{DynamicResource UserSecondaryBackground}"
+                                     MaxLength="40"
+                                     Foreground="{DynamicResource UserTitleColor}"/>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="lbl"/>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="lblUserRegion" Style="{DynamicResource lblUserRegion}"/>
+                                <Border Grid.Column="1"
+                                Background="{DynamicResource UserSecondaryBackground}"
+                                Margin="-10 20 0 0"
+                                CornerRadius="10"
+                                BorderThickness="0 0 0 3"
+                                BorderBrush="White">
+                                    <TextBox x:Name="txtRegion" FontSize="16"
+                                     Margin="10 5"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"
+                                     Background="{DynamicResource UserSecondaryBackground}"
+                                     MaxLength="40"
+                                     Foreground="{DynamicResource UserTitleColor}"/>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="lblUserDistrict" Style="{DynamicResource lblUserDistrict}"/>
+                                <Border Grid.Column="1"
+                                Background="{DynamicResource UserSecondaryBackground}"
+                                Margin="-10 20 0 0"
+                                CornerRadius="10"
+                                BorderThickness="0 0 0 3"
+                                BorderBrush="White">
+                                    <TextBox x:Name="txtDistrict" FontSize="16"
+                                     Margin="10 5"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"
+                                     Background="{DynamicResource UserSecondaryBackground}"
+                                     MaxLength="40"
+                                     Foreground="{DynamicResource UserTitleColor}"/>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0"  x:Name="lblUserTelefon" Style="{DynamicResource lblUserTelefon}" Margin="5,0,0,0"/>
+                                <Border Grid.Column="1"
+                                Background="{DynamicResource UserSecondaryBackground}"
+                                Margin="-10 20 0 0"
+                                CornerRadius="10"
+                                BorderThickness="0 0 0 3"
+                                BorderBrush="White">
+                                    <TextBox x:Name="txtPhoneNumber" FontSize="16"
+                                     Margin="10 5"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"
+                                     Background="{DynamicResource UserSecondaryBackground}"
+                                     MaxLength="40"
+                                     Foreground="{DynamicResource UserTitleColor}"/>
+                                </Border>
+                            </Grid>
+
+                        </StackPanel>
+                        <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
+
+                        <!--Description-->
+                        <Border Grid.Row="2" CornerRadius="15" BorderThickness="0 2 0 2" 
+                    
+                BorderBrush="{DynamicResource ProfileImageBackground}"
+                Padding="5" Margin="10 100 10 0">
+                            <TextBox x:Name="rbDefenation"
+                        VerticalAlignment="Top"
+                        FontSize="16"
+                        Margin="10 0 10 0"
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap"
+                        Height="150"
+
+                        FontFamily="Jetbrains mono"
+                        Foreground="{DynamicResource UserTitleColor}"
+                        BorderThickness="0"
+                        Background="{DynamicResource UserFirstBackground}"/>
+
+                            <!--<ScrollViewer Visibility="Visible" Background="{DynamicResource UserFirstBackground}">
+                        <TextBlock x:Name="txtDesc" Style="{DynamicResource txtUserPostDescription}"
+                            Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+                    </ScrollViewer>-->
+                        </Border>
+
+                        <Button x:Name="btnUpdate"
+                        Click="btnUpdate_Click"
+                        Margin="10 15" Height="50" 
+                        Style="{DynamicResource UpdateButton}" 
+                        Content="O'zgartirish"/>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
+    
 </Window>

@@ -31,6 +31,9 @@ public class API
 
     public static readonly string CREATE_IMAGE_POST = BASE_URL + "user/post/image";
 
+    public static readonly string UPDATE_IMAGE_POST = BASE_URL + "user/post/image";
+    
+
 
 
     public static readonly string GETBYID_VACANCY = BASE_URL + "common/post/byId";
@@ -44,6 +47,8 @@ public class API
     public static readonly string UPDATE_USER_PROFILE = BASE_URL + "tokenuser";
     public static readonly string CREATE_POST = BASE_URL + "user/post";
     public static readonly string GET_ALL_MY_POSTS = BASE_URL + "common/post/user";
+    public static readonly string UPDATE_MY_POST = BASE_URL + "user/post";
+                                //http://64.227.42.134:4040/api/user/post/2
 
     //category part
     public static readonly string GET_ALL_CATEGORY = BASE_URL + "common/category";
