@@ -40,20 +40,20 @@ namespace Profex_Desktop.Components.SkillAbout
 
                 if (result == 1)
                 {
-                    MessageBox.Show("Skill added successfully!");
+                    MessageBox.Show("Mahorat muvaffaqiyatli qo'shildi!");
                 }
                 else if (result == 0)
                 {
-                    MessageBox.Show("skill has already exists.");
+                    MessageBox.Show("Sizda ushbu mahorat avvaldan mavjud");
                 }
                 else if (result == -1)
                 {
-                    MessageBox.Show("An error occurred while adding the skill.");
+                    MessageBox.Show("Mahorat qo'shish vaqtida qandaydir xatolik yuz berdi");
                 }
             }
             catch
             {
-                MessageBox.Show("internet is slow!");
+                MessageBox.Show("internet aloqasi sekin!");
             }
         }
     }

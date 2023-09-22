@@ -31,7 +31,7 @@ namespace Profex_Desktop.Components.Request
 
         private async void BtnRequst_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Send a request to this post?", "Warning!", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Siz ushbu postga so'rov jo'natasizmi?", "Warning!", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
             {
@@ -40,20 +40,20 @@ namespace Profex_Desktop.Components.Request
                     var result1 = await _requestService.AddRequest(vacancyId, UserId);
                     if (result1 == 1)
                     {
-                        MessageBox.Show("Your request has been sent successfully!");
+                        MessageBox.Show("Sizning so'rovingiz muvoffaqiyatli yuborildi!");
                     }
                     else if (result1 == 0)
                     {
-                        MessageBox.Show("You have already sent a request for this post.");
+                        MessageBox.Show("Siz allaqchon so'rov jo'natib bo'lgansiz.");
                     }
                     else if (result1 == -1)
                     {
-                        MessageBox.Show("An unknown error occurred while sending the request.");
+                        MessageBox.Show("So'rov jo'natish vaqtida qandaydir xatolik mavjud bo'ldi.");
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("internet is slow!");
+                    MessageBox.Show("Internet aloqasi sekin");
                 }
 
             }

@@ -47,7 +47,7 @@ namespace Profex_Desktop.Components.Request
 
         private async void BorderDelete_Requests(object sender, MouseButtonEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Send a request to this post?", "Warning!", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Ushbu so'rovni o'chirmoqchimisiz?", "Warning!", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 try
@@ -55,20 +55,20 @@ namespace Profex_Desktop.Components.Request
                     var result1 = await _requestService.DeleteReq(vacancyId, UserId);
                     if (result1 == 1)
                     {
-                        MessageBox.Show("Your request has been delete successfully!");
+                        MessageBox.Show("So'rovingiz muvoffaqiyatli o'chirildi!");
                     }
                     else if (result1 == 0)
                     {
-                        MessageBox.Show("You have already delete a request for this post.");
+                        MessageBox.Show("Siz ushbu so'rovni avval o'chirgansiz");
                     }
                     else if (result1 == -1)
                     {
-                        MessageBox.Show("An unknown error occurred while deleteing the request.");
+                        MessageBox.Show("Nomalum xatolik yuz berdi.");
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("internet is slow!");
+                    MessageBox.Show("internet sekin ishlamoqda!");
                 }
 
             }

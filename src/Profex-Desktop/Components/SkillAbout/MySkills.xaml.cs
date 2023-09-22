@@ -1,19 +1,8 @@
 ﻿using Profex_Integrated.Services.Skills;
 using Profex_ViewModels.Skills;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Profex_Desktop.Components.SkillAbout
 {
@@ -54,22 +43,22 @@ namespace Profex_Desktop.Components.SkillAbout
                 if (result == 1)
                 {
                     // Skill added successfully, you can update your UI here if needed.
-                    MessageBox.Show("Skill removed successfully!");
+                    MessageBox.Show("Muvoffaqiyatli o'chirildi!");
                 }
                 else if (result == 0)
                 {
                     // Handle the case where adding the skill failed.
-                    MessageBox.Show("skill has already removed.");
+                    MessageBox.Show("Siz ushbu mahoratni allaqachon o'chirgansiz");
                 }
                 else if (result == -1)
                 {
                     // Handle unexpected errors.
-                    MessageBox.Show("An error occurred while removed the skill.");
+                    MessageBox.Show("Nomalum xatolik yuz berdi");
                 }
             }
             catch
             {
-                MessageBox.Show("internet is slow!");
+                MessageBox.Show("internet aloqasi sekin!");
             }
 
         }
@@ -84,22 +73,22 @@ namespace Profex_Desktop.Components.SkillAbout
                 if (result == 1)
                 {
                     // Skill added successfully, you can update your UI here if needed.
-                    MessageBox.Show("Skill removed successfully!");
+                    MessageBox.Show("Mahorat muvaffaqiyatli ravishda o'chirildi!");
                 }
                 else if (result == 0)
                 {
                     // Handle the case where adding the skill failed.
-                    MessageBox.Show("skill has already removed.");
+                    MessageBox.Show("Mahorat allaqachon o'chirildi.");
                 }
                 else if (result == -1)
                 {
                     // Handle unexpected errors.
-                    MessageBox.Show("An error occurred while removed the skill.");
+                    MessageBox.Show("Qandaydir xatolik yuz berdi.");
                 }
             }
             catch
             {
-                MessageBox.Show("internet is slow!");
+                MessageBox.Show("internet alqoasu sekin!");
             }
         }
     }

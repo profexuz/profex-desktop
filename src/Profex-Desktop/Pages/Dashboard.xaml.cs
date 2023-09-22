@@ -1,5 +1,6 @@
 ﻿using Profex_Desktop.Components.MasterContact;
 using Profex_Desktop.Components.Vacancies;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Services.Masters;
 using Profex_Integrated.Services.Users;
 using Profex_Integrated.Services.Vacancies;
@@ -20,7 +21,6 @@ namespace Profex_Desktop.Pages
         private long mastersCount = 0;
         private long usersCount = 0;
         private long vacanciesCount = 0;
-        private string BASE_URL = "http://64.227.42.134:4040/";
         private MasterService _masterService = new MasterService();
         private VacancyService _vacancyService = new VacancyService();
         private UserService _userService = new UserService();
@@ -67,7 +67,7 @@ namespace Profex_Desktop.Pages
                 foreach (var res in result)
                 {
                     if (count == 6) break; count++;
-                    string imageUrl = BASE_URL + res.ImagePath;
+                    string imageUrl = API.BASEIMG_URL + res.ImagePath;
                     MasterContactControl ms = new MasterContactControl();
                     ms.ustaId = res.Id;
                     string[] list =

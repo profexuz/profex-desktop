@@ -1,4 +1,5 @@
 ﻿using Profex_Desktop.Components.Vacancies;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Services.Vacancies;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,7 +12,6 @@ namespace Profex_Desktop.Pages
     public partial class Vacancies : Page
     {
         private VacancyService _vacancyService = new VacancyService();
-        private string BASE_URL = "http://64.227.42.134:4040/";
         public Vacancies()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Profex_Desktop.Pages
                 if (count ==3 ) break; count++;
                 Vacancy vacancy = new Vacancy();
                 vacancy.vacancyId = item.Id;
-                values[0] = BASE_URL + item.ImagePath[0];
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
@@ -46,7 +46,7 @@ namespace Profex_Desktop.Pages
                 }
                 Vacancy vacancy = new Vacancy();
                 vacancy.vacancyId = item.Id;
-                values[0] = BASE_URL + item.ImagePath[0];
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
@@ -74,7 +74,7 @@ namespace Profex_Desktop.Pages
                 if (count == 6) break;
                 Vacancy vacancy = new Vacancy();
                 vacancy.vacancyId = item.Id;
-                values[0] = BASE_URL + item.ImagePath[0];
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);
@@ -94,7 +94,7 @@ namespace Profex_Desktop.Pages
                 }
                 Vacancy vacancy = new Vacancy();
                 vacancy.vacancyId = item.Id;
-                values[0] = BASE_URL + item.ImagePath[0];
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
                 vacancy.SetData(values);

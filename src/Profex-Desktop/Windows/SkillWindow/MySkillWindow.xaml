@@ -30,7 +30,7 @@
             Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
                 </Grid>
                 <Grid Grid.Column="0">
-                    <Label Content="My skills" Style="{DynamicResource lblSkillStyle}"/>
+                    <Label Content="Mening mahoratlarim" Style="{DynamicResource lblSkillStyle}"/>
                 </Grid>
 
             </Grid>

@@ -79,12 +79,8 @@ namespace Profex_Desktop.Pages
                         btnSave.IsEnabled = false;
                     }
 
-                    // Tanlangan rasm faylini olish va kerakli ishlar bilan davom etish
-                    // Misol uchun: Tanlangan rasmni bir joyga joylash va uni ko'rsatish
                     ImageSource imageSource = new BitmapImage(new Uri(selectedFilePath));
-                    // imageSource ni WPF Image elementiga berish mumkin
                     imgProfile.ImageSource = imageSource;
-                    // imageElement.Source = imageSource;
                 }
             }
         }
@@ -145,14 +141,7 @@ namespace Profex_Desktop.Pages
                 // _masterViewModel.ImagePath ga ro'yxatni o'rnating
                 _masterViewModel.ImagePath = new FormFile(new MemoryStream(Encoding.UTF8.GetBytes(res.ImagePath)), 0, res.ImagePath.Length, null, Path.GetFileName(res.ImagePath));
                 btnSave.IsEnabled = true;
-
-
-
             }
-
-
-
-
             if (cmbIsFree.SelectedIndex == 0)
             {
                 _masterViewModel.IsFree = false;
@@ -179,9 +168,7 @@ namespace Profex_Desktop.Pages
             {
                 MessageBox.Show("Internet bilan muammo yuzaga keldi!");
             }
-
         }
-
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
             btnSave.Visibility = Visibility.Visible;

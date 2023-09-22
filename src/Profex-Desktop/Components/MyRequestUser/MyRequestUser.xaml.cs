@@ -36,14 +36,9 @@ namespace Profex_Desktop.Components.MyRequestUser
 
         }
 
-        private void btnAccepted_Click(object sender, RoutedEventArgs e)
+        private async void btnAccepted_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private async void btnIgnore_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Send a request to this post?", "Warning!", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Bu postni qabul qilasizmi?", "Warning!", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 try
@@ -51,20 +46,51 @@ namespace Profex_Desktop.Components.MyRequestUser
                     var result1 = await rqs.DeleteReq1(MasterId, vacancyId);
                     if (result1 == 1)
                     {
-                        MessageBox.Show("Your request has been delete successfully!");
+                        MessageBox.Show("So'rov muvaffaqiyatli ravishda qabul qilindi!");
                     }
                     else if (result1 == 0)
                     {
-                        MessageBox.Show("You have already delete a request for this post.");
+                        MessageBox.Show("So'rovni allaqachon qabul qilgansiz");
                     }
                     else if (result1 == -1)
                     {
-                        MessageBox.Show("An unknown error occurred while deleteing the request.");
+                        MessageBox.Show("Nomalum xatolik yuz berdi so'rovni qabul qilish vaqtida.");
                     }
                 }
                 catch
                 {
                     MessageBox.Show("internet is slow!");
+                }
+
+            }
+            else
+            { }
+        }
+
+        private async void btnIgnore_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Bu postni qabul qilmaysizmi?", "Warning!", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var result1 = await rqs.DeleteReq1(MasterId, vacancyId);
+                    if (result1 == 1)
+                    {
+                        MessageBox.Show("Ushbu so'rpv muvaffaqiyatli ravishda o'chirildi!");
+                    }
+                    else if (result1 == 0)
+                    {
+                        MessageBox.Show("Ushbu so'rovni allaqachon o'chirgansiz.");
+                    }
+                    else if (result1 == -1)
+                    {
+                        MessageBox.Show("So'rovni o'chirish vaqtida qandaydir xatolik yuz berdi.");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("internet bilan muomo bor.");
                 }
 
             }

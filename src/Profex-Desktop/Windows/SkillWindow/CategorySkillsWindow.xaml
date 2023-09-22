@@ -31,7 +31,7 @@
                 Click="btnClose_Click" Style="{DynamicResource CloseButton}"/>
                 </Grid>
                 <Grid Grid.Column="0">
-                    <Label Content="Skills" Style="{DynamicResource lblSkillStyle}"/>
+                    <Label Content="Mahoratlar" Style="{DynamicResource lblSkillStyle}"/>
                 </Grid>
 
             </Grid>
