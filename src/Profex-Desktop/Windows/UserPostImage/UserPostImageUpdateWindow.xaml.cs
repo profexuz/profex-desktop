@@ -121,7 +121,7 @@ namespace Profex_Desktop.Windows.UserPostImage
 
         private void btnCreateWindowClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

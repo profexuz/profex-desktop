@@ -100,7 +100,7 @@ namespace Profex_Desktop.Windows.AboutVacancy
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

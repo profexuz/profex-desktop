@@ -78,6 +78,7 @@ public class VacancyService : IVacancyService
     public async Task<IList<Vacancy>> SearchAsync(string search)
     {
         //throw new NotImplementedException();
+
         try
         {
             using (HttpClient client = new HttpClient())

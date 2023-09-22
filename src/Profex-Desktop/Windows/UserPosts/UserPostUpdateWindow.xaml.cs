@@ -22,7 +22,7 @@ namespace Profex_Desktop.Windows.UserPosts
 
         private void btnCreateWindowClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private async void btnUpdate_Click(object sender, RoutedEventArgs e)

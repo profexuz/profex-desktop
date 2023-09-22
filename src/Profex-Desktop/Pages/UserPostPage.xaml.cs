@@ -90,19 +90,69 @@ namespace Profex_Desktop.Pages
         {
             try
             {
+                
                 if (e.Key == Key.Enter)
                 {
+
                     wrpWords_Groups.Children.Clear();
-                    var result = await _postService.SearchAsync(tbSearch.Text.ToString());
-                    foreach (var word in result)
+                    if (tbSearch.Text.Length > 0)
                     {
-                        UserPostxaml userPostxaml = new UserPostxaml();
-                        string[] value = new string[3];
-                        value[0] = BASE_URL + word.ImagePath[0];
-                        value[1] = word.Title;
-                        userPostxaml.SetData(value);
-                        wrpWords_Groups.Children.Add(userPostxaml);
+                        var result = await _postService.SearchAsync(tbSearch.Text.ToString());
+                        foreach (var word in result)
+                        {
+                            UserPostxaml userPostxaml = new UserPostxaml();
+                            string[] value = new string[3];
+                            value[0] = BASE_URL + word.ImagePath[0];
+                            value[1] = word.Title;
+                            userPostxaml.SetData(value);
+                            wrpWords_Groups.Children.Add(userPostxaml);
+                        }
                     }
+                    else if (tbSearch.Text.Length == 0)
+                    {
+                        wrpWords_Groups.Children.Clear();
+                        var result1 = await _postService.GetAllMyPost(1);
+                        string[] values = new string[4];
+
+                        byte count = 0;
+                        foreach (var item in result1)
+                        {
+                            if (count == 6) break; count++;
+                            UserPostxaml vck = new UserPostxaml();
+                            vck.vacancyId = item.Id;
+                            vck.categoryId = item.CategoryId;
+                            //                vck.ImageId = item.Images; 
+                            foreach (var iteeeeem in item.Images)
+                            {
+                                vck.ImageId = iteeeeem.Id;
+                            }
+                            values[0] = BASE_URL + item.ImagePath[0];
+                            values[1] = item.Title;
+                            values[2] = item.Price.ToString();
+                            //LastId = item.Id;
+                            //values[3] = LastId;
+                            UserPostImageWindow inc = new UserPostImageWindow();
+                            //values[3] = item.Id;
+                            inc.lastId = item.Id;
+                            values[3] = item.Id.ToString();
+                            string fileName = "C:\\Users\\Public\\LastID.txt";
+                            if (File.Exists(fileName))
+                            {
+                                File.Delete(fileName);
+                            }
+                            using (FileStream fs = File.Create(fileName))
+                            {
+                                // Add some text to file    
+                                Byte[] title = new UTF8Encoding(true).GetBytes($"{item.Id}");
+                                fs.Write(title, 0, title.Length);
+                            }
+                            vck.SetData(values);
+                            inc.SetData(values);
+
+                            wrpWords_Groups.Children.Add(vck);
+                        }
+                    }
+                    
                 }
             }
             catch

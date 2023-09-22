@@ -68,6 +68,7 @@ namespace Profex_Desktop
 
         private void rbFAQs_Click(object sender, RoutedEventArgs e)
         {
+
             appName.Content = "SAVOL-JAVOB";
             UserFaqsPage faqsPage = new UserFaqsPage();
             PageNavigator.Navigate(faqsPage);

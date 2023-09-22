@@ -65,7 +65,7 @@ namespace Profex_Desktop.Windows.SkillWindow
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

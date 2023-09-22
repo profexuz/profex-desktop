@@ -22,7 +22,7 @@ namespace Profex_Desktop.Windows.AboutMaster
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)

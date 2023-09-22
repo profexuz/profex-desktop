@@ -58,6 +58,7 @@ namespace Profex_Desktop.Pages
             wrpVacancies.Children.Clear();
             try
             {
+
                 var usCount = await _userService.CountAsync();
                 var result = await _masterService.GetAllAsync();
                 var vacancy = await _vacancyService.GetAllAsync(1);

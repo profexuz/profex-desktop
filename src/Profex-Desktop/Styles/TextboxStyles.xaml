@@ -101,7 +101,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
                     <Border x:Name="B"
-                            CornerRadius="15 0 0 15" 
+                            CornerRadius="15 15 15 15" 
                             BorderBrush="{DynamicResource ProfileImageBackground}"
                             BorderThickness="1 1 1 1"
                             Background="{TemplateBinding Background}"

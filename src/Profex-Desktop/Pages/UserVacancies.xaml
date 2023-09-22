@@ -33,12 +33,13 @@
                 <TextBox x:Name="Search" Style="{DynamicResource Search}"/>
             </Grid>
             <Button x:Name="btnSearch"
+                    Content="izlash"
                     Click="btnSearch_Click"
-                    Style="{DynamicResource btnSearch}"/>
+                    Style="{DynamicResource SuccessButton}"/>
 
-            <ComboBox x:Name="cmbCategory"
+            <!--<ComboBox x:Name="cmbCategory"
                       Style="{DynamicResource RoundComboBox}">
-            </ComboBox>
+            </ComboBox>-->
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical">
             <Label x:Name="NewAdded" Style="{DynamicResource newAdded}"/>
