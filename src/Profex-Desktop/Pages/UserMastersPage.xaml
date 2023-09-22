@@ -92,7 +92,9 @@
                     <TextBox x:Name="txtSearch" Style="{DynamicResource SearchMaser}"/>
                 </Grid>
                 <Button x:Name="btnSearch" 
-                        Click="btnSearch_Click" Style="{DynamicResource btnSearchMaster}"/>
+                        Content="Izlash"
+                        Height="40"
+                        Click="btnSearch_Click" Style="{DynamicResource searchbtn}"/>
             </StackPanel>
         </Grid>
 

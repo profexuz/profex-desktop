@@ -93,7 +93,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
         <Setter Property="FontSize" Value="15"/>
-        <Setter Property="Height" Value="35"/>
+        <Setter Property="Height" Value="42"/>
         <Setter Property="Width" Value="330"/>
         <Setter Property="Padding" Value="10 5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -101,7 +101,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
                     <Border x:Name="B"
-                            CornerRadius="15 0 0 15" 
+                            CornerRadius="15" 
                             BorderBrush="{DynamicResource ProfileImageBackground}"
                             BorderThickness="1 1 1 1"
                             Background="{TemplateBinding Background}"
@@ -225,7 +225,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
         <Setter Property="FontSize" Value="15"/>
-        <Setter Property="Height" Value="35"/>
+        <Setter Property="Height" Value="42"/>
         <Setter Property="Width" Value="255"/>
         <Setter Property="Padding" Value="10 5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>

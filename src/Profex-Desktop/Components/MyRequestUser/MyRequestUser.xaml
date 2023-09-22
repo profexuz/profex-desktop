@@ -37,13 +37,23 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label x:Name="lblTitle" Grid.Row="0" Content="Title" FontSize="25" Foreground="Red" HorizontalAlignment="Center"/>
-                    <Border Grid.Row="1" Margin="10" CornerRadius="15" Background="White"
+                    <Border Grid.Row="1" Margin="10" CornerRadius="15" Background="Transparent"
                         >
                         <Button
-                        x:Name="btnAccepted" Background="Transparent" Content="Qabul qilish" FontSize="18" Click="btnAccepted_Click"/>
+                        x:Name="btnAccepted" 
+                            Background="Transparent" 
+                            Content="Qabul qilish" 
+                            FontSize="18" 
+                            Style="{DynamicResource SuccessButton}"
+                            Click="btnAccepted_Click"/>
                     </Border>
-                    <Border Grid.Row="2" Margin="10" CornerRadius="15" Background="White">
-                        <Button x:Name="btnIgnore" Background="Transparent" Content="Sorovni rad etish" FontSize="18" Click="btnIgnore_Click"/>
+                    <Border Grid.Row="2" Margin="10" CornerRadius="15" Background="Transparent">
+                        <Button x:Name="btnIgnore" 
+                                Background="Transparent" 
+                                Content="Sorovni rad etish" 
+                                FontSize="18" 
+                                Style="{DynamicResource DeleteButton}"
+                                Click="btnIgnore_Click"/>
                     </Border>
                 </Grid>
             </Grid>

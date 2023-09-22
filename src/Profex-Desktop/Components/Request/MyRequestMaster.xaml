@@ -58,7 +58,7 @@
                            x:Name="lblRequest"
                            Content="Siz bu postga so'rov jo'natgansiz" HorizontalAlignment="Center" Foreground="White" FontSize="12"/>
 
-                    <Border Padding="4" Grid.Row="3" Height="23" Width="130" CornerRadius="10" Background="Blue" Cursor="Hand" MouseDown="BorderDelete_Requests">
+                    <Border Padding="4" Grid.Row="3" Height="23" Width="130" CornerRadius="10" Background="Red" Cursor="Hand" MouseDown="BorderDelete_Requests">
                         <TextBlock Text="Delete" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </Grid>

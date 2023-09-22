@@ -171,7 +171,7 @@
                                 <Border x:Name="B" BorderThickness="0" CornerRadius="35" Height="60" Width="60"  Background="{DynamicResource lblMastersAccountColor}">
                                     <Ellipse Height="58" Width="58">
                                         <Ellipse.Fill>
-                                            <ImageBrush x:Name="MyPhoto" ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                                            <ImageBrush x:Name="MyPhoto" ImageSource="/Assets/Images/DefaultProfileImage.png"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Border>

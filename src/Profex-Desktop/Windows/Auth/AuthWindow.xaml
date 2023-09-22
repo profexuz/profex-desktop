@@ -30,7 +30,7 @@
                 <Border Grid.Column="0" Width="250" Height="320"
                         VerticalAlignment="Top" Margin="0 50">
                     <Border.Background>
-                        <ImageBrush ImageSource="/Assets/Profile images/DefaultProfileImage1.png" />
+                        <ImageBrush ImageSource="/Assets/Images/DefaultProfileImage1.png" />
                     </Border.Background>
                 </Border>
 
