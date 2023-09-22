@@ -1344,7 +1344,7 @@
                         <Label FontSize="16"
                            FontWeight="SemiBold"
                            FontFamily="Jetbrains Mono"
-                           Foreground="White"
+                           Foreground="Black"
                            Content="{TemplateBinding Content}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>

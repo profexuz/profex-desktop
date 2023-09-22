@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         Title="AboutCategoryWindow" Height="800" Width="800">
     <Grid>
-        <Border BorderThickness="12" CornerRadius="15" Background="Blue">
+        <Border BorderThickness="12" CornerRadius="15" Background="#1F2936">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.15*"/>
@@ -23,7 +23,7 @@
                             Click="btnClose_Click" 
                             Style="{DynamicResource CloseButton}"/>
                 <Label Content="Kategoryilar royhati" Foreground="White" FontSize="25" FontFamily="JetBrains Mono" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-                <Border Grid.Row="1" BorderThickness="1" BorderBrush="Blue">
+                <Border Grid.Row="1" BorderThickness="1" BorderBrush="White">
                     <ScrollViewer>
                         <WrapPanel x:Name="wrpPanel" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent"/>
 

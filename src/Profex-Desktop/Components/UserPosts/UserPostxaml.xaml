@@ -54,13 +54,13 @@
                 <Button x:Name="btnUpdate"
                         Click="btnUpdate_Click" 
                             Style="{DynamicResource UpdateButton}"
-                            Content="Update"
+                            Content="Tahrirlash"
                             HorizontalAlignment="Center"/>
                 <Button Grid.Column="1"
                     x:Name="btnDelete"
                         Click="btnDelete_Click" 
                             Style="{DynamicResource DeleteButton}"
-                            Content="Delete"
+                            Content="O'chirish"
                             HorizontalAlignment="Center"/>
             </Grid>
         </Grid>

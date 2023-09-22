@@ -13,7 +13,7 @@
         Loaded="Window_Loaded"
         MouseDown="Window_MouseDown">
     <Grid>
-        <Grid Height="600" VerticalAlignment="Top" >
+        <Grid Height="600" VerticalAlignment="Top" Background="#279EFF" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -68,13 +68,13 @@
             </Border>
 
 
-            <Grid Grid.Column="1" Background="Transparent">
+            <Grid Grid.Column="1" Background="{DynamicResource UserFirstBackground}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="197*"/>
                     <RowDefinition Height="0*"/>
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
-                <Border  Background="White" CornerRadius="40 0 0 0" Grid.RowSpan="3"/>
+                <Border  Background="#279EFF" CornerRadius="40 0 0 0" Grid.RowSpan="3"/>
                 <Border VerticalAlignment="Top" Margin="0,90,0,0" HorizontalAlignment="Center"
                 Height="auto" Width="361" Background="White"
                     CornerRadius="20">

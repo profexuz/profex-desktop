@@ -6,7 +6,9 @@
       xmlns:local="clr-namespace:Profex_Desktop.Pages"
       mc:Ignorable="d" 
       Height="auto" Width="auto"
-      Title="FaqsPage">
+      Title="FaqsPage"
+      Background="#1F2936">
+    
 
     <Grid>
         <Grid.RowDefinitions>

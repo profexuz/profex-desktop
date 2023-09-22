@@ -9,7 +9,7 @@
       Height="auto" Width="360"
       Title="LoginPage"
       Loaded="Page_Loaded"
-      Background="white">
+      Background="#008CFF">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

@@ -27,7 +27,8 @@ namespace Profex_Desktop.Components.MyRequestUser
             Uri imageUri = new Uri(values[0], UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);
             lblTitle.Content = values[1];
-            
+            loader.Visibility = Visibility.Collapsed;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
