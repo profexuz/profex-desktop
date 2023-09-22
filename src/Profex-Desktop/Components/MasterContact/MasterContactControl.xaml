@@ -18,7 +18,7 @@
                     Margin="5" Background="#c12ebf">
                 <Ellipse Height="48" Width="48">
                     <Ellipse.Fill>
-                        <ImageBrush x:Name="ProfileImg"  ImageSource="/Assets/Profile images/DefaultProfileImage.png"/>
+                        <ImageBrush x:Name="ProfileImg"  ImageSource="/Assets/Images/DefaultProfileImage.png"/>
                         
                     </Ellipse.Fill>
                 </Ellipse>

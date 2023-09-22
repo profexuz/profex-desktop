@@ -33,7 +33,7 @@
                         
                         <Border.Background>
                             
-                            <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Profile images/DefoultUserImage.jpg" /> 
+                            <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Images/DefoultUserImage.jpg" /> 
                             
                         </Border.Background>
                     </Border>

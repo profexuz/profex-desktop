@@ -36,7 +36,7 @@
                         BorderThickness="1" CornerRadius="10"
                         Margin="50 50 0 0">
                     <Border.Background>
-                        <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Profile images/DefoultUserImage.jpg" />
+                        <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Images/DefoultUserImage.jpg" />
                     </Border.Background>
                 </Border>
                 <fa:ImageAwesome
@@ -112,8 +112,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btnCancel" Click="btnCancel_Click" Visibility="Hidden" Grid.Column="0" Style="{DynamicResource btnCancel}"/>
-                    <Button x:Name="btnChange" Click="btnChange_Click" Grid.Column="0"  Content="O'zgartirish" Style="{DynamicResource btnCHANGE}"/>
-                    <Button x:Name="btnSave" Click="btnSave_Click" Visibility="Visible" Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
+                    <Button x:Name="btnChange" Click="btnChange_Click"  Grid.Column="0"  Content="O'zgartirish" Style="{DynamicResource btnCHANGE}"/>
+                    <Button x:Name="btnSave" Click="btnSave_Click" Visibility="Hidden" Grid.Column="1" Style="{DynamicResource btnSaveChanges}"/>
                 </Grid>
         </Grid>
             <fa:ImageAwesome

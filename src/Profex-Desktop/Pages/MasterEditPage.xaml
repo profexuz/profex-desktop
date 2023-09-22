@@ -37,7 +37,7 @@
                         BorderThickness="1" CornerRadius="10"
                         Margin="50 50 0 0">
                     <Border.Background>
-                        <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Profile images/DefaultProfileImage.png" />
+                        <ImageBrush x:Name="imgProfile" ImageSource="/Assets/Images/DefaultProfileImage.png" />
                     </Border.Background>
                 </Border>
 

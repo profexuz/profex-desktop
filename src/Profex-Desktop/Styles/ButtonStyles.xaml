@@ -1330,8 +1330,40 @@
     </Style>
 
     
-    
-    
+    <!--search button-->
+    <Style x:Key="searchbtn" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10 0"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B" CornerRadius="5" Background="#6DC534">
+                        <Label FontSize="16"
+                           FontWeight="SemiBold"
+                           FontFamily="Jetbrains Mono"
+                           Foreground="White"
+                           Content="{TemplateBinding Content}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="#66B730"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="#5BA32B"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
     <!--Joylash button-->
     <Style x:Key="JoylashButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10 0"/>

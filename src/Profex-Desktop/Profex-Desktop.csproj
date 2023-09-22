@@ -33,20 +33,6 @@
     <None Remove="Assets\Images\somebreakedthing4.jpg" />
     <None Remove="Assets\Images\somebreakedthing5.jpg" />
     <None Remove="Assets\Images\Vacancy.png" />
-    <None Remove="Assets\Profile images - Copy\default image.jpg" />
-    <None Remove="Assets\Profile images - Copy\default imageLight.jpg" />
-    <None Remove="Assets\Profile images - Copy\defaultimagaUser.jpg" />
-    <None Remove="Assets\Profile images - Copy\defaultimagaUserDark.jpg" />
-    <None Remove="Assets\Profile images - Copy\DefaultProfileImage.png" />
-    <None Remove="Assets\Profile images - Copy\DefaultProfileImage1.png" />
-    <None Remove="Assets\Profile images\default image.jpg" />
-    <None Remove="Assets\Profile images\default imageLight.jpg" />
-    <None Remove="Assets\Profile images\defaultimagaUser.jpg" />
-    <None Remove="Assets\Profile images\defaultimagaUserDark.jpg" />
-    <None Remove="Assets\Profile images\DefaultProfileImage.png" />
-    <None Remove="Assets\Profile images\DefaultProfileImage1.png" />
-    <None Remove="Assets\Profile images\DefoultUserImage.jpg" />
-    <None Remove="Assets\Profile images\userFoto.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -110,44 +96,26 @@
     <Resource Include="Assets\Images\Vacancy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images - Copy\default image.jpg">
+    <Resource Include="Assets\Images\default image.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images - Copy\default imageLight.jpg">
+    <Resource Include="Assets\Images\default imageLight.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images - Copy\defaultimagaUser.jpg">
+    <Resource Include="Assets\Images\defaultimagaUser.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images - Copy\defaultimagaUserDark.jpg">
+    <Resource Include="Assets\Images\defaultimagaUserDark.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images - Copy\DefaultProfileImage.png">
+    <Resource Include="Assets\Images\DefaultProfileImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images - Copy\DefaultProfileImage1.png">
+    <Resource Include="Assets\Images\DefaultProfileImage1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Profile images\default image.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Profile images\default imageLight.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Profile images\defaultimagaUser.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Profile images\defaultimagaUserDark.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Profile images\DefaultProfileImage.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Profile images\DefaultProfileImage1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Profile images\DefoultUserImage.jpg" />
-    <Resource Include="Assets\Profile images\userFoto.png" />
+    <Resource Include="Assets\Images\DefoultUserImage.jpg" />
+    <Resource Include="Assets\Images\userFoto.png" />
   </ItemGroup>
 
 </Project>
