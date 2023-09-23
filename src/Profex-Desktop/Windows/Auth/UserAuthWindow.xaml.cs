@@ -1,4 +1,5 @@
 ﻿using Profex_Desktop.Windows.AuthPages;
+using Profex_Desktop.Windows.StartWindow;
 using System.Windows;
 using System.Windows.Input;
 
@@ -48,6 +49,13 @@ namespace Profex_Desktop.Windows.Auth
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void btnBack_Cliked(object sender, RoutedEventArgs e)
+        {
+            BeginWindow beginWindow = new BeginWindow();
+            beginWindow.Show();
+            this.Close();
         }
     }
 }

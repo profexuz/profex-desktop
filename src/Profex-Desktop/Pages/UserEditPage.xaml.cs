@@ -111,6 +111,7 @@ namespace Profex_Desktop.Pages
             btnChange.Visibility = Visibility.Hidden;
 
 
+
             string token = File.ReadAllText(_path);
             IdentityService identityService = jwtParser.ParseToken(token);
 
@@ -146,8 +147,7 @@ namespace Profex_Desktop.Pages
                 btnSave.Visibility = Visibility.Hidden;
                 btnCancel.Visibility = Visibility.Hidden;
                 btnChange.Visibility = Visibility.Visible;
-                UserMainWindow main = new UserMainWindow();
-                main.Show();
+                this.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -170,6 +170,8 @@ namespace Profex_Desktop.Pages
             loader.Visibility = Visibility.Collapsed;
             loader2.Visibility = Visibility.Collapsed;
         }
+
+        
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {

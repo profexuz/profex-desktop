@@ -110,6 +110,8 @@
         </Grid>
         <Button x:Name="btnClose" Click="btnClose_Clicked" 
                 Style="{DynamicResource RegisterPageCloseButton}"/>
+        <Button x:Name="btnBack" Click="btnBack_Cliked"
+                Style="{DynamicResource BackButton}"/>
     </Grid>
 </Window>
 

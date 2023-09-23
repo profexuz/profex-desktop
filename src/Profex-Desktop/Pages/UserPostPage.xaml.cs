@@ -70,7 +70,7 @@ namespace Profex_Desktop.Pages
                 }
                 vck.SetData(values);
                 inc.SetData(values);
-                    
+                loader.Visibility = Visibility.Collapsed;
                 wrpWords_Groups.Children.Add(vck);
             }
             

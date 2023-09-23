@@ -58,7 +58,7 @@ namespace Profex_Desktop.Pages
         private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             loader.Visibility = Visibility;
-            loader2.Visibility = Visibility;
+            
             string searchText = Search.Text; // Qidiruv so'zini olish
             if (searchText.Length > 0)
             {
