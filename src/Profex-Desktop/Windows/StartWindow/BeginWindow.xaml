@@ -1,0 +1,98 @@
+﻿<Window x:Class="Profex_Desktop.Windows.StartWindow.BeginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Profex_Desktop.Windows.StartWindow"
+             mc:Ignorable="d"
+        Title="StartWindow"
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource UserSecondaryBackground}"
+        AllowsTransparency="True"
+        WindowStyle="None">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Opacity="0.4" Stretch="UniformToFill" ImageSource="/Assets/Images/Agreement.jpeg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="320"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border >
+                <Border Grid.Row="0" Width="250" Height="280"
+                        VerticalAlignment="Top" Margin="0 40 0 0"
+                            CornerRadius="20 20 0 0"
+                        MouseDown="Border_MOuseDown"
+                        Cursor="Hand">
+                    <Border.Background>
+
+                        <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Images/User.png" />
+
+                    </Border.Background>
+                </Border>
+            </Border>
+            <Border Grid.Row="1"
+                    Width="250"
+                    Height="90"
+                    Margin="75,0,75,40"
+                    Background="{DynamicResource UserFirstBackground}"
+                    CornerRadius="0 0 25 25"
+                    MouseDown="Border_MOuseDown"
+                    >
+                <StackPanel >
+                    <Label Content="Xizmat"
+                        Style="{DynamicResource StartStyle}"/>
+                    <Label Content="berishni"
+                       Style="{DynamicResource StartStyle}"/>
+                    <Label Content="hoxlayman"
+                       Style="{DynamicResource StartStyle}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid Grid.Column="1" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="320"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border >
+                <Border Grid.Row="0" Width="250" Height="280"
+                        VerticalAlignment="Top" Margin="0 40 0 0"
+                        CornerRadius="20 20 0 0"
+                        MouseDown="Border_MouseDown_1" Cursor="Hand"
+                        >
+                    <Border.Background>
+
+                        <ImageBrush Stretch="Uniformtofill" ImageSource="/Assets/Images/master.png" />
+
+                    </Border.Background>
+                </Border>
+            </Border>
+            <Border Grid.Row="1"
+                    Width="250"
+                    Height="90"
+                    Margin="75,0,75,40"
+                    Background="{DynamicResource UserFirstBackground}"
+                    CornerRadius="0 0 25 25"
+                    MouseDown="Border_MouseDown_1" Cursor="Hand"
+                    >
+                <StackPanel >
+                    <Label Content="Xizmat"
+                        Style="{DynamicResource StartStyle}"/>
+                    <Label Content="ko'rsatishni"
+                       Style="{DynamicResource StartStyle}"/>
+                    <Label Content="hoxlayman"
+                       Style="{DynamicResource StartStyle}"/>
+                </StackPanel>
+            </Border>
+            <Button x:Name="btnClose" Click="btnClose_Clicked" 
+                Style="{DynamicResource RegisterPageCloseButton}"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -629,18 +629,49 @@
                     <Border x:Name="B"
                             Background="{DynamicResource SideBarBackground}"
                             CornerRadius="50" Padding="0">
-                        <Path Fill="#768C9E"
+                        <Path Fill="#FFFF"
                               Data="{DynamicResource x}" Height="10" Width="10" Stretch="UniformToFill"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="B" Property="Background" Value="#495057"/>
+                            <Setter TargetName="B" Property="Background" Value="#FF5967"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="False">
-                            <Setter TargetName="B" Property="Background" Value="{DynamicResource SideBarBackground}"/>
+                            <Setter TargetName="B" Property="Background" Value="#495057"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="B" Property="Background" Value="#212529"/>
+                            <Setter TargetName="B" Property="Background" Value="#FF1100"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BackButton" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="B"
+                            Background="{DynamicResource SideBarBackground}"
+                            CornerRadius="50" Padding="0">
+                        <Path Fill="Black"
+                              Data="{DynamicResource Back}" Height="10" Width="10" Stretch="UniformToFill" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="green"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="B" Property="Background" Value="#ffff"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="B" Property="Background" Value="lightgreen"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

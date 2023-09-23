@@ -16,26 +16,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Images\Agreement.jpeg" />
     <None Remove="Assets\Images\builders.png" />
     <None Remove="Assets\Images\common users.jpg" />
     <None Remove="Assets\Images\defaultvacanciesimg.jpg" />
     <None Remove="Assets\Images\deleteButton.png" />
     <None Remove="Assets\Images\frequently.png" />
     <None Remove="Assets\Images\Loading.gif" />
+    <None Remove="Assets\Images\Master.png" />
     <None Remove="Assets\Images\nimalardur.png" />
     <None Remove="Assets\Images\plusss.jpg" />
     <None Remove="Assets\Images\ProfexLogoDark.png" />
-    <None Remove="Assets\Images\ProfexLogoLight.png" />
     <None Remove="Assets\Images\qoshish.png" />
     <None Remove="Assets\Images\somebreakedthing1.jpeg" />
     <None Remove="Assets\Images\somebreakedthing2.jpeg" />
     <None Remove="Assets\Images\somebreakedthing3.jpg" />
     <None Remove="Assets\Images\somebreakedthing4.jpg" />
     <None Remove="Assets\Images\somebreakedthing5.jpg" />
+    <None Remove="Assets\Images\User.png" />
     <None Remove="Assets\Images\Vacancy.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Images\Agreement.jpeg" />
     <Resource Include="Assets\Images\deleteButton.png" />
     <Resource Include="Assets\Images\frequently.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -43,6 +46,7 @@
     <Resource Include="Assets\Images\Loading.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Images\Master.png" />
     <Resource Include="Assets\Images\plusss.jpg" />
     <Resource Include="Assets\Images\ProfexLogoDark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -78,9 +82,6 @@
     <Resource Include="Assets\Images\nimalardur.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Images\ProfexLogoLight.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Assets\Images\somebreakedthing1.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -93,6 +94,7 @@
     <Resource Include="Assets\Images\somebreakedthing5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Images\User.png" />
     <Resource Include="Assets\Images\Vacancy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
