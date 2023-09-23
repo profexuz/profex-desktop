@@ -2,6 +2,7 @@
 using Profex_Desktop.Windows.AboutCategory;
 using Profex_Desktop.Windows.UserPostImage;
 using Profex_Desktop.Windows.UserPosts;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Services.Posts;
 using Profex_Integrated.Services.Vacancies;
 using System;
@@ -22,7 +23,6 @@ namespace Profex_Desktop.Pages
         private VacancyService _vacancyService = new VacancyService();
         public long LastId;
         public long ImageId;
-        private string BASE_URL = "http://64.227.42.134:4040/";
         
         public UserPostPage()
         {
@@ -48,7 +48,7 @@ namespace Profex_Desktop.Pages
                 {
                     vck.ImageId = iteeeeem.Id;
                 }
-                values[0] = BASE_URL + item.ImagePath[0];
+                values[0] = API.BASE_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
                 //LastId = item.Id;
@@ -101,7 +101,7 @@ namespace Profex_Desktop.Pages
                         {
                             UserPostxaml userPostxaml = new UserPostxaml();
                             string[] value = new string[3];
-                            value[0] = BASE_URL + word.ImagePath[0];
+                            value[0] = API.BASE_URL + word.ImagePath[0];
                             value[1] = word.Title;
                             userPostxaml.SetData(value);
                             wrpWords_Groups.Children.Add(userPostxaml);
@@ -125,7 +125,7 @@ namespace Profex_Desktop.Pages
                             {
                                 vck.ImageId = iteeeeem.Id;
                             }
-                            values[0] = BASE_URL + item.ImagePath[0];
+                            values[0] = API.BASE_URL + item.ImagePath[0];
                             values[1] = item.Title;
                             values[2] = item.Price.ToString();
                             //LastId = item.Id;

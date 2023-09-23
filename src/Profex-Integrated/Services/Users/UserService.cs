@@ -45,7 +45,8 @@ public class UserService : IUserService
             try
             {
                 client.BaseAddress = new Uri(API.GETALL_USERS);
-                var result = await client.GetAsync(client.BaseAddress);
+                var result = await client.GetAsync(client.BaseAddress+"?page=1");
+                //
 
                 // If the upload failed there is not a lot we can do 
                 if (result.IsSuccessStatusCode)
@@ -73,7 +74,7 @@ public class UserService : IUserService
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = new Uri(API.GETBYID_USERS);
-                var response = await client.GetAsync($"{client.BaseAddress}?userId={id}");
+                var response = await client.GetAsync($"{client.BaseAddress}/{id}");
 
                 if (response.IsSuccessStatusCode)
                 {

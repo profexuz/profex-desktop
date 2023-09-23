@@ -22,7 +22,7 @@ namespace Profex_Desktop.Windows.UserPosts
     {
         private VacancyService vacancyService = new VacancyService();
         public long vacancyId;
-        private string BASE_URL = "htpp://64.227.42.134.4040";
+        //private string BASE_URL = "htpp://64.227.42.134.4040";
         public UserPostviewWindow()
         {
             InitializeComponent();

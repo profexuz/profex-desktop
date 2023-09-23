@@ -1,5 +1,6 @@
 
 using Profex_Desktop.Pages;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
@@ -24,7 +25,7 @@ namespace Profex_Desktop
         private JwtParser jwtParser = new JwtParser();
         //private MasterService _masterService = new MasterService();
         private UserService _userService = new UserService();
-        private string BASEIMG_URL = "http://64.227.42.134:4040/";
+        //private string BASEIMG_URL = "http://64.227.42.134:4040/";
         public UserMainWindow()
         {
             InitializeComponent();
@@ -90,7 +91,7 @@ namespace Profex_Desktop
         private async void Window_loading(object sender, RoutedEventArgs e)
         {
             var result = await _userService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
-            string imageUrl = BASEIMG_URL + result.ImagePath;
+            string imageUrl = API.BASEIMG_URL + result.ImagePath;
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             MyPhoto.ImageSource = new BitmapImage(imageUri);
             //Name.Content = result.FirstName;

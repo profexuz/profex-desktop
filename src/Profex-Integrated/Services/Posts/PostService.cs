@@ -38,6 +38,7 @@ public class PostService : IPostService
                 client.BaseAddress = new Uri(API.GET_ALL_MY_POSTS);
 
                 var response = await client.GetAsync($"{client.BaseAddress}/{identityService.Id}?page={page}");
+                //http://64.227.42.134:5075/api/common/posts/users/26?page=1
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -229,10 +230,7 @@ public class PostService : IPostService
             {
                 client.BaseAddress = new Uri(API.SEARCH_VACANCY);
 
-                // Qidiruv so'zini query parametri sifatida qo'shish
-                //var response = await client.GetAsync($"{client.BaseAddress}?search={search}");
-                var response = await client.GetAsync($"?search={search}");
-                //https://localhost:7145/api/common/master/search?search=das&page=1
+                var response = await client.GetAsync($"?search={search}&page=1");
 
                 if (response.IsSuccessStatusCode)
                 {

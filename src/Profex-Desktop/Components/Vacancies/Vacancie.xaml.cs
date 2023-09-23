@@ -1,4 +1,5 @@
 ﻿using Profex_Desktop.Components.MasterContact;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Services.Users;
 using Profex_Integrated.Services.Vacancies;
 using System;
@@ -17,7 +18,7 @@ namespace Profex_Desktop.Components.Vacancies
     {
         private UserService _userService = new UserService();
         private VacancyService _vacancyService = new VacancyService();
-        private string BASE_URL = "http://64.227.42.134:4040/";
+        //private string BASE_URL = "http://64.227.42.134:4040/";
 
 
         private List<string[]> list = new List<string[]>();
@@ -42,12 +43,12 @@ namespace Profex_Desktop.Components.Vacancies
                 if (count1 == 5) break;
                 if (item.ImagePath.Count > 0)
                 {
-                    imagePaths[index] = BASE_URL + item.ImagePath[0];
+                    imagePaths[index] = API.BASEIMG_URL + item.ImagePath[0];
                     description[index] = item.Description;
                     var getByIdUser = await _userService.GetByIdAsync(item.UserId);
                     string[] list1 = new string[3];
 
-                    string imageUrl = BASE_URL + getByIdUser.ImagePath;
+                    string imageUrl = API.BASEIMG_URL + getByIdUser.ImagePath;
                     list1[0] = imageUrl;
                     list1[1] = getByIdUser.FirstName + " " + getByIdUser.LastName;
                     list1[2] = MakeRandom();
@@ -77,7 +78,7 @@ namespace Profex_Desktop.Components.Vacancies
             string imagePath = imagePaths[currentElement];
             if (imagePath == null)
             {
-                imagePath = BASE_URL + "media\\images\\IMG_91678077-3baf-47ff-81a7-4359f3825c39.png";
+                imagePath = API.BASEIMG_URL + "media\\images\\IMG_91678077-3baf-47ff-81a7-4359f3825c39.png";
             }
             Uri imageUri = new Uri(imagePath, UriKind.Absolute);
             VacancieImg.ImageSource = new BitmapImage(imageUri);

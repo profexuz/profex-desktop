@@ -23,7 +23,7 @@ public class VacancyService : IVacancyService
             try
             {
                 client.BaseAddress = new Uri(API.GETALL_VACANCY);
-                var result = await client.GetAsync($"{client.BaseAddress}?/page={page}");
+                var result = await client.GetAsync($"{client.BaseAddress}?page={page}");
 
                 // If the upload failed there is not a lot we can do 
                 if (result.IsSuccessStatusCode)
@@ -53,7 +53,6 @@ public class VacancyService : IVacancyService
             {
                 client.BaseAddress = new Uri(API.GETBYID_VACANCY);
                 var response = await client.GetAsync($"{client.BaseAddress}/{id}");
-                //http://64.227.42.134:4040/api/common/post/byId/8
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -86,9 +85,8 @@ public class VacancyService : IVacancyService
 
                 // Qidiruv so'zini query parametri sifatida qo'shish
                 //var response = await client.GetAsync($"{client.BaseAddress}?search={search}");
-                var response = await client.GetAsync($"?search={search}");
-                //https://localhost:7145/api/common/master/search?search=das&page=1
-
+                var response = await client.GetAsync($"?search={search}&page=1");
+                
                 if (response.IsSuccessStatusCode)
                 {
                     string responseContent = await response.Content.ReadAsStringAsync();
