@@ -1,4 +1,5 @@
-﻿using Profex_Desktop.Windows.UserPosts;
+﻿using Profex_Desktop.Windows.AboutCategory;
+using Profex_Desktop.Windows.UserPosts;
 using Profex_ViewModels.Categories;
 using System.Windows.Controls;
 
@@ -22,10 +23,12 @@ namespace Profex_Desktop.Components.Categories
 
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            
+            AboutCategoryWindow aboutCategoryWindow = new AboutCategoryWindow();
             UserPostCreateWindow usp = new UserPostCreateWindow();
             usp.CategoryId = categoryId;
+            aboutCategoryWindow.Close();
             usp.ShowDialog();
+            
         }
     }
 }

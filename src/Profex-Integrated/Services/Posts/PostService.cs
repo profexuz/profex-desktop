@@ -38,7 +38,6 @@ public class PostService : IPostService
                 client.BaseAddress = new Uri(API.GET_ALL_MY_POSTS);
 
                 var response = await client.GetAsync($"{client.BaseAddress}/{identityService.Id}?page={page}");
-                //http://64.227.42.134:5075/api/common/posts/users/26?page=1
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -102,9 +101,8 @@ public class PostService : IPostService
         }
         catch { return -1; }
     }
-    public async Task<int> AddPostImage(PostImageCreateDto dto)
+    public async Task<int> AddPostImage(long postid,PostImageCreateDto dto)
     {
-        long son = dto.PostId+1;
         try
         {
             string tokenFilePath = "C:\\Users\\Public\\Token.txt";
@@ -118,16 +116,11 @@ public class PostService : IPostService
             {
                 client.BaseAddress = new Uri(API.CREATE_IMAGE_POST);
                 MultipartFormDataContent formData = new MultipartFormDataContent();
-                formData.Add(new StringContent(son.ToString()), "PostId");
+                formData.Add(new StringContent(dto.PostId.ToString()), "PostId");
                 if (dto.ImagePath != null)
                 {
-                    // Ma'lumotlarni IFormFile turidagi ma'lumot sifatida qo'shish
                     formData.Add(new StreamContent(dto.ImagePath.OpenReadStream()), "ImagePath", dto.ImagePath.FileName);
                 }
-
-
-                //formData.Add(new StringContent(dto.ImagePath.ToString()), "ImagePath");
-
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await client.PostAsync("", formData);
