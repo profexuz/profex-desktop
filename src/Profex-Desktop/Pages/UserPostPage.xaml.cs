@@ -48,13 +48,10 @@ namespace Profex_Desktop.Pages
                 {
                     vck.ImageId = iteeeeem.Id;
                 }
-                values[0] = API.BASE_URL + item.ImagePath[0];
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
                 values[1] = item.Title;
                 values[2] = item.Price.ToString();
-                //LastId = item.Id;
-                //values[3] = LastId;
                 UserPostImageWindow inc = new UserPostImageWindow();
-                //values[3] = item.Id;
                 inc.lastId = item.Id;
                 values[3] = item.Id.ToString();
                 string fileName = "C:\\Users\\Public\\LastID.txt";
@@ -78,12 +75,9 @@ namespace Profex_Desktop.Pages
         }
         private async void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //UserPostCreateWindow userPostCreateWindow = new UserPostCreateWindow();
             AboutCategoryWindow aboutCategoryWindow = new AboutCategoryWindow();
             LastId = aboutCategoryWindow.lastId;
             aboutCategoryWindow.ShowDialog();
-            //userPostCreateWindow.ShowDialog();
-            
         }
 
         private async void tbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -101,7 +95,7 @@ namespace Profex_Desktop.Pages
                         {
                             UserPostxaml userPostxaml = new UserPostxaml();
                             string[] value = new string[3];
-                            value[0] = API.BASE_URL + word.ImagePath[0];
+                            value[0] = API.BASEIMG_URL + word.ImagePath[0];
                             value[1] = word.Title;
                             userPostxaml.SetData(value);
                             wrpWords_Groups.Children.Add(userPostxaml);
@@ -125,13 +119,10 @@ namespace Profex_Desktop.Pages
                             {
                                 vck.ImageId = iteeeeem.Id;
                             }
-                            values[0] = API.BASE_URL + item.ImagePath[0];
+                            values[0] = API.BASEIMG_URL + item.ImagePath[0];
                             values[1] = item.Title;
                             values[2] = item.Price.ToString();
-                            //LastId = item.Id;
-                            //values[3] = LastId;
                             UserPostImageWindow inc = new UserPostImageWindow();
-                            //values[3] = item.Id;
                             inc.lastId = item.Id;
                             values[3] = item.Id.ToString();
                             string fileName = "C:\\Users\\Public\\LastID.txt";

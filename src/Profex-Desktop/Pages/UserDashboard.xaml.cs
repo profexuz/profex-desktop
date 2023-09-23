@@ -76,7 +76,7 @@ namespace Profex_Desktop.Pages
                 foreach (var res in result)
                 {
                     if (count == 6) break; count++;
-                    string imageUrl = API.BASE_URL + res.ImagePath;
+                    string imageUrl = API.BASEIMG_URL + res.ImagePath;
                     MasterContactControl ms = new MasterContactControl();
                     ms.ustaId = res.Id;
                     string[] list =

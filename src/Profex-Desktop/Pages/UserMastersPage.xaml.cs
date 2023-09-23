@@ -47,7 +47,7 @@ namespace Profex_Desktop.Pages
             foreach (var master in search)
             {
                 MasterInfo info = new MasterInfo();
-                maste[0] = API.BASE_URL + master.ImagePath;
+                maste[0] = API.BASEIMG_URL + master.ImagePath;
                 maste[1] = (master.FirstName + " " + master.LastName);
                 maste[2] = (master.PhoneNumber);
                 maste[3] = master.IsFree ? "bo'sh" : "band";
@@ -73,7 +73,7 @@ namespace Profex_Desktop.Pages
                 {
                     MasterInfo info = new MasterInfo();
 
-                    maste[0] =API.BASE_URL + master.ImagePath;
+                    maste[0] =API.BASEIMG_URL + master.ImagePath;
                     maste[1] = (master.FirstName + " " + master.LastName);
                     maste[2] = (master.PhoneNumber);
                     //maste[3] = (master.IsFree.ToString());

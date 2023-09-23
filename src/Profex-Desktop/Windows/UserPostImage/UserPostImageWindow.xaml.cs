@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http.Internal;
+using Profex_Desktop.Windows.AboutCategory;
 using Profex_Dtos.PostImages;
 using Profex_Integrated.Services.Categories;
 using Profex_Integrated.Services.PostImages;
@@ -45,14 +46,13 @@ namespace Profex_Desktop.Windows.UserPostImage
             if(File.Exists(lastIdFilePath))
 {
                 string lastIdContent = File.ReadAllText(lastIdFilePath);
-                if (int.TryParse(lastIdContent, out int lastId))
+                if (long.TryParse(lastIdContent, out long lastId))
                 {
                     PostId = lastId;
                 }
             }
             PostImageCreateDto dto = new PostImageCreateDto();
-            dto.PostId = PostId;
-            //dto.ImagePath = selectedFilePath;
+            dto.PostId = PostId+1;
             if (!string.IsNullOrEmpty(selectedFilePath))
             {
                 // Faylni IFormFile ko'rinishida yaratish
@@ -62,24 +62,33 @@ namespace Profex_Desktop.Windows.UserPostImage
                 BtnImage.IsEnabled = true;
             }
 
-            //var res = await _postImageService.AddPostImage(dto);
-            var res = await _postService.AddPostImage(dto);
+            var res = await _postService.AddPostImage(dto.PostId,dto);
             if(res==1)
             {
+
+                AboutCategoryWindow mcc = new AboutCategoryWindow();
+
                 MessageBox.Show("Muvoffaqiyatli yaratildi");
-                //UserPostImageWindow ms = new UserPostImageWindow();
+                
                 this.Close();
-                //ms.Close();
+                mcc.Close();
             }
             else if(res==0)
             {
+                AboutCategoryWindow mcc = new AboutCategoryWindow();
                 MessageBox.Show("Qandaydir xatolik mavjud berdi, keyinroq qaytadan urinib ko'ring!");
                 this.Close();
+                mcc.Close();
+                
+
+
             }
             else
             {
+                AboutCategoryWindow mcc = new AboutCategoryWindow();
                 MessageBox.Show("Internet aloqasini tekshirib qaytadan urinib ko'ring!");
                 this.Close();
+                mcc.Close();
             }
         }
 

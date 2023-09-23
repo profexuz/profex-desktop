@@ -1,4 +1,5 @@
 ﻿using Notification.Wpf;
+using Profex_Desktop.Windows.AboutCategory;
 using Profex_Desktop.Windows.UserPostImage;
 using Profex_Dtos.Post;
 using Profex_Integrated.Services.Categories;
@@ -17,6 +18,7 @@ namespace Profex_Desktop.Windows.UserPosts
     {
         List<CategoryViewModel> list = new List<CategoryViewModel>();
         public long CategoryId;
+        AboutCategoryWindow aboutCategoryWindow = new AboutCategoryWindow();
         public long PostId;
         private PostService _postService = new PostService();
         private CategoryService _categoryService = new CategoryService();
@@ -48,7 +50,7 @@ namespace Profex_Desktop.Windows.UserPosts
 
         private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
-
+            
             PostCreateDto dto = new PostCreateDto();
             if(validationAttribute.IsValidTitle(txtTitle.Text).isSuccessful==false)
             {
@@ -74,17 +76,12 @@ namespace Profex_Desktop.Windows.UserPosts
                 var notificationManager = new NotificationManager();
                 notificationManager.Show("Diqqat!", validationAttribute.IsValidRegion(txtRegion.Text).Message, NotificationType.Warning);
             }
-            //dto.Region = txtRegion.Text;
 
             else if(validationAttribute.IsValidDistrict(txtDistrict.Text).isSuccessful == false)
             {
                 var notificationManager = new NotificationManager();
                 notificationManager.Show("Diqqat!", validationAttribute.IsValidDistrict(txtDistrict.Text).Message, NotificationType.Warning);
             }
-            //dto.District = txtDistrict.Text;
-
-            //dto.Latidute = 12323;
-            //dto.Longitude = 12321;
             else if(validationAttribute.IsValidPhoneNumber(txtPhoneNumber.Text).isSuccessful==false)
             {
                 var notificationManager = new NotificationManager();
@@ -108,17 +105,18 @@ namespace Profex_Desktop.Windows.UserPosts
                     if (reeesult == MessageBoxResult.Yes)
                     {
                         UserPostImageWindow us = new UserPostImageWindow();
-                        //PostId = us.PostId;
-
+                        
                         us.PostId = PostId;
 
                         us.ShowDialog();
-                        ///MessageBox.Show("Bu funksiya xali qoshilmadi jarayonda");
+                        aboutCategoryWindow.Close();
                     }
                     else
                     {
                         this.Close();
+                        aboutCategoryWindow.Close();
                     }
+                    
                 }
             }
 
