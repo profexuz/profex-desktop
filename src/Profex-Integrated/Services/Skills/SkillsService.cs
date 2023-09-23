@@ -55,7 +55,7 @@ namespace Profex_Integrated.Services.Skills
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(API.GET_ALL_BY_CATEGORY_ID);
-                    var response = await client.GetAsync($"{client.BaseAddress}?categoryId={categoryId}&page={page}");
+                    var response = await client.GetAsync($"{client.BaseAddress}/{categoryId}?page={page}");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -116,6 +116,7 @@ namespace Profex_Integrated.Services.Skills
                 {
                     client.BaseAddress = new Uri(API.GET_ADD_SKILL);
 
+
                     MultipartFormDataContent formData = new MultipartFormDataContent();
 
                     formData.Add(new StringContent(skillId.ToString()), "skillId");
@@ -150,7 +151,7 @@ namespace Profex_Integrated.Services.Skills
 
                     client.BaseAddress = new Uri(API.MY_ALL_SKILL);
 
-                    var response = await client.GetAsync($"{client.BaseAddress}/{identityService.Id}");
+                    var response = await client.GetAsync($"{client.BaseAddress}?masterId={identityService.Id}");
 
                     if (response.IsSuccessStatusCode)
                     {

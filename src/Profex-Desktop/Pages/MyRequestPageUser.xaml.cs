@@ -1,5 +1,6 @@
 ﻿using Profex_Desktop.Components.MyRequestUser;
 using Profex_Desktop.Components.Request;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Services.Requests;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,6 @@ namespace Profex_Desktop.Pages
     public partial class MyRequestPageUser : Page
     {
         private RequestService _requestService = new RequestService();
-        private string BASE_URL = "http://64.227.42.134:4040/";
         private List<long> masterIds = new List<long>(1);
         public long demoInt;
         public MyRequestPageUser()
@@ -76,7 +76,7 @@ namespace Profex_Desktop.Pages
                 masterIds.Clear();
                 //rqm.MasterId = demoInt;
                 rqm.UserId = item.userId;
-                values[0] = BASE_URL + item.imagePath[0];
+                values[0] = API.BASE_URL + item.imagePath[0];
                 values[1] = item.title;
                 values[2] = item.price.ToString();
                 rqm.SetData(values);

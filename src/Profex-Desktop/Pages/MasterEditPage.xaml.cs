@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.Internal;
 using Profex_Dtos.Masters;
+using Profex_Integrated.Helpers;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Masters;
@@ -27,8 +28,7 @@ namespace Profex_Desktop.Pages
         private JwtParser jwtParser = new JwtParser();
         private MasterUpdateDto _masterViewModel = new MasterUpdateDto();
         private string selectedFilePath = "";
-        //private string BASEIMG_URL = "http://localhost:5230/";
-        private string BASEIMG_URL = "http://64.227.42.134:4040/";
+        
 
 
         public MasterEditPage()
@@ -197,7 +197,7 @@ namespace Profex_Desktop.Pages
                 cmbIsFree.SelectedIndex = 0;
             else
                 cmbIsFree.SelectedIndex = 1;
-            string imageUrl = BASEIMG_URL + result.ImagePath;
+            string imageUrl = API.BASEIMG_URL + result.ImagePath;
             Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
             imgProfile.ImageSource = new BitmapImage(imageUri);
             loader.Visibility = Visibility.Collapsed;

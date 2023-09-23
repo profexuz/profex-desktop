@@ -28,7 +28,7 @@ namespace Profex_Integrated.Services.Requests
                 }
                 using (HttpClient client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://64.227.42.134:4040/api/tokenmaster/request/post");
+                    client.BaseAddress = new Uri("http://64.227.42.134:5075/api/masters/post/requests");
                     MultipartFormDataContent formData = new MultipartFormDataContent();
                     formData.Add(new StringContent(vacancyId.ToString()), "PostId");
                     formData.Add(new StringContent(UserId.ToString()), "UserId");
@@ -58,14 +58,14 @@ namespace Profex_Integrated.Services.Requests
 
                 using (HttpClient client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://64.227.42.134:4040/api/tokenmaster/post/request");
+                    client.BaseAddress = new Uri("http://64.227.42.134:5075/api/masters/post/requests");
                     MultipartFormDataContent formData = new MultipartFormDataContent();
                     formData.Add(new StringContent(vacancyId.ToString()), "PostId");
 
                     formData.Add(new StringContent(UserId.ToString()), "UserId");
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "http://64.227.42.134:4040/api/tokenmaster/post/request");
+                    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "http://64.227.42.134:5075/api/masters/post/requests");
                     request.Content = formData;
                     HttpResponseMessage response = await client.SendAsync(request);
 
@@ -101,16 +101,14 @@ namespace Profex_Integrated.Services.Requests
 
                 using (HttpClient client = new HttpClient())
                 {
-                    //client.BaseAddress = new Uri("http://64.227.42.134:4040/api/tokenmaster/post/request");
-                    client.BaseAddress = new Uri("http://64.227.42.134:4040/api/user/post/delete/request");
+                    client.BaseAddress = new Uri("http://64.227.42.134:5075/api/user/posts/requests");
                     MultipartFormDataContent formData = new MultipartFormDataContent();
                     formData.Add(new StringContent(MasterId.ToString()), "MasterId");
 
                     formData.Add(new StringContent(PostId.ToString()), "PostId");
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                    //HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "http://64.227.42.134:4040/api/tokenmaster/post/request");
-                    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "http://64.227.42.134:4040/api/user/post/delete/request");
+                    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, "http://64.227.42.134:5075/api/user/posts/requests");
                     request.Content = formData;
                     HttpResponseMessage response = await client.SendAsync(request);
 
@@ -145,7 +143,7 @@ namespace Profex_Integrated.Services.Requests
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                     client.BaseAddress = new Uri(API.GET_ALL_REQUEST_USESR);
 
-                    var result = await client.GetAsync($"{client.BaseAddress}?/page={page}");
+                    var result = await client.GetAsync($"{client.BaseAddress}?page={page}");
 
                     // If the upload failed there is not a lot we can do 
                     if (result.IsSuccessStatusCode)
@@ -188,7 +186,9 @@ namespace Profex_Integrated.Services.Requests
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                     client.BaseAddress = new Uri(API.GET_ALL_REQUEST);
 
-                    var result = await client.GetAsync($"{client.BaseAddress}?/page={page}");
+                    var result = await client.GetAsync($"{client.BaseAddress}?page={page}");
+                    
+
 
                     // If the upload failed there is not a lot we can do 
                     if (result.IsSuccessStatusCode)
