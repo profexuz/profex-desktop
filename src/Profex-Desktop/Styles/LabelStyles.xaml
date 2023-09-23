@@ -749,7 +749,7 @@
 
     <!--Price label style-->
     <Style x:Key="lblPrice" TargetType="{x:Type Label}">
-        <Setter Property="Content" Value="Marxi"/>
+        <Setter Property="Content" Value="Narxi"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="{DynamicResource UserPrimaryTextColor}"/>
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
@@ -845,5 +845,28 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!--UserTelefon label style-->
+    <Style x:Key="lblTavsif" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Tavsif"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
+    </Style>
+    <Style x:Key="lblTavsif2" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Tavsif"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="{DynamicResource UserSecondaryTextColor}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyNormal}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="5 5 0 5"/>
     </Style>
 </ResourceDictionary>

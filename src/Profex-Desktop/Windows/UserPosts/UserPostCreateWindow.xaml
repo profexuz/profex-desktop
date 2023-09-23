@@ -196,6 +196,7 @@
                     <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
                     
                     <!--Description-->
+                    <Label Grid.Column="0"  x:Name="lblUserTavsif" Style="{DynamicResource lblTavsif}" Margin="0"/>
                     <Border Grid.Row="2" CornerRadius="15" BorderThickness="0 2 0 2" 
                         
                     BorderBrush="{DynamicResource ProfileImageBackground}"

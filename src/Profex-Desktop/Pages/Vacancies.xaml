@@ -36,6 +36,7 @@
                     Click="btnSearch_Click"
                     Content="Izlash"
                     Height="40"
+                    Width="80"
                     Style="{DynamicResource searchbtn}"/>
 
             <!--<ComboBox x:Name="cmbCategory"

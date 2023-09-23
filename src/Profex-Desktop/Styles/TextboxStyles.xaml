@@ -90,7 +90,7 @@
 
     <!--Search textbox style-->
     <Style x:Key="Search" TargetType="TextBox">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="{DynamicResource UserFirstBackground}"/>
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="Height" Value="42"/>
