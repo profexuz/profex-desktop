@@ -93,7 +93,7 @@
                 </Grid>
                 <Button x:Name="btnSearch" 
                         Content="izlash"
-                        Click="btnSearch_Click" Style="{DynamicResource searchbtn}" Height="40"/>
+                        Click="btnSearch_Click" Style="{DynamicResource searchbtn}" Height="40" Width="80"/>
             </StackPanel>
         </Grid>
         

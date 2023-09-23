@@ -90,6 +90,7 @@ namespace Profex_Desktop.Pages
         {
             try
             {
+                loader.Visibility = Visibility.Visible;
                 if (e.Key == Key.Enter)
                 {
                     if (tbSearch.Text.Length > 0)
@@ -152,6 +153,7 @@ namespace Profex_Desktop.Pages
                         }
                     }
                 }
+                loader.Visibility = Visibility.Collapsed;
             }
             catch
             {

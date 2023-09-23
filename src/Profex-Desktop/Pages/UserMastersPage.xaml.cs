@@ -61,6 +61,7 @@ namespace Profex_Desktop.Pages
         {
             wrpMasters.Children.Clear();
             string[] maste = new string[5];
+            loader.Visibility = Visibility;
             if (txtSearch.Text.Length == 0)
             {
                 Loading();
@@ -82,6 +83,7 @@ namespace Profex_Desktop.Pages
                     wrpMasters.Children.Add(info);
                 }
             }
+                loader.Visibility = Visibility.Collapsed;
         }
 
 

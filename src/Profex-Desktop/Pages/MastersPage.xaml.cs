@@ -44,6 +44,7 @@ namespace Profex_Desktop.Pages
 
         private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            loader.Visibility = Visibility.Visible;
             wrpMasters.Children.Clear();
             string[] maste = new string[5];
             if (txtSearch.Text.Length == 0)
@@ -65,6 +66,7 @@ namespace Profex_Desktop.Pages
                     wrpMasters.Children.Add(info);
                 }
             }
+            loader.Visibility = Visibility.Collapsed;
         }
     }
 }

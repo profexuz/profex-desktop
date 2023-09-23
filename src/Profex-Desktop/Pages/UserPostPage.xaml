@@ -39,16 +39,15 @@
                             Fill="{DynamicResource UserSecondaryTextColor}"
                             Data="{DynamicResource search}"/>
                         <TextBox x:Name="tbSearch"
-                                 Grid.Column="1"
                                  VerticalAlignment="Center"
                                  FontSize="16"
-                                 Margin="5 0 5 0"
+                                 Margin="37,0,13,0"
                                  FontFamily="Jetbrains mono"
                                  Foreground="White"
                                  BorderThickness="0"
                                  KeyDown="tbSearch_KeyDown"
-                                   Background="{DynamicResource SearchBachground}"/>
-                        
+                                   Background="{DynamicResource SearchBachground}" Grid.ColumnSpan="2"/>
+
                     </Grid>
                 </Border>
                 <Button x:Name="btnCreate"

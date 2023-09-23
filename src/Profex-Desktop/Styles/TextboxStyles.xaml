@@ -222,14 +222,14 @@
 
     <!--Masters Search textbox style-->
     <Style x:Key="SearchMaser" TargetType="TextBox">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="{DynamicResource UserFirstBackground}"/>
         <Setter Property="Foreground" Value="{DynamicResource ProfileImageBackground}"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="Height" Value="42"/>
         <Setter Property="Width" Value="255"/>
         <Setter Property="Padding" Value="10 5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
