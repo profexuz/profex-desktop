@@ -43,7 +43,8 @@
                      Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing3.jpg"/>
 
                 <RadioButton x:Name="rbImg3" Visibility="Hidden" Click="rbImg3_Click" Style="{DynamicResource Images}"
-                     Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing4.jpg"/>--><!--
+                     Content="C:\Users\99891\Desktop\profex-desktop\src\Profex-Desktop\Assets\Images\somebreakedthing4.jpg"/>-->
+            <!--
 
             </StackPanel>-->
             <Border Grid.Column="1" CornerRadius="20">
@@ -66,7 +67,7 @@
                     <Label x:Name="lblTitle"
                 Style="{DynamicResource lblTitleForMaster
                         }"/>
-                    
+
                     <Border Style="{DynamicResource brLine}"/>
                 </StackPanel>
 
@@ -110,9 +111,10 @@
                 <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
 
                 <!--Description-->
+                <Label Grid.Column="0"  x:Name="lblTavsif" Style="{DynamicResource lblTavsif}" Margin="208,9,0,0" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
                 <Border Grid.Row="2" CornerRadius="15" BorderThickness="1" 
                 BorderBrush="Blue"
-                Padding="5" Margin="10">
+                Padding="5" Margin="10,48,10,42" Grid.RowSpan="2">
                     <ScrollViewer Visibility="Visible">
                         <TextBlock x:Name="txtSkill" Style="{DynamicResource txtDescription}"
                             Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>

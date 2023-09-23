@@ -35,6 +35,7 @@
             <Button x:Name="btnSearch"
                     Click="btnSearch_Click"
                     Height="40"
+                    Width="80"
                     Content="Izlash"
                     Style="{DynamicResource searchbtn}"/>
 

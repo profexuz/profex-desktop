@@ -270,10 +270,11 @@
                         <Border Grid.Row="1" Style="{DynamicResource brLine}"/>
 
                         <!--Description-->
+                        <Label Grid.Row="2"  x:Name="lblTafsif" Style="{DynamicResource lblTavsif}" Margin="10"/>
                         <Border Grid.Row="2" CornerRadius="15" BorderThickness="0 2 0 2" 
                     
                 BorderBrush="{DynamicResource ProfileImageBackground}"
-                Padding="5" Margin="10 100 10 0">
+                Padding="5" Margin="10 20 10 20">
                             <TextBox x:Name="rbDefenation"
                         VerticalAlignment="Top"
                         FontSize="16"
