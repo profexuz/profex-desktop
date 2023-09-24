@@ -42,16 +42,10 @@ namespace Profex_Desktop.Pages
 
             if (clickedElement != null)
             {
-                // OpenFileDialog obyektini yaratish
                 Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
 
-                // Foydalanuvchi faylni tanlashi mumkin bo'lgan fayl formatlari
                 openFileDialog.Filter = "Rasm fayllari|*.jpg;*.jpeg;*.png;|Barcha fayllar|*.*";
-
-                // Faylni tanlash va natijani oluvchi oynani ochish
                 bool? result = openFileDialog.ShowDialog();
-
-                // Agar fayl tanlansa va rasm fayli bo'lsa
                 if (result == true)
                 {
                     selectedFilePath = openFileDialog.FileName;
@@ -64,9 +58,6 @@ namespace Profex_Desktop.Pages
                         MessageBox.Show("Faqat 'jpg','jpeg' va 'png' formatdagi rasmlarni yuklay olasiz", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                         btnSave.IsEnabled = false;
                     }
-
-                    // Tanlangan rasm faylini olish va kerakli ishlar bilan davom etish
-                    // Misol uchun: Tanlangan rasmni bir joyga joylash va uni ko'rsatish
                     ImageSource imageSource = new BitmapImage(new Uri(selectedFilePath));
                     imgProfile.ImageSource = imageSource;
                 }
@@ -113,7 +104,6 @@ namespace Profex_Desktop.Pages
             
             if (!string.IsNullOrEmpty(selectedFilePath))
             {
-                // Faylni IFormFile ko'rinishida yaratish
                 var fileBytes = File.ReadAllBytes(selectedFilePath);
                 var fileName = System.IO.Path.GetFileName(selectedFilePath);
                 _userViewModel.ImagePath = new FormFile(new MemoryStream(fileBytes), 0, fileBytes.Length, null, fileName);
@@ -122,28 +112,14 @@ namespace Profex_Desktop.Pages
             else
             {
                 var res = await _userService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
-
-                // _masterViewModel.ImagePath ga ro'yxatni o'rnating
                 _userViewModel.ImagePath = new FormFile(new MemoryStream(Encoding.UTF8.GetBytes(res.ImagePath)), 0, res.ImagePath.Length, null, System.IO.Path.GetFileName(res.ImagePath));
                 btnSave.IsEnabled = true;
             }
             
             var result = await _userService.UpdateAsync(identityService.Id, _userViewModel);
-            
             if (result == true)
             {
-
                 await RefreshAsync();
-                /*txtFName.IsReadOnly = true;
-                txtLName.IsReadOnly = true;
-                txtNum.IsReadOnly = true;
-                *///cmbIsFree.IsReadOnly = true;
-
-                /*btnSave.Visibility = Visibility.Hidden;
-                btnCancel.Visibility = Visibility.Hidden;
-                btnChange.Visibility = Visibility.Visible;
-                this.Visibility = Visibility.Hidden;*/
-
             }
             else
             {

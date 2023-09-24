@@ -22,7 +22,7 @@ namespace Profex_Desktop.Components.UserPosts
         public long ImageId;
         private PostService _postService = new PostService();
         private VacancyService _vacancyService = new VacancyService();
-        
+        public Action RefreshAsync { get; set; }
         public UserPostxaml()
         {
             InitializeComponent();
@@ -52,18 +52,21 @@ namespace Profex_Desktop.Components.UserPosts
            { 
                var result = await _vacancyService.RemoveAsync(vacancyId);
 
-               // Check the result and take appropriate action.
+               
                if (result == 1)
                {
                    MessageBox.Show("Sizning postingiz muvaffaqiyatli o'chirildi!");
+                    RefreshAsync();
                 }
                else if (result == 0)
                {
                    MessageBox.Show("Siz ushbu postni avval o'chirgansiz");
+                    RefreshAsync();
                }
                else if (result == -1)
                {
                    MessageBox.Show("Post o'chirishda xatolik mavjud, iltimos qaytadan urinib ko'ring!");
+                   RefreshAsync();
                }
            }
            catch

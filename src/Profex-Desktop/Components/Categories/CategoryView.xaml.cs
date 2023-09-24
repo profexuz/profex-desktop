@@ -11,10 +11,10 @@ namespace Profex_Desktop.Components.Categories
     /// </summary>
     public partial class CategoryView : UserControl
     {
-        public Action CloseWindow { get; set; }
+        
 
         public long categoryId;
-
+        public Action CloseWindow { get; set; }
         public CategoryView()
         {
             InitializeComponent();
@@ -24,21 +24,14 @@ namespace Profex_Desktop.Components.Categories
             categoryId = categoryViewModel.Id;
             CategoryTitle.Content = categoryViewModel.Name;
         } 
-        public void Closse()
-        {
-            //this.CloseWindow();
-            this.Closse();
-        }
-
+        
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            AboutCategoryWindow aboutCategoryWindow = new AboutCategoryWindow();
             UserPostCreateWindow usp = new UserPostCreateWindow();
             usp.CategoryId = categoryId;
             usp.CloseWindow = CloseWindow;
-            aboutCategoryWindow.Close();
+
             usp.ShowDialog();
-            //CloseWindow();
         }
     }
 }
