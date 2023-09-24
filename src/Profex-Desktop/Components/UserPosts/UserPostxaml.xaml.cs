@@ -56,17 +56,15 @@ namespace Profex_Desktop.Components.UserPosts
                if (result == 1)
                {
                    MessageBox.Show("Sizning postingiz muvaffaqiyatli o'chirildi!");
-                    RefreshAsync();
+                   RefreshAsync();
                 }
                else if (result == 0)
                {
                    MessageBox.Show("Siz ushbu postni avval o'chirgansiz");
-                    RefreshAsync();
                }
                else if (result == -1)
                {
                    MessageBox.Show("Post o'chirishda xatolik mavjud, iltimos qaytadan urinib ko'ring!");
-                   RefreshAsync();
                }
            }
            catch

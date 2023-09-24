@@ -114,16 +114,19 @@ public class PostService : IPostService
             }
             using (HttpClient client = new HttpClient())
             {
-                client.BaseAddress = new Uri(API.CREATE_IMAGE_POST);
+                client.BaseAddress = new Uri("http://64.227.42.134:5075/api/user/posts/images");
                 MultipartFormDataContent formData = new MultipartFormDataContent();
                 formData.Add(new StringContent(dto.PostId.ToString()), "PostId");
                 if (dto.ImagePath != null)
                 {
                     formData.Add(new StreamContent(dto.ImagePath.OpenReadStream()), "ImagePath", dto.ImagePath.FileName);
                 }
+                //http://64.227.42.134:5075/api/user/posts/images
+                //http://64.227.42.134:5075/api/user/posts/images
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await client.PostAsync("", formData);
+                
                 if (response.IsSuccessStatusCode)
                 {
                     return 1;

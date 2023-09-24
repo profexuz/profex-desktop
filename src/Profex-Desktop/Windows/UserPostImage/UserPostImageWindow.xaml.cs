@@ -46,8 +46,9 @@ namespace Profex_Desktop.Windows.UserPostImage
         }
         private async void BtnImage_Click(object sender, RoutedEventArgs e)
         {
+            loader2.Visibility = Visibility.Visible;
             if(File.Exists(lastIdFilePath))
-{
+            {
                 string lastIdContent = File.ReadAllText(lastIdFilePath);
                 if (long.TryParse(lastIdContent, out long lastId))
                 {
@@ -70,18 +71,19 @@ namespace Profex_Desktop.Windows.UserPostImage
 
                 AboutCategoryWindow mcc = new AboutCategoryWindow();
 
+                loader2.Visibility= Visibility.Collapsed;
                 MessageBox.Show("Muvoffaqiyatli yaratildi");
-                
                 this.Close();
                 if (CloseWindow != null)
                     CloseWindow();
                 UserPostCreateWindow userpostcreate = new UserPostCreateWindow();
                 userpostcreate.Hide();
-                //CloseWindow();
+                
             }
             else if(res==0)
             {
                 AboutCategoryWindow mcc = new AboutCategoryWindow();
+                loader2.Visibility= Visibility.Collapsed;
                 MessageBox.Show("Qandaydir xatolik mavjud berdi, keyinroq qaytadan urinib ko'ring!");
                 this.Close();
                 mcc.Close();
@@ -92,6 +94,7 @@ namespace Profex_Desktop.Windows.UserPostImage
             else
             {
                 AboutCategoryWindow mcc = new AboutCategoryWindow();
+                loader2.Visibility= Visibility.Collapsed;
                 MessageBox.Show("Internet aloqasini tekshirib qaytadan urinib ko'ring!");
                 this.Close();
                 mcc.Close();

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profex_Desktop.Windows.UserPostImage"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Background="Transparent"
         WindowStyle="None"
@@ -48,6 +49,7 @@
                
 
             </Border>
+            
 
             <Border Grid.Row="0"
         CornerRadius="10 10 0 0"
@@ -58,9 +60,18 @@
             HorizontalAlignment="Right"/>
             </Border>
 
-
-
-
+            <fa:ImageAwesome
+                Grid.Row="1"
+                x:Name="loader2"
+                Icon="Spinner"
+                Visibility="Hidden"
+                Spin="True"
+                Foreground="{DynamicResource Loaders}"
+                Margin="0 0 0 0"
+                Height="100"
+                />
+            
         </Grid>
+        
     </Border>
 </Window>

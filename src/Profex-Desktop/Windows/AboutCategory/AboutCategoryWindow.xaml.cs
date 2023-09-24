@@ -60,7 +60,7 @@ namespace Profex_Desktop.Windows.AboutCategory
                     categoryView.SetData(category);
 
                     wrpPanel.Children.Add(categoryView);
-                    
+                    loader2.Visibility = Visibility.Collapsed;            
                 }
                 
             }

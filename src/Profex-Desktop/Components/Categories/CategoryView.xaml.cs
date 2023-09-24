@@ -30,7 +30,6 @@ namespace Profex_Desktop.Components.Categories
             UserPostCreateWindow usp = new UserPostCreateWindow();
             usp.CategoryId = categoryId;
             usp.CloseWindow = CloseWindow;
-
             usp.ShowDialog();
         }
     }

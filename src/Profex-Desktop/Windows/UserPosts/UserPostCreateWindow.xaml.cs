@@ -4,8 +4,10 @@ using Profex_Desktop.Windows.UserPostImage;
 using Profex_Dtos.Post;
 using Profex_Integrated.Services.Categories;
 using Profex_Integrated.Services.Posts;
+using Profex_Integrated.Services.Vacancies;
 using Profex_Integrated.Validation;
 using Profex_ViewModels.Categories;
+using Profex_ViewModels.Vacancies;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -23,6 +25,7 @@ namespace Profex_Desktop.Windows.UserPosts
         public long PostId;
         private PostService _postService = new PostService();
         private CategoryService _categoryService = new CategoryService();
+        private readonly VacancyService _vacancyService = new VacancyService();
         ValidationAttribute validationAttribute = new ValidationAttribute();
         List<string> lst = new List<string>();
 
@@ -44,10 +47,16 @@ namespace Profex_Desktop.Windows.UserPosts
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            var resultCatrgory = await _categoryService.GetAll(1);
-            foreach(var iiii in resultCatrgory)
+            /*var resultCatrgory = await _categoryService.GetAll(2);
+            foreach (var iiii in resultCatrgory)
             {
                 PostId = iiii.Id;
+            }
+*/
+            var res = await _vacancyService.GetAllAsync(1);
+            foreach(var item in res)
+            {
+                PostId = item.Id;
             }
         }
 
@@ -110,13 +119,14 @@ namespace Profex_Desktop.Windows.UserPosts
                         UserPostImageWindow us = new UserPostImageWindow();
                         us.PostId = PostId;
                         us.ShowDialog();
+                        this.Hide();
 
                     }
                     else
                     {
                         this.Close();
                     }
-                    CloseWindow();
+                    //CloseWindow();
                     
                 }
             }
