@@ -43,5 +43,13 @@ namespace Profex_Desktop.Windows.StartWindow
         {
             Application.Current.Shutdown();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserMainWindow usm  = new UserMainWindow(); 
+            usm.Close();
+            MainWindow mwm = new MainWindow();
+            mwm.Close();
+        }
     }
 }

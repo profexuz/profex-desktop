@@ -45,15 +45,16 @@
                                 Margin="15 0 0 10" Padding="10 120 10 0">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
-                                    <RowDefinition Height="79"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    
                                 </Grid.RowDefinitions>
                                 <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                Checked="rbDashboard_Click"
@@ -95,7 +96,17 @@
                                          
                                     Content="Mahoratlarim">
                                 <RadioButton.ToolTip>
-                                    <TextBlock>Skills</TextBlock>
+                                    <TextBlock>Mahoratlarim</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+
+                            <RadioButton x:Name="rbSignOut" Grid.Row="8" 
+                                        Click="rbSignOut_Click" 
+                                         Style="{DynamicResource SideBarButton}"
+                                        Tag="{DynamicResource SignOut}"
+                                Content="Chiqish">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Chiqish</TextBlock>
                                 </RadioButton.ToolTip>
                             </RadioButton>
 
@@ -106,7 +117,7 @@
                                             Tag="{DynamicResource MyRequests}"
                                                 Content="So'rovlarim" Checked="rbMyRequests_Checked">
                                 <RadioButton.ToolTip>
-                                    <TextBlock>MyRequests</TextBlock>
+                                    <TextBlock>Mening so'rovlarim</TextBlock>
                                 </RadioButton.ToolTip>
                             </RadioButton>
 
@@ -118,7 +129,7 @@
                                     Tag="{DynamicResource Requests}"
                                         Content="So'rovlar">
                                 <RadioButton.ToolTip>
-                                    <TextBlock>Requests</TextBlock>
+                                    <TextBlock>So'rovlar</TextBlock>
                                 </RadioButton.ToolTip>
                             </RadioButton>
 

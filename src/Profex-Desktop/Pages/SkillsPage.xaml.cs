@@ -4,6 +4,7 @@ using Profex_Integrated.Services.Skills;
 using Profex_ViewModels.Categories;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -31,6 +32,36 @@ namespace Profex_Desktop.Pages
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            wrpSkills.Children.Clear();
+            try
+            {
+                var result = await _skillsService.GetAllAysnc(page);
+                categoryCount = result.Count();
+                foreach (var item in result)
+                {
+                    SkillInformation ms = new SkillInformation();
+                    ms.skillId = item.Id;
+                    ms.CategoryId = item.Id;
+
+                    var category = new CategoryViewModel
+                    {
+                        Id = item.Id,
+                        Name = item.Name
+                    };
+
+                    ms.SetData(category);
+
+                    wrpSkills.Children.Add(ms);
+                }
+                loader.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public async Task RefreshAsync()
         {
             wrpSkills.Children.Clear();
             try

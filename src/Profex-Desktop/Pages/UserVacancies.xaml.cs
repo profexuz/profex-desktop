@@ -69,6 +69,44 @@ namespace Profex_Desktop.Pages
 
             }
         }
+        public async Task RefreshAsync()
+        {
+            wrpNewsVacancy.Children.Clear();
+            wrpAdvertising.Children.Clear();
+            var result = await _vacancyService.GetAllAsync(1);
+            string[] values = new string[3];
+            byte count = 0;
+            foreach (var item in result)
+            {
+                if (count == 4) break; count++;
+                Vacancy vacancy = new Vacancy();
+                vacancy.vacancyId = item.Id;
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
+                values[1] = item.Title;
+                values[2] = item.Price.ToString();
+                vacancy.SetData(values);
+                wrpNewsVacancy.Children.Add(vacancy);
+                loader.Visibility = Visibility.Collapsed;
+            }
+
+            count = 0;
+            foreach (var item in result)
+            {
+                if (count == 6)
+                {
+                    count++;
+                    continue;
+                }
+                Vacancy vacancy = new Vacancy();
+                vacancy.vacancyId = item.Id;
+                values[0] = API.BASEIMG_URL + item.ImagePath[0];
+                values[1] = item.Title;
+                values[2] = item.Price.ToString();
+                vacancy.SetData(values);
+                wrpAdvertising.Children.Add(vacancy);
+
+            }
+        }
 
         private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {

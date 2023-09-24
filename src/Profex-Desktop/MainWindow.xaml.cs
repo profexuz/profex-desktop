@@ -1,5 +1,6 @@
 ﻿using Profex_Desktop.Components.Loading;
 using Profex_Desktop.Pages;
+using Profex_Desktop.Windows.StartWindow;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
@@ -150,6 +151,13 @@ namespace Profex_Desktop
         private void rbMyRequests_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void rbSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            BeginWindow begw = new BeginWindow();
+            begw.ShowDialog();
         }
 
         //private void IsChecked(object sender, RoutedEventArgs e)

@@ -1,5 +1,6 @@
 
 using Profex_Desktop.Pages;
+using Profex_Desktop.Windows.StartWindow;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Interfaces;
 using Profex_Integrated.Security;
@@ -128,6 +129,13 @@ namespace Profex_Desktop
             MyRequestPageUser mys = new MyRequestPageUser();
             PageNavigator.Navigate(mys);
 
+        }
+
+        private void rbChiqish(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            BeginWindow begw = new BeginWindow();
+            begw.ShowDialog();
         }
     }
 }

@@ -55,17 +55,14 @@ namespace Profex_Desktop.Components.UserPosts
                // Check the result and take appropriate action.
                if (result == 1)
                {
-                   // Skill added successfully, you can update your UI here if needed.
                    MessageBox.Show("Sizning postingiz muvaffaqiyatli o'chirildi!");
-               }
+                }
                else if (result == 0)
                {
-                   // Handle the case where adding the skill failed.
                    MessageBox.Show("Siz ushbu postni avval o'chirgansiz");
                }
                else if (result == -1)
                {
-                   // Handle unexpected errors.
                    MessageBox.Show("Post o'chirishda xatolik mavjud, iltimos qaytadan urinib ko'ring!");
                }
            }
