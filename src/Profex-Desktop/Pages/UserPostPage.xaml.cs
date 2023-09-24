@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace Profex_Desktop.Pages
 {
@@ -41,7 +42,8 @@ namespace Profex_Desktop.Pages
                 UserPostxaml vck = new UserPostxaml();
                 vck.vacancyId = item.Id;
                 vck.categoryId = item.CategoryId;
-                foreach(var iteeeeem in item.Images)
+                vck.RefreshAsync = RefreshAsync;
+                foreach (var iteeeeem in item.Images)
                 {
                     vck.ImageId = iteeeeem.Id;
                 }
@@ -67,7 +69,7 @@ namespace Profex_Desktop.Pages
                 wrpWords_Groups.Children.Add(vck);
             }
         }
-        public async Task RefreshAsync()
+        public async void RefreshAsync()
         {
             wrpWords_Groups.Children.Clear();
             var result1 = await _postService.GetAllMyPost(1);
@@ -111,7 +113,7 @@ namespace Profex_Desktop.Pages
             AboutCategoryWindow aboutCategoryWindow = new AboutCategoryWindow();
             LastId = aboutCategoryWindow.lastId;
             aboutCategoryWindow.ShowDialog();
-            await RefreshAsync();
+            RefreshAsync();
         }
 
         private async void tbSearch_KeyDown(object sender, KeyEventArgs e)

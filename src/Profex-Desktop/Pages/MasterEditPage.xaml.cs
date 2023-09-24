@@ -56,16 +56,9 @@ namespace Profex_Desktop.Pages
 
             if (clickedElement != null)
             {
-                // OpenFileDialog obyektini yaratish
                 Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-
-                // Foydalanuvchi faylni tanlashi mumkin bo'lgan fayl formatlari
                 openFileDialog.Filter = "Rasm fayllari|*.jpg;*.jpeg;*.png;|Barcha fayllar|*.*";
-
-                // Faylni tanlash va natijani oluvchi oynani ochish
                 bool? result = openFileDialog.ShowDialog();
-
-                // Agar fayl tanlansa va rasm fayli bo'lsa
                 if (result == true)
                 {
                     selectedFilePath = openFileDialog.FileName;
@@ -136,16 +129,7 @@ namespace Profex_Desktop.Pages
             var result = await _masterService.UpdateAsync(identityService.Id, _masterViewModel);
             if (result == true)
             {
-                txtFName.IsReadOnly = true;
-                txtLName.IsReadOnly = true;
-                txtNum.IsReadOnly = true;
-                cmbIsFree.IsReadOnly = true;
-
-                btnSave.Visibility = Visibility.Hidden;
-                btnCancel.Visibility = Visibility.Hidden;
-                btnChange.Visibility = Visibility.Visible;
-                MainWindow main = new MainWindow();
-                main.Show();
+                await RefreshAsync();
             }
             else
             {
@@ -200,6 +184,9 @@ namespace Profex_Desktop.Pages
             imgProfile.ImageSource = new BitmapImage(imageUri);
             loader.Visibility = Visibility.Collapsed;
             loader1.Visibility = Visibility.Collapsed;
+            btnSave.Visibility = Visibility.Hidden;
+            btnCancel.Visibility = Visibility.Hidden;
+            btnChange.Visibility = Visibility.Visible;
         }
     }
 }

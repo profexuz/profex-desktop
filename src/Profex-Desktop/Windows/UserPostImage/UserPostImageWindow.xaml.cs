@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.Internal;
 using Profex_Desktop.Windows.AboutCategory;
+using Profex_Desktop.Windows.UserPosts;
 using Profex_Dtos.PostImages;
 using Profex_Integrated.Services.Categories;
 using Profex_Integrated.Services.PostImages;
@@ -41,6 +42,7 @@ namespace Profex_Desktop.Windows.UserPostImage
         public void SetData(string[] values)
         {
             lastId = long.Parse(values[3]);
+
         }
         private async void BtnImage_Click(object sender, RoutedEventArgs e)
         {
@@ -56,7 +58,6 @@ namespace Profex_Desktop.Windows.UserPostImage
             dto.PostId = PostId+1;
             if (!string.IsNullOrEmpty(selectedFilePath))
             {
-                // Faylni IFormFile ko'rinishida yaratish
                 var fileBytes = File.ReadAllBytes(selectedFilePath);
                 var fileName = Path.GetFileName(selectedFilePath);
                 dto.ImagePath = new FormFile(new MemoryStream(fileBytes), 0, fileBytes.Length, null, fileName);
@@ -72,8 +73,11 @@ namespace Profex_Desktop.Windows.UserPostImage
                 MessageBox.Show("Muvoffaqiyatli yaratildi");
                 
                 this.Close();
-                //mcc.Close();
-                CloseWindow();
+                if (CloseWindow != null)
+                    CloseWindow();
+                UserPostCreateWindow userpostcreate = new UserPostCreateWindow();
+                userpostcreate.Hide();
+                //CloseWindow();
             }
             else if(res==0)
             {

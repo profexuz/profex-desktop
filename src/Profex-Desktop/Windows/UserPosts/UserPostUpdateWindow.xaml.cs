@@ -1,6 +1,7 @@
 ﻿using Profex_Desktop.Windows.UserPostImage;
 using Profex_Dtos.Post;
 using Profex_Integrated.Services.Posts;
+using System;
 using System.Windows;
 
 namespace Profex_Desktop.Windows.UserPosts
@@ -44,12 +45,6 @@ namespace Profex_Desktop.Windows.UserPosts
                 var reeesult = MessageBox.Show("Postingiz muvofaqiyatli ravishda yangilandi", "Warning", MessageBoxButton.OK);
                 if (reeesult == MessageBoxResult.OK)
                 {
-                    /*//UserPostImageWindow us = new UserPostImageWindow();
-                    UserPostImageUpdateWindow us = new UserPostImageUpdateWindow();
-                    vacancyId = us.PostId;
-                    //ImageID = us.imageID;
-                    us.imageID = ImageID;
-                    us.ShowDialog();*/
                     this.Close();
                 }
                 else

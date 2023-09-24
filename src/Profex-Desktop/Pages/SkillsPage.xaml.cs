@@ -26,11 +26,6 @@ namespace Profex_Desktop.Pages
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             wrpSkills.Children.Clear();
@@ -51,7 +46,6 @@ namespace Profex_Desktop.Pages
                     };
 
                     ms.SetData(category);
-
                     wrpSkills.Children.Add(ms);
                 }
                 loader.Visibility = Visibility.Collapsed;
@@ -96,11 +90,6 @@ namespace Profex_Desktop.Pages
         {
             MySkillWindow msk = new MySkillWindow();
             msk.ShowDialog();
-        }
-
-        private void btnMySkills_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

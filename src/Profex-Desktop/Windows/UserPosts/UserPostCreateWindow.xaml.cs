@@ -25,6 +25,7 @@ namespace Profex_Desktop.Windows.UserPosts
         private CategoryService _categoryService = new CategoryService();
         ValidationAttribute validationAttribute = new ValidationAttribute();
         List<string> lst = new List<string>();
+
         public Action CloseWindow { get; set; }
 
         public UserPostCreateWindow()
@@ -109,18 +110,13 @@ namespace Profex_Desktop.Windows.UserPosts
                         UserPostImageWindow us = new UserPostImageWindow();
                         us.PostId = PostId;
                         us.ShowDialog();
-                        us.CloseWindow = CloseWindow;
-                        //aboutCategoryWindow.Close();
-                        //AboutCategory
-                        //AboutCategoryWindow.close
 
                     }
                     else
                     {
                         this.Close();
-                        //aboutCategoryWindow.Close();
                     }
-                    
+                    CloseWindow();
                     
                 }
             }

@@ -49,6 +49,34 @@ namespace Profex_Desktop.Windows.SkillWindow
                         Description = item.Description,
                         CategoryId = item.CategoryId,
                     };
+                    msk.Yangilash = Yangilash;
+                    msk.SetData(myskill);
+                    wrpPanel.Children.Add(msk);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public async void Yangilash()
+        {
+            wrpPanel.Children.Clear();
+            try
+            {
+                var result = await _skillsService.GetAllMySkills(masterId);
+
+                foreach (var item in result.MasterSkills)
+                {
+                    MySkills msk = new MySkills();
+
+                    var myskill = new SkillViewModel
+                    {
+                        Id = item.Id,
+                        Title = item.Title,
+                        Description = item.Description,
+                        CategoryId = item.CategoryId,
+                    };
 
                     msk.SetData(myskill);
 
@@ -60,6 +88,8 @@ namespace Profex_Desktop.Windows.SkillWindow
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
-            
+
+
 }
