@@ -18,6 +18,7 @@ namespace Profex_Desktop.Windows.AboutCategory
         public long lastId;
         private CategoryService _categoryService = new CategoryService();    
         public long categoryCount;
+
         public AboutCategoryWindow()
         {
             InitializeComponent();
@@ -25,8 +26,12 @@ namespace Profex_Desktop.Windows.AboutCategory
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
+        }
 
+        public void CloseWindow()
+        {
+            this.Close();
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -51,6 +56,7 @@ namespace Profex_Desktop.Windows.AboutCategory
                     };
                     lastId = item.Id;
                     categoryView.categoryId = item.Id;
+                    categoryView.CloseWindow = CloseWindow;
                     categoryView.SetData(category);
 
                     wrpPanel.Children.Add(categoryView);

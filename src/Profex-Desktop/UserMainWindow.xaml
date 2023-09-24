@@ -52,6 +52,10 @@
                                 <RowDefinition Height="65"/>
                                 <RowDefinition Height="65"/>
                                 <RowDefinition Height="65"/>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <RadioButton x:Name="rbDashboard" Grid.Row="0"
                                                Checked="rbDashboard_Click"
@@ -104,6 +108,19 @@
                                     <TextBlock>Menga yuborilgan so'rovlar</TextBlock>
                                 </RadioButton.ToolTip>
                             </RadioButton>
+
+
+                            <RadioButton x:Name="rbSignOut" Grid.Row="9"
+                            Click="rbChiqish" Style="{DynamicResource UserSideBarButton}"
+                            Tag="{DynamicResource SignOut}"
+                            Content="Chiqish">
+                                <RadioButton.ToolTip>
+                                    <TextBlock>Ilovadan chiqib ketish</TextBlock>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+
+
+
 
                             <RadioButton x:Name="rbFAQs" Grid.Row="6"
                                                 Click="rbFAQs_Click" Style="{DynamicResource UserSideBarButton}"

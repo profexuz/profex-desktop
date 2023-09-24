@@ -4,11 +4,11 @@ using Profex_Integrated.Helpers;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Masters;
-using Profex_ViewModels.Masters;
 using System;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -110,25 +110,9 @@ namespace Profex_Desktop.Pages
             _masterViewModel.FirstName = txtFName.Text;
             _masterViewModel.LastName = txtLName.Text;
             _masterViewModel.PhoneNumber = "+" + txtNum.Text;
-            /*if (selectedFilePath != "")
-            {
-                //_masterViewModel.ImagePath = selectedFilePath.ToString();
-                //_masterViewModel.ImagePath = selectedFilePath.ToString();
-                _masterViewModel.ImagePath = selectedFilePath;
-                btnSave.IsEnabled = true;
-            }
-
-            else
-            {
-                var res = await _masterService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
-                _masterViewModel.ImagePath = res.ImagePath;
-                btnSave.IsEnabled = true;
-            }
-*/
 
             if (!string.IsNullOrEmpty(selectedFilePath))
             {
-                // Faylni IFormFile ko'rinishida yaratish
                 var fileBytes = File.ReadAllBytes(selectedFilePath);
                 var fileName = Path.GetFileName(selectedFilePath);
                 _masterViewModel.ImagePath = new FormFile(new MemoryStream(fileBytes), 0, fileBytes.Length, null, fileName);
@@ -138,7 +122,6 @@ namespace Profex_Desktop.Pages
             {
                 var res = await _masterService.GetByIdAsync(IdentitySingelton.GetInstance().Id);
 
-                // _masterViewModel.ImagePath ga ro'yxatni o'rnating
                 _masterViewModel.ImagePath = new FormFile(new MemoryStream(Encoding.UTF8.GetBytes(res.ImagePath)), 0, res.ImagePath.Length, null, Path.GetFileName(res.ImagePath));
                 btnSave.IsEnabled = true;
             }
@@ -175,10 +158,7 @@ namespace Profex_Desktop.Pages
             btnCancel.Visibility = Visibility.Visible;
             btnChange.Visibility = Visibility.Hidden;
             brUpload.IsEnabled = true;
-            /*txtFName.Text = "";
-            txtLName.Text = "";
-            txtNum.Text = "";
-*/
+
             txtFName.IsReadOnly = false;
             txtLName.IsReadOnly = false;
             txtNum.IsReadOnly = false;
@@ -186,6 +166,24 @@ namespace Profex_Desktop.Pages
         }
 
         private async void Page_loaded(object sender, RoutedEventArgs e)
+        {
+            string token = File.ReadAllText(_path);
+            IdentityService identityService = jwtParser.ParseToken(token);
+            var result = await _masterService.GetByIdAsync(identityService.Id);
+            txtFName.Text = result.FirstName.ToUpper();
+            txtLName.Text = result.LastName.ToUpper();
+            txtNum.Text = result.PhoneNumber.ToUpper().Substring(1);
+            if (result.IsFree == true)
+                cmbIsFree.SelectedIndex = 0;
+            else
+                cmbIsFree.SelectedIndex = 1;
+            string imageUrl = API.BASEIMG_URL + result.ImagePath;
+            Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
+            imgProfile.ImageSource = new BitmapImage(imageUri);
+            loader.Visibility = Visibility.Collapsed;
+            loader1.Visibility = Visibility.Collapsed;
+        }
+        public async Task RefreshAsync()
         {
             string token = File.ReadAllText(_path);
             IdentityService identityService = jwtParser.ParseToken(token);

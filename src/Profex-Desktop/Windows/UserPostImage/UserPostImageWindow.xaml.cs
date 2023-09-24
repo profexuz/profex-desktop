@@ -32,6 +32,7 @@ namespace Profex_Desktop.Windows.UserPostImage
         private CategoryService _categoryService = new CategoryService();
         int s = 0;
         List<string> lst = new List<string>();
+        public Action CloseWindow { get; set; }
         public UserPostImageWindow()
         {
             InitializeComponent();
@@ -71,7 +72,8 @@ namespace Profex_Desktop.Windows.UserPostImage
                 MessageBox.Show("Muvoffaqiyatli yaratildi");
                 
                 this.Close();
-                mcc.Close();
+                //mcc.Close();
+                CloseWindow();
             }
             else if(res==0)
             {

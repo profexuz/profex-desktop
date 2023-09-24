@@ -6,6 +6,7 @@ using Profex_Integrated.Services.Categories;
 using Profex_Integrated.Services.Posts;
 using Profex_Integrated.Validation;
 using Profex_ViewModels.Categories;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -18,12 +19,13 @@ namespace Profex_Desktop.Windows.UserPosts
     {
         List<CategoryViewModel> list = new List<CategoryViewModel>();
         public long CategoryId;
-        AboutCategoryWindow aboutCategoryWindow = new AboutCategoryWindow();
+        
         public long PostId;
         private PostService _postService = new PostService();
         private CategoryService _categoryService = new CategoryService();
         ValidationAttribute validationAttribute = new ValidationAttribute();
         List<string> lst = new List<string>();
+        public Action CloseWindow { get; set; }
 
         public UserPostCreateWindow()
         {
@@ -105,17 +107,20 @@ namespace Profex_Desktop.Windows.UserPosts
                     if (reeesult == MessageBoxResult.Yes)
                     {
                         UserPostImageWindow us = new UserPostImageWindow();
-                        
                         us.PostId = PostId;
-
                         us.ShowDialog();
-                        aboutCategoryWindow.Close();
+                        us.CloseWindow = CloseWindow;
+                        //aboutCategoryWindow.Close();
+                        //AboutCategory
+                        //AboutCategoryWindow.close
+
                     }
                     else
                     {
                         this.Close();
-                        aboutCategoryWindow.Close();
+                        //aboutCategoryWindow.Close();
                     }
+                    
                     
                 }
             }

@@ -1,27 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http.Internal;
-using Profex_Dtos.Masters;
 using Profex_Dtos.Users;
 using Profex_Integrated.Helpers;
 using Profex_Integrated.Security;
 using Profex_Integrated.Services.Auth.JwtToken;
 using Profex_Integrated.Services.Users;
-using Profex_ViewModels.Masters;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Profex_Desktop.Pages
 {
@@ -137,17 +129,21 @@ namespace Profex_Desktop.Pages
             }
             
             var result = await _userService.UpdateAsync(identityService.Id, _userViewModel);
+            
             if (result == true)
             {
-                txtFName.IsReadOnly = true;
+
+                await RefreshAsync();
+                /*txtFName.IsReadOnly = true;
                 txtLName.IsReadOnly = true;
                 txtNum.IsReadOnly = true;
-                //cmbIsFree.IsReadOnly = true;
+                *///cmbIsFree.IsReadOnly = true;
 
-                btnSave.Visibility = Visibility.Hidden;
+                /*btnSave.Visibility = Visibility.Hidden;
                 btnCancel.Visibility = Visibility.Hidden;
                 btnChange.Visibility = Visibility.Visible;
-                this.Visibility = Visibility.Hidden;
+                this.Visibility = Visibility.Hidden;*/
+
             }
             else
             {
@@ -169,6 +165,24 @@ namespace Profex_Desktop.Pages
             imgProfile.ImageSource = new BitmapImage(imageUri);
             loader.Visibility = Visibility.Collapsed;
             loader2.Visibility = Visibility.Collapsed;
+        }
+        public async Task RefreshAsync()
+        {
+            string token = File.ReadAllText(_path);
+            IdentityService identityService = jwtParser.ParseToken(token);
+            var result = await _userService.GetByIdAsync(identityService.Id);
+            txtFName.Text = result.FirstName.ToUpper();
+            txtLName.Text = result.LastName.ToUpper();
+            txtNum.Text = result.PhoneNumber.ToUpper().Substring(1);
+            string imageUrl = API.BASEIMG_URL + result.ImagePath;
+            Uri imageUri = new Uri(imageUrl, UriKind.Absolute);
+            imgProfile.ImageSource = new BitmapImage(imageUri);
+            loader.Visibility = Visibility.Collapsed;
+            loader2.Visibility = Visibility.Collapsed;
+            btnSave.Visibility = Visibility.Hidden;
+            btnCancel.Visibility = Visibility.Hidden;
+            btnChange.Visibility = Visibility.Visible;
+            //this.Visibility = Visibility.Hidden;
         }
 
         
