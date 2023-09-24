@@ -47,6 +47,7 @@ namespace Profex_Desktop.Components.Request
                     if (result1 == 1)
                     {
                         MessageBox.Show("So'rovingiz muvoffaqiyatli o'chirildi!");
+                        RefreshAsync();
                     }
                     else if (result1 == 0)
                     {

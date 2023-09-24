@@ -17,7 +17,7 @@ namespace Profex_Desktop.Components.MyRequestUser
         public long UserId;
         public long MasterId;
         private RequestService rqs = new RequestService();
-
+        public Action RefreshAsync { get; set; }
         public MyRequestUser()
         {
             InitializeComponent();
@@ -47,6 +47,7 @@ namespace Profex_Desktop.Components.MyRequestUser
                     if (result1 == 1)
                     {
                         MessageBox.Show("So'rov muvaffaqiyatli ravishda qabul qilindi!");
+                        RefreshAsync();
                     }
                     else if (result1 == 0)
                     {
@@ -78,6 +79,7 @@ namespace Profex_Desktop.Components.MyRequestUser
                     if (result1 == 1)
                     {
                         MessageBox.Show("Ushbu so'rpv muvaffaqiyatli ravishda o'chirildi!");
+                        RefreshAsync();
                     }
                     else if (result1 == 0)
                     {

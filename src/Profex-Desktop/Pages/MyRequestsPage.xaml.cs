@@ -29,6 +29,7 @@ namespace Profex_Desktop.Pages
                 if (count == 6) break; count++;
                 MyRequestMaster rqm = new MyRequestMaster();
                 rqm.vacancyId = item.id;
+                rqm.RefreshAsync = RefreshAsync;
                 rqm.UserId = item.userId;
                 values[0] = API.BASEIMG_URL + item.imagePath[0];
                 values[1] = item.title;
@@ -39,7 +40,7 @@ namespace Profex_Desktop.Pages
             }
             loader.Visibility = Visibility.Collapsed;
         }
-        public async Task RefreshAsync()
+        public async void RefreshAsync()
         {
             wrpAdvertising.Children.Clear();
             var result = await _requestService.GetAllAsync(1);
