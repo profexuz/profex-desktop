@@ -43,16 +43,17 @@ namespace Profex_Desktop.Pages
                 rqm.MasterId = masterIds[0];
                 masterIds.Clear();
                 rqm.UserId = item.userId;
-                values[0] = API.BASE_URL + item.imagePath[0];
+                values[0] = API.BASEIMG_URL + item.imagePath[0];
                 values[1] = item.title;
                 values[2] = item.price.ToString();
+                rqm.RefreshAsync = RefreshAsync;
                 rqm.SetData(values);
                 wrpAdvertising.Children.Add(rqm);
 
             }
             loader.Visibility = Visibility.Collapsed;
         }
-        public async Task RefreshAsync()
+        public async void RefreshAsync()
         {
             wrpAdvertising.Children.Clear();
             var result = await _requestService.GetAllAsync1(1);
@@ -74,10 +75,11 @@ namespace Profex_Desktop.Pages
                 rqm.MasterId = masterIds[0];
                 masterIds.Clear();
                 rqm.UserId = item.userId;
-                values[0] = API.BASE_URL + item.imagePath[0];
+                values[0] = API.BASEIMG_URL + item.imagePath[0];
                 values[1] = item.title;
                 values[2] = item.price.ToString();
                 rqm.SetData(values);
+                
                 wrpAdvertising.Children.Add(rqm);
 
             }

@@ -35,30 +35,6 @@ namespace Profex_Desktop.Components.SkillAbout
             }
         }
 
-        private async void SkillChopish(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                var result = await _skillsService.RemoveMySkill(SkillId);
-                if (result == 1)
-                {
-                    MessageBox.Show("Muvoffaqiyatli o'chirildi!");
-                    Yangilash();
-                }
-                else if (result == 0)
-                {
-                    MessageBox.Show("Siz ushbu mahoratni allaqachon o'chirgansiz");
-                }
-                else if (result == -1)
-                {
-                    MessageBox.Show("Nomalum xatolik yuz berdi");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("internet aloqasi sekin!");
-            }
-        }
         private async void SkillChopish(object sender, RoutedEventArgs e)
         {
             try

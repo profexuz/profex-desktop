@@ -7,6 +7,7 @@
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
              Background="#0E1621"
+             Margin="5"
              Height="450" Width="400">
     <Grid Background="{DynamicResource UserFirstBackground}">
         <Border MouseDown="Border_MouseDown">
